@@ -1,0 +1,3 @@
+Art. 36.-
+
+Transferencia de acciones de INECEL.-16
