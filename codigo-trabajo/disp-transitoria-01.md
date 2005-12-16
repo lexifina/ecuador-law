@@ -1,0 +1,2 @@
+De la Ley 133, Codificación del Código del Trabajo, promulgada en el Registro Oficial No. 162 del 29 de septiembre de 1997:
+PRIMERA.- Las organizaciones laborales constituidas antes de la vigencia de la Ley No. 133 promulgada en el Suplemento del Registro Oficial No. 817 del 21 de noviembre de 1991, con un número de trabajadores inferior al mínimo exigido para el efecto en dicha reforma, conservarán su personería jurídica y todos los derechos que le correspondan.

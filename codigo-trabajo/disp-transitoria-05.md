@@ -1,0 +1,1 @@
+QUINTA.- En las jurisdicciones cantonales donde no existan jueces de Trabajo, conocerán las causas en primera instancia los jueces de lo Civil, o si los jueces de Trabajo se hallaren impedidos de intervenir se procederá de conformidad con las reglas de subrogación.

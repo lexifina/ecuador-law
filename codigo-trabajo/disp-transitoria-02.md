@@ -1,0 +1,1 @@
+SEGUNDA.- Se respetarán los días de descanso obligatorio pactados en los contratos colectivos de trabajo vigentes a la fecha de publicación de la Ley No. 55 promulgada en el Suplemento del Registro Oficial No. 462 del 15 de junio de 1994.

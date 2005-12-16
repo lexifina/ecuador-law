@@ -1,0 +1,2 @@
+De la Ley 2005-3, Reformatoria a la Ley mediante la cual se establece el procedimiento oral en los juicios laborales, promulgada en el Suplemento del Registro Oficial No. 52 del 4 de julio del 2005.
+DECIMA.- Desde la fecha en que se constituya legalmente la Corte Suprema de Justicia, será su obligación implementar hasta el 1 de julio del 2006, planes de capacitación judicial en todos los distritos judiciales en los que todavía no ha entrado en vigencia el sistema oral en materia laboral.
