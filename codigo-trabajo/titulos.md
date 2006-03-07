@@ -38,6 +38,7 @@ Capítulo VII Del trabajo agrícola
 Parágrafo 1ro. Del empleador y del obrero agrícola
 Parágrafo 2do. De los jornaleros y destajeros
 Parágrafo 3ro. Disposiciones comunes relativas a este capítulo y a otras modalidades de trabajo
+TITULO .... DEL TRABAJO PARA PERSONAS CON DISCAPACIDAD
 TÍTULO IV DE LOS RIESGOS DEL TRABAJO
 Capítulo I Determinación de los riesgos y de la responsabilidad del empleador
 Capítulo II De los accidentes
