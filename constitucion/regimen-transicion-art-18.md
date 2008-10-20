@@ -1,0 +1,2 @@
+Art. 18.- (Función Electoral) Con el fin de posibilitar la inmediata realización del proceso electoral dispuesto en este Régimen de Transición, la Asamblea Constituyente designará a quienes transitoriamente conformarán el Consejo Nacional Electoral y el Tribunal Contencioso Electoral.
+Los integrantes de estos órganos así designados, serán reemplazados por quienes resulten ganadores de los concursos establecidos en la Constitución. El proceso de selección dará inicio una vez concluido el proceso electoral.

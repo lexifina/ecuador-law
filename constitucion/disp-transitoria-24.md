@@ -1,0 +1,1 @@
+VIGESIMOCUARTA.- Dentro del plazo máximo de treinta días a partir de la aprobación de esta Constitución, el Ejecutivo conformará una comisión para realizar una auditoría de las concesiones de las frecuencias de radio y televisión, cuyo informe se entregará en un plazo máximo de ciento ochenta días.

@@ -1,0 +1,3 @@
+Art. 7.- (Circunscripciones urbanas y rurales) Para las elecciones de concejales en los cantones existirán dos circunscripciones electorales, una urbana y otra rural, constituidas por los electores de las parroquias urbanas y las rurales, respectivamente.
+En cada circunscripción se elegirá el número que resulte de multiplicar el total de concejales del cantón por el porcentaje de la población de la circunscripción correspondiente. El resultado se aproximará al entero más cercano. Cuando el valor no alcance la unidad en la circunscripción se elegirá un concejal.
+En los cantones que no cuentan con parroquias rurales existirá una sola circunscripción, donde se elegirán todos los concejales.

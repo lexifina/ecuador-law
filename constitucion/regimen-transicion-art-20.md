@@ -1,0 +1,1 @@
+Art. 20.- (Consejo de la Judicatura) En un plazo no mayor de ciento ochenta (180) días se organizará el Consejo de la Judicatura; sus integrantes se designarán por el procedimiento establecido en la Constitución.

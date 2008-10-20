@@ -1,0 +1,1 @@
+OCTAVA.- Los procesos que estén sustanciándose por miembros de la Corte Suprema de Justicia, así como aquéllos que estén en conocimiento de las cortes policial y militar, pasarán a conocimiento y resolución de la Corte Nacional de Justicia.

@@ -1,0 +1,3 @@
+VIGESIMOSEXTA.- En el plazo de trescientos sesenta días a partir de la entrada en vigencia de esta Constitución, las delegaciones de servicios públicos en agua y saneamiento realizadas a empresas privadas serán auditadas financiera, jurídica, ambiental y socialmente.
+El Estado definirá la vigencia, renegociación y, en su caso, la terminación de los contratos de delegación, de acuerdo con lo establecido en esta Constitución y en los resultados de las auditorías.
+Se condona a las usuarias y usuarios en extrema pobreza las deudas de agua de consumo humano que hayan contraído hasta la entrada en vigencia de esta Constitución.

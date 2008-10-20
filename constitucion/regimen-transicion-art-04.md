@@ -1,0 +1,3 @@
+Art. 4.- (Presentación de candidaturas) En estas elecciones, las organizaciones políticas y alianzas que participaron en la elección de asambleístas podrán presentar candidaturas.
+Podrán también hacerlo otras organizaciones políticas, para lo cual deberán presentar el uno por ciento (1%) de firmas de adhesión de los ciudadanos y ciudadanas del correspondiente registro electoral. Al efecto, el Consejo Nacional Electoral entregará los formularios necesarios.
+Las candidaturas pluripersonales se presentarán en listas completas con candidatos principales y sus respectivos suplentes. Las listas se conformarán paritariamente con secuencia de mujer, hombre u hombre, mujer hasta completar el total de candidaturas.

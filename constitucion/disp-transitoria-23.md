@@ -1,0 +1,1 @@
+VIGESIMOTERCERA.- Dentro del plazo de ciento ochenta días a partir de la aprobación de esta Constitución, se creará la entidad financiera de propiedad del Instituto Ecuatoriano de Seguridad Social, responsable de la administración de sus fondos, bajo criterios de banca de inversión, y con el objetivo de generar empleo y valor agregado.

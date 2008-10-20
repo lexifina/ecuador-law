@@ -1,0 +1,1 @@
+Art. 22.- Una vez promulgada la ley que regule la conformación y funcionamiento del Consejo de la Judicatura, este organismo conformará la Corte Nacional de Justicia, también procederá a organizar las Cortes Provinciales de Justicia y los Tribunales Distritales y Penales, designando a sus integrantes.

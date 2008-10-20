@@ -1,0 +1,1 @@
+VIGESIMOQUINTA.- La revisión anual del salario básico se realizará con carácter progresivo hasta alcanzar el salario digno de acuerdo con lo dispuesto en esta Constitución. El salario básico tenderá a ser equivalente al costo de la canasta familiar. La jubilación universal para los adultos mayores se aplicará de modo progresivo.

@@ -1,0 +1,1 @@
+VIGESIMOSEGUNDA.- El Presupuesto General del Estado destinado al financiamiento del sistema nacional de salud, se incrementará cada año en un porcentaje no inferior al cero punto cinco por ciento del Producto Interior Bruto, hasta alcanzar al menos el cuatro por ciento.

@@ -1,0 +1,1 @@
+Art. 13.- (Financiamiento de la campaña) El Estado, a través del presupuesto del Consejo Nacional Electoral, financiará exclusivamente la campaña propagandística en prensa escrita, radio, televisión y vallas publicitarias de todas las candidaturas unipersonales y pluripersonales, excepto las de juntas parroquiales rurales.

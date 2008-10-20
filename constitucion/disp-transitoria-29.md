@@ -1,0 +1,2 @@
+VIGESIMONOVENA.- Las participaciones accionarias que posean las personas jurídicas del sector financiero en empresas ajenas a este sector, se enajenarán en el plazo de dos años a partir de la entrada en vigencia de esta Constitución.
+Las participaciones accionarias de las personas jurídicas del sector financiero, sus representantes legales y miembros de directorio y accionistas que tengan participación en el capital pagado de medios de comunicación social, deberán ser enajenadas en el plazo de dos años a partir de la entrada en vigencia de esta Constitución.

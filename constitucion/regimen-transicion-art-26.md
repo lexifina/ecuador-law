@@ -1,0 +1,1 @@
+Art. 26.- Los empleados del Tribunal Constitucional con excepción de los de libre nombramiento y remoción, podrán continuar prestando sus servicios en la Corte Constitucional, previo proceso de evaluación y selección.
