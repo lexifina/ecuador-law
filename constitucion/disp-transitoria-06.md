@@ -1,0 +1,1 @@
+SEXTA.- Los consejos nacionales de niñez y adolescencia, discapacidades, mujeres, pueblos y nacionalidades indígenas, afroecuatorianos y montubios, se constituirán en consejos nacionales para la igualdad, para lo que adecuarán su estructura y funciones a la Constitución.

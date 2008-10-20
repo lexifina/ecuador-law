@@ -1,0 +1,1 @@
+DECIMOCUARTA.- A partir del Presupuesto General del Estado del año 2009, el monto de transferencias del Estado central a los gobiernos autónomos descentralizados no será, en ningún caso, inferior al monto asignado en el Presupuesto del ejercicio fiscal del año 2008.

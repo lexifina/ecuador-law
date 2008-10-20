@@ -1,0 +1,2 @@
+Art. 30.- Los servidores públicos de la Comisión de Control Cívico de la Corrupción y de la Secretaría Nacional Anticorrupción, que no son de libre nombramiento y remoción, pasarán a formar parte del Consejo de Participación Ciudadana y Control Social.
+Los bienes de la Comisión de Control Cívico de la Corrupción pasarán a formar parte del patrimonio del Consejo de Participación Ciudadana y Control Social.

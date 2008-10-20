@@ -1,0 +1,1 @@
+DUODÉCIMA.- En el plazo de cuarenta y cinco días desde la entrada en vigencia de esta Constitución, los partidos y movimientos políticos deberán reinscribirse en el Consejo Nacional Electoral y podrán conservar sus nombres, símbolos y número.

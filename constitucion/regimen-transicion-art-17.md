@@ -1,0 +1,3 @@
+Art. 17.- (Función Legislativa) Se declara concluido el período de los diputados y diputadas, principales y suplentes, elegidos el 15 de octubre del 2006.
+La Asamblea Constituyente se reunirá cinco días después de proclamados los resultados del referéndum aprobatorio para conformar la Comisión Legislativa y de Fiscalización procurando mantener la proporcionalidad política que tuvo el plenario de la Asamblea Constituyente.
+Esta Comisión Legislativa y de Fiscalización cumplirá las funciones de la Asamblea Nacional previstas en la Constitución, hasta que se elijan y posesionen los Asambleístas, conforme lo establecido en este Régimen de Transición.

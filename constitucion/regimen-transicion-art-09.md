@@ -1,0 +1,6 @@
+Art. 9.- (Calendario y períodos de funciones) Los dignatarios de elección popular iniciarán sus períodos de la siguiente forma y de acuerdo con el siguiente calendario:
+1. La Asamblea Nacional, sin necesidad de convocatoria previa, se reunirá treinta (30) días luego de proclamados los resultados de las elecciones de todas las dignidades. En la misma fecha, iniciarán sus períodos los prefectos y viceprefectos, alcaldes, concejales y miembros de las juntas parroquiales rurales.
+2. Los representantes al Parlamento Andino se posesionarán ante la Asamblea Nacional luego de cinco (5) días de su instalación.
+3. El Presidente y Vicepresidente de la República iniciarán su período a los diez (10) días de la instalación de la Asamblea Nacional, ante la cual prestarán juramento.
+El Presidente y Vicepresidente de la República concluirán su período de gobierno el día 24 de mayo de 2013; los parlamentarios andinos lo harán el día 19 de mayo de 2013; y, los miembros de la Asamblea Nacional el día 14 de mayo de 2013.
+A fin de que las elecciones nacionales y locales no sean concurrentes, los siguientes dos períodos de los prefectos y viceprefectos, alcaldes, concejales municipales y vocales de las juntas parroquiales rurales, por ésta y la próxima ocasión, concluirán sus períodos el día 14 de mayo de 2014 y el día 14 de mayo de 2019.

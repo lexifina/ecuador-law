@@ -1,0 +1,1 @@
+DECIMOQUINTA.- Los activos y pasivos, las funcionarias y funcionarios y las empleadas y empleados del Consejo Provincial de Galápagos y del Instituto Nacional Galápagos, pasarán a formar parte del Consejo de Gobierno del Régimen Especial de Galápagos.

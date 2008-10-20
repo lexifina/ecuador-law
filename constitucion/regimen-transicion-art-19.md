@@ -1,0 +1,2 @@
+Art. 19.- Los funcionarios y empleados del Tribunal Supremo Electoral y de los tribunales provinciales electorales que no son de libre nombramiento y remoción, continuarán desempeñando funciones en la Función Electoral, se sujetarán a un proceso de selección y calificación acorde a las necesidades de los nuevos organismos.
+Los bienes del Tribunal Supremo Electoral pasarán a formar parte del patrimonio de la Función Electoral.

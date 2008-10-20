@@ -1,0 +1,1 @@
+Art. 8.- (Registro electoral) El registro electoral se elaborará conforme las disposiciones de la Constitución. Se cumplirán los plazos establecidos en la Ley Orgánica de Elecciones para la actualización de domicilio y la elaboración del registro electoral.

@@ -1,0 +1,1 @@
+Art.- 16.- (Proceso de transición) Una vez aprobada la Constitución y a efecto de posibilitar los cambios institucionales previstos en ella, se implementará el proceso de transición establecido en las normas que a continuación se señalan.

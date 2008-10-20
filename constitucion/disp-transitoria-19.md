@@ -1,0 +1,2 @@
+DECIMONOVENA.- El Estado realizará una evaluación integral de las instituciones educativas unidocentes y pluridocentes públicas, y tomará medidas con el fin de superar la precariedad y garantizar el derecho a la educación.
+En el transcurso de tres años, el Estado realizará una evaluación del funcionamiento, finalidad y calidad de los procesos de educación popular y diseñará las políticas adecuadas para el mejoramiento y regularización de la planta docente.
