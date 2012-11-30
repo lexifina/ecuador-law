@@ -1,0 +1,9 @@
+EL DIRECTOR EJECUTIVO DE LA AGENCIA
+
+ECUATORIANA DE ASEGURAMIENTO DE LA
+
+CALIDAD DEL AGRO-AGROCALIDAD
+
+Considerando:
+
+Que, la Constitución de la República del Ecuador en el
