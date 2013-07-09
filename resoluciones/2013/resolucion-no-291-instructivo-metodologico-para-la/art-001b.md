@@ -1,0 +1,149 @@
+Artículo 1.- COBERTURA DEL SUBSIDIO.- Serán
+
+beneficiados de la comercialización y distribución de urea
+
+subsidiada, los pequeños y medianos productores agrícolas
+
+con predios desde una (1) hectárea hasta veinte (20)
+
+hectáreas que se encuentren éstos asociados o no. No habrá
+
+excepciones de ningún tipo a lo establecido en el
+
+presente instructivo. Los cultivos y superficie por cultivo
+
+que se beneficiaran del presente programa se detallan en la
+
+siguiente tabla de cultivos y limite de hectáreas por cultivo:
+
+Tabla 1: Tabla de cultivos y límite de hectáreas subsidiadas por cultivo
+
+Cultivo
+
+Límite de hectáreas (ha)
+
+por cultivo
+
+Cultivo
+
+Límite de hectáreas (ha)
+
+por cultivo
+
+Arroz
+
+0 a 20 hectáreas
+
+Hortalizas
+
+0 a 20 hectáreas
+
+Maíz duro
+
+0 a 20 hectáreas
+
+Cereales
+
+0 a 20 hectáreas
+
+Trigo
+
+0 a 20 hectáreas
+
+Banano
+
+0 a 20 hectáreas
+
+Cacao
+
+0 a 20 hectáreas
+
+Plátano
+
+0 a 20 hectáreas
+
+Café
+
+0 a 20 hectáreas
+
+Palma africana
+
+0 a 20 hectáreas
+
+Yuca
+
+0 a 20 hectáreas
+
+Maíz suave
+
+0 a 20 hectáreas
+
+Palmito
+
+0 a 20 hectáreas
+
+Papa
+
+0 a 20 hectáreas
+
+Caña de azúcar
+
+0 a 20 hectáreas
+
+Algodón
+
+0 a 20 hectáreas
+
+Frutales
+
+0 a 20 hectáreas
+
+Pastizales costa
+
+0 a 20 hectáreas
+
+Pastos sierra
+
+0 a 20 hectáreas
+
+El número de sacos promedio de urea requerido para cada
+
+cultivo
+
+ha
+
+sido
+
+determinado
+
+en
+
+virtud
+
+de
+
+las
+
+recomendaciones técnicas del INIAP. El detalle específico
+
+de requerimientos de Urea, según el tamaño de cada predio,
+
+por cada cultivo se presenta en el Anexo 1 de este
+
+instructivo.
+
+La UNA considerará el tamaño del predio y los
+
+requerimientos nutricionales de urea promedio por hectárea
+
+y por cultivo detallados en el Anexo 1, para realizar el
+
+cálculo de la entrega correspondiente a cada beneficiario.
+
+FECHA
+
+La fecha en la que se determina el inicio del ciclo Verano
+
+será públicamente expuesto en las respectivas Ventanillas
+
+Únicas de Servicios en las Direcciones Provinciales
