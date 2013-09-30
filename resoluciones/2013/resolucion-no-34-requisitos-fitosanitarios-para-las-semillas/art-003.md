@@ -1,0 +1,13 @@
+Artículo 3.- De la ejecución de la presente Resolución
+
+encárguese a la Dirección de Sanidad Vegetal de
+
+AGROCALIDAD.
+
+La presente Resolución entrará en vigencia a partir de su
+
+suscripción sin perjuicio de su publicación en el Registro
+
+Oficial.
+
+COMUNÍQUESE, PUBLÍQUESE Y CÚMPLASE.
