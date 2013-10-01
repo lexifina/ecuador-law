@@ -1,0 +1,7 @@
+Art. 4.- La presente resolución entrará en vigencia a partir de la
+
+presente fecha, sin perjuicio de su publicación en el Registro
+
+oficial.
+
+Dado en el Distrito Metropolitano de Quito, en la Sala Verde del
