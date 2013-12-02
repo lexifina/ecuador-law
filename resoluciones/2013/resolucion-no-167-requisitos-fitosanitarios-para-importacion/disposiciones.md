@@ -1,0 +1,43 @@
+DISPOSICIÓN GENERAL
+
+La Dirección de Sanidad Vegetal conjuntamente con la
+
+Coordinación
+
+de
+
+Relaciones
+
+Internacionales
+
+y
+
+Comunicación Social de AGROCALIDAD se encargará de
+
+notificar la presente Resolución ante la Organización
+
+Mundial de Comercio (OMC).
+
+DISPOSICIÓN DEROGATORIA
+
+Derogar la Resolución No. 023 del 29 de mayo 2008, en el
+
+cual se establece los requisitos fitosanitarios para la
+
+importación de semillas germinadas de palma africana
+
+(Elaeis guineensis) para la siembra, procedentes de
+
+Honduras.
+
+De la ejecución de la presente Resolución encárguese a la
+
+Dirección de Sanidad Vegetal de AGROCALIDAD.
+
+La presente Resolución entrará en vigencia a partir de su
+
+suscripción sin perjuicio de su publicación en el Registro
+
+Oficial.
+
+COMUNÍQUESE, PUBLÍQUESE Y CÚMPLASE.
