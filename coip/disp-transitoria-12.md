@@ -1,0 +1,1 @@
+DÉCIMO SEGUNDA: En el plazo máximo de sesenta días, contados a partir de su conformación, el Organismo Técnico del Sistema de Rehabilitación Social dictará el reglamento para la implementación, aplicación y cumplimiento de las normas establecidas en el Libro III, Ejecución, de este Código.

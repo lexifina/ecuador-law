@@ -1,0 +1,1 @@
+PRIMERA: En lo no previsto en este Código se deberá aplicar lo establecido en el Código Orgánico de la Función Judicial y el Código de Procedimiento Civil, si es aplicable con la naturaleza del proceso penal acusatorio oral.

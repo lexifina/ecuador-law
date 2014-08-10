@@ -1,0 +1,1 @@
+SÉPTIMA: En el primer inciso del segundo innumerado del artículo 138 de la Ley de Minería, sustitúyase la frase "con las penas aplicables al delito de perjurio" por la frase "con el Código Orgánico Integral Penal."

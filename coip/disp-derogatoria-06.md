@@ -1,0 +1,1 @@
+SEXTA: Deróguense los artículos 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, incisos primero y segundo del art. 200, y 201 del Código Orgánico de la Producción, Comercio e Inversiones publicado en el Suplemento del Registro Oficial No. 351 del 29 de diciembre de 2010.

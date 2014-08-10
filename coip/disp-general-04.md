@@ -1,0 +1,1 @@
+CUARTA: En lo referente a infracciones contra la administración aduanera, cuando el valor de las mercancías no exceda de los montos previstos para que se configure el tipo penal, no constituye delito y será sancionada como contravención administrativa por la autoridad aduanera con el cincuenta por ciento de la multa máxima establecida para cada delito.

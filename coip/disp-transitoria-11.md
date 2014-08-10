@@ -1,0 +1,1 @@
+DÉCIMO PRIMERA: El Presidente de la República, en el plazo máximo de sesenta días, contados desde la publicación de este Código en el Registro Oficial conformará el Organismo Técnico del Sistema de Rehabilitación Social, y nombrará a quien lo presidirá.

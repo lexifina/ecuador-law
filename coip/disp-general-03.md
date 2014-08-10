@@ -1,0 +1,1 @@
+TERCERA: En los casos de repatriación de personas extranjeras sentenciadas en el Ecuador, las obligaciones de pago de multas quedan extinguidas, de conformidad con los convenios internacionales referentes a esta materia.

@@ -1,0 +1,1 @@
+VIGÉSIMO SEGUNDA: Deróguense los artículos 319 al 331, y el segundo inciso del artículo 342 de la Codificación de la Ley de Propiedad Intelectual publicada en el Suplemento del Registro Oficial No. 426 de 28 de diciembre de 2006.

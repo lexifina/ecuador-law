@@ -1,0 +1,1 @@
+CUARTA: Los procesos, actuaciones y procedimientos de repatriación que estén tramitándose cuando entre en vigencia este Código, seguirán sustanciándose de acuerdo con las normas nacionales e internacionales vigentes al tiempo de su inicio y hasta su conclusión.

@@ -1,0 +1,1 @@
+DÉCIMO CUARTA: Deróguese el Capítulo II "De las infracciones y la penas" que contienen los artículos 76 al 78, de la Ley General de Seguros publicada en el Registro Oficial No. 403 de 23 de noviembre de 2006.

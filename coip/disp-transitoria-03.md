@@ -1,0 +1,1 @@
+TERCERA: Los procesos, actuaciones y procedimientos en materia de ejecución de penas privativas de libertad que estén tramitándose cuando entre en vigencia este Código, seguirán sustanciándose conforme al Código de Ejecución de Penas y demás normas vigentes al tiempo de su inicio y hasta su conclusión.
