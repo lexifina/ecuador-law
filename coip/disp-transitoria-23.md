@@ -1,0 +1,1 @@
+VIGÉSIMO TERCERA: En el plazo de ciento ochenta días contados a partir de la publicación de este Código, el Consejo de la Judicatura creará las oficinas técnicas con profesionales en medicina psicología y trabajo social, para garantizar la intervención integral de las personas.

@@ -1,0 +1,1 @@
+VIGÉSIMO SEGUNDA: En un plazo máximo de ciento ochenta días contados a partir de la publicación del presente Código en el Registro Oficial, el Consejo de la Judicatura de manera conjunta y coordinada con el Ministerio de Salud Pública y la Fiscalía General del Estado, cumplirán con el proceso de acreditación de peritos especializados en cada una de las ramas de la salud.

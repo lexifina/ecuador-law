@@ -1,0 +1,2 @@
+DÉCIMO TERCERA: En la Ley contra la Violencia a la Mujer y la Familia, sustitúyase el artículo 3 por el siguiente:
+"Art. 3.- Ámbito de Aplicación.- Se consideran miembros del núcleo familiar el cónyuge o la cónyuge, a la pareja en unión de hecho o unión libre, conviviente, ascendientes, descendientes, hermanas, hermanos, parientes hasta el segundo grado de afinidad y personas con las que se mantenga, o haya mantenido vínculos familiares, íntimos, afectivos, conyugales, de convivencia, noviazgo o cohabiten."

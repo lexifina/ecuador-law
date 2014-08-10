@@ -1,0 +1,1 @@
+DÉCIMO NOVENA: El Ministerio de Justicia, Derechos Humanos y Cultos en coordinación con el Consejo de la Judicatura, en el plazo de ciento cincuenta días, contados desde la publicación en el Registro Oficial de este Código, pondrá en funcionamiento los dispositivos de vigilancia electrónica y su respectiva plataforma.

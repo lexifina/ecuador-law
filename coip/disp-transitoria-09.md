@@ -1,0 +1,1 @@
+NOVENA: El Consejo de la Judicatura dictará los reglamentos necesarios para la implementación, aplicación y cumplimiento de las normas establecidas en el Libro II, Procedimiento, de este Código, en el plazo máximo de ciento cincuenta días, contados desde la publicación de este Código en el Registro Oficial.

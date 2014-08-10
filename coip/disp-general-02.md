@@ -1,0 +1,1 @@
+SEGUNDA: En referencia a las infracciones cometidas en las comunidades indígenas se deberá proceder conforme a lo dispuesto en la Constitución de la República, en los tratados e instrumentos internacionales ratificados por el Estado, en el Código Orgánico de la Función Judicial y en la leyes respectivas.

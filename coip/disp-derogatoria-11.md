@@ -1,0 +1,1 @@
+DÉCIMO PRIMERA: Deróguense los artículos 477 y 478 del Código Orgánico de Organización Territorial, Autonomía y Descentralización publicado en el Suplemento del Registro Oficial No. 303 de 19 de octubre de 2010.

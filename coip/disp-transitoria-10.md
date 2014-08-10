@@ -1,0 +1,1 @@
+DÉCIMA: El Consejo de la Judicatura implementará los centros de mediación para adolescentes y dictará los reglamentos necesarios para su implementación, en el plazo máximo de ciento cincuenta días, contados desde la publicación de este Código.

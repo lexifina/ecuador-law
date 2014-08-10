@@ -1,0 +1,1 @@
+El Código Orgánico Integral Penal entrará en vigencia en ciento ochenta días contados a partir de su publicación en el Registro Oficial, con excepción de las disposiciones reformatorias al Código Orgánico de la Función Judicial, que entrarán en vigencia a partir de la publicación de este Código en el Registro Oficial.
