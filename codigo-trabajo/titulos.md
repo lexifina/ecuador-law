@@ -2,7 +2,7 @@ TÍTULO PRELIMINAR DISPOSICIONES FUNDAMENTALES
 TÍTULO I DEL CONTRATO INDIVIDUAL DE TRABAJO
 Capítulo I De su naturaleza y especies
 Parágrafo 1ro. Definiciones y reglas generales
-Parágrafo 2do. De los contratos de enganche, de grupo y de equipo
+Parágrafo 2do. De los contratos, de grupo y de equipo
 Capítulo II De la capacidad para contratar
 Capítulo III De los efectos del contrato de trabajo
 Capítulo IV De las obligaciones del empleador y del trabajador
@@ -14,7 +14,7 @@ Capítulo VI De los salarios, de los sueldos, de las utilidades y de las bonific
 Parágrafo 1ro. De las remuneraciones y sus garantías
 Parágrafo 2do. De las utilidades
 Parágrafo 3ro. De las remuneraciones adicionales
-Parágrafo 4to. De la política de salarios
+Parágrafo 4to. De las políticas de trabajo y salarios
 Capítulo VII Del trabajo de mujeres y menores
 Capítulo VIII De los aprendices
 Capítulo IX De la terminación del contrato de trabajo
