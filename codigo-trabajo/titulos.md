@@ -3,6 +3,7 @@ TÍTULO I DEL CONTRATO INDIVIDUAL DE TRABAJO
 Capítulo I De su naturaleza y especies
 Parágrafo 1ro. Definiciones y reglas generales
 Parágrafo 2do. De los contratos, de grupo y de equipo
+Parágrafo 3o Del contrato de trabajo juvenil
 Capítulo II De la capacidad para contratar
 Capítulo III De los efectos del contrato de trabajo
 Capítulo IV De las obligaciones del empleador y del trabajador
