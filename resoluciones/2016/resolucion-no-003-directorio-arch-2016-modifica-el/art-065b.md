@@ -1,0 +1,17 @@
+Artículo 65– B.- Si como producto del control realizado,
+
+se llegare a determinar alguna de las infracciones antes
+
+señaladas, se procederá con el levantamiento de las actas
+
+de inspección y de control en las que se hará constar el
+
+cometimiento de la infracción y la suspensión de operación
+
+del sujeto de control, e inmediatamente se pondrá en
+
+conocimiento del Director de la ARCH o su delegado el
+
+particular, para el inicio del procedimiento administrativo
+
+que corresponda.”
