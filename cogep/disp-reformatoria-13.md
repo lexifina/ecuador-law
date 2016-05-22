@@ -1,0 +1,1 @@
+DÉCIMO TERCERA.- Sustitúyase en la disposición general décimo primera de la Ley de Mercado de Valores, incorporada en el Código Orgánico Monetario y Financiero, como Libro II, la frase "artículo 413 del Código de Procedimiento Civil" por "Código Orgánico General de Procesos".

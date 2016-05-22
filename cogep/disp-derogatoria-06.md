@@ -1,0 +1,2 @@
+SEXTA.- Deróguese la sección segunda del Capítulo IV Procedimientos Judiciales y los artículos 292 y 293 del Código Orgánico de la Niñez y la Adolescencia, publicado en el Registro Oficial No. 737 de 3 de enero de 2003.
+Deróguense, así mismo, los artículos 22, 23, 27, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42 y 45 de la Ley Reformatoria al Código de la Niñez y Adolescencia, en materia de alimentos, publicada en el Suplemento del Registro Oficial No. 643 de 29 de julio de 2009, incorporada como Título V del Libro II del mismo código.

@@ -1,0 +1,2 @@
+SEGUNDA.- Los procedimientos coactivos y de expropiación seguirán sustanciándose de acuerdo con lo previsto en el Código de Procedimiento Civil y el Código Orgánico Tributario, según el caso, sin perjuicio del acatamiento de las normas del debido proceso previstas en la Constitución de la República.
+Las normas antes aludidas se seguirán aplicando en lo que no contravenga las previstas en este Código, una vez que éste entre en vigencia y hasta que se expida la ley que regule la materia administrativa.

@@ -1,0 +1,1 @@
+OCTAVA.- Deróguense los artículos 568, 570, 574, 576, 578, 579, 580, 581, 582, 583, 584, 585, 586, 587, 590, 591, 592, 593, 596, 597, 598, 599, 600, 601, 602, 603, 604, 605, 607, 608, 609, 610, 611, 612, 613, 614, 616, 618, 619 y 620 del Código del Trabajo, codificación publicada en el Suplemento al Registro Oficial No. 167 de 16 de diciembre de 2005.

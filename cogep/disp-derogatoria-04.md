@@ -1,0 +1,1 @@
+CUARTA.- Deróguense el numeral 1 del artículo 164 y el primer inciso del artículo 333 del Código Orgánico de la Función Judicial, publicado en el Suplemento del Registro Oficial No. 544 de 9 de marzo de 2009.

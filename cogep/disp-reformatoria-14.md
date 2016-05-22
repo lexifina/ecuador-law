@@ -1,0 +1,1 @@
+DÉCIMO CUARTA.- Sustitúyase en el tercer inciso del artículo 35 de la Ley de Aviación Civil, la frase "los artículos 413 y 419 del Código de Procedimiento Civil" por "las disposiciones del Código Orgánico General de Procesos".

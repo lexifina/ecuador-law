@@ -1,0 +1,1 @@
+QUINTA.- Deróguense el Capítulo II del Trámite de las Acciones, del Título II de la Sustanciación ante el Tribunal Distrital de lo Fiscal, del Libro III del Procedimiento Contencioso y los artículos 291, 292, 293, 294, 296 y 299 del Código Orgánico Tributario, publicado en el Suplemento del Registro Oficial No. 38 de 14 de junio de 2005.

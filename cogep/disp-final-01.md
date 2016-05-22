@@ -1,0 +1,1 @@
+PRIMERA.- En todo lo no previsto en el Código Orgánico General de Procesos, se observarán, de forma supletoria, las disposiciones vigentes del Código Orgánico de la Niñez y Adolescencia; Código Orgánico Tributario; Código Civil, Código del Trabajo y Código de Comercio.

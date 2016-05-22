@@ -1,0 +1,1 @@
+DÉCIMO OCTAVA.- Añádase en el inciso final del artículo 6 de la Ley Reformatoria al Código Orgánico de la Niñez y Adolescencia, en materia de alimentos, incorporada como Título V del Libro II del referido código, a continuación de la frase "Consejo de la Judicatura" la frase "y que podrá ser presentado en el domicilio del demandado o del actor, a elección de este último".
