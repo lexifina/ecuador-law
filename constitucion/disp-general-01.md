@@ -1,0 +1,1 @@
+Disposición General Primera: Déjense sin efecto desde su aprobación los artículos 2, 4 y la Disposición Transitoria Segunda de las enmiendas constitucionales aprobadas del 3 de diciembre de 2015 por la Asamblea Nacional.
