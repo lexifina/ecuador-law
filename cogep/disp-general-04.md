@@ -1,0 +1,1 @@
+CUARTA.- Cuando las leyes se refieran a la venta o remate al martillo o, en general, a las ventas con intervención de martillador público, los jueces ordenarán la práctica del remate conforme al artículo 314 del Código Orgánico de la Función Judicial.
