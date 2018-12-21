@@ -1,0 +1,15 @@
+Artículo 3.- Disponer la vigencia del presente Acuerdo
+
+Ministerial a partir de su expedición sin perjuicio de
+
+su publicación en el Registro O¿ cial. Encárguese de la
+
+ejecución del presente Acuerdo a la Subsecretaria de
+
+Recursos Pesqueros, a través de la Dirección de Control de
+
+Recursos Pesqueros, Dirección de Pesca Industrial y a la
+
+Dirección Nacional de Espacios Acuáticos DIRNEA.
+
+COMUNÍQUESE y PUBLÍQUESE.
