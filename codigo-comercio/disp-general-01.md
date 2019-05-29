@@ -1,0 +1,1 @@
+PRIMERA.- El Servicio de Rentas Internas ofrecerá en su página digital a través de internet, una herramienta que permita verificar una factura electrónica que tenga la condición de negociable, con el detalle de la información contenida en el comprobante electrónico.

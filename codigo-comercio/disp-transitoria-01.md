@@ -1,0 +1,1 @@
+PRIMERA.- La autoridad tributaria administradora de tributos nacionales deberá implementar las plataformas informáticas digitales para la consulta de facturas comerciales negociables, previstas en la Disposición General Primera del presente Código, dentro del plazo de 180 días a partir de la publicación de este Código en el Registro Oficial.

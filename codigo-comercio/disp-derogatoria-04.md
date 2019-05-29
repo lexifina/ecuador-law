@@ -1,0 +1,2 @@
+CUARTA.- Derógase el Decreto Supremo No. 3121, Ley de Arrendamiento Mercantil, emitido por el Consejo Supremo de Gobierno, publicado mediante Registro Oficial No. 745 de fecha 05 de enero de 1979.
+Sin perjuicio de lo dispuesto, los contratos de leasing o arrendamiento mercantil que se hubieren celebrado antes de la vigencia de esta disposición y que sigan en ejecución, continuarán regulándose por las normas del Decreto Supremo No. 3121 que se encontraban vigentes antes de esta disposición, hasta su terminación o resolución.
