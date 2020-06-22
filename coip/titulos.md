@@ -59,11 +59,12 @@ SECCIÓN SEXTA Delitos contra el derecho al trabajo y la Seguridad Social
 SECCIÓN SÉPTIMA Contravención contra el derecho al trabajo
 CAPÍTULO CUARTO Delitos contra el ambiente y la naturaleza o Pacha Mama
 SECCIÓN PRIMERA Delitos contra la biodiversidad
-PARÁGRAFO ÚNICO Contravención de maltrato y muerte de mascotas o animales de compañía
-SECCIÓN SEGUNDA Delitos contra los recursos naturales
-SECCIÓN TERCERA Delitos contra la gestión ambiental
-SECCIÓN CUARTA Disposiciones comunes
-SECCIÓN QUINTA Delitos contra los recursos naturales no renovables
+Sección Segunda DELITOS DE ACCIÓN PRIVADA CONTRA ANIMALES QUE FORMAN PARTE DEL ÁMBITO PARA EL MANEJO DE LA FAUNA URBANA.
+PARÁGRAFO ÚNICO Contravenciones contra animales que formen parte de la Fauna Urbana.
+Sección Tercera Delitos contra los recursos naturales
+Sección Cuarta Delitos contra la gestión ambiental
+Sección Quinta Disposiciones Comunes
+Sección Sexta Delitos contra los recursos naturales no renovables
 PARÁGRAFO PRIMERO Delitos contra los recursos mineros
 PARÁGRAFO SEGUNDO Delitos contra la actividad hidrocarburífera, derivados de hidrocarburos, gas licuado de petróleo y biocombustibles
 CAPÍTULO QUINTO DELITOS CONTRA LA RESPONSABILIDAD CIUDADANA
@@ -155,6 +156,7 @@ SECCIÓN TERCERA Procedimiento expedito
 PARÁGRAFO PRIMERO Procedimiento expedito de contravenciones penales
 PARÁGRAFO SEGUNDO Procedimiento para contravenciones de tránsito
 SECCIÓN CUARTA Procedimiento para el ejercicio privado de la acción penal
+Sección Quinta Procedimiento unificado, especial y expedito para el juzgamiento y sanción de los delitos de violencia contra la mujer o miembros del núcleo familiar.
 TÍTULO IX IMPUGNACIÓN Y RECURSOS
 CAPÍTULO PRIMERO IMPUGNACIÓN
 CAPÍTULO SEGUNDO RECURSO DE APELACIÓN

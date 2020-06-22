@@ -1,0 +1,1 @@
+Disposición General Octava.- En todos los casos de incautación y comiso, la o el juzgador ordenará a la entidad pública competente para el depósito, resguardo y administración de los valores incautados o comisados, la bancarización de los mismos.

@@ -1,0 +1,1 @@
+Disposición General Sexta.- Para aplicación de las disposiciones de este Código que se refieren a tiempo de enfermedad o incapacidad de una persona, se entenderá que es el tiempo de reposo prescrito por un profesional de la salud.
