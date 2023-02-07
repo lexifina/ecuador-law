@@ -1,0 +1,1 @@
+PRIMERA.- El Ministerio de Economía y Finanzas coordinará con el Consejo de la Judicatura para que, dentro de su asignación presupuestaria, se proceda a la plena implementación del expediente electrónico en el plazo de noventa (90) días contados desde la entrada en vigencia de esta Ley.

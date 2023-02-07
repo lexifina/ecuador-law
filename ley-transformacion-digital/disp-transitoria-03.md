@@ -1,0 +1,1 @@
+TERCERA.- El Consejo de Educación Superior tendrá un plazo máximo de noventa (90) días contados desde la entrada en vigencia de esta Ley, para emitir o actualizar las normativas relacionadas a lo previsto en la transformación digital de las mallas curriculares.

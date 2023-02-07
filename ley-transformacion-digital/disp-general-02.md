@@ -1,0 +1,1 @@
+SEGUNDA.- El Consejo de la Judicatura, dentro del marco de sus competencias y en apego a las disposiciones que rigen para la coordinación interinstitucional, deberá solicitar apoyo técnico a la Corte Constitucional para la plena implementación del expediente electrónico, bajo los parámetros definidos en esta Ley para dicha herramienta tecnológica.

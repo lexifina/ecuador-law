@@ -1,0 +1,1 @@
+SEGUNDA.- El Ministerio de Educación tendrá un plazo máximo de noventa (90) días contados desde la entrada en vigencia de esta Ley, para emitir o actualizar las normativas relacionadas al desarrollo virtual de las clases de escuelas y colegios.

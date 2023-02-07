@@ -1,0 +1,1 @@
+QUINTA.- El Presidente de la República, dentro de los noventa (90) días posteriores a la publicación de la presente Ley en el Registro Oficial, actualizará la normativa vigente, así como emitirá el Reglamento correspondiente, para viabilizar la aplicación de lo previsto en esta Ley.

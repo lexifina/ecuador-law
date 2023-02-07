@@ -1,0 +1,1 @@
+PRIMERA.- En un plazo máximo de noventa (90) días contados desde la entrada en vigencia de esta Ley, el Consejo de la Judicatura deberá implementar los sistemas informáticos que sean necesarios para la correcta e inmediata aplicación de los expedientes electrónicos.

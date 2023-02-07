@@ -1,0 +1,1 @@
+TERCERA.- Los procedimientos sustanciados a través del Código Orgánico Administrativo y de la Ley Orgánica de Garantías Jurisdiccionales y Control Constitucional, en lo que resulte aplicable, deberán observar las reformas establecidas en esta Ley al Código Orgánico General de Procesos.
