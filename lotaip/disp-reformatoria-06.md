@@ -1,0 +1,2 @@
+SEXTA.- En el artículo 207 del Código Orgánico Administrativo, sustitúyase el primer inciso por el siguiente:
+"Los reclamos o pedidos dirigidos a las administraciones públicas, con excepción de las solicitudes de acceso a la información pública, deberán ser resueltos en el término de treinta (30) días, vencido el cual, sin que se haya notificado la decisión que lo resuelva, se entenderá que es positiva."

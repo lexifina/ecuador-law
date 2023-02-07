@@ -1,0 +1,1 @@
+TERCERA.- En el plazo de ciento ochenta (180) días la Defensoría del Pueblo adoptará las medidas administrativas, técnicas y presupuestarias para el cabal cumplimiento de la responsabilidad que esta Ley le asigna.

@@ -1,0 +1,1 @@
+SÉPTIMA.- Los organismos, dependencias y/o personas jurídicas obligadas, tendrán un plazo de noventa (90) días contados a partir de la publicación de esta Ley en el Registro Oficial con base en sus competencias constitucionales y legales implementar programas de difusión, capacitación y fortalecimiento sobre esta Ley a sus servidores/as.

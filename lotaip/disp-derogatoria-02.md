@@ -1,0 +1,1 @@
+SEGUNDA.- Quedan derogadas todas las normas del ordenamiento jurídico nacional para la clasificación de información pública como reservada que sean anteriores, jerárquicamente inferiores y/o incompatibles con las normas establecidas en la presente Ley.

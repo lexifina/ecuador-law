@@ -1,0 +1,4 @@
+CUARTA.- Sustitúyase el artículo 47 de la Ley Orgánica de Garantías Jurisdiccionales y Control Constitucional por el siguiente:
+"Art. 47.- Objeto y ámbito de protección.- Esta acción tiene por objeto garantizar el acceso a la información pública, cuando ha sido denegada expresa o tácitamente, cuando se crea que la información proporcionada no es completa o ha sido alterada o cuando se ha negado al acceso físico o digital a las fuentes de información. También procederá la acción cuando la denegación de información se sustente en el carácter secreto o reservado de la misma.
+Se considerará información pública toda aquella que emane o que esté en poder de entidades del sector público o entidades privadas que, para el tema materia de la información, tengan participación del Estado o sean concesionarios de éste.
+No se podrá acceder a información pública que tenga el carácter de confidencial o reservada, declarada en los términos establecidos por la ley."

@@ -1,0 +1,1 @@
+PRIMERA.- Deróguese la Ley Orgánica de Transparencia y Acceso a la Información Pública, publicada en el Suplemento del Registro Oficial Nro. 337 de 18 de mayo del año 2004 y su Reglamento General publicado y expedido mediante Decreto Ejecutivo Nro. 2471, publicado en el Registro Oficial Nro. 507 de 19 de enero de 2005.

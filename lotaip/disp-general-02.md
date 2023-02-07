@@ -1,0 +1,1 @@
+SEGUNDA.- Los medios de comunicación públicos, tendrán un plazo de noventa (90) días a partir de la publicación de esta Ley en el Registro Oficial, para incluir dentro de su programación habitual espacios destinados a promocionar el derecho de acceso a la información pública.

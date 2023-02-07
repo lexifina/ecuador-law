@@ -1,0 +1,1 @@
+NOVENA.- Los sujetos obligados según lo dispuesto en el artículo 19 de esta Ley, contarán con el plazo máximo de noventa (90) días desde la publicación de la presente Ley en el Registro Oficial, para desarrollar un formulario web de datos personales para el solicitante, previo a acceder al portal informático web de información, en aras de prevenir el mal uso de la información.

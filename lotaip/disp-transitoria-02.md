@@ -1,0 +1,1 @@
+SEGUNDA.- Los sujetos obligados contarán con el plazo máximo de ciento ochenta (180) días desde la publicación de la presente Ley en el Registro Oficial, para adaptarse a las obligaciones contenidas en la misma.

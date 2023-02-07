@@ -1,0 +1,1 @@
+TERCERA.- El Estado se encargará de garantizar en el Presupuesto General del Estado, los recursos necesarios para el acceso y la transparencia de la información en todos los niveles de gobiernos. Asimismo, se le asignarán los recursos necesarios a la Defensoría del Pueblo, a fin de cumplir con el rol y las atribuciones enunciados en la presente Ley.
