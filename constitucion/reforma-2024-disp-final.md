@@ -1,0 +1,1 @@
+Disposición Final.- Hágase saber a la Corte Constitucional del contenido de la presente reforma parcial, en cumplimiento de los dictámenes 4-22-RC/22 y 7-22-RC/22 que habilitaron el tratamiento de la presente reforma parcial a la Constitución de la República, que entrará en vigencia a partir el día de su publicación en el Registro Oficial.

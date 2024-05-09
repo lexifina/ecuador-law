@@ -1,0 +1,1 @@
+Disposición Transitoria Segunda. - En el plazo de doscientos días, contados [a] partir de la entrada en vigencia de la presente reforma parcial, la Asamblea Nacional aprobará el marco normativo que desarrolle los parámetros, límite[s] formales y materiales del apoyo complementario de las Fuerzas Armadas a la Policía Nacional.
