@@ -1,0 +1,1 @@
+Disposición General Tercera. - La Corte Constitucional de oficio deberá efectuar un control formal y material constitucional posterior de los decretos que disponga el apoyo complementario de las Fuerzas Armadas a las tareas de la Policía Nacional en el ámbito de la Seguridad Interna y de los que se dicten con fundamento en éste.
