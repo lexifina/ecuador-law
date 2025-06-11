@@ -1,0 +1,1 @@
+TERCERA. -Deróguese el primer inciso del artículo 20, la Disposición General Cuarta y la Disposición Reformatoria Tercera de la Ley Orgánica de Prevención, Detección y Combate del Delito de Lavado de Activos y de la Financiación de otros Delitos.

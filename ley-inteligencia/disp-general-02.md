@@ -1,0 +1,1 @@
+SEGUNDA. - Los servidores públicos que presten sus servicios en el Sistema Nacional de Inteligencia serán responsables de mantener la confidencialidad de la documentación, organización, estructura interna, procedimientos, personal, instalaciones, bases y centros de datos de sus respectivas instituciones.

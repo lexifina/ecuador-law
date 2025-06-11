@@ -1,0 +1,1 @@
+CUARTA. - El cumplimiento de las disposiciones establecidas en esta Ley que impliquen un impacto presupuestario, se ejecutará previo dictamen favorable de impacto presupuestario emitido por la entidad rectora de las finanzas públicas.
