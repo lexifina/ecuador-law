@@ -1,0 +1,1 @@
+OCTAVA: El ente rector del Sistema Nacional de Salud reportará anualmente a la Asamblea Nacional el cumplimiento de las competencias asignadas en esta Ley Orgánica de las Personas con Discapacidad, así como el cumplimiento de entrega de prótesis y medicina gratuita a personas con discapacidad en el Sistema Nacional de Salud.

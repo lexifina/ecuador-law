@@ -1,0 +1,1 @@
+SEGUNDA: En el plazo de noventa días contados a partir de la publicación de esta Ley en el Registro Oficial, el Presidente de la República dictará el reglamento general para la aplicación de esta Ley Orgánica de las Personas con Discapacidad.

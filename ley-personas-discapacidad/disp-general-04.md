@@ -1,0 +1,2 @@
+CUARTA: Les corresponderá la Licencia Tipo F que establezca la Ley de la materia a aquellas personas que conduzcan automotores adaptados.
+Las personas con discapacidad podrán acceder a cualquier tipo de licencia, para ello, las autoridades competentes en tránsito, transporte terrestre y seguridad vial tomarán el respectivo examen especializado de conducción y tendrán la facultad de verificar la capacidad para conducir de la persona con discapacidad.

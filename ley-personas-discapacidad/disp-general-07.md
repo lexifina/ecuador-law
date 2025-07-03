@@ -1,0 +1,1 @@
+SÉPTIMA: El Consejo Nacional para la Igualdad de Discapacidades reportará durante los primeros noventa días de cada año a la Asamblea Nacional el cumplimiento de la inclusión laboral de las personas con discapacidad de acuerdo con lo previsto en esta Ley Orgánica de las Personas con Discapacidad.

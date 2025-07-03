@@ -1,0 +1,1 @@
+QUINTA: En todas las normas legales en las cuales se encuentran redactados e incorporados términos peyorativos o discriminatorios sobre la denominación y trato hacia las personas con discapacidad, se utilizará un lenguaje apropiado, respetuoso y basado en derechos, como se evidencia en esta Ley Orgánica de las Personas con Discapacidad.

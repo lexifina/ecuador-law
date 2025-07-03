@@ -1,0 +1,1 @@
+TERCERA: Para la aplicación de esta Ley Orgánica de las Personas con Discapacidad, el ente rector de finanzas públicas y el ente rector de planificación, adoptarán las medidas necesarias en el ámbito de sus competencias.

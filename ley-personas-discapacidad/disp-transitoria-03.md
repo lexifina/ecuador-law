@@ -1,0 +1,1 @@
+TERCERA: En un plazo de noventa días contados a partir de la publicación de esta Ley en el Registro Oficial, los gobiernos autónomos descentralizados emitirán las ordenanzas relacionadas con el Capítulo X del Título II de esta Ley Orgánica de las Personas con Discapacidad.

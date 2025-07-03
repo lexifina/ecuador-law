@@ -1,0 +1,1 @@
+SEXTA: Los costos derivados de la implementación de las políticas, los programas, planes y proyectos determinados en esta Ley Orgánica de las Personas con Discapacidad, se sujetarán al presupuesto de las instituciones correspondientes, que haya sido asignado por la autoridad competente.
