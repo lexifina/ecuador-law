@@ -1,0 +1,2 @@
+PRIMERA.- Sustitúyase el texto del artículo 1 de la Ley Orgánica de Regulación y Control del Poder de Mercado, por el siguiente:
+El objeto de la presente Ley es evitar, prevenir, corregir, eliminar y sancionar el abuso de operadores económicos con poder de mercado; la prevención, prohibición y sanción de acuerdos colusorios y otras prácticas restrictivas; y, el control y regulación de las operaciones de concentración económica, buscando proteger el proceso competitivo, la eficiencia en los mercados o el bienestar general y de los consumidores y usuarios.

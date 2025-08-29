@@ -1,0 +1,1 @@
+PRIMERA.- En lo no previsto en esta Ley se estará a lo dispuesto en la Ley Orgánica de Regulación y Control del Poder de Mercado, el Código Orgánico Administrativo, el Código Civil, el Código Orgánico General de Procesos, y las demás leyes y regulaciones aplicables.

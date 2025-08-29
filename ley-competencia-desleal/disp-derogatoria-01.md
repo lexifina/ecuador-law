@@ -1,0 +1,1 @@
+PRIMERA.- Deróguese los artículos 25, 26, 27, 27.2, inciso final del artículo 28, letras a), b), i) y j) del número 1 y letra c) del número 2 del artículo 78 de la Ley Orgánica de Regulación y Control del Poder de Mercado.

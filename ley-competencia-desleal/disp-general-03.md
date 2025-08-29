@@ -1,0 +1,1 @@
+TERCERA.- Todas las resoluciones dictadas en instancia administrativa que causen estado se publicarán en el Registro Oficial, en su página electrónica y en la Gaceta Oficial de la Superintendencia de Competencia Económica según corresponda.
