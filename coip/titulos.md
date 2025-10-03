@@ -70,6 +70,7 @@ PARÁGRAFO PRIMERO Delitos contra los recursos mineros
 PARÁGRAFO SEGUNDO Delitos contra la actividad hidrocarburífera, derivados de hidrocarburos, gas licuado de petróleo y biocombustibles
 CAPÍTULO QUINTO DELITOS CONTRA LA RESPONSABILIDAD CIUDADANA
 SECCIÓN PRIMERA Delitos contra la tutela judicial efectiva
+SECCIÓN SEGUNDA Contravenciones contra la tutela judicial efectiva
 SECCIÓN TERCERA Delitos contra la eficiencia de la administración pública
 SECCIÓN CUARTA Contravenciones contra la eficiencia de la administración pública
 SECCIÓN QUINTA Delitos contra el régimen de desarrollo
