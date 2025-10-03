@@ -32,7 +32,6 @@ SECCIÓN PRIMERA Delitos contra la humanidad
 SECCIÓN SEGUNDA Trata de Personas
 SECCIÓN TERCERA Diversas formas de explotación
 SECCIÓN CUARTA Delitos contra personas y bienes protegidos por el Derecho Internacional Humanitario
-Sección Quinta De los delitos cometidos en el marco de un conflicto armado interno.
 CAPÍTULO SEGUNDO DELITOS CONTRA LOS DERECHOS DE LIBERTAD
 SECCIÓN PRIMERA Delitos contra la inviolabilidad de la vida
 SECCIÓN SEGUNDA Delitos contra la integridad personal
@@ -159,7 +158,6 @@ PARÁGRAFO PRIMERO Procedimiento expedito de contravenciones penales
 PARÁGRAFO SEGUNDO Procedimiento para contravenciones de tránsito
 SECCIÓN CUARTA Procedimiento para el ejercicio privado de la acción penal
 Sección Quinta Procedimiento unificado, especial y expedito para el juzgamiento y sanción de los delitos de violencia contra la mujer o miembros del núcleo familiar.
-Sección Sexta Procedimiento unificado y especial para el juzgamiento y sanción de delitos en contra de las personas y bienes protegidos por el Derecho Internacional Humanitario durante conflicto armado interno y delitos conexos al conflicto armado interno.
 TÍTULO IX IMPUGNACIÓN Y RECURSOS
 CAPÍTULO PRIMERO IMPUGNACIÓN
 CAPÍTULO SEGUNDO RECURSO DE APELACIÓN
