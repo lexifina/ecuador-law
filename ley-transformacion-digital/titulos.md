@@ -4,6 +4,13 @@ TÍTULO I LA RECTORÍA EN TRANSFORMACIÓN DIGITAL
 TÍTULO II DE LA IDENTIDAD DIGITAL
 TÍTULO III DE LA PRESTACIÓN DE SERVICIOS DIGITALES
 TÍTULO IV DE LA SEGURIDAD DIGITAL
+Título (...) DE LA CIBERSEGURIDAD
+Capítulo I Principios y Coordinación
+Capítulo II Gestión de incidentes y notificación
+Capítulo III Prestadores de servicios digitales y sector privado
+Capítulo IV Infraestructura crítica digital y fiscalización
+Capítulo V Gobernanza y cooperación
+Capítulo VI Del Régimen Administrativo Sancionador
 TÍTULO V CONSOLIDACIÓN DE LA TRANSFORMACIÓN DIGITAL Y AUDIOVISUAL
 TÍTULO VI DEL SECTOR AUDIOVISUAL
 TÍTULO VII EDUCACIÓN PARA LA TRANSFORMACIÓN DIGITAL
