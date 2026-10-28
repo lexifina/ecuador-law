@@ -733,5 +733,65 @@
   "mentions": 0,
   "snippets": [],
   "bytes": 1087314
+ },
+ "https://www.asambleanacional.gob.ec/es/system/files/registro_oficial_2.pdf": {
+  "n": "18",
+  "title": "Ley Orgánica de Acompañamiento y Reparación Transformadora e Integral a Hijas, Hijos, Madres, Padres y demás familiares de víctimas de femicidio y otras muertes violentas por razones de género",
+  "ro": "R.O. No. 588, Tercero Suplemento, de 27-06-2024",
+  "date": "2024-06-27",
+  "pdf": "https://www.asambleanacional.gob.ec/es/system/files/registro_oficial_2.pdf",
+  "pages": 27,
+  "no_text_pages": 24,
+  "mentions": 0,
+  "snippets": [],
+  "bytes": 20504685
+ },
+ "https://www.asambleanacional.gob.ec/es/system/files/ro_publicacion.pdf": {
+  "n": "17",
+  "title": "Ley Orgánica Reformatoria de la Ley Orgánica de Participación Ciudadana",
+  "ro": "R.O. No. 584, Cuarto Suplemento, de 21-06-2024",
+  "date": "2024-06-21",
+  "pdf": "https://www.asambleanacional.gob.ec/es/system/files/ro_publicacion.pdf",
+  "pages": 14,
+  "no_text_pages": 9,
+  "mentions": 0,
+  "snippets": [],
+  "bytes": 1151385
+ },
+ "https://www.asambleanacional.gob.ec/es/system/files/roleyd1.pdf": {
+  "n": "16",
+  "title": "Ley Orgánica Reformatoria a la Ley Orgánica de Movilidad Humana",
+  "ro": "R.O. No. 582, Tercer Suplemento, de 19-06-2024",
+  "date": "2024-06-19",
+  "pdf": "https://www.asambleanacional.gob.ec/es/system/files/roleyd1.pdf",
+  "pages": 14,
+  "no_text_pages": 12,
+  "mentions": 0,
+  "snippets": [],
+  "bytes": 5915201
+ },
+ "https://www.asambleanacional.gob.ec/es/system/files/ro_ley_publicada_0.pdf": {
+  "n": "15",
+  "title": "Ley Orgánica de Cooperación entre el Estado Ecuatoriano y la Corte Penal Internacional",
+  "ro": "R.O. No. 559, Tercer Suplemento, de 16-05-2024",
+  "date": "2024-05-16",
+  "pdf": "https://www.asambleanacional.gob.ec/es/system/files/ro_ley_publicada_0.pdf",
+  "pages": 37,
+  "no_text_pages": 34,
+  "mentions": 0,
+  "snippets": [],
+  "bytes": 27647268
+ },
+ "https://www.asambleanacional.gob.ec/es/system/files/roleyo1_0.pdf": {
+  "n": "14",
+  "title": "Ley Orgánica Reformatoria para la Erradicación de la Violencia y el Acoso en todas las modalidades de Trabajo",
+  "ro": "R.O. No. 559, Suplemento, de 16-05-2024",
+  "date": "2024-05-16",
+  "pdf": "https://www.asambleanacional.gob.ec/es/system/files/roleyo1_0.pdf",
+  "pages": 25,
+  "no_text_pages": 21,
+  "mentions": 0,
+  "snippets": [],
+  "bytes": 2225685
  }
 }
