@@ -262,3 +262,19 @@ def seguridad_integral_2023(u: Units) -> None:
     u.set_unit("disp-general-09", new, label="Disposición general novena")
     u.u["disp-general-09"]["kind"] = "general"
     R.fresh(u, "disp-general-09")
+
+
+# ---------------------------------------------------------------- 2024: Cuarto Supl. 610 (in force a year later)
+
+def lavado_2024(u: Units) -> None:
+    """Ley Orgánica de Prevención, Detección y Combate del Delito de Lavado de Activos y de la Financiación de Otros
+    Delitos (Registro Oficial, Cuarto Suplemento 610, 29-VII-2024), Disposición reformatoria primera: arts. 318 and
+    368 repealed, art. 553 substituted (its quotation is never closed: it runs to the next disposición)."""
+    s = R.csrc(R.S4_610_2024)
+    s.check("PRIMERA.- Refórmese en el Código Orgánico Integral Penal lo siguiente:", "Uno.- Deróguese el artículo 318.",
+            "Dos.- Deróguese el artículo 368.")
+    u.remove("art-318")
+    u.remove("art-368")
+    new = R.open_quote(s, "Tres.- Sustitúyase el artículo 553 por el siguiente:", "SEGUNDA.- Refórmese en el Código "
+                       "Orgánico Monetario")
+    whole(u, "553", ['"' + new[0]] + new[1:])
