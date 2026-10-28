@@ -70,5 +70,53 @@
   "mentions": 0,
   "snippets": [],
   "bytes": 2335398
+ },
+ "https://www.asambleanacional.gob.ec/es/system/files/ro_34.pdf": {
+  "n": "36",
+  "title": "Ley Orgánica que regula el apoyo complementario y subsidiario de las fuerzas armadas a la Policía Nacional de conformidad con lo previsto en el artículo 158 de la Constitución de la República del Ecuador",
+  "ro": "R.O. No. 359, Sexto Suplemento, de 01-09-2026",
+  "date": "2026-09-01",
+  "pdf": "https://www.asambleanacional.gob.ec/es/system/files/ro_34.pdf",
+  "pages": 24,
+  "no_text_pages": 19,
+  "mentions": 0,
+  "snippets": [],
+  "bytes": 21122506
+ },
+ "https://www.asambleanacional.gob.ec/es/system/files/ro_33.pdf": {
+  "n": "35",
+  "title": "Ley Orgánica Reformatoria de varios cuerpos legales para la agilización de la adopción",
+  "ro": "R.O. No. 347, Octavo Suplemento, de 14-08-2026",
+  "date": "2026-08-14",
+  "pdf": "https://www.asambleanacional.gob.ec/es/system/files/ro_33.pdf",
+  "pages": 33,
+  "no_text_pages": 30,
+  "mentions": 0,
+  "snippets": [],
+  "bytes": 4689351
+ },
+ "https://www.asambleanacional.gob.ec/es/system/files/ro_32.pdf": {
+  "n": "34",
+  "title": "Ley Orgánica de Extradición",
+  "ro": "R.O. No. 343, Quinto Suplemento, de 07-08-2026",
+  "date": "2026-08-07",
+  "pdf": "https://www.asambleanacional.gob.ec/es/system/files/ro_32.pdf",
+  "pages": 35,
+  "no_text_pages": 31,
+  "mentions": 0,
+  "snippets": [],
+  "bytes": 5802555
+ },
+ "https://www.asambleanacional.gob.ec/es/system/files/ro_31.pdf": {
+  "n": "33",
+  "title": "Ley Orgánica Reformatoria al Código Orgánico de la Producción, Comercio e Inversiones, en materia aduanera",
+  "ro": "R.O. No. 336, Quinto Suplemento, de 29-07-2026",
+  "date": "2026-07-29",
+  "pdf": "https://www.asambleanacional.gob.ec/es/system/files/ro_31.pdf",
+  "pages": 16,
+  "no_text_pages": 12,
+  "mentions": 0,
+  "snippets": [],
+  "bytes": 4925953
  }
 }
