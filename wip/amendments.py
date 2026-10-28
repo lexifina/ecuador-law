@@ -501,9 +501,9 @@ STEPS = [
     ("enmienda-2021", "2021-01-25", enmienda_2021, RO_377_2021),
     ("referendo-2023", REF_2023_DAY, ["art-074", "art-079", "art-109", "art-112", "art-118", "art-120", "art-181",
                                       "art-207", "art-208", "art-209", "art-210", "art-405"], REF_2023_URL),
+    ("referendo-2024-rechazos", "2024-04-21", ["art-327", "art-422"], RO_554_2024),
     ("reforma-parcial-2024", "2024-05-09", reforma_158_2024, RO_508_2024),
     ("referendo-2024", "2024-05-09", referendo_2024, RO_498_2024),
-    ("referendo-2024-rechazos", "2024-04-21", ["art-327", "art-422"], RO_554_2024),
     ("enmienda-2024", "2024-05-30", enmienda_2024, RO_568_2024),
     ("referendo-2025", "2025-11-16", ["art-005", "art-110", "art-118", "art-444"], RO_177_2025),
 ]
@@ -521,14 +521,11 @@ NOTES = {
                    "already replaced by the 2018 referendum."),
     "2021-01-25": ("Registro Oficial, Tercer Suplemento 377, lunes 25 de enero de 2021 (in force on publication by its "
                    "Disposición final). The page carrying the text is an image; its words were read by OCR."),
-    "2023-02-05": "Referéndum of 5 February 2023: all eight proposed amendments rejected; no words changed.",
-    "2024-04-21": "Referéndum of 21 April 2024, questions D and E rejected; no words changed.",
     "2024-05-09": ("Registro Oficial, Suplemento 554, 9 de mayo de 2024: results of the referéndum of 21 April 2024. "
                    "Wording: art. 158 reform as convoked by the CNE (Supl. 508, 29-II-2024); arts. 79 and 86 from the "
                    "annexes of Decreto Ejecutivo 163 (Segundo Supl. 498, 15-II-2024)."),
     "2024-05-30": ("Registro Oficial, Tercer Suplemento 568, 30 de mayo de 2024 (in force on publication by its "
                    "Disposición final). The pages carrying the text are images; their words were read by OCR."),
-    "2025-11-16": "Referéndum y consulta popular of 16 November 2025: all four questions rejected; no words changed.",
 }
 
 DECISIONS = [
