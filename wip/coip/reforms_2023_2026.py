@@ -40,8 +40,8 @@ def items(src, start: str, stop: str, item: str, numbers: range, inline: bool = 
         b = pos[keys[j + 1]] if j + 1 < len(keys) else i1
         ins = src.paras[a]
         payload = src.paras[a + 1:b]
-        if inline and '"' in ins:
-            q = ins.index('"')
+        if inline and ': "' in ins:
+            q = ins.index(': "') + 2
             ins, payload = ins[:q].rstrip(), [ins[q:]] + payload
         out[n] = (ins, payload)
     return out
@@ -61,7 +61,7 @@ def num_key(n: str) -> str:
     return f"art-{int(m.group(1)):03d}" + (f"-{m.group(2).lower()}" if m.group(2) else "")
 
 
-HEAD = re.compile(r"(?:Art\.|Artículo\.?)\s*(\d+(?:[.-]\w+)?)\s*\.?\s*-")
+HEAD = re.compile(r"(?:Art\.|Artículo\.?)\s*(\d+(?:[.-]\w+)?)\s*\.?\s*(?:-|(?=[A-ZÁÉÍÓÚ]))")
 
 
 def whole(u: Units, n: str, payload: list[str], printed: str | None = None) -> None:
