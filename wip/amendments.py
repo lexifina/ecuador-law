@@ -313,7 +313,8 @@ class Ocr:
         import ocr_pages
         d = ocr_pages.load()[name]
         self.name, self.url = name, d["url"]
-        self.lines = [ln for p in sorted(d["pages"], key=int) for ln in d["pages"][p].split("\n")]
+        self.lines = [ln for p in sorted(d["pages"], key=int) for ln in d["pages"][p].split("\n")
+                      if not rotext.HEADER.match(rotext.norm(ln)) and not re.fullmatch(r"\s*\d{1,3}\s*", ln)]
 
     def grab(self, start: str, end: str, breaks: list[str], vocab: set[str]) -> list[str]:
         """Lines from `start` through `end` (raw OCR anchors), corrected word by word, split before `breaks`."""
@@ -323,8 +324,8 @@ class Ocr:
         a = text.index(start)
         text = text[a:text.index(end, a) + len(end)]
         fixes = OCR_FIXES[self.name]
-        words = [fixes.get(w, w) for w in text.replace('"', " ").split()]
-        text = re.sub(r"\s+", " ", " ".join(words)).strip()
+        text = re.sub(r"[^\W\d_]+", lambda m: fixes.get(m.group(0), m.group(0)), text.replace('"', " "))
+        text = re.sub(r"\s+", " ", text).strip()
         for w in re.findall(r"[A-Za-zÁÉÍÓÚáéíóúñÑüÜäöå]+", text):
             if not re.fullmatch(r"[A-Za-zÁÉÍÓÚáéíóúñÑ]+", w):
                 raise SystemExit(f"OCR word not corrected: {w!r}")
@@ -365,6 +366,8 @@ RO_554_2024 = H + "eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiMjQwYWI5MTQtMWVmOS00NTg5LWIzO
 RO_204_2022 = H + "eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiMzNhOGE3YTYtNTIwNC00YmU4LWIyNWMtN2Y0MmJjMDdmMDFkLnBkZiJ9"
 RO_129_2025 = HS + "eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiY2U4ZmU4ZTItZDc3My00MjNkLTg3ZDEtNGFmYTc5ODMxMDViLnBkZiJ9"
 RO_139_2025 = HS + "eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiYmM1ZGRjMmItZmMyYS00ZDc1LWIxMjEtYzFiMGJiNTAyNDBjLnBkZiJ9"
+REF_2023_DAY = "2023-02-05"   # a rejected vote changes nothing: dated on the day of the vote
+REF_2023_URL = RO_204_2022  # the convocation with the eight annexes (results edition: see PROGRESS)
 RO_177_2025 = HS + "eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiNjcyMzI2ODQtMDBkYS00Njc1LWJhNGYtODJhNGMwMmFmNDUxLnBkZiJ9"
 
 
@@ -500,9 +503,9 @@ STEPS = [
                                       "art-207", "art-208", "art-209", "art-210", "art-405"], REF_2023_URL),
     ("reforma-parcial-2024", "2024-05-09", reforma_158_2024, RO_508_2024),
     ("referendo-2024", "2024-05-09", referendo_2024, RO_498_2024),
-    ("referendo-2024-rechazos", "2024-05-09", ["art-327", "art-422"], RO_554_2024),
+    ("referendo-2024-rechazos", "2024-04-21", ["art-327", "art-422"], RO_554_2024),
     ("enmienda-2024", "2024-05-30", enmienda_2024, RO_568_2024),
-    ("referendo-2025", "2025-12-03", ["art-005", "art-110", "art-118", "art-444"], RO_177_2025),
+    ("referendo-2025", "2025-11-16", ["art-005", "art-110", "art-118", "art-444"], RO_177_2025),
 ]
 
 NOTES = {
@@ -516,6 +519,16 @@ NOTES = {
                    "Constitucional 79, 30 April 2019). The court's auto of 17 April 2019 says the declaration took effect "
                    "on notification, so the 2015 wording fell and the earlier text came back, except arts. 114 and 144, "
                    "already replaced by the 2018 referendum."),
+    "2021-01-25": ("Registro Oficial, Tercer Suplemento 377, lunes 25 de enero de 2021 (in force on publication by its "
+                   "Disposición final). The page carrying the text is an image; its words were read by OCR."),
+    "2023-02-05": "Referéndum of 5 February 2023: all eight proposed amendments rejected; no words changed.",
+    "2024-04-21": "Referéndum of 21 April 2024, questions D and E rejected; no words changed.",
+    "2024-05-09": ("Registro Oficial, Suplemento 554, 9 de mayo de 2024: results of the referéndum of 21 April 2024. "
+                   "Wording: art. 158 reform as convoked by the CNE (Supl. 508, 29-II-2024); arts. 79 and 86 from the "
+                   "annexes of Decreto Ejecutivo 163 (Segundo Supl. 498, 15-II-2024)."),
+    "2024-05-30": ("Registro Oficial, Tercer Suplemento 568, 30 de mayo de 2024 (in force on publication by its "
+                   "Disposición final). The pages carrying the text are images; their words were read by OCR."),
+    "2025-11-16": "Referéndum y consulta popular of 16 November 2025: all four questions rejected; no words changed.",
 }
 
 DECISIONS = [
@@ -545,6 +558,32 @@ DECISIONS = [
     "Interpretative rulings of the Corte Constitucional (which change no words) and a commercial consolidation's "
     "editorial replacement of 'imputado' by 'procesado' (from the Código Orgánico Integral Penal, which cannot amend "
     "the Constitution) are not commits.",
+    "The enmiendas of 2021 (art. 272, numeral 4) and 2024 (art. 138) are printed in the Registro Oficial only as page "
+    "images. Their words come from machine OCR of those pages (ocr_pages.py, raw output kept in ocr_pages.json) with "
+    "the word corrections listed in amendments.OCR_FIXES (the engine had no Spanish model and drops or swaps "
+    "accents); every resulting word is either used in the 2008 text or listed in OCR_NEW_WORDS, and the result was "
+    "compared with the page images. Paragraph breaks follow the printed spacing. The 2024 art. 138 differs from the "
+    "2008 text only in the heading 'Artículo 138.-' and in 'con el voto de su mayoría absoluta', which corroborates "
+    "the OCR. The page prints 'absoluta\".' with a stray closing quote inside the quotation; the quote is dropped and "
+    "the full stop kept.",
+    "The 2021 enmienda is dated 25 January 2021, as its own masthead says (the portal's month listing says 26 January).",
+    "The 2024 partial reform of art. 158 (casillero A) is read from the CNE's convocation (Registro Oficial, Supl. 508, "
+    "29 February 2024), which prints the annex approved by dictamen 7-22-RC/24, including the bracketed insertions "
+    "'[a]' and 'límite[s]' exactly as printed. Its arts. 3 and 4 add two transitional provisions and a final provision "
+    "'after' the 2015 enmiendas' own provisions, which this record does not carry (see above); they are kept as units "
+    "of their own (reforma-2024-disp-transitoria-02, -03, reforma-2024-disp-final).",
+    "The 2024 annex for art. 86 prints numeral 2 up to 'normas de procedimiento [...]' and numeral 3 as '3. [...]' "
+    "followed by the new second inciso: the elided parts (the colon and letters a) to e) of numeral 2, the first "
+    "inciso of numeral 3) are kept unchanged.",
+    "The 2024 referendum's approved questions take effect on the publication of the results (Supl. 554, 9 May 2024); "
+    "the art. 158 reform's own Disposición final says the same.",
+    "A rejected referendum changes no words. It is a referendum law with a note, dated on the day of the vote and "
+    "credited to the provisions its annexes would have changed: 2023 per the annexes printed with the CNE's "
+    "convocation (Registro Oficial, Tercer Supl. 204, 7 December 2022); 2024 questions D and E per Decreto Ejecutivo "
+    "163 (art. 422 and art. 327); 2025 per Decretos Ejecutivos 147 (art. 5; the decree is printed as page images and "
+    "was read by OCR only to identify the article), 149 (art. 110) and 173 (art. 118), and the consulta of Decreto 148 "
+    "on a constituent assembly, which is the procedure of art. 444. The 2025 results are in Registro Oficial, Cuarto "
+    "Supl. 177, 3 December 2025; the 2024 results in Supl. 554, 9 May 2024.",
 ]
 
 

@@ -220,9 +220,18 @@ def build() -> dict:
         "acts": acts,
         "applies": [],
         "decisions": DECISIONS + amendments.DECISIONS,
-        "ai_use": ["none: no model wrote, transcribed or corrected any legal text. Parsing is rule-based (pymupdf "
-                   "text blocks); the amendment map in amendments.py (which provision each act replaces and the "
-                   "anchors around its new text) was written by the agent from reading each act."],
+        "ai_use": [
+            "No generative model wrote legal text. Parsing is rule-based (pymupdf text blocks). The amendment map in "
+            "amendments.py (which provision each act replaces, and the anchors around its new text in the act's PDF) "
+            "was written by an AI agent (Claude) from reading each act; the words themselves are cut from the PDFs.",
+            "OCR (Windows.Media.Ocr, a machine-learning text recogniser) read 3 image-only gazette pages for legal "
+            "text: art. 272 numeral 4 (2021, 1 sentence) and art. 138 (2024, 5 paragraphs). The agent compared the "
+            "OCR with the page images and listed 35 word corrections (accents and misread letters) in "
+            "amendments.OCR_FIXES; no word was supplied that the OCR did not read, except the final stops noted in "
+            "decisions.",
+            "OCR was also used, only to read and not as text, on image-only pages of the court ruling 018-18-SIN-CC "
+            "and its auto (dates and scope) and of Decreto Ejecutivo 147 of 2025 (which article it concerned).",
+        ],
     }
 
 
