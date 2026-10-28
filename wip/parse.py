@@ -39,7 +39,7 @@ ORD_LABEL = ["primera", "segunda", "tercera", "cuarta", "quinta", "sexta", "sép
              "vigesimoctava", "vigesimonovena", "trigésima"]
 ORD_RE = re.compile(r"^(" + "|".join(sorted(ORD, key=len, reverse=True)) + r")\s*\.?-\s*")
 HEAD_RE = re.compile(r"^(T[IÍ]TULO\s+[IVXL]+|Cap[ií]tulo\s+\w+|CAP[IÍ]TULO\s+[IVXL]+|Secci[oó]n\s+\w+)\s*$")
-ART_RE = re.compile(r"^Art\.\s*(\d+)\s*\.?\s*-")
+ART_RE = re.compile(r"^Art\.\s*-?\s*(\d+)\s*\.?\s*-")  # RT art. 16 is printed "Art.- 16.-"
 
 
 def sha_file(p: Path) -> str:

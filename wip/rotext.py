@@ -22,7 +22,8 @@ STRUCT = re.compile(
     r"^(Art\.\s*\d+|Art[ií]culo\s+\d+|\d+\.\s|[A-ZÁÉÍÓÚ]{4,}[A-ZÁÉÍÓÚ]*\.-|T[IÍ]TULO\s|Cap[ií]tulo\s|CAP[IÍ]TULO\s|Secci[oó]n\s|SECCI[OÓ]N\s|DISPOSICI)"
 )
 HEADING = re.compile(r"^(T[IÍ]TULO\s|Cap[ií]tulo\s|CAP[IÍ]TULO\s|Secci[oó]n\s|SECCI[OÓ]N\s|DISPOSICI|R[EÉ]GIMEN DE TRANSICI|PRE[AÁ]MBULO)")
-ART_START = re.compile(r"^Art\.\s*\d+\s*\.?\s*-")
+ART_START = re.compile(r"^Art\.\s*-?\s*\d+\s*\.?\s*-")
+HEAD_LINE = re.compile(r"^(T[IÍ]TULO\s+[IVXL]+|Cap[ií]tulo\s+\w+|CAP[IÍ]TULO\s+[IVXL]+|Secci[oó]n\s+\w+)$")
 ITEM_START = re.compile(r"^\d{1,2}\.\s+\S")
 
 
@@ -75,7 +76,7 @@ def chunks(pdf_path, first_page: int = 0, last_page: int | None = None) -> list[
                     continue
                 n = norm(raw)
                 prev = norm(cur[-1]) if cur else ""
-                if cur and (ART_START.match(n) or (ITEM_START.match(n) and re.search(r"[.;:]$", prev))):
+                if cur and (ART_START.match(n) or HEAD_LINE.match(n) or (ITEM_START.match(n) and re.search(r"[.;:]$", prev))):
                     paras.append(cur)
                     cur = []
                 cur.append(raw)
