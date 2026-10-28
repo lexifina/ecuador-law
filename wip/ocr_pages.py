@@ -6,9 +6,9 @@ Two amendments to the Constitution are printed only as page images:
 
     python -X utf8 ocr_pages.py --make     render the pages (pymupdf, 200 dpi) and OCR them with the
                                            Windows.Media.Ocr engine (en-US; no Spanish engine was
-                                           installed), writing ocr_pages.json next to this file
+                                           installed), writing ocr_data.py next to this file
 
-The raw OCR output is kept as is in ocr_pages.json. amendments.py takes the words of each provision from
+The raw OCR output is kept as is in ocr_data.py. amendments.py takes the words of each provision from
 it and applies the explicit word corrections listed there (OCR_FIXES); every corrected or accented word
 must also occur in the 2008 Constitution's own text, or be listed in OCR_NEW_WORDS.
 """
@@ -20,7 +20,7 @@ import sys
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-OUT = HERE / "ocr_pages.json"
+OUT = HERE / "ocr_data.py"  # a .py so that it ships with the tools
 PAGES = {
     "ro377-2021": ("http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/"
                    "eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiY2NiNDhjMmUtYjIwNy00YTBhLWFkZTEtMDczNTA2OGEyYzI3LnBkZiJ9", [2]),
@@ -68,12 +68,14 @@ def make() -> None:
     for name, (url, pages) in PAGES.items():
         out[name] = {"url": url, "pages": {str(p): (work / f"{name}-p{p}.txt").read_text(encoding="utf-8-sig")
                                            for p in pages}}
-    OUT.write_text(json.dumps(out, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    OUT.write_text('"""Raw OCR output written by ocr_pages.py --make (do not edit by hand)."""\n\nDATA = '
+                   + json.dumps(out, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     print("wrote", OUT)
 
 
 def load() -> dict:
-    return json.loads(OUT.read_text(encoding="utf-8"))
+    import ocr_data
+    return ocr_data.DATA
 
 
 if __name__ == "__main__":

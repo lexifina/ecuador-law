@@ -557,7 +557,7 @@ DECISIONS = [
     "editorial replacement of 'imputado' by 'procesado' (from the Código Orgánico Integral Penal, which cannot amend "
     "the Constitution) are not commits.",
     "The enmiendas of 2021 (art. 272, numeral 4) and 2024 (art. 138) are printed in the Registro Oficial only as page "
-    "images. Their words come from machine OCR of those pages (ocr_pages.py, raw output kept in ocr_pages.json) with "
+    "images. Their words come from machine OCR of those pages (ocr_pages.py, raw output kept in ocr_data.py) with "
     "the word corrections listed in amendments.OCR_FIXES (the engine had no Spanish model and drops or swaps "
     "accents); every resulting word is either used in the 2008 text or listed in OCR_NEW_WORDS, and the result was "
     "compared with the page images. Paragraph breaks follow the printed spacing. The 2024 art. 138 differs from the "
