@@ -56,7 +56,11 @@ def paragraphs(url: str = S180_2014) -> list[str]:
     return [p for p in rotext.paragraphs(fetch.cached(url))]
 
 
+HEAD_NEXT: list[list[str]] = []  # [heading line, key of the first unit after it], filled by units_from_paragraphs
+
+
 def units_from_paragraphs(ps: list[str]) -> dict:
+    HEAD_NEXT.clear()
     start = ps.index("LIBRO PRELIMINAR NORMAS RECTORAS")
     units: dict[str, dict] = {}
     heads: list[str] = []
@@ -72,6 +76,9 @@ def units_from_paragraphs(ps: list[str]) -> dict:
                 raise SystemExit(f"Artículo {n} where {expect} was expected")
             expect += 1
             cur = art_key(n)
+            for h in HEAD_NEXT:
+                if h[1] == "":
+                    h[1] = cur
             units[cur] = {"label": f"Art. {n}", "kind": "art", "lines": [p]}
             continue
         if p in DISP:
@@ -88,6 +95,7 @@ def units_from_paragraphs(ps: list[str]) -> dict:
             break
         if section is None and HEAD.match(p):
             heads.append(p)
+            HEAD_NEXT.append([p, ""])
             cur = None
             continue
         if section is not None and section[0] != "disp-final":
