@@ -829,5 +829,53 @@
   "mentions": 0,
   "snippets": [],
   "bytes": 4293166
+ },
+ "https://www.asambleanacional.gob.ec/es/system/files/ro_ley_conflicto_armado.pdf": {
+  "n": "10",
+  "title": "Ley Orgánica para enfrentar el Conflicto Armado Interno, la Crisis Social y Económica",
+  "ro": "R.O. No. 516, Suplemento de 12-03-2024",
+  "date": "2024-03-12",
+  "pdf": "https://www.asambleanacional.gob.ec/es/system/files/ro_ley_conflicto_armado.pdf",
+  "pages": 22,
+  "no_text_pages": 21,
+  "mentions": 0,
+  "snippets": [],
+  "bytes": 3557493
+ },
+ "https://www.asambleanacional.gob.ec/es/system/files/roleyo1.pdf": {
+  "n": "9",
+  "title": "Ley Orgánica de Vigilancia y Seguridad Privada (incluye Fe de Erratas)",
+  "ro": "R.O. No. 496, Suplemento de 09-02-2024",
+  "date": "2024-02-09",
+  "pdf": "https://www.asambleanacional.gob.ec/es/system/files/roleyo1.pdf",
+  "pages": 86,
+  "no_text_pages": 72,
+  "mentions": 0,
+  "snippets": [],
+  "bytes": 5212159
+ },
+ "https://www.asambleanacional.gob.ec/es/system/files/ro.pdf": {
+  "n": "8",
+  "title": "Ley de Creación de las Universidades de Seguridad Ciudadana y Ciencias Policiales",
+  "ro": "R.O. No. 495, Suplemento, de 08-02-2024",
+  "date": "2024-02-08",
+  "pdf": "https://www.asambleanacional.gob.ec/es/system/files/ro.pdf",
+  "pages": 16,
+  "no_text_pages": 13,
+  "mentions": 0,
+  "snippets": [],
+  "bytes": 2593007
+ },
+ "https://www.asambleanacional.gob.ec/es/system/files/ro-ley1.pdf": {
+  "n": "7",
+  "title": "Ley Orgánica para el Ahorro y la Monetización de Recursos Económicos para el Financiamiento de la Lucha contra la Corrupción",
+  "ro": "R.O. No. 496, Segundo Suplemento, de 09-02-2024",
+  "date": "2024-02-09",
+  "pdf": "https://www.asambleanacional.gob.ec/es/system/files/ro-ley1.pdf",
+  "pages": 61,
+  "no_text_pages": 57,
+  "mentions": 0,
+  "snippets": [],
+  "bytes": 12373890
  }
 }
