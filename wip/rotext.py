@@ -13,11 +13,27 @@ import unicodedata
 
 import fitz  # pymupdf
 
-HEADER = re.compile(
-    r"^\s*(\d+\s*-+\s*)?(Tercer\s+|Segundo\s+|Cuarto\s+|Quinto\s+)?(Suplemento\s+(del\s+)?|Edici[oó]n\s+\w+\s+(del\s+)?)?"
-    r"Registro\s+Oficial\s+(N[º°o]\.?|No\.?)\s*\d+.*\d{4}\s*(-+\s*\d+\s*)?$",
-    re.I,
-)
+_DAY = r"(Lunes|Martes|Mi[eé]rcoles|Jueves|Viernes|S[aá]bado|Domingo)"
+_RO = r"Registro\s+Ofi\s?cial"
+HEADERS = [
+    # one-line running heads: "2 -- Suplemento -- Registro Oficial Nº 490 -- Miércoles 13 de Julio del 2011 -- 3"
+    re.compile(rf"^[\d\s-]*((Primer|Segundo|Tercer|Cuarto|Quinto)?\s*Suplemento|Edici[oó]n\s+\w+)?[\s-]*{_RO}\s*"
+               rf"(N[º°o]\.?|No\.?)\s*\d+[\s-]*{_DAY}.*\d{{4}}[\s-]*\d*$", re.I),
+    # two-line running heads (2015 on): "2 - Lunes 21 de diciembre de 2015" / "Suplemento - Registro Oficial Nº 653"
+    re.compile(rf"^(\d+\s*-+\s*)?{_DAY}\s+\d{{1,2}}\s+de\s+\w+\s+del?\s+\d{{4}}(\s*-+\s*\d+)?$", re.I),
+    re.compile(rf"^[\d\s-]*((Primer|Segundo|Tercer|Cuarto|Quinto)?\s*Suplemento|Edici[oó]n\s+\w+)?[\s-]*{_RO}"
+               rf"(\s*-\s*((Primer|Segundo|Tercer|Cuarto|Quinto)?\s*Suplemento|Edici[oó]n\s+\w+))?\s*"
+               rf"(N[º°o]\.?|No\.?)\s*\d+(\s*-+\s*((Primer|Segundo|Tercer)?\s*Suplemento|Edici[oó]n\s+\w+))?[\s\d-]*$", re.I),
+]
+
+
+class _Header:
+    @staticmethod
+    def match(s: str) -> bool:
+        return len(s) < 140 and any(h.match(s) for h in HEADERS)
+
+
+HEADER = _Header()
 STRUCT = re.compile(
     r"^(Art\.\s*\d+|Art[ií]culo\s+\d+|\d+\.\s|[A-ZÁÉÍÓÚ]{4,}[A-ZÁÉÍÓÚ]*\.-|T[IÍ]TULO\s|Cap[ií]tulo\s|CAP[IÍ]TULO\s|Secci[oó]n\s|SECCI[OÓ]N\s|DISPOSICI)"
 )
@@ -29,6 +45,11 @@ ITEM_START = re.compile(r"^\d{1,2}\.\s+\S")
 
 def norm(s: str) -> str:
     s = unicodedata.normalize("NFC", s)
+    # ligatures; the 2015+ typesetting also leaves a space after them ("defi nitivos", "tráfi co de infl uencias")
+    s = re.sub("\N{LATIN SMALL LIGATURE FI} (?=[a-záéíóúñü])", "fi", s)
+    s = re.sub("\N{LATIN SMALL LIGATURE FL} (?=[a-záéíóúñü])", "fl", s)
+    s = s.replace("\N{LATIN SMALL LIGATURE FI}", "fi").replace("\N{LATIN SMALL LIGATURE FL}", "fl")
+    s = s.replace("\N{HYPHEN}", "-").replace("\N{NON-BREAKING HYPHEN}", "-")
     s = s.replace("\u00a0", " ").replace("\u00ad", "")
     for a in "\u201c\u201d\u201e\u00ab\u00bb\u2033":
         s = s.replace(a, '"')
