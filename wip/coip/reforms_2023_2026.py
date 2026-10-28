@@ -19,6 +19,23 @@ import coip_replay as R
 
 # ---------------------------------------------------------------- cutting an act into items
 
+_CLEAN: dict[str, object] = {}
+
+
+def src(url: str):
+    """coip_replay.csrc, with one more typesetting fix for these editions: the private-use glyph U+F020 (a space set
+    in a symbol font, as in Cuarto Supl. 275 of 2026) is a space; runs of spaces collapse and paragraphs are
+    trimmed."""
+    if url not in _CLEAN:
+        s = R.csrc(url)
+        c = object.__new__(type(s))
+        c.url = s.url
+        c.paras = [re.sub(r" {2,}", " ", p.replace("", " ")).strip() for p in s.paras]
+        c.flat = re.sub(r"\s+", " ", "\n".join(c.paras))
+        _CLEAN[url] = c
+    return _CLEAN[url]
+
+
 def items(src, start: str, stop: str, item: str, numbers: range, inline: bool = False) -> dict[int, tuple[str, list[str]]]:
     """{n: (instruction, payload)} for the items numbered `numbers` between the paragraph holding `start` and the one
     holding `stop`. `item` is a regex with one group, the item's number, matched at the start of a paragraph. With
@@ -115,7 +132,7 @@ AFTER = re.compile(r"(?:Agréguese|Agréguense|Agrégase) (?:el siguiente artíc
 def seguridad_integral_2023(u: Units) -> None:
     """Ley Orgánica Reformatoria a Varios Cuerpos Legales para el Fortalecimiento de las Capacidades Institucionales y
     la Seguridad Integral (Registro Oficial, Suplemento 279, 29-III-2023), Capítulo III, arts. 38 to 126."""
-    s = R.csrc(R.S279_2023)
+    s = src(R.S279_2023)
     P = items(s, "Capítulo III REFORMAS AL CÓDIGO ORGÁNICO INTEGRAL PENAL", "Capítulo IV REFORMAS",
               r"Artículo (\d+)\.- ", range(38, 127))
     special = {39, 40, 45, 46, 48, 59, 60, 61, 62, 63, 64, 65, 66, 67, 78, 81, 82, 84, 96, 109, 125, 126}
@@ -270,7 +287,7 @@ def lavado_2024(u: Units) -> None:
     """Ley Orgánica de Prevención, Detección y Combate del Delito de Lavado de Activos y de la Financiación de Otros
     Delitos (Registro Oficial, Cuarto Suplemento 610, 29-VII-2024), Disposición reformatoria primera: arts. 318 and
     368 repealed, art. 553 substituted (its quotation is never closed: it runs to the next disposición)."""
-    s = R.csrc(R.S4_610_2024)
+    s = src(R.S4_610_2024)
     s.check("PRIMERA.- Refórmese en el Código Orgánico Integral Penal lo siguiente:", "Uno.- Deróguese el artículo 318.",
             "Dos.- Deróguese el artículo 368.")
     u.remove("art-318")
@@ -286,7 +303,7 @@ def solidaridad_2025(u: Units) -> None:
     """Ley Orgánica de Solidaridad Nacional (Registro Oficial, Sexto Suplemento 56, 10-VI-2025), Disposición
     reformatoria segunda, numerals 1 to 21, and Disposición derogatoria segunda (art. 296); in force on publication
     (its Disposición final)."""
-    s = R.csrc(R.S6_56_2025)
+    s = src(R.S6_56_2025)
     P = items(s, "SEGUNDA.- Refórmese en el Código Orgánico Integral Penal, lo siguiente:",
               "TERCERA.- Refórmese en la Ley Orgánica de Personal y Disciplina",
               r"(\d+)\. (?:A continuación|Incorpórese|Sustitúyase|Agréguese)", range(1, 22))
@@ -369,7 +386,7 @@ def integridad_2025(u: Units) -> None:
     """Ley Orgánica de Integridad Pública (Registro Oficial, Tercer Suplemento 68, 26-VI-2025), Disposición
     reformatoria segunda, numerals 1 to 13 (printed without quotation marks), and Disposición derogatoria tercera
     (art. 699.1); in force on publication (its Disposición final)."""
-    s = R.csrc(R.S3_68_2025)
+    s = src(R.S3_68_2025)
     P = items(s, "Segunda.- Refórmese el Código Orgánico Integral Penal en lo siguiente:",
               "Tercera.- Refórmese el Código de la Niñez y Adolescencia",
               r"(\d+)\. (?:Agréguese|En el|Sustitúyase|Elimínese|A continuación)", range(1, 14))
@@ -438,7 +455,7 @@ def penitenciario_2026(u: Units) -> None:
     """Ley Orgánica Reformatoria para el Fortalecimiento del Sistema Penitenciario (Registro Oficial, Cuarto
     Suplemento 275, 29-IV-2026), Capítulo II, arts. 7 to 24; in force on publication (its Disposición final). Each
     article carries its quotation inside its own paragraph."""
-    s = R.csrc(R.S4_275_2026)
+    s = src(R.S4_275_2026)
     P = items(s, "DE LAS REFORMAS AL CÓDIGO ORGÁNICO INTEGRAL PENAL", "Capítulo III", r"Artículo (\d+)\.- ",
               range(7, 25), inline=True)
 
@@ -496,7 +513,7 @@ def penitenciario_2026(u: Units) -> None:
 def ciberseguridad_2026(u: Units) -> None:
     """Ley Orgánica para el Fortalecimiento de la Ciberseguridad (Registro Oficial, Quinto Suplemento 290,
     22-V-2026), art. 11: an inciso at the end of art. 232; in force on publication (its Disposición final)."""
-    s = R.csrc(R.S5_290_2026)
+    s = src(R.S5_290_2026)
     s.check('Artículo 11.- Al final del artículo 232 añadir el siguiente inciso: "No constituyen delito las acciones de '
             'acceso, prueba o evaluación')
     if R.editable(u, "art-232"):
@@ -508,7 +525,7 @@ def ciberseguridad_2026(u: Units) -> None:
 def cc_61_18_in_23(u: Units) -> None:
     """Corte Constitucional, sentencia 61-18-IN/23 (Edición Constitucional 319, 26-II-2024): the phrase 'pena
     privativa de libertad de cinco a quince días' of art. 383 is unconstitutional; the other penalties stay."""
-    s = R.csrc(R.EC319_2024)
+    s = src(R.EC319_2024)
     s.check('Declarar la inconstitucionalidad por el fondo de la frase "pena privativa de libertad de cinco a quince '
             'días" del artículo 383 del Código Orgánico Integral Penal')
     u.drop("art-383", "pena privativa de libertad de cinco a quince días", para=0)
@@ -518,7 +535,7 @@ def cc_49_21_cn_25(u: Units) -> None:
     """Corte Constitucional, sentencia 49-21-CN/25 (Edición Constitucional 15, 2-IV-2025): the phrase 'tampoco se
     podrá sustituir la prisión preventiva por otra medida cautelar cuando se trate de un caso de reincidencia' of art.
     536 is unconstitutional. In this record it is the whole last inciso, which goes."""
-    s = R.csrc(R.EC15_2025)
+    s = src(R.EC15_2025)
     phrase = "tampoco se podrá sustituir la prisión preventiva por otra medida cautelar cuando se trate de un caso de " \
              "reincidencia"
     s.check(f'Declarar inconstitucional la frase contenida en el último inciso primero del artículo 536 del COIP que '
