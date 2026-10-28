@@ -61,6 +61,9 @@ TARGETS = {
     "s222-2023": ("suplemento", "2023-01-04", 222),
     "s191-2023": ("suplemento", "2023-03-08", 191),
     "ec191-2023": ("constitucional", "2023-03-08", 191),
+    "ec261-2022": ("constitucional", "2022-01-14", 261),
+    "ec267-2022": ("constitucional", "2022-01-25", 267),
+    "ec268-2022": ("constitucional", "2022-01-28", 268),
 }
 OUT = HERE / "editions.json"
 
@@ -72,7 +75,12 @@ def main(argv: list[str]) -> None:
     for name in names:
         prod, day, num = TARGETS[name]
         y, m = int(day[:4]), int(day[5:7])
-        eds = [e for e in ro_index.editions(prod, y, m) if e["date"] == day and e["number"] == num]
+        # the portal's listing date can be a day or two off the masthead (RO 386 of 2021: listed 6-II, printed 5-II),
+        # so the number decides, within three days of the date the indexes give
+        import datetime as _dt
+        d0 = _dt.date.fromisoformat(day)
+        eds = [e for e in ro_index.editions(prod, y, m) if e["number"] == num and e["date"]
+               and abs((_dt.date.fromisoformat(e["date"]) - d0).days) <= 3]
         if not eds:
             print(f"== {name}: no {prod} {num} on {day}")
             continue
@@ -86,7 +94,7 @@ def main(argv: list[str]) -> None:
             sizes = [len(d[i].get_text().strip()) for i in range(len(d))]
             empty = sum(1 for s in sizes if s < 200)
             head = re.sub(r"\s+", " ", d[0].get_text())[:500]
-            rows.append({"title": e["title"], "pdf": e["pdf"], "pages": len(d), "no_text_pages": empty,
+            rows.append({"title": e["title"], "listed": e["date"], "pdf": e["pdf"], "pages": len(d), "no_text_pages": empty,
                          "bytes": p.stat().st_size, "head": head})
             print(f"== {name} | {e['title']} | {len(d)} p | no-text pages {empty} | {p.stat().st_size} B\n   {head[:300]}")
         found[name] = rows

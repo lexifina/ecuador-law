@@ -24,6 +24,7 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent))
 sys.path.insert(0, str(HERE.parent / "civil"))
 import fetch  # noqa: E402
+import rotext  # noqa: E402
 from replay import Src, Units, unquote  # noqa: E402  (civil/replay.py: gazette cutting and unit edits)
 
 H = "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/"
@@ -50,6 +51,13 @@ S3_598_2015 = ed("s598-2015", "Tercer Suplemento")
 S615_2015 = ed("s615-2015", "Primer Suplemento")
 S711_2016 = ed("s711-2016", "Primer Suplemento")
 S2_802_2016 = ed("s802-2016", "Segundo Suplemento")
+S2_150_2017 = ed("s150-2017", "Segundo Suplemento")
+S133_2017 = ro("eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiYTg1ZGM4YzMtM2U4ZS00OGI5LWI1YjEtZGJmZWQzZGJhNWE0LnBkZiJ9")
+S180_2018 = ro("eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiOGMwNTA4ZmMtYTQ0NS00MWRlLTk3OWEtZmZiMjY5NGMyNWQ0LnBkZiJ9")
+S175_2018 = ed("s175-2018", "Primer Suplemento")
+S478_2019 = ed("s478-2019", "Primer Suplemento")
+S481_2019 = ed("s481-2019", "Primer Suplemento")
+EC90_2019 = ed("ec90-2019", "Ediciones Constitucionales")
 
 
 def plazo_days(published: str, days: int) -> str:
@@ -230,6 +238,116 @@ def lavado_2016(u: Units) -> None:
     u.set_para("art-298", n - 3, new)
 
 
+def clean_src(url: str) -> Src:
+    """Like Src, but skipping stray text fragments laid over the real text blocks (rotext drop_overlaps); used only
+    for the editions whose pages carry them (see decisions)."""
+    s = object.__new__(Src)
+    s.url = url
+    s.paras = rotext.paragraphs(fetch.cached(url), drop_overlaps=True)
+    s.flat = re.sub(r"\s+", " ", "\n".join(s.paras))
+    return s
+
+
+def open_quote(src: Src, anchor: str, until: str) -> list[str]:
+    """A quotation the act opens after `anchor` and never closes: it runs to the paragraph before the one starting
+    with `until` (the act's next provision). A closing quote, if printed at the end, is dropped."""
+    i = src.index(anchor)
+    p = src.paras[i]
+    head = p[p.index(anchor) + len(anchor):].strip()
+    j = src.index(until, src.paras[i])
+    if not src.paras[j].startswith(until):
+        raise SystemExit(f"{until!r} does not start its paragraph")
+    block = ([head] if head else []) + src.paras[i + 1:j]
+    if not block or not block[0].startswith('"'):
+        raise SystemExit(f"no opening quote after {anchor!r}")
+    block[0] = block[0][1:].strip()
+    block[-1] = re.sub(r'"\s*([.,;]?)$', r"\1", block[-1]).rstrip()
+    return block
+
+
+def quoted_para(src: Src, start: str, after: str | None = None) -> list[str]:
+    """The single quoted paragraph beginning with '"' + start (the first one after the paragraph holding `after`)."""
+    i0 = src.index(after) + 1 if after else 0
+    hits = [p for p in src.paras[i0:] if p.startswith('"' + start)]
+    if after and hits:
+        hits = hits[:1]
+    if len(hits) != 1:
+        raise SystemExit(f"{len(hits)} quoted paragraphs start with {start!r}")
+    return unquote([hits[0]])
+
+
+def violencia_mujeres_2018(u: Units) -> None:
+    """Ley Orgánica Integral para Prevenir y Erradicar la Violencia contra las Mujeres (Supl. 175, 5-II-2018),
+    Disposiciones reformatorias cuarta to séptima and décima; in force on publication (its Disposición final). Its
+    quotations open and are never closed; each runs to the next disposición."""
+    s = clean_src(S175_2018)
+    u.set_unit("art-558-1", open_quote(s, "Agrégase, a continuación del artículo 558 del Código Orgánico Integral Penal, "
+                                          "el siguiente artículo:", "QUINTA.-"), label="Art. 558.1")
+    u.set_unit("art-078-1", open_quote(s, "A continuación del artículo 78 del Código Orgánico Integral Penal, "
+                                          "incorpórase el siguiente artículo:", "SEXTA.-"), label="Art. 78.1")
+    u.set_unit("art-157", open_quote(s, "Sustitúyase el artículo 157 del Código Orgánico Integral Penal, por el "
+                                        "siguiente:", "SÉPTIMA.-"))
+    u.set_unit("art-159", open_quote(s, "Refórmase el artículo 159 del Código Orgánico Integral Penal por el "
+                                        "siguiente texto:", "OCTAVA.-"))
+    u.set_unit("art-570", open_quote(s, "Refórmase el artículo 570 del Código Orgánico Integral Penal por el "
+                                        "siguiente:", "DÉCIMA PRIMERA.-"))
+
+
+def referendo_2018(u: Units) -> None:
+    """Referéndum y consulta popular of 4 February 2018, questions 1 and 4: the annexes' reforms of the COIP, as put
+    to the vote by Decreto Ejecutivo 229 (Supl. 133, 4-XII-2017); in force on the publication of the CNE's results
+    (Supl. 180, 14-II-2018), as for the Constitution's amendments of the same vote."""
+    s = clean_src(S133_2017)
+    s.check("Agréguese el número 14 al artículo 60 del Código Orgánico Integral Penal, que disponga:")
+    u.insert("art-060", u.find("art-060", "13. ") + 1, quoted_para(s, "14. Inhabilitación para contratar"))
+    s.check("Agréguese como segundo inciso en el artículo 68 del Código Orgánico Integral Penal, el siguiente:")
+    u.insert("art-068", 1, quoted_para(s, "En el caso de los delitos de peculado"))
+    s.check("En el artículo 77 del Código Orgánico Integral Penal incorpórese el siguiente inciso final:")
+    u.insert("art-077", u.count("art-077"), quoted_para(s, "Las personas condenadas con sentencia ejecutoriada"))
+    pj = "En caso de determinarse responsabilidad de la persona jurídica será sancionada"
+    a280 = "En el artículo 280 del Código Orgánico Integral Penal añádase el siguiente inciso final:"
+    u.insert("art-280", u.count("art-280"), quoted_para(s, pj, after=a280))
+    a285 = "En el artículo 285 del Código Orgánico Integral Penal incorpórese como tercer inciso, el siguiente:"
+    u.insert("art-285", 2, quoted_para(s, pj, after=a285))
+    s.check("En el artículo 289 del Código Orgánico Integral Penal incorpórese como segundo inciso, el siguiente:")
+    u.insert("art-289", 1, quoted_para(s, "En caso de establecerse responsabilidad de personas jurídicas"))
+    s.check("Sustitúyase el numeral 4 del artículo 16 del Código Orgánico Integral Penal por el siguiente texto:")
+    u.set_para("art-016", u.find("art-016", "4. "), ["4. " + quoted_para(s, "Las infracciones de agresión a un Estado")[0]])
+    s.check("Sustitúyase el inciso final del artículo 75 del Código Orgánico Integral Penal por el siguiente texto:")
+    u.set_para("art-075", u.count("art-075") - 1, quoted_para(s, "No prescriben las penas determinadas"))
+
+
+def deporte_2019(u: Units) -> None:
+    """Ley Orgánica de Prevención y Sanción de la Violencia en el Deporte (Supl. 478, 30-IV-2019), Disposición
+    reformatoria primera: art. 397 replaced (unquoted, up to the next disposición). No vigencia clause: in force on
+    publication (Código Civil art. 6)."""
+    s = Src(S478_2019)
+    i = s.index("PRIMERA.- Sustitúyase el artículo 397 por el siguiente texto:")
+    j = s.index("DISPOSICIONES TRANSITORIAS", s.paras[i])
+    new = s.paras[i + 1:j]
+    if not new[0].startswith("Artículo 397.-"):
+        raise SystemExit("397: replacement not found")
+    u.set_unit("art-397", new)
+
+
+def defensoria_2019(u: Units) -> None:
+    """Ley Orgánica de la Defensoría del Pueblo (Supl. 481, 6-V-2019), Disposiciones reformatorias séptima (art. 675,
+    first inciso) and octava (a new Disposición general); in force on publication (its Disposición final)."""
+    s = Src(S481_2019)
+    new = open_quote(s, "Refórmese el inciso primero del artículo 675 del Código Integral Penal de la siguiente manera:",
+                     "OCTAVA.-")
+    if len(new) != 1 or not new[0].startswith("Art. 675.- Directorio.-"):
+        raise SystemExit("675: unexpected replacement")
+    ps = u.paras("art-675")
+    ps[0] = new[0]
+    u.put("art-675", ps)
+    i = s.index("Agrégase una Disposición General al Código Orgánico Integral Penal, que dicte:")
+    j = s.index("Durante las visitas, el Mecanismo Nacional", s.paras[i])
+    block = s.paras[i + 1:j + 1]
+    u.set_unit("disp-general-05", unquote(block), label="Disposición general (quinta)")
+    u.u["disp-general-05"]["kind"] = "general"
+
+
 def order(key: str) -> tuple:
     m = re.match(r"art-(\d{3})(?:-(\w+))?$", key)
     if m:
@@ -272,6 +390,34 @@ LAWS: dict[str, dict] = {
                             title="Ley Orgánica de Prevención, Detección y Erradicación del Delito de Lavado de Activos "
                                   "y del Financiamiento de Delitos (Registro Oficial, Segundo Suplemento 802, "
                                   "21-VII-2016)"),
+    "ley-reactivacion-2017": dict(label="Ley Orgánica para la Reactivación de la Economía (2017)", kind="law",
+                                  published="2017-12-29", url=S2_150_2017, note=IMAGE_ONLY,
+                                  title="Ley Orgánica para la Reactivación de la Economía, Fortalecimiento de la "
+                                        "Dolarización y Modernización de la Gestión Financiera (Registro Oficial, "
+                                        "Segundo Suplemento 150, 29-XII-2017): art. 299, first inciso. NOT APPLIED "
+                                        "(image-only edition)"),
+    "ley-violencia-mujeres-2018": dict(label="Ley Orgánica contra la Violencia hacia las Mujeres (2018)", kind="law",
+                                       enacted="2018-01-23", published="2018-02-05", url=S175_2018,
+                                       title="Ley Orgánica Integral para Prevenir y Erradicar la Violencia contra las "
+                                             "Mujeres (Registro Oficial, Suplemento 175, 5-II-2018)"),
+    "referendo-2018": dict(label="Referéndum de 2018", kind="referendum", enacted="2018-02-04", published="2018-02-14",
+                           url=S180_2018,
+                           title="Referéndum y consulta popular de 4 de febrero de 2018, preguntas 1 y 4 (anexos del "
+                                 "Decreto Ejecutivo 229, RO Supl. 133 de 4-XII-2017; resultados del CNE, RO Supl. 180 "
+                                 "de 14-II-2018)"),
+    "ley-deporte-2019": dict(label="Ley Orgánica contra la Violencia en el Deporte (2019)", kind="law",
+                             enacted="2019-03-27", published="2019-04-30", url=S478_2019,
+                             title="Ley Orgánica de Prevención y Sanción de la Violencia en el Deporte (Registro "
+                                   "Oficial, Suplemento 478, 30-IV-2019)"),
+    "ley-defensoria-2019": dict(label="Ley Orgánica de la Defensoría del Pueblo (2019)", kind="law",
+                                published="2019-05-06", url=S481_2019,
+                                title="Ley Orgánica de la Defensoría del Pueblo (Registro Oficial, Suplemento 481, "
+                                      "6-V-2019)"),
+    "cc-ec90-2019": dict(label="Corte Constitucional, Edición Constitucional 90 (2019)", kind="court",
+                         published="2019-06-03", url=EC90_2019, note=IMAGE_ONLY,
+                         title="Corte Constitucional, sentencia publicada en la Edición Constitucional 90 (3-VI-2019) "
+                               "que declara la inconstitucionalidad parcial del art. 202. NOT APPLIED (image-only "
+                               "edition)"),
 }
 
 # (law, in-force day, edit function, or the list of provisions a not-applied act concerns)
@@ -282,6 +428,12 @@ STEPS: list[tuple] = [
     ("ley-drogas-2015", plazo_days("2015-10-26", 90), drogas_2015_b),
     ("ley-tierras-2016", "2016-03-14", tierras_2016),
     ("ley-lavado-2016", "2016-07-21", lavado_2016),
+    ("ley-reactivacion-2017", "2017-12-29", ["art-299"]),
+    ("ley-violencia-mujeres-2018", "2018-02-05", violencia_mujeres_2018),
+    ("referendo-2018", "2018-02-14", referendo_2018),
+    ("ley-deporte-2019", "2019-04-30", deporte_2019),
+    ("ley-defensoria-2019", "2019-05-06", defensoria_2019),
+    ("cc-ec90-2019", "2019-06-03", ["art-202"]),
 ]
 
 
