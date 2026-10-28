@@ -803,5 +803,38 @@
    "bytes": 3485094,
    "head": "Año I - Nº 96 - 197 páginas Quito, viernes 3 de octubre de 2025 Edición Constitucional SUMARIO: Págs. CORTE CONSTITUCIONAL DEL ECUADOR SENTENCIAS: 51-25-IN/25 En el Caso No. 51-25-IN y acumulados Se declara la inconstitucionalidad por la forma de la totalidad de disposiciones de la Ley Orgánica de Solidaridad Nacional, con efecto retroactivo, a partir de su publicación en el Registro Oficial....... 2 52-25-IN/25 En el Caso No. 52-25-IN y acumulados Se acepta las demandas de inconstitucionalidad "
   }
+ ],
+ "s151-2025": [
+  {
+   "title": "Séptimo Suplemento",
+   "listed": "2025-10-24",
+   "pdf": "https://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiYjYxMzdmOTEtYWIxYS00NTM5LThmYzYtMDQ5MGE1ZDNjZjI2LnBkZiJ9",
+   "pages": 50,
+   "no_text_pages": 46,
+   "bytes": 6005556,
+   "head": "Año I - Nº 151 - 50 páginas Quito, viernes 24 de octubre de 2025 Séptimo Suplemento LEY ORGÁNICA REFORMATORIA A LA LEY ORGÁNICA DE MOVILIDAD HUMANA "
+  }
+ ],
+ "s275-2026": [
+  {
+   "title": "Cuarto Suplemento",
+   "listed": "2026-04-29",
+   "pdf": "https://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiNmIyNjhjMGYtYjgxYy00MGY3LThjMmEtZTM1Mzg1NzIzMmEyLnBkZiJ9",
+   "pages": 52,
+   "no_text_pages": 1,
+   "bytes": 1910100,
+   "head": "Año II - Nº 275 - 52 páginas Quito, miércoles 29 de abril de 2026 Cuarto Suplemento LEY ORGÁNICA REFORMATORIA PARA EL FORTALECIMIENTO DEL SISTEMA PENITENCIARIO "
+  }
+ ],
+ "s316-2026": [
+  {
+   "title": "Quinto Suplemento",
+   "listed": "2026-07-01",
+   "pdf": "https://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiYTNmNWFiODAtODA2ZC00NGRkLWIzMzUtNGI1OGMxODkyYjgzLnBkZiJ9",
+   "pages": 31,
+   "no_text_pages": 26,
+   "bytes": 23788402,
+   "head": "Año II - Nº 316 - 31 páginas Quito, miércoles 1 de julio de 2026 Quinto Suplemento LEY ORGÁNICA REFORMATORIA PARA PREVENIR Y SANCIONAR EL USO DELICTIVO DE UNIFORMES, INSIGNIAS Y DISTINTIVOS INSTITUCIONALES PARA EL FORTALECIMIENTO DE LA SEGURIDAD PÚBLICA "
+  }
  ]
 }
