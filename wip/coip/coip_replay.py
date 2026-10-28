@@ -58,6 +58,9 @@ S175_2018 = ed("s175-2018", "Primer Suplemento")
 S478_2019 = ed("s478-2019", "Primer Suplemento")
 S481_2019 = ed("s481-2019", "Primer Suplemento")
 EC90_2019 = ed("ec90-2019", "Ediciones Constitucionales")
+EC6_2019 = ed("ec6-2019", "Ediciones Constitucionales")
+EC21_2019 = _EDITIONS["ec21-2019"][0]["pdf"]
+S107_2019 = ed("s107-2019", "Primer Suplemento")
 
 
 def plazo_days(published: str, days: int) -> str:
@@ -348,6 +351,39 @@ def defensoria_2019(u: Units) -> None:
     u.u["disp-general-05"]["kind"] = "general"
 
 
+class Heads:
+    """The 'titulos' unit as [heading, first unit after it] pairs, so a heading can be inserted before an article."""
+
+    def __init__(self) -> None:
+        import coip_base
+        self.lines = [list(h) for h in coip_base.HEAD_NEXT]
+
+    def _write(self, u: Units) -> None:
+        u.u["titulos"]["text"] = "".join(h[0] + "\n" for h in self.lines)
+
+    def rename(self, u: Units, old: str, new: str) -> None:
+        hits = [h for h in self.lines if h[0] == old]
+        if len(hits) != 1:
+            raise SystemExit(f"heading {old!r}: {len(hits)} matches")
+        hits[0][0] = new
+        self._write(u)
+
+    def insert(self, u: Units, text: str, before: str) -> None:
+        pos = next((i for i, h in enumerate(self.lines) if order(h[1]) > order(before)), len(self.lines))
+        self.lines.insert(pos, [text, before])
+        self._write(u)
+
+
+HEADS: Heads | None = None
+
+
+def reformatoria_coip_2019(u: Units) -> None:
+    """Ley Orgánica Reformatoria al Código Orgánico Integral Penal (Supl. 107, 24-XII-2019), arts. 1-121; in force
+    180 days after publication (its Disposición final). See coip/s107_2019.py."""
+    import s107_2019
+    s107_2019.apply(u, clean_src(S107_2019), HEADS)
+
+
 def order(key: str) -> tuple:
     m = re.match(r"art-(\d{3})(?:-(\w+))?$", key)
     if m:
@@ -418,6 +454,18 @@ LAWS: dict[str, dict] = {
                          title="Corte Constitucional, sentencia publicada en la Edición Constitucional 90 (3-VI-2019) "
                                "que declara la inconstitucionalidad parcial del art. 202. NOT APPLIED (image-only "
                                "edition)"),
+    "cc-ec6-2019": dict(label="Corte Constitucional, sentencia 5-13-IN/19", kind="court", published="2019-08-15",
+                        url=EC6_2019, note=IMAGE_ONLY,
+                        title="Corte Constitucional, sentencia 5-13-IN/19 (Edición Constitucional 6, 15-VIII-2019): "
+                              "inconstitucionalidad del último inciso del art. 581. NOT APPLIED (image-only edition)"),
+    "cc-ec21-2019": dict(label="Corte Constitucional, Edición Constitucional 21 (2019)", kind="court",
+                         published="2019-11-13", url=EC21_2019, note=IMAGE_ONLY,
+                         title="Corte Constitucional, sentencia publicada en la Edición Constitucional 21 (13-XI-2019): "
+                               "constitucionalidad condicionada aditiva del art. 653. NOT APPLIED (image-only edition)"),
+    "reformatoria-coip-2019": dict(label="Ley Orgánica Reformatoria del COIP (2019)", kind="law", enacted="2019-12-17",
+                                   published="2019-12-24", url=S107_2019,
+                                   title="Ley Orgánica Reformatoria al Código Orgánico Integral Penal (Registro "
+                                         "Oficial, Suplemento 107, 24-XII-2019)"),
 }
 
 # (law, in-force day, edit function, or the list of provisions a not-applied act concerns)
@@ -434,10 +482,15 @@ STEPS: list[tuple] = [
     ("ley-deporte-2019", "2019-04-30", deporte_2019),
     ("ley-defensoria-2019", "2019-05-06", defensoria_2019),
     ("cc-ec90-2019", "2019-06-03", ["art-202"]),
+    ("cc-ec6-2019", "2019-08-15", ["art-581"]),
+    ("cc-ec21-2019", "2019-11-13", ["art-653"]),
+    ("reformatoria-coip-2019", plazo_days("2019-12-24", 180), reformatoria_coip_2019),
 ]
 
 
 def replay(first: dict) -> list[dict]:
+    global HEADS
+    HEADS = Heads()
     out = []
     units = first
     for law, day, edit in STEPS:
