@@ -126,7 +126,7 @@ def comf_2014(u: Units) -> None:
     """Código Orgánico Monetario y Financiero (Segundo Supl. 332, 12-IX-2014), Disposición reformatoria trigésima
     séptima: art. 278, fourth inciso replaced (by two paragraphs); art. 557 num. 3, a sentence added after 'para el
     efecto.'."""
-    s = Src(S2_332_2014)
+    s = csrc(S2_332_2014)
     new = qfrom(s, "sustitúyase el cuarto inciso por el siguiente:")
     if len(new) != 2:
         raise SystemExit(f"COMF 278: {len(new)} paragraphs")
@@ -138,7 +138,7 @@ def comf_2014(u: Units) -> None:
 def reformatoria_coip_2015(u: Units) -> None:
     """Ley Orgánica Reformatoria del Código Orgánico Integral Penal (Tercer Supl. 598, 30-IX-2015), arts. 1-13; in
     force on publication (its Disposición final)."""
-    s = Src(S3_598_2015)
+    s = csrc(S3_598_2015)
     # 1. art. 19: second and third paragraphs removed
     s.check("En el artículo 19, elimínense los párrafos segundo y tercero.")
     ps = u.paras("art-019")
@@ -189,7 +189,7 @@ def reformatoria_coip_2015(u: Units) -> None:
 def drogas_2015_a(u: Units) -> None:
     """Ley Orgánica de Prevención Integral del Fenómeno Socio Económico de las Drogas (Supl. 615, 26-X-2015),
     Disposición reformatoria primera, which its Disposición final applies from publication: arts. 220, 474, 557."""
-    s = Src(S615_2015)
+    s = csrc(S615_2015)
     p = s.paras[s.index("1.- En el número 1 del artículo 220, sustitúyanse los literales a) y b) por los siguientes:")]
     rest = p.split("por los siguientes: ", 1)[1]
     a, b = rest.split(" b) ", 1)
@@ -208,7 +208,7 @@ def drogas_2015_a(u: Units) -> None:
 def drogas_2015_b(u: Units) -> None:
     """The same law, Disposición derogatoria cuarta, in force with the rest of the law ninety days after publication:
     the Code's Disposición reformatoria décimo primera is repealed."""
-    s = Src(S615_2015)
+    s = csrc(S615_2015)
     s.check("Derógase la disposición reformatoria décimo primera del Código Orgánico Integral Penal")
     u.remove("disp-reformatoria-11")
 
@@ -216,7 +216,7 @@ def drogas_2015_b(u: Units) -> None:
 def tierras_2016(u: Units) -> None:
     """Ley Orgánica de Tierras Rurales y Territorios Ancestrales (Supl. 711, 14-III-2016), Disposición reformatoria
     quinta: a numeral 7 after numeral 6 of art. 557. The law sets no vigencia, so it binds from publication."""
-    s = Src(S711_2016)
+    s = csrc(S711_2016)
     new = qfrom(s, "En el artículo 557 del Código Orgánico Integral Penal, incorpórese después del numeral sexto uno "
                    "que diga:")
     u.insert("art-557", u.find("art-557", "6. ") + 1, new)
@@ -225,7 +225,7 @@ def tierras_2016(u: Units) -> None:
 def lavado_2016(u: Units) -> None:
     """Ley Orgánica de Prevención, Detección y Erradicación del Delito de Lavado de Activos y del Financiamiento de
     Delitos (Segundo Supl. 802, 21-VII-2016), Disposición reformatoria 1: art. 298. In force on publication."""
-    s = Src(S2_802_2016)
+    s = csrc(S2_802_2016)
     a = "Refórmese el artículo 298 del Código Orgánico Integral Penal de la siguiente manera: a) Sustituir el primer inciso por el siguiente:"
     first = qfrom(s, a)
     ps = u.paras("art-298")
@@ -338,7 +338,7 @@ def deporte_2019(u: Units) -> None:
     """Ley Orgánica de Prevención y Sanción de la Violencia en el Deporte (Supl. 478, 30-IV-2019), Disposición
     reformatoria primera: art. 397 replaced (unquoted, up to the next disposición). No vigencia clause: in force on
     publication (Código Civil art. 6)."""
-    s = Src(S478_2019)
+    s = csrc(S478_2019)
     i = s.index("PRIMERA.- Sustitúyase el artículo 397 por el siguiente texto:")
     j = s.index("DISPOSICIONES TRANSITORIAS", s.paras[i])
     new = s.paras[i + 1:j]
@@ -350,7 +350,7 @@ def deporte_2019(u: Units) -> None:
 def defensoria_2019(u: Units) -> None:
     """Ley Orgánica de la Defensoría del Pueblo (Supl. 481, 6-V-2019), Disposiciones reformatorias séptima (art. 675,
     first inciso) and octava (a new Disposición general); in force on publication (its Disposición final)."""
-    s = Src(S481_2019)
+    s = csrc(S481_2019)
     new = open_quote(s, "Refórmese el inciso primero del artículo 675 del Código Integral Penal de la siguiente manera:",
                      "OCTAVA.-")
     if len(new) != 1 or not new[0].startswith("Art. 675.- Directorio.-"):

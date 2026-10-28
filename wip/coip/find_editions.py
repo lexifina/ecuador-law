@@ -64,6 +64,7 @@ TARGETS = {
     "ec261-2022": ("constitucional", "2022-01-14", 261),
     "ec267-2022": ("constitucional", "2022-01-25", 267),
     "ec268-2022": ("constitucional", "2022-01-28", 268),
+    "s899-2016": ("suplemento", "2016-12-09", 899),
 }
 OUT = HERE / "editions.json"
 
