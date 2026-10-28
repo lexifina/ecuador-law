@@ -86,6 +86,7 @@ TARGETS = {
     "s275-2026": ("suplemento", "2026-04-29", 275, "Cuarto Suplemento"),
     "s316-2026": ("suplemento", "2026-07-01", 316, "Quinto Suplemento"),
     "s343-2026": ("suplemento", "2026-08-07", 343, "Quinto Suplemento"),
+    "s290-2026": ("suplemento", "2026-05-22", 290, "Quinto Suplemento"),
 }
 OUT = HERE / "editions.json"
 

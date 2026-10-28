@@ -793,5 +793,41 @@
   "mentions": 0,
   "snippets": [],
   "bytes": 2225685
+ },
+ "https://www.asambleanacional.gob.ec/es/system/files/registro_oficial_1.pdf": {
+  "n": "13",
+  "title": "Ley Orgánica para la Acción Voluntaria",
+  "ro": "R.O. No. 535, Cuarto Suplemento, de 09-04-2024",
+  "date": "2024-04-09",
+  "pdf": "https://www.asambleanacional.gob.ec/es/system/files/registro_oficial_1.pdf",
+  "pages": 33,
+  "no_text_pages": 30,
+  "mentions": 0,
+  "snippets": [],
+  "bytes": 8737212
+ },
+ "https://www.asambleanacional.gob.ec/es/system/files/registro_oficial_0.pdf": {
+  "n": "12",
+  "title": "Ley Orgánica para el Fortalecimiento de las Actividades Turísticas y Fomento del Empleo",
+  "ro": "R.O. No. 525, Suplemento, de 25-03-2024",
+  "date": "2024-03-25",
+  "pdf": "https://www.asambleanacional.gob.ec/es/system/files/registro_oficial_0.pdf",
+  "pages": 36,
+  "no_text_pages": 33,
+  "mentions": 0,
+  "snippets": [],
+  "bytes": 4854369
+ },
+ "https://www.asambleanacional.gob.ec/es/system/files/regist1_0.pdf": {
+  "n": "11",
+  "title": "Ley Orgánica Reformatoria de la Ley Orgánica de Gestión de Identidad y Datos Civiles",
+  "ro": "R.O. No. 517, Suplemento, de 13-03-2024",
+  "date": "2024-03-13",
+  "pdf": "https://www.asambleanacional.gob.ec/es/system/files/regist1_0.pdf",
+  "pages": 42,
+  "no_text_pages": 19,
+  "mentions": 0,
+  "snippets": [],
+  "bytes": 4293166
  }
 }
