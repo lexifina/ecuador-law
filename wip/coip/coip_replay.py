@@ -738,4 +738,80 @@ def check_anachronism(versions: list[dict], laws: dict) -> list[str]:
     return errs
 
 
-DECISIONS: list[str] = []
+DECISIONS: list[str] = [
+    "COIP: the amending acts were found from two editorial indexes, read only: the Ediciones Legales consolidation "
+    "(Consejo de Comunicación repository, to 13-X-2021; coip/index_notes.py) and the Lexis consolidation on FAOLEX (to "
+    "8-III-2023; coip/index_lexis.py). Each act was then read in its own Registro Oficial edition (coip/editions.json, "
+    "found by coip/find_editions.py; the portal's listing date can be a day off the masthead, so editions are matched "
+    "by number within three days).",
+    "COIP coverage ends on 4 January 2023, the last act this record checked. Reforms published later (among them, by "
+    "press and editorial accounts, a 2023 law on security, the Ley Orgánica para enfrentar el conflicto armado "
+    "interno of February 2024, the 2024 reform carrying out the referendum's penal questions, and 2025 laws whose "
+    "penal articles the Corte Constitucional later struck down) were not indexed or checked and are missing. Ediciones "
+    "Legales counts at least 58 reforms in twelve years; this record has 28 dated acts and rulings to 2023, 12 of them not applied.",
+    "COIP: in-force dates follow the default rule (Código Civil art. 6: from publication) unless the act says otherwise: "
+    "the Code itself and the 2019 reform 180 days after publication (10-VIII-2014, 22-VI-2020); the drug law of 2015 "
+    "90 days after publication for its repeal of the Code's Disposición reformatoria décimo primera (25-I-2016) and "
+    "on publication for its Disposición reformatoria primera, as its Disposición final says. Day plazos are counted "
+    "under Código Civil art. 33 (complete days, the publication day not counted; the act binds the next day).",
+    "COIP: constitutional rulings that strike or rewrite words take effect on the day of their publication in the "
+    "Registro Oficial. Rulings that only fix an interpretation or declare conditional constitutionality change no "
+    "words and are not versions (sentencias 14-19-CN/20 on art. 301, 17-21-CN/23 on art. 171, and the interpretations "
+    "noted by the indexes for arts. 220, 268, 387, 649, 652, 653).",
+    "COIP: rulings that state how a provision 'dirá' or 'se leerá' are applied in the ruling's own words: art. 75 "
+    "numeral 1 (Edición Constitucional 261, 2022), art. 175 numeral 5 (Edición Constitucional 268, 2022; two footnote "
+    "calls the text layer glues to words, 'coerción70' and 'consentimiento71', are removed), art. 476 first inciso and "
+    "numeral 6 (Edición Constitucional 20, 2022; the ruling's markers '(...)' and '(Las negritas se incluyen)' are not "
+    "part of the reading).",
+    "COIP NOT APPLIED, image-only gazette editions (no text layer; no OCR by the user's decision). Each has a version "
+    "of its own that changes no words, credited to the provisions the editorial indexes name, and the files named keep "
+    "their earlier wording, which is not the law from that date: Ley Orgánica para la Reactivación de la Economía "
+    "(Segundo Supl. 150, 29-XII-2017: art. 299); Corte Constitucional, Edición Constitucional 90 (3-VI-2019: art. "
+    "202), sentencia 5-13-IN/19 (Edición Constitucional 6, 15-VIII-2019: art. 581) and Edición Constitucional 21 "
+    "(13-XI-2019: art. 653); Ley Reformatoria de la Ley Orgánica de Movilidad Humana (Tercer Supl. 386, 5-II-2021: "
+    "art. 91); Ley Reformatoria del COIP en materia anticorrupción (Segundo Supl. 392, 17-II-2021: 20 articles and 5 "
+    "new ones); Ley Orgánica de Extinción de Dominio (Quinto Supl. 452, 14-V-2021: art. 452); Ley Reformatoria de la "
+    "Ley de Tránsito (Quinto Supl. 512, 10-VIII-2021: arts. 17, 388 to 392, 404); Ley contra el comercio ilícito "
+    "(Quinto Supl. 525, 27-VIII-2021: 9 articles and new arts. 208 B, 208 C); Ley Reformatoria del COIP sobre "
+    "violencia sexual digital (Cuarto Supl. 526, 30-VIII-2021: 14 articles and 8 new ones); Ley Orgánica que regula "
+    "el Uso Legítimo de la Fuerza (Tercer Supl. 131, 22-VIII-2022: 8 articles and new arts. 30.2, 533.1). Articles "
+    "these acts add do not exist in this record.",
+    "COIP: sentencia 8-20-CN/21 (Edición Constitucional 222, 13-X-2021) strikes words that the anticorruption reform "
+    "of February 2021 (not applied, image-only) put into art. 536; those words are not in this record's text, so the "
+    "ruling is a version that changes no words, with a note.",
+    "COIP: the 2018 referendum's reforms (questions 1 and 4) take the wording of the annexes of Decreto Ejecutivo 229 "
+    "(Supl. 133, 4-XII-2017), which put them to the vote, and the in-force day of the CNE's results (Supl. 180, "
+    "14-II-2018), as for the Constitution. The CNE reprinted the annexes in Supl. 181 (15-II-2018), but only as page "
+    "images. Ediciones Legales reads art. 75 as 'niñas, niños' where the decree's annex reads 'niños, niñas'.",
+    "COIP: the Ley Orgánica Integral para Prevenir y Erradicar la Violencia contra las Mujeres (Supl. 175, 2018) opens "
+    "its quotations and never closes them; each quoted text is taken to run to the next disposición. That edition, "
+    "the decree annexes of Supl. 133 (2017) and the 2019 reform (Supl. 107) carry stray text fragments laid over the "
+    "real text blocks; they are read with rotext's drop_overlaps (text blocks lying mostly inside a fuller block, and "
+    "blocks of at most eight characters touching one, are skipped).",
+    "COIP: the Registro Oficial hyphenates words at line ends and the text layer keeps the hyphen; a hyphenated pair "
+    "of lower-case words is joined when the joined word occurs unbroken in the Code's text (or the same edition), "
+    "otherwise the printed hyphen stays ('penas in-definidas' in art. 53 and 'investí-gación' in art. 412 keep it). "
+    "Other typesetting of the text layer is kept as printed ('necesariala' in art. 466; 'visolencia' in art. 157 as "
+    "enacted in 2018; 'reglamento..' in art. 708 as enacted in 2019).",
+    "COIP, words the acts quote slightly differently from the Code, changed where they evidently point: the 2015 "
+    "reform's art. 4 adds 'y vigilancia' after 'consejo de administración', which in art. 278 (as replaced by the COMF "
+    "in 2014) reads 'consejos de administración'; the 2019 reform's art. 92 removes 'de existir méritos.' from art. "
+    "558 numeral 12, whose second paragraph reads 'la o el fiscal de existir méritos, solicitará' (the words go, the "
+    "comma stays); its art. 52 and art. 60 quote the headings in another case and 'mascotas y animales' for 'mascotas "
+    "o animales'; the replacement headings are taken as the act prints them.",
+    "COIP: replacement text is taken exactly as each act prints it, including its heading style ('Art. 157.-' where "
+    "the Code had 'Artículo 157.-'), its typos and numbering ('1. 1. Las infracciones' in art. 635, 'Artículo. 651.4'), "
+    "and the absence of a final stop where the act gives none (art. 30: 'debidamente comprobados').",
+    "COIP: the 2019 reform's art. 19 replaces 'the third paragraph of numeral 2' of art. 69; the numeral's lettered "
+    "items are not counted as paragraphs, so it is 'En caso de sentencia condenatoria ejecutoriada ...'. Its art. 110 "
+    "replaces the first inciso of art. 677, which in the Code is the article's first two paragraphs ('... El Centro de "
+    "formación ...' and 'Sus funciones serán:'). Its arts. 122 to 127 amend other laws and are not part of the Code; "
+    "its own transitional provisions are not added to the Code.",
+    "COIP: the Ley Orgánica de la Defensoría del Pueblo (2019) adds 'una Disposición General' without an ordinal; it "
+    "is the fifth (disp-general-05), before the 2019 reform's sexta to octava.",
+    "COIP: the replayed text on 13-X-2021 was compared, for reading only, with the Ediciones Legales consolidation "
+    "(coip/reconcile_coip.py): 663 of 754 articles agree after normalising spacing, quotes and amendment notes. Of the "
+    "91 that differ, 51 are explained by acts not applied here (image-only editions) and 40 by the consolidation's "
+    "own editorial changes, typos and note residue, its headings run into article text, and the literal readings "
+    "listed above.",
+]
