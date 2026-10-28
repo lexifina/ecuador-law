@@ -562,5 +562,77 @@
   "mentions": 0,
   "snippets": [],
   "bytes": 3042354
+ },
+ "https://www.asambleanacional.gob.ec/es/system/files/ro_primera_infancia_0.pdf": {
+  "n": "32",
+  "title": "Ley Orgánica de la Primera Infancia",
+  "ro": "R.O. No. 38, Cuarto Suplemento, de 14-05-2025",
+  "date": "2025-05-14",
+  "pdf": "https://www.asambleanacional.gob.ec/es/system/files/ro_primera_infancia_0.pdf",
+  "pages": 37,
+  "no_text_pages": 35,
+  "mentions": 0,
+  "snippets": [],
+  "bytes": 14085055
+ },
+ "https://www.asambleanacional.gob.ec/es/system/files/ro_4.pdf": {
+  "n": "31",
+  "title": "Ley Orgánica de Cuidados Paliativos",
+  "ro": "R.O. No. 8, Tercer Suplemento, de 28-03-2025",
+  "date": "2025-03-28",
+  "pdf": "https://www.asambleanacional.gob.ec/es/system/files/ro_4.pdf",
+  "pages": 25,
+  "no_text_pages": 22,
+  "mentions": 0,
+  "snippets": [],
+  "bytes": 2262252
+ },
+ "https://www.asambleanacional.gob.ec/es/system/files/regist1_3.pdf": {
+  "n": "30",
+  "title": "Ley Orgánica para Impulsar la economía de las mujeres emprendedoras del Ecuador, urgente en materia económica",
+  "ro": "R.O. No. 758, Tercer Suplemento, de 10-03-2025",
+  "date": "2025-03-10",
+  "pdf": "https://www.asambleanacional.gob.ec/es/system/files/regist1_3.pdf",
+  "pages": 31,
+  "no_text_pages": 27,
+  "mentions": 0,
+  "snippets": [],
+  "bytes": 5094328
+ },
+ "https://www.asambleanacional.gob.ec/es/system/files/ro_3.pdf": {
+  "n": "29",
+  "title": "Ley Orgánica para Prevenir y Erradicar la Malnutrición en el Ecuador",
+  "ro": "R.O. No. 750, Cuarto Suplemento, de 24-02-2025",
+  "date": "2025-02-24",
+  "pdf": "https://www.asambleanacional.gob.ec/es/system/files/ro_3.pdf",
+  "pages": 31,
+  "no_text_pages": 27,
+  "mentions": 0,
+  "snippets": [],
+  "bytes": 11057884
+ },
+ "https://www.asambleanacional.gob.ec/es/system/files/ro_ley_de_alivio_financiero.pdf": {
+  "n": "28",
+  "title": "Ley Orgánica para el Alivio Financiero y el Fortalecimiento Económico de las Generaciones en el Ecuador",
+  "ro": "R.O. No. 699, Quinto Suplemento, de 09-12-2024",
+  "date": "2024-12-09",
+  "pdf": "https://www.asambleanacional.gob.ec/es/system/files/ro_ley_de_alivio_financiero.pdf",
+  "pages": 27,
+  "no_text_pages": 1,
+  "mentions": 0,
+  "snippets": [],
+  "bytes": 984556
+ },
+ "https://www.asambleanacional.gob.ec/es/system/files/ro_2.pdf": {
+  "n": "27",
+  "title": "Ley de Creación de la Universidad Pública de Santo Domingo de los Tsáchilas",
+  "ro": "R.O. No. 692, Segundo Suplemento, de 27-11-2024",
+  "date": "2024-11-27",
+  "pdf": "https://www.asambleanacional.gob.ec/es/system/files/ro_2.pdf",
+  "pages": 17,
+  "no_text_pages": 16,
+  "mentions": 0,
+  "snippets": [],
+  "bytes": 11697904
  }
 }
