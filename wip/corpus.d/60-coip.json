@@ -12,7 +12,7 @@
    "note": null
   },
   "comf-2014": {
-   "label": "Código Orgánico Monetario y Financiero (2014)",
+   "label": "Código Orgánico Monetario y Financiero",
    "title": "Código Orgánico Monetario y Financiero, Disposición reformatoria trigésima séptima (Registro Oficial, Segundo Suplemento 332, 12-IX-2014)",
    "kind": "law",
    "enacted": "2014-07-24",
@@ -188,7 +188,7 @@
    "note": "NOT APPLIED here: the Registro Oficial edition that publishes it is page images without a text layer, and this repository does not OCR. Its wording is missing from the files named in this commit; they keep the earlier text (provisions named from the editorial indexes: Ediciones Legales 2021, Lexis 2023)."
   },
   "ley-extincion-dominio-2021": {
-   "label": "Ley Orgánica de Extinción de Dominio (2021)",
+   "label": "Ley Orgánica de Extinción de Dominio",
    "title": "Ley Orgánica de Extinción de Dominio (Registro Oficial, Quinto Suplemento 452, 14-V-2021): art. 452. NOT APPLIED (image-only edition)",
    "kind": "law",
    "enacted": null,

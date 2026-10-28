@@ -512,7 +512,7 @@ IMAGE_ONLY = ("NOT APPLIED here: the Registro Oficial edition that publishes it 
               "keep the earlier text (provisions named from the editorial indexes: Ediciones Legales 2021, Lexis 2023).")
 
 LAWS: dict[str, dict] = {
-    "comf-2014": dict(label="Código Orgánico Monetario y Financiero (2014)", kind="law", enacted="2014-07-24",
+    "comf-2014": dict(label="Código Orgánico Monetario y Financiero", kind="law", enacted="2014-07-24",
                       published="2014-09-12", url=S2_332_2014,
                       title="Código Orgánico Monetario y Financiero, Disposición reformatoria trigésima séptima "
                             "(Registro Oficial, Segundo Suplemento 332, 12-IX-2014)"),
@@ -586,7 +586,7 @@ LAWS: dict[str, dict] = {
                                          "45, 47, 49, 60, 68, 69, 77, 270, 278, 280, 281, 285, 286, 430.1, 430.2, 536, "
                                          "581, 630, 698, 699 and new arts. 294.1, 320.1, 422.1, 550.1, 581.1. NOT "
                                          "APPLIED (image-only edition)"),
-    "ley-extincion-dominio-2021": dict(label="Ley Orgánica de Extinción de Dominio (2021)", kind="law",
+    "ley-extincion-dominio-2021": dict(label="Ley Orgánica de Extinción de Dominio", kind="law",
                                        published="2021-05-14", url=S5_452_2021, note=IMAGE_ONLY,
                                        title="Ley Orgánica de Extinción de Dominio (Registro Oficial, Quinto "
                                              "Suplemento 452, 14-V-2021): art. 452. NOT APPLIED (image-only edition)"),
@@ -802,8 +802,9 @@ DECISIONS: list[str] = [
     "COIP: replacement text is taken exactly as each act prints it, including its heading style ('Art. 157.-' where "
     "the Code had 'Artículo 157.-'), its typos and numbering ('1. 1. Las infracciones' in art. 635, 'Artículo. 651.4'), "
     "and the absence of a final stop where the act gives none (art. 30: 'debidamente comprobados').",
-    "COIP: the 2019 reform's art. 19 replaces 'the third paragraph of numeral 2' of art. 69; the numeral's lettered "
-    "items are not counted as paragraphs, so it is 'En caso de sentencia condenatoria ejecutoriada ...'. Its art. 110 "
+    "COIP: the 2019 reform's art. 19 replaces 'the third paragraph of numeral 2' of art. 69; counting the numeral's "
+    "own line ('2. Comiso penal ...') as the first and not counting its lettered items, the third is 'En caso de "
+    "sentencia condenatoria ejecutoriada ...', which is also how the replacement begins. Its art. 110 "
     "replaces the first inciso of art. 677, which in the Code is the article's first two paragraphs ('... El Centro de "
     "formación ...' and 'Sus funciones serán:'). Its arts. 122 to 127 amend other laws and are not part of the Code; "
     "its own transitional provisions are not added to the Code.",

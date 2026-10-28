@@ -175,9 +175,9 @@ def apply(u: Units, src, heads) -> None:
     # 18. art. 69, numeral 2: letter f) after e)
     check_instr(P, 18, "a continuación de la letra e) del número 2 del artículo 69")
     u.insert("art-069", letter_span(u, "art-069", "e") + 1, pay(18))
-    # 19. art. 69, numeral 2, third paragraph replaced. Numeral 2 is 'Comiso penal ...' with letters a) to f); its
-    #     paragraphs are counted after the letters: the first is 'Cuando tales bienes ...', so the third is
-    #     'En caso de sentencia condenatoria ejecutoriada ...' (see decisions).
+    # 19. art. 69, numeral 2, third paragraph replaced: the numeral's own line '2. Comiso penal ...' is the first,
+    #     its letters a) to f) are not counted, 'Cuando tales bienes ...' is the second, so the third is 'En caso de
+    #     sentencia condenatoria ejecutoriada ...', as the replacement itself begins (see decisions).
     check_instr(P, 19, "Sustitúyese el tercer párrafo del número 2 del artículo 69")
     i = u.find("art-069", "En caso de sentencia condenatoria ejecutoriada")
     u.set_para("art-069", i, pay(19))
