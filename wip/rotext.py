@@ -27,10 +27,20 @@ HEADERS = [
 ]
 
 
+_HEAD_TOKENS = re.compile(
+    rf"{_RO}|((Primer|Segundo|Tercer|Cuarto|Quinto|Sexto|S[eé]ptimo)\s+)?Suplemento|Edici[oó]n\s+(Especial|Constitucional|Jur[ií]dica)"
+    rf"|N[º°o]\.?\s*\d+|No\.\s*\d+|[\d\s-]+", re.I)
+
+
 class _Header:
     @staticmethod
     def match(s: str) -> bool:
-        return len(s) < 140 and any(h.match(s) for h in HEADERS)
+        if len(s) >= 140:
+            return False
+        if any(h.match(s) for h in HEADERS):
+            return True
+        # running head made only of "Registro Oficial", "<n> Suplemento", "Nº 508", dashes and page numbers
+        return bool(re.search(_RO, s, re.I)) and _HEAD_TOKENS.sub("", s).strip() == ""
 
 
 HEADER = _Header()
