@@ -713,12 +713,12 @@ LAWS: dict[str, dict] = {
         title="Ley Orgánica Reformatoria a Varios Cuerpos Legales para el Fortalecimiento de las Capacidades "
               "Institucionales y la Seguridad Integral (Registro Oficial, Suplemento 279, 29-III-2023), arts. 38 to 126"),
     "ley-salud-mental-2024": dict(
-        label="Ley Orgánica de Salud Mental (2024)", kind="law", published="2024-01-05", url=S471_2024,
+        label="Ley Orgánica de Salud Mental", kind="law", published="2024-01-05", url=S471_2024,
         note=IMAGE_ONLY_2026,
         title="Ley Orgánica de Salud Mental (Registro Oficial, Suplemento 471, 5-I-2024), Disposición reformatoria "
               "primera: art. 76. NOT APPLIED (image-only edition)"),
     "ley-ahorro-monetizacion-2024": dict(
-        label="Ley Orgánica para el Ahorro y la Monetización de Recursos (2024)", kind="law", published="2024-02-09",
+        label="Ley Orgánica para el Ahorro y la Monetización de Recursos", kind="law", published="2024-02-09",
         url=S2_496_2024, note=IMAGE_ONLY_2026,
         title="Ley Orgánica para el Ahorro y la Monetización de Recursos Económicos para el Financiamiento de la Lucha "
               "contra la Corrupción (Registro Oficial, Segundo Suplemento 496, 9-II-2024), Disposición reformatoria "
@@ -727,8 +727,8 @@ LAWS: dict[str, dict] = {
         label="Sentencia 61-18-IN/23", kind="court", published="2024-02-26", url=EC319_2024,
         title="Corte Constitucional, sentencia 61-18-IN/23 (Edición Constitucional 319, 26-II-2024): "
               "inconstitucionalidad de la frase 'pena privativa de libertad de cinco a quince días' del art. 383"),
-    "ley-reparacion-femicidio-2024": dict(
-        label="Ley de Reparación a Familiares de Víctimas de Femicidio (2024)", kind="law", published="2024-06-27",
+    "ley-victimas-femicidio-2024": dict(
+        label="Ley Orgánica de Reparación a Familiares de Víctimas de Femicidio", kind="law", published="2024-06-27",
         url=S3_588_2024, note=IMAGE_ONLY_2026,
         title="Ley Orgánica de Acompañamiento y Reparación Transformadora e Integral a Hijas, Hijos, Madres, Padres y "
               "demás familiares de víctimas de femicidio y otras muertes violentas por razones de género (Registro "
@@ -866,7 +866,7 @@ STEPS: list[tuple] = [
     ("ley-salud-mental-2024", "2024-01-05", ["art-076"]),
     ("ley-ahorro-monetizacion-2024", "2024-02-09", ["art-069", "art-443"]),
     ("cc-61-18-in-23", "2024-02-26", later("cc_61_18_in_23")),
-    ("ley-reparacion-femicidio-2024", "2024-06-27", ["art-078-1", "art-441", "art-520", "art-558-1", "art-570"]),
+    ("ley-victimas-femicidio-2024", "2024-06-27", ["art-078-1", "art-441", "art-520", "art-558-1", "art-570"]),
     ("ley-consulta-popular-2024", "2024-07-12",
      ["art-092", "art-140", "art-143", "art-162", "art-260", "art-317", "art-362", "art-366", "art-367", "art-369",
       "art-698", "art-699"]),
