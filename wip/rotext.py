@@ -88,16 +88,19 @@ def join_lines(lines: list[str]) -> str:
 
 def _overlapped(blocks: list) -> set[int]:
     """Indexes of text blocks that lie mostly (>= half their area) inside a block holding more text: the stray
-    fragments some editions carry over their real text (Suplemento 175 of 2018, page 28)."""
+    fragments some editions carry over their real text (Suplemento 175 of 2018, page 28). Tiny blocks (at most 8
+    characters, not a bare page number) that touch a fuller block at all are fragments too (Suplemento 107 of 2019:
+    'a b', 'si 6' in the gutter between the columns)."""
     out = set()
     for i, b in enumerate(blocks):
         area = max((b[2] - b[0]) * (b[3] - b[1]), 1e-6)
+        tiny = len(b[4].strip()) <= 8 and not b[4].strip().isdigit()
         for j, c in enumerate(blocks):
             if i == j or len(c[4]) <= len(b[4]):
                 continue
             w = min(b[2], c[2]) - max(b[0], c[0])
             h = min(b[3], c[3]) - max(b[1], c[1])
-            if w > 0 and h > 0 and w * h >= area / 2:
+            if w > 0 and h > 0 and (w * h >= area / 2 or tiny):
                 out.add(i)
                 break
     return out

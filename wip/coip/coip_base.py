@@ -52,8 +52,40 @@ def art_key(n: int, extra: str = "") -> str:
     return f"art-{n:03d}" + (f"-{extra}" if extra else "")
 
 
+_WORD = r"[a-záéíóúñü]+"
+_BROKEN = re.compile(rf"\b({_WORD})-({_WORD})\b")
+
+
+def vocabulary(ps: list[str]) -> set[str]:
+    """Every lower-case word that occurs unbroken (not joined to another by a hyphen)."""
+    out: set[str] = set()
+    for p in ps:
+        for m in re.finditer(rf"(?<![-\w])({_WORD})(?![-\w])", p.lower()):
+            out.add(m.group(1))
+    return out
+
+
+def join_broken(ps: list[str], vocab: set[str]) -> list[str]:
+    """The Registro Oficial hyphenates words at line ends; the text layer keeps the hyphen ('in-definidas',
+    'abste-nerse'). A hyphenated pair is joined when the joined word occurs unbroken in the Code's text (or in the
+    same edition); otherwise the printed hyphen stays (compounds like 'político-administrativo')."""
+    def fix(m: re.Match) -> str:
+        w = m.group(1) + m.group(2)
+        return w if w.lower() in vocab else m.group(0)
+    return [_BROKEN.sub(fix, p) for p in ps]
+
+
+_BASE_VOCAB: set[str] = set()
+
+
+def base_vocab() -> set[str]:
+    if not _BASE_VOCAB:
+        _BASE_VOCAB.update(vocabulary(rotext.paragraphs(fetch.cached(S180_2014))))
+    return _BASE_VOCAB
+
+
 def paragraphs(url: str = S180_2014) -> list[str]:
-    return [p for p in rotext.paragraphs(fetch.cached(url))]
+    return join_broken(rotext.paragraphs(fetch.cached(url)), base_vocab())
 
 
 HEAD_NEXT: list[list[str]] = []  # [heading line, key of the first unit after it], filled by units_from_paragraphs

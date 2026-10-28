@@ -241,14 +241,28 @@ def lavado_2016(u: Units) -> None:
     u.set_para("art-298", n - 3, new)
 
 
-def clean_src(url: str) -> Src:
-    """Like Src, but skipping stray text fragments laid over the real text blocks (rotext drop_overlaps); used only
-    for the editions whose pages carry them (see decisions)."""
+_SRC: dict[tuple[str, bool], Src] = {}
+
+
+def csrc(url: str, drop_overlaps: bool = False) -> Src:
+    """One gazette edition as civil/replay.Src paragraphs, with the COIP's hyphenation rule (coip_base.join_broken:
+    the vocabulary is the Code's and the edition's own unbroken words). With drop_overlaps, stray text fragments laid
+    over the real text blocks are skipped (rotext drop_overlaps), for the editions whose pages carry them."""
+    if (url, drop_overlaps) in _SRC:
+        return _SRC[(url, drop_overlaps)]
+    import coip_base
+    raw = rotext.paragraphs(fetch.cached(url), drop_overlaps=drop_overlaps)
+    vocab = coip_base.base_vocab() | coip_base.vocabulary(raw)
     s = object.__new__(Src)
     s.url = url
-    s.paras = rotext.paragraphs(fetch.cached(url), drop_overlaps=True)
+    s.paras = coip_base.join_broken(raw, vocab)
     s.flat = re.sub(r"\s+", " ", "\n".join(s.paras))
+    _SRC[(url, drop_overlaps)] = s
     return s
+
+
+def clean_src(url: str) -> Src:
+    return csrc(url, drop_overlaps=True)
 
 
 def open_quote(src: Src, anchor: str, until: str) -> list[str]:
