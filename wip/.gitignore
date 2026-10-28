@@ -1,3 +1,4 @@
 .autopush.json
 .tmp-build/
 .tmp-ocr/
+.tmp/
