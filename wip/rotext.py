@@ -28,14 +28,14 @@ ITEM_START = re.compile(r"^\d{1,2}\.\s+\S")
 
 def norm(s: str) -> str:
     s = unicodedata.normalize("NFC", s)
-    s = s.replace(" ", " ").replace("­", "")
-    for a in "“”„«»″":
+    s = s.replace("\u00a0", " ").replace("\u00ad", "")
+    for a in "\u201c\u201d\u201e\u00ab\u00bb\u2033":
         s = s.replace(a, '"')
-    for a in "‘’‚′´":
+    for a in "\u2018\u2019\u201a\u2032\u00b4":
         s = s.replace(a, "'")
-    for a in "–—‒−":
+    for a in "\u2013\u2014\u2012\u2212":
         s = s.replace(a, "-")
-    s = s.replace("…", "...")
+    s = s.replace("\u2026", "...")
     return re.sub(r"[ \t]+", " ", s).strip()
 
 
