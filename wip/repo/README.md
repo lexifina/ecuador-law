@@ -123,14 +123,28 @@ su texto anterior desde esa fecha.
 ## Código Orgánico Integral Penal (COIP, 2014)
 
 `coip/` holds the Criminal Code as enacted (Registro Oficial Suplemento 180, 10 February 2014; in force 10 August
-2014, 180 days after publication) and 30 versions to 4 January 2023. Each later version replays one amending act or
+2014, 180 days after publication) and 50 versions to 7 August 2026. Each later version replays one amending act or
 constitutional ruling, cut from the text layer of its own Registro Oficial edition, on its in-force day; no version
-carries wording from an act published after that day. The 2019 reform (Supplement 107, 118 provisions, in force 22 June
-2020) is the largest.
+carries wording from an act published after that day. The largest are the 2019 reform (Supplement 107, 118 provisions,
+in force 22 June 2020) and the 2023 security law (Supplement 279, 85 provisions, in force 13 May 2023).
 
-**History ends on 4 January 2023.** Reforms published later (a 2023 security law, the February 2024 law on the internal
-armed conflict, the 2024 reform carrying out the referendum's penal questions, and 2025 laws) have not been indexed or
-checked yet and are missing: the files show the law as of early 2023 at best.
+**Coverage and gaps.** Reforms from 2023 on were indexed from two editorial consolidations (Ediciones Legales to 29
+April 2026, Andina Ediciones to 24 August 2026), read only as indexes, and from the Asamblea Nacional's list of
+published laws: every law on that list from 2023 to October 2026 was downloaded and its text layer searched for the
+Code. Most laws since 2021 are printed only as page images, so the text of the Code today is far from complete:
+
+- 22 acts and rulings are **not applied** (table below): their files keep the earlier wording, which is not the law.
+- When an image-only reform has amended an article, a later act's partial amendment of it (a numeral, an inciso, a
+  phrase) is not applied either, so no version grafts new words onto outdated text. This leaves out art. 47 numeral 24
+  and art. 430.1 (2023), arts. 47, 77, 536 (Solidaridad 2025), arts. 45, 698, 699 (Integridad Pública 2025), arts.
+  698, 699 (2026 prison reform) and art. 232 (2026 cybersecurity law). Whole articles an act substitutes or adds are
+  always applied.
+- Laws published after 24 August 2026 as page images could not be checked for COIP reforms and may be missing.
+- The Ley Orgánica de Solidaridad Nacional (June 2025) and the penal reforms of the Ley Orgánica de Integridad Pública
+  (June 2025) are applied as published and undone on 3 October 2025, when the Corte Constitucional's rulings 51-25-IN/25
+  and 52-25-IN/25 annulled them with retroactive effect.
+- The internal-armed-conflict law of March 2024 (Supplement 516) and the 21 April 2024 referendum changed no words of
+  the Code; the referendum's penal questions were carried out by the July 2024 law in the table.
 
 ### Changes that are missing (not applied)
 
@@ -152,17 +166,33 @@ wording, which is no longer the law:
 | 2021-08-30 | Ley Reformatoria del COIP sobre violencia sexual digital (Cuarto Supl. 526) | 47, 103, 157, 166, 169, 170, 171, 175, 179, 230, 232, 234, 396, 497; new 154.2, 154.3, 172.1, 234.1-234.4, 477.1 |
 | 2021-10-13 | Sentencia 8-20-CN/21 (strikes words the 2021 anticorruption reform added) | 536 |
 | 2022-08-22 | Ley Orgánica que regula el Uso Legítimo de la Fuerza (Tercer Supl. 131) | 30.1, 47, 274, 275, 293, 537, 685, 686; new 30.2, 533.1 |
+| 2024-01-05 | Ley Orgánica de Salud Mental (Supl. 471) | 76 |
+| 2024-02-09 | Ley para el Ahorro y la Monetización de Recursos (Segundo Supl. 496) | 69, 443 |
+| 2024-06-27 | Ley de Reparación a Familiares de Víctimas de Femicidio (Tercer Supl. 588) | 78.1, 441, 520, 558.1, 570; new 77.1 |
+| 2024-07-12 | Ley para la Aplicación de la Consulta Popular de 2024 (Supl. 599) | 92, 140, 143, 162, 260, 317, 362, 366, 367, 369, 698, 699; new 360.1, 474.2-474.4 |
+| 2024-12-10 | Decreto Ley 477, Mejora Recaudatoria (Quinto Supl. 700) | 69, 552 |
+| 2025-03-27 | Sentencia 94-24-IN/25 (annuls Decreto Ley 477 with retroactive effect) | 69, 552 |
+| 2025-05-14 | Ley Reformatoria de la Ley de Tránsito (Quinto Supl. 38) | 388 |
+| 2025-10-24 | Ley Reformatoria de la Ley Orgánica de Movilidad Humana (Séptimo Supl. 151) | 12, 61, 667.1, 729, 730; new 633.1 |
+| 2026-07-01 | Ley contra el uso delictivo de uniformes (Quinto Supl. 316) | 47, 69; new 362.1, 362.2 |
+| 2026-08-07 | Ley Orgánica de Extradición (Quinto Supl. 343) | 541 |
 
-The acts were found through two editorial consolidations, read only as indexes (Ediciones Legales to October 2021, Lexis
-to March 2023). On 13 October 2021 the replayed text agrees with the Ediciones Legales consolidation in 663 of 754
-articles; each difference is classified in REPRODUCE.md (decisions).
+Sentencia 129-21-IN/25 (Edición Constitucional 78, 2025) strikes words of art. 294.1, which the image-only 2021
+anticorruption reform added; this record does not have that article, so the ruling has no commit.
+
+The acts to 2023 were found through two editorial consolidations, read only as indexes (Ediciones Legales to October
+2021, Lexis to March 2023). On 13 October 2021 the replayed text agrees with the Ediciones Legales consolidation in 663
+of 754 articles; each difference is classified in REPRODUCE.md (decisions).
 
 ### En español
 
 `coip/` contiene el Código Orgánico Integral Penal publicado en el Suplemento 180 (10-II-2014, vigente desde el
-10-VIII-2014) y 30 versiones hasta el 4 de enero de 2023, cada una tomada del texto del Registro Oficial que publicó la
-reforma o la sentencia. Las reformas publicadas solo como imagen (tabla anterior) no están aplicadas, y las reformas
-posteriores a enero de 2023 aún no están incorporadas.
+10-VIII-2014) y 50 versiones hasta el 7 de agosto de 2026, cada una tomada del texto del Registro Oficial que publicó la
+reforma o la sentencia. Las reformas publicadas solo como imagen (tabla anterior) no están aplicadas; tampoco las
+reformas parciales posteriores de los artículos que esas reformas dejaron desactualizados. Las leyes publicadas solo como
+imagen después del 24 de agosto de 2026 no se han podido revisar. La Ley de Solidaridad Nacional y las reformas penales
+de la Ley de Integridad Pública (2025) se aplican y se deshacen el 3-X-2025, con las sentencias 51-25-IN/25 y
+52-25-IN/25.
 
 ## How it is built
 
