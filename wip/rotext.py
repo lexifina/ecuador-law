@@ -97,8 +97,15 @@ def chunks(pdf_path, first_page: int = 0, last_page: int | None = None) -> list[
                 continue
             paras: list[list[str]] = []
             cur: list[str] = []
-            for raw in b[4].split("\n"):
-                if HEADER.match(norm(raw)):
+            if re.fullmatch(r"\s*\d{1,3}\s*", b[4]):
+                continue  # a page number set as a block of its own
+            lines = b[4].split("\n")
+            heads = {i for i, raw in enumerate(lines) if HEADER.match(norm(raw))}
+            # a bare page number printed between the two lines of a running head
+            heads |= {i for i, raw in enumerate(lines)
+                      if re.fullmatch(r"\s*\d{1,3}\s*", raw) and (i - 1 in heads or i + 1 in heads)}
+            for i, raw in enumerate(lines):
+                if i in heads:
                     continue
                 if not raw.strip():
                     if cur:
