@@ -708,7 +708,7 @@ LAWS: dict[str, dict] = {
                                               "Campesina (Registro Oficial, Suplemento 222, 4-I-2023)"),
     # ---- 2023 to 2026
     "ley-seguridad-integral-2023": dict(
-        label="Ley Reformatoria para la Seguridad Integral (2023)", kind="law", enacted="2023-03-14",
+        label="Ley Reformatoria para la Seguridad Integral (2023)", kind="law",
         published="2023-03-29", url=S279_2023,
         title="Ley Orgánica Reformatoria a Varios Cuerpos Legales para el Fortalecimiento de las Capacidades "
               "Institucionales y la Seguridad Integral (Registro Oficial, Suplemento 279, 29-III-2023), arts. 38 to 126"),
@@ -768,13 +768,13 @@ LAWS: dict[str, dict] = {
               "Oficial, Quinto Suplemento 38, 14-V-2025), Disposición reformatoria primera: art. 388. NOT APPLIED "
               "(image-only edition)"),
     "ley-solidaridad-2025": dict(
-        label="Ley Orgánica de Solidaridad Nacional (2025)", kind="law", enacted="2025-06-07", published="2025-06-10",
+        label="Ley Orgánica de Solidaridad Nacional (2025)", kind="law", published="2025-06-10",
         url=S6_56_2025,
         title="Ley Orgánica de Solidaridad Nacional (Registro Oficial, Sexto Suplemento 56, 10-VI-2025), Disposición "
               "reformatoria segunda and Disposición derogatoria segunda; annulled with retroactive effect by sentencia "
               "51-25-IN/25"),
     "ley-integridad-2025": dict(
-        label="Ley Orgánica de Integridad Pública (2025)", kind="law", enacted="2025-06-24", published="2025-06-26",
+        label="Ley Orgánica de Integridad Pública (2025)", kind="law", published="2025-06-26",
         url=S3_68_2025,
         title="Ley Orgánica de Integridad Pública (Registro Oficial, Tercer Suplemento 68, 26-VI-2025), Disposición "
               "reformatoria segunda and Disposición derogatoria tercera; its penal reforms annulled with retroactive "
@@ -858,6 +858,35 @@ STEPS: list[tuple] = [
     ("ley-uso-fuerza-2022", "2022-08-22",
      ["art-030-1", "art-047", "art-274", "art-275", "art-293", "art-537", "art-685", "art-686"]),
     ("ley-economia-campesina-2023", "2023-01-04", economia_campesina_2023),
+    # ---- 2023 to 2026
+    # Disposición transitoria séptima: the COIP reforms in force 'en el término de treinta (30) días' after
+    # publication: 30 días hábiles (holidays in the span: Viernes Santo 7-IV-2023 and 1-V-2023)
+    ("ley-seguridad-integral-2023", termino_days("2023-03-29", 30, ("2023-04-07", "2023-05-01")),
+     later("seguridad_integral_2023")),
+    ("ley-salud-mental-2024", "2024-01-05", ["art-076"]),
+    ("ley-ahorro-monetizacion-2024", "2024-02-09", ["art-069", "art-443"]),
+    ("cc-61-18-in-23", "2024-02-26", later("cc_61_18_in_23")),
+    ("ley-reparacion-femicidio-2024", "2024-06-27", ["art-078-1", "art-441", "art-520", "art-558-1", "art-570"]),
+    ("ley-consulta-popular-2024", "2024-07-12",
+     ["art-092", "art-140", "art-143", "art-162", "art-260", "art-317", "art-362", "art-366", "art-367", "art-369",
+      "art-698", "art-699"]),
+    ("dl-477-2024", "2024-12-10", ["art-069", "art-552"]),
+    ("cc-94-24-in-25", "2025-03-27", ["art-069", "art-552"]),
+    ("cc-49-21-cn-25", "2025-04-02", later("cc_49_21_cn_25")),
+    ("ley-transito-2025", "2025-05-14", ["art-388"]),
+    ("ley-solidaridad-2025", "2025-06-10", later("solidaridad_2025")),
+    ("ley-integridad-2025", "2025-06-26", later("integridad_2025")),
+    # its Disposición final: in force 'en el plazo de un año posterior a su publicación'; Código Civil art. 33: the
+    # year ends on 29-VII-2025, and the act binds from the next day
+    ("ley-lavado-2024", (dt.date.fromisoformat(plazo_months("2024-07-29", 12)) + dt.timedelta(days=1)).isoformat(),
+     later("lavado_2024")),
+    ("cc-52-25-in-25", "2025-10-03", lambda u: restore_law("ley-integridad-2025")(u)),
+    ("cc-51-25-in-25", "2025-10-03", lambda u: restore_law("ley-solidaridad-2025")(u)),
+    ("ley-movilidad-humana-2025", "2025-10-24", ["art-012", "art-061", "art-667-1", "art-729", "art-730"]),
+    ("ley-penitenciaria-2026", "2026-04-29", later("penitenciario_2026")),
+    ("ley-ciberseguridad-2026", "2026-05-22", later("ciberseguridad_2026")),
+    ("ley-uniformes-2026", "2026-07-01", ["art-047", "art-069"]),
+    ("ley-extradicion-2026", "2026-08-07", ["art-541"]),
 ]
 
 
