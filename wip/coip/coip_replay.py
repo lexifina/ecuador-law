@@ -931,6 +931,9 @@ def restore_law(law: str):
             (u.restale if k in stale else u.fresh).add(k)
         if "titulos" in CHANGED[law]:
             HEADS.lines = [list(h) for h in heads]
+        u.note = (f"The ruling annuls the Code's reforms by the {LAWS[law]['label']} with retroactive effect from "
+                  f"that law's publication. This record keeps the wording as published and in force until the "
+                  f"ruling's publication, and restores the earlier wording from that day.")
     return edit
 
 
