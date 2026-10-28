@@ -401,6 +401,13 @@ class Heads:
         self.lines.insert(pos, [text, before])
         self._write(u)
 
+    def remove(self, u: Units, text: str) -> None:
+        hits = [i for i, h in enumerate(self.lines) if h[0] == text]
+        if len(hits) != 1:
+            raise SystemExit(f"heading {text!r}: {len(hits)} matches")
+        del self.lines[hits[0]]
+        self._write(u)
+
 
 HEADS: Heads | None = None
 
@@ -495,7 +502,9 @@ def economia_campesina_2023(u: Units) -> None:
 def order(key: str) -> tuple:
     m = re.match(r"art-(\d{3})(?:-(\w+))?$", key)
     if m:
-        return (1, int(m.group(1)), m.group(2) or "")
+        # a numeric suffix sorts as a number (art-477-2 before art-477-10); single digits sort as before
+        sfx = m.group(2) or ""
+        return (1, int(m.group(1)), sfx.zfill(3) if sfx.isdigit() else sfx)
     for i, p in enumerate(("disp-general", "disp-transitoria", "disp-reformatoria", "disp-derogatoria", "disp-final",
                            "titulos")):
         if key.startswith(p):
@@ -688,13 +697,62 @@ STEPS: list[tuple] = [
 ]
 
 
+# Provisions whose text in this record is not the law in force: an act this record could not apply (image-only
+# edition) amended them, and no applied act has since replaced them whole. A later act's partial amendment of such a
+# provision (a numeral, an inciso, a phrase) is not applied either: it would graft new words onto wording that was
+# no longer law. Acts after 2023 consult it through editable(); replay() keeps it current.
+STALE: set[str] = set()
+# law -> (units, headings, stale set) just before the law's first step, and law -> keys its steps changed: what a
+# ruling that annuls a law with retroactive effect restores (restore_law)
+BEFORE: dict[str, tuple] = {}
+CHANGED: dict[str, set[str]] = {}
+
+PARTLY = ("Partly NOT APPLIED here: an earlier reform this record could not apply (image-only edition) had already "
+          "amended {}, so this act's partial amendment of {} is not applied either; {} the earlier text, which is not "
+          "the law from this date.")
+
+
+def editable(u: Units, key: str) -> bool:
+    """True if `key` may take a partial amendment; otherwise the act is credited to it as not applied."""
+    if key in STALE:
+        u.skipped.append(key)
+        return False
+    return True
+
+
+def fresh(u: Units, key: str) -> None:
+    """`key` was replaced whole (or added) from an applied act: its text is the law again."""
+    u.fresh.add(key)
+
+
+def restore_law(law: str):
+    """Edit function for a ruling that annuls `law` with retroactive effect: every provision the law's steps changed
+    goes back to its text just before the law, headings included."""
+    def edit(u: Units) -> None:
+        units, heads, stale = BEFORE[law]
+        for k in sorted(CHANGED[law], key=order):
+            if k in units:
+                u.u[k] = json.loads(json.dumps(units[k]))
+            else:
+                u.u.pop(k, None)
+            (u.restale if k in stale else u.fresh).add(k)
+        if "titulos" in CHANGED[law]:
+            HEADS.lines = [list(h) for h in heads]
+    return edit
+
+
 def replay(first: dict) -> list[dict]:
     global HEADS
     HEADS = Heads()
+    STALE.clear()
+    BEFORE.clear()
+    CHANGED.clear()
     out = []
     units = first
     for law, day, edit in STEPS:
         url = LAWS[law]["url"]
+        if law not in BEFORE:
+            BEFORE[law] = (units, [list(h) for h in HEADS.lines], set(STALE))
         if isinstance(edit, list):
             for k in edit:
                 if k not in units:
@@ -706,18 +764,34 @@ def replay(first: dict) -> list[dict]:
             if out and out[-1]["from"] == day:
                 v["same_day"] = True
             out.append(v)
+            STALE.update(edit)
             continue
         u = Units(units)
+        u.skipped, u.fresh, u.restale, u.note = [], set(), set(), None
         edit(u)
         new = u.u
         changed = sorted((k for k in set(units) | set(new) if units.get(k) != new.get(k)), key=order)
-        if not changed:
+        skipped = sorted(set(u.skipped) - set(changed) - set(u.fresh), key=order)
+        if not changed and not skipped:
             raise SystemExit(f"{law}: no change")
         v = {"from": day, "source_url": url, "sha256": sha_of(url),
-             "changes": {k: new.get(k) for k in changed}, "credits": {k: [law] for k in changed}}
+             "changes": {k: new.get(k) for k in changed},
+             "credits": {k: [law] for k in sorted(set(changed) | set(skipped), key=order)}}
+        note = u.note
+        if skipped:
+            names = ", ".join(new[k].get("label") or k for k in skipped)
+            one = len(skipped) == 1
+            note = ((note + " ") if note else "") + PARTLY.format(names, "it" if one else "them",
+                                                                 "it keeps" if one else "they keep")
+        if note:
+            v["note"] = note
         if out and out[-1]["from"] == day:
             v["same_day"] = True
         out.append(v)
+        CHANGED.setdefault(law, set()).update(changed)
+        STALE.difference_update(u.fresh)
+        STALE.difference_update(k for k in changed if k not in new)
+        STALE.update(u.restale)
         units = new
     return out
 
