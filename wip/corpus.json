@@ -21,7 +21,7 @@
    "name": "Registro Oficial del Ecuador",
    "url": "https://www.registroficial.gob.ec",
    "retrieved": "2026-10-28",
-   "requests": 37,
+   "requests": 80,
    "licence": "No licence stated on the site; official gazette text.",
    "notes": "One PDF per gazette edition, served by esacc.corteconstitucional.gob.ec. Editions were found through the site's month listings (admin-ajax) and search. No dated consolidation exists, so every version is the 2008 text with each amending act's replacements applied."
   }
