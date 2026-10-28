@@ -900,7 +900,7 @@ STALE: set[str] = set()
 BEFORE: dict[str, tuple] = {}
 CHANGED: dict[str, set[str]] = {}
 
-PARTLY = ("Partly NOT APPLIED here: an earlier reform this record could not apply (image-only edition) had already "
+PARTLY = ("{} here: an earlier reform this record could not apply (image-only edition) had already "
           "amended {}, so this act's partial amendment of {} is not applied either; {} the earlier text, which is not "
           "the law from this date.")
 
@@ -974,8 +974,9 @@ def replay(first: dict) -> list[dict]:
         if skipped:
             names = ", ".join(new[k].get("label") or k for k in skipped)
             one = len(skipped) == 1
-            note = ((note + " ") if note else "") + PARTLY.format(names, "it" if one else "them",
-                                                                 "it keeps" if one else "they keep")
+            note = ((note + " ") if note else "") + PARTLY.format(
+                "Partly NOT APPLIED" if changed else "NOT APPLIED", names, "it" if one else "them",
+                "it keeps" if one else "they keep")
         if note:
             v["note"] = note
         if out and out[-1]["from"] == day:
