@@ -21,7 +21,7 @@
    "name": "Registro Oficial del Ecuador",
    "url": "https://www.registroficial.gob.ec",
    "retrieved": "2026-10-28",
-   "requests": 557,
+   "requests": 608,
    "licence": "No licence stated on the site; official gazette text.",
    "notes": "One PDF per gazette edition, served by esacc.corteconstitucional.gob.ec. Editions were found through the site's month listings (admin-ajax) and search. No dated consolidation exists, so every version is the 2008 text with each amending act's replacements applied."
   }
@@ -98,8 +98,8 @@
    "title": "Referéndum del 5 de febrero de 2023 para enmendar la Constitución (Decreto Ejecutivo 607; ocho preguntas, convocatoria PLE-CNE-1-6-12-2022)",
    "kind": "referendum",
    "enacted": "2023-02-05",
-   "published": null,
-   "url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiMzNhOGE3YTYtNTIwNC00YmU4LWIyNWMtN2Y0MmJjMDdmMDFkLnBkZiJ9",
+   "published": "2023-03-08",
+   "url": "https://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiNzhjYjM2YWQtNjQyOC00OWVhLTliOTktZWEwN2I3Y2M0YzI4LnBkZiJ9",
    "temporary_until": null,
    "restores": null,
    "note": "The referendum of 5 February 2023 rejected all eight proposed amendments (arts. 74, 79, 109, 112, 118, 120, 181, 207 to 210 and 405); no words changed."
@@ -18188,8 +18188,8 @@
     },
     {
      "from": "2023-02-05",
-     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiMzNhOGE3YTYtNTIwNC00YmU4LWIyNWMtN2Y0MmJjMDdmMDFkLnBkZiJ9",
-     "sha256": "05374e8ac6141c8e95f73c7301846ac685c2d98e6b289c4853318759fd535856",
+     "source_url": "https://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiNzhjYjM2YWQtNjQyOC00OWVhLTliOTktZWEwN2I3Y2M0YzI4LnBkZiJ9",
+     "sha256": "80d1627258027d4de4650f1a336c719bb59784b3b31e368cdbe9ab44ab92cf9f",
      "units": {
       "preambulo": {
        "label": "Preámbulo",
@@ -31147,7 +31147,7 @@
   "The 2024 partial reform of art. 158 (casillero A) is read from the CNE's convocation (Registro Oficial, Supl. 508, 29 February 2024), which prints the annex approved by dictamen 7-22-RC/24, including the bracketed insertions '[a]' and 'límite[s]' exactly as printed. Its arts. 3 and 4 add two transitional provisions and a final provision 'after' the 2015 enmiendas' own provisions, which this record does not carry (see above); they are kept as units of their own (reforma-2024-disp-transitoria-02, -03, reforma-2024-disp-final).",
   "The 2024 annex for art. 86 prints numeral 2 up to 'normas de procedimiento [...]' and numeral 3 as '3. [...]' followed by the new second inciso: the elided parts (the colon and letters a) to e) of numeral 2, the first inciso of numeral 3) are kept unchanged.",
   "The 2024 referendum's approved questions take effect on the publication of the results (Supl. 554, 9 May 2024); the art. 158 reform's own Disposición final says the same.",
-  "A rejected referendum changes no words. It is a referendum law with a note, dated on the day of the vote and credited to the provisions its annexes would have changed: 2023 per the annexes printed with the CNE's convocation (Registro Oficial, Tercer Supl. 204, 7 December 2022); 2024 questions D and E per Decreto Ejecutivo 163 (art. 422 and art. 327); 2025 per Decretos Ejecutivos 147 (art. 5; the decree is printed as page images and was read by OCR only to identify the article), 149 (art. 110) and 173 (art. 118), and the consulta of Decreto 148 on a constituent assembly, which is the procedure of art. 444. The 2025 results are in Registro Oficial, Cuarto Supl. 177, 3 December 2025; the 2024 results in Supl. 554, 9 May 2024."
+  "A rejected referendum changes no words. It is a referendum law with a note, dated on the day of the vote and credited to the provisions its annexes would have changed: 2023 per the annexes printed with the CNE's convocation (Registro Oficial, Tercer Supl. 204, 7 December 2022); 2024 questions D and E per Decreto Ejecutivo 163 (art. 422 and art. 327); 2025 per Decretos Ejecutivos 147 (art. 5; the decree is printed as page images and was read by OCR only to identify the article), 149 (art. 110) and 173 (art. 118), and the consulta of Decreto 148 on a constituent assembly, which is the procedure of art. 444. The 2025 results are in Registro Oficial, Cuarto Supl. 177, 3 December 2025; the 2024 results in Supl. 554, 9 May 2024; the 2023 results in Supl. 264, 8 March 2023."
  ],
  "ai_use": [
   "No generative model wrote legal text. Parsing is rule-based (pymupdf text blocks). The amendment map in amendments.py (which provision each act replaces, and the anchors around its new text in the act's PDF) was written by an AI agent (Claude) from reading each act; the words themselves are cut from the PDFs.",

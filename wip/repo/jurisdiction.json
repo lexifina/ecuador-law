@@ -1,0 +1,10 @@
+{
+  "path": "ec",
+  "code": "EC",
+  "name": "Ecuador",
+  "level": "country",
+  "repo": "https://github.com/lexifina/ecuador-law",
+  "build": "constitution: 2008 text + 11 amending events (2011-2025), replayed from the Registro Oficial",
+  "register": "https://claude.ai/artifact/DdS9F6yqpPZtV2i7FGQhYZ",
+  "register_date": "2026-10-28"
+}

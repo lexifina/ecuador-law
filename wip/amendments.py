@@ -367,7 +367,8 @@ RO_204_2022 = H + "eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiMzNhOGE3YTYtNTIwNC00YmU4LWIyN
 RO_129_2025 = HS + "eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiY2U4ZmU4ZTItZDc3My00MjNkLTg3ZDEtNGFmYTc5ODMxMDViLnBkZiJ9"
 RO_139_2025 = HS + "eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiYmM1ZGRjMmItZmMyYS00ZDc1LWIxMjEtYzFiMGJiNTAyNDBjLnBkZiJ9"
 REF_2023_DAY = "2023-02-05"   # a rejected vote changes nothing: dated on the day of the vote
-REF_2023_URL = RO_204_2022  # the convocation with the eight annexes (results edition: see PROGRESS)
+RO_264_2023 = HS + "eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiNzhjYjM2YWQtNjQyOC00OWVhLTliOTktZWEwN2I3Y2M0YzI4LnBkZiJ9"
+REF_2023_URL = RO_264_2023  # CNE results, PLE-CNE-2-2-3-2023 (Supl. 264, 8-III-2023)
 RO_177_2025 = HS + "eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiNjcyMzI2ODQtMDBkYS00Njc1LWJhNGYtODJhNGMwMmFmNDUxLnBkZiJ9"
 
 
@@ -451,7 +452,7 @@ LAWS = {
         "label": "Referéndum de 2023 (rechazado)",
         "title": ("Referéndum del 5 de febrero de 2023 para enmendar la Constitución (Decreto Ejecutivo 607; ocho "
                   "preguntas, convocatoria PLE-CNE-1-6-12-2022)"),
-        "kind": "referendum", "enacted": "2023-02-05", "published": None, "url": RO_204_2022,
+        "kind": "referendum", "enacted": "2023-02-05", "published": "2023-03-08", "url": RO_264_2023,
         "note": ("The referendum of 5 February 2023 rejected all eight proposed amendments (arts. 74, 79, 109, 112, "
                  "118, 120, 181, 207 to 210 and 405); no words changed."),
     },
@@ -580,7 +581,8 @@ DECISIONS = [
     "163 (art. 422 and art. 327); 2025 per Decretos Ejecutivos 147 (art. 5; the decree is printed as page images and "
     "was read by OCR only to identify the article), 149 (art. 110) and 173 (art. 118), and the consulta of Decreto 148 "
     "on a constituent assembly, which is the procedure of art. 444. The 2025 results are in Registro Oficial, Cuarto "
-    "Supl. 177, 3 December 2025; the 2024 results in Supl. 554, 9 May 2024.",
+    "Supl. 177, 3 December 2025; the 2024 results in Supl. 554, 9 May 2024; the 2023 results in Supl. 264, 8 March "
+    "2023.",
 ]
 
 
