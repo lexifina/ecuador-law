@@ -1,0 +1,81 @@
+"""Locate the Registro Oficial editions that carry the COIP's amending acts and test whether each has a text layer.
+
+For each target (product, date, number) it lists that month's editions, downloads every edition of that number and
+day, and prints the title, page count, the share of pages with no text layer and the first page's sumario.
+
+    python -X utf8 coip/find_editions.py [TARGET ...]
+"""
+from __future__ import annotations
+
+import json
+import re
+import sys
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+sys.path.insert(0, str(HERE.parent))
+import fetch  # noqa: E402
+import ro_index  # noqa: E402
+
+# from the reading-only index (coip/index_notes.py) and the RO site search; product per ro_index.PRODUCTS
+TARGETS = {
+    "s180-2014": ("suplemento", "2014-02-10", 180),
+    "s224-2014": ("suplemento", "2014-04-11", 224),
+    "s246-2014": ("suplemento", "2014-05-15", 246),
+    "s332-2014": ("suplemento", "2014-09-12", 332),
+    "s506-2015": ("suplemento", "2015-05-22", 506),
+    "s598-2015": ("suplemento", "2015-09-30", 598),
+    "s615-2015": ("suplemento", "2015-10-26", 615),
+    "s711-2016": ("suplemento", "2016-03-14", 711),
+    "s802-2016": ("suplemento", "2016-07-21", 802),
+    "s175-2018": ("suplemento", "2018-02-05", 175),
+    "s181-2018": ("suplemento", "2018-02-15", 181),
+    "s478-2019": ("suplemento", "2019-04-30", 478),
+    "s481-2019": ("suplemento", "2019-05-06", 481),
+    "ec6-2019": ("constitucional", "2019-08-15", 6),
+    "s107-2019": ("suplemento", "2019-12-24", 107),
+    "ec95-2020": ("constitucional", "2020-11-18", 95),
+    "s386-2021": ("suplemento", "2021-02-05", 386),
+    "s392-2021": ("suplemento", "2021-02-17", 392),
+    "s452-2021": ("suplemento", "2021-05-14", 452),
+    "ec194-2021": ("constitucional", "2021-06-29", 194),
+    "s512-2021": ("suplemento", "2021-08-10", 512),
+    "s525-2021": ("suplemento", "2021-08-27", 525),
+    "s526-2021": ("suplemento", "2021-08-30", 526),
+    "ec222-2021": ("constitucional", "2021-10-13", 222),
+}
+OUT = HERE / "editions.json"
+
+
+def main(argv: list[str]) -> None:
+    import fitz
+    names = argv or list(TARGETS)
+    found = json.loads(OUT.read_text(encoding="utf-8")) if OUT.exists() else {}
+    for name in names:
+        prod, day, num = TARGETS[name]
+        y, m = int(day[:4]), int(day[5:7])
+        eds = [e for e in ro_index.editions(prod, y, m) if e["date"] == day and e["number"] == num]
+        if not eds:
+            print(f"== {name}: no {prod} {num} on {day}")
+            continue
+        rows = []
+        for e in eds:
+            p = fetch.get(e["pdf"], timeout=900)
+            if p is None:
+                print(f"== {name} {e['title']}: download failed {e['pdf']}")
+                continue
+            d = fitz.open(p)
+            sizes = [len(d[i].get_text().strip()) for i in range(len(d))]
+            empty = sum(1 for s in sizes if s < 200)
+            head = re.sub(r"\s+", " ", d[0].get_text())[:500]
+            rows.append({"title": e["title"], "pdf": e["pdf"], "pages": len(d), "no_text_pages": empty,
+                         "bytes": p.stat().st_size, "head": head})
+            print(f"== {name} | {e['title']} | {len(d)} p | no-text pages {empty} | {p.stat().st_size} B\n   {head[:300]}")
+        found[name] = rows
+        tmp = OUT.with_suffix(".tmp")
+        tmp.write_text(json.dumps(found, ensure_ascii=False, indent=1), encoding="utf-8", newline="\n")
+        tmp.replace(OUT)
+
+
+if __name__ == "__main__":
+    main(sys.argv[1:])

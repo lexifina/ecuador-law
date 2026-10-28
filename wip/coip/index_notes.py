@@ -24,7 +24,7 @@ CONSOLIDATION = "https://repositorio.consejodecomunicacion.gob.ec/bitstream/CONS
 NOTE = re.compile(r"\(((?:Reformad|Sustituid|Agregad|Derogad|Suprimid|Eliminad|Incorporad|Declarad|Inclu[ií]d|"
                   r"Renumerad|Interpretad|Modificad)[^()]{0,400}?(?:R\.\s*O\.|Registro Oficial|E\.\s*C\.)[^()]{0,120})\)",
                   re.S)
-REF = re.compile(r"((?:R\.\s*O\.|E\.\s*C\.)\s*[\w.\-]+(?:\s*-\s*[A-Z0-9]+)?\s*,\s*\d{1,2}-[IVX]+-\d{4})")
+REF = re.compile(r"((?:R\.\s*O\.|E\.\s*C\.)\s*(?:E\.\s*C\.\s*)?\d+(?:\s*-\s*\d?[A-Z]+)?\s*,\s*\d{1,2}\s*-\s*[IVX]+\s*-\s*\d{4})")
 ART = re.compile(r"^\s*Art\.\s*([\d.]+(?:\s*(?:bis|ter|\.\d+))?)\s*\.?-", re.M)
 
 
@@ -36,7 +36,7 @@ def notes() -> list[tuple[str, str, str]]:
     out = []
     for m in NOTE.finditer(text):
         art = next((a for s, a in reversed(pos) if s < m.start()), "?")
-        body = re.sub(r"\s+", " ", m.group(1))
+        body = re.sub(r"\s+", " ", re.sub(r"Página \d+ de \d+", " ", m.group(1)))
         refs = REF.findall(body) or ["?"]
         for r in refs:
             out.append((art, re.sub(r"\s+", "", r), body))
