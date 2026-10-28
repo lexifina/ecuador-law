@@ -30,5 +30,11 @@
    "https://www.defensa.gob.ec/wp-content/uploads/downloads/2021/02/Constitucion-de-la-Republica-del-Ecuador_act_ene-2021.pdf"
   ],
   "what": "Lexis Finder consolidation (reading only, reconcile.py)"
+ },
+ "default-rule": {
+  "urls": [
+   "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiYzMwNzA4MTgtYTg5NC00OTA3LWFmNGItZTI3NDZlNmQxODJlLnBkZiJ9"
+  ],
+  "what": "Codificación del Código Civil, RO Supl. 46, 24-VI-2005 (art. 6, default in-force rule)"
  }
 }

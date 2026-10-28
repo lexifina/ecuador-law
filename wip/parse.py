@@ -159,10 +159,13 @@ COUNTRY = {
     "future_branch": "futuro",
     "publisher": {"name": "Registro Oficial del Ecuador", "email": "registro@registroficial.invalid"},
     "default_in_force_rule": {
-        "text": ("Código Civil art. 6: a law is binding from its promulgation in the Registro Oficial, unless the "
-                 "law itself sets another day. The Constitution's own Disposición final puts it in force on its "
-                 "publication in the Registro Oficial."),
-        "source": RO449,
+        "text": ("Código Civil (codificación 2005) art. 6: \"La ley entrará en vigencia a partir de su promulgación en "
+                 "el Registro Oficial y por ende será obligatoria y se entenderá conocida de todos desde entonces. "
+                 "Podrá sin embargo, en la misma ley, designarse un plazo especial para su vigencia a partir de su "
+                 "promulgación.\" The Constitution's own Disposición final puts it in force on its publication in "
+                 "the Registro Oficial."),
+        "source": ("http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/"
+                   "eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiYzMwNzA4MTgtYTg5NC00OTA3LWFmNGItZTI3NDZlNmQxODJlLnBkZiJ9"),
     },
     "licence_note": ("Texto oficial: Registro Oficial del Ecuador (www.registroficial.gob.ec), órgano de la "
                      "Corte Constitucional."),
