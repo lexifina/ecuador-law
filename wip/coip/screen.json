@@ -118,5 +118,41 @@
   "mentions": 0,
   "snippets": [],
   "bytes": 4925953
+ },
+ "https://www.asambleanacional.gob.ec/es/system/files/ro_30.pdf": {
+  "n": "32",
+  "title": "Ley Orgánica de Gobernanza del Espacio Marino-Costero",
+  "ro": "R.O. No. 329, Cuarto Suplemento, de 20-07-2026",
+  "date": "2026-07-20",
+  "pdf": "https://www.asambleanacional.gob.ec/es/system/files/ro_30.pdf",
+  "pages": 25,
+  "no_text_pages": 22,
+  "mentions": 0,
+  "snippets": [],
+  "bytes": 11104180
+ },
+ "https://www.asambleanacional.gob.ec/es/system/files/ro_borbon.pdf": {
+  "n": "31",
+  "title": "Ley para la creación del cantón Borbón en la provincia de Esmeraldas",
+  "ro": "R.O. No. 323, Quinto Suplemento, de 10-07-2026",
+  "date": "2026-07-10",
+  "pdf": "https://www.asambleanacional.gob.ec/es/system/files/ro_borbon.pdf",
+  "pages": 27,
+  "no_text_pages": 23,
+  "mentions": 0,
+  "snippets": [],
+  "bytes": 3310009
+ },
+ "https://www.asambleanacional.gob.ec/es/system/files/ro_logtus.pdf": {
+  "n": "30",
+  "title": "Ley Orgánica Reformatoria a la Ley Orgánica de Ordenamiento Territorial, Uso y Gestión del Suelo",
+  "ro": "R.O. No. 320, Cuarto Suplemento, de 07-07-2026",
+  "date": "2026-07-07",
+  "pdf": "https://www.asambleanacional.gob.ec/es/system/files/ro_logtus.pdf",
+  "pages": 53,
+  "no_text_pages": 49,
+  "mentions": 0,
+  "snippets": [],
+  "bytes": 58290170
  }
 }
