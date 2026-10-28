@@ -16,7 +16,8 @@ import rotext  # noqa: E402
 
 RO46_2005 = ("http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/"
              "eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiYzMwNzA4MTgtYTg5NC00OTA3LWFmNGItZTI3NDZlNmQxODJlLnBkZiJ9")
-HEAD = re.compile(r"^(LIBRO|T[IÍ]TULO|Par[aá]grafo|PAR[AÁ]GRAFO|Cap[ií]tulo|CAP[IÍ]TULO|Secci[oó]n|SECCI[OÓ]N)\b")
+HEAD = re.compile(r"^(LIBRO|T[IÍ]TULO|Par[aá]grafo|PAR[AÁ]GRAFO|Cap[ií]tulo|CAP[IÍ]TULO|Secci[oó]n|SECCI[OÓ]N)\b"
+                  r"|^[IVX]+( [A-ZÁÉÍÓÚ].*)?$")  # also the numbered sub-headings "II", "II Reglas relativas a ..."
 ART = re.compile(r"^Art\.\s*(\d+)\s*\.?\s*-")
 
 
@@ -53,10 +54,17 @@ def units_from_paragraphs(ps: list[str]) -> dict:
             break
         elif HEAD.match(p) or (in_head and cur is not None):
             in_head = True
-            heads.extend(x.strip() for x in re.split(r"\s+(?=Par[aá]grafo \d+o\.$)", p))
+            for x in re.split(r"\s+(?=Par[aá]grafo \d+o\.$)|\s+(?=[IVX]+ Reglas )", p):
+                # a sub-heading numeral set in the next text block ("Del depósito necesario" + "I")
+                m2 = re.fullmatch(r"(?!LIBRO|T[IÍ]TULO)(.+?) ([IVX]+)", x.strip())
+                heads.extend([m2.group(1), m2.group(2)] if m2 else [x.strip()])
             continue
         elif cur is None:
             heads.append(p)  # the heading lines before art. 1
+            continue
+        if re.search(r"\bArts?\.\n$", units[cur]["text"]) and re.match(r"\d", p):
+            # a column break right after "Art." (arts. 845 and 907): the number belongs to the same sentence
+            units[cur]["text"] = units[cur]["text"][:-1] + " " + p + "\n"
             continue
         units[cur]["text"] += p + "\n"
     if expect != 2425:
