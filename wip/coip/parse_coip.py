@@ -112,7 +112,7 @@ def sources(act: dict) -> list[dict]:
          "notes": "Index of amending acts from May to August 2026 (coip/index_el2026.py --andina)."},
         {"name": "Asamblea Nacional, leyes aprobadas (published in the Registro Oficial)",
          "url": "https://www.asambleanacional.gob.ec/es/leyes-aprobadas", "retrieved": RETRIEVED,
-         "requests": 6 + len(screened()),
+         "requests": 8 + len(screened()),
          "licence": "No licence stated; official site.",
          "notes": "List of laws with their Registro Oficial references (coip/index_asamblea.py); each law's edition "
                   "from 2023 on (the Asamblea's copy, the same bytes as the Registro Oficial's) was searched in its "

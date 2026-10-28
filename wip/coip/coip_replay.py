@@ -1018,7 +1018,7 @@ DECISIONS: list[str] = [
     "COIP, acts of 2023 to 2026: indexed from the editorial notes of the Ediciones Legales consolidation of 2026 "
     "(aduana.gob.ec copy, last reform 29-IV-2026; coip/index_el2026.py) and of the Andina Ediciones compilation "
     "updated to 24-VIII-2026 (legalcloud.ec copy), both read only, and from the Asamblea Nacional's list of laws "
-    "published in the Registro Oficial (coip/index_asamblea.py): every law on that list from 2023 to 19-X-2026 was "
+    "published in the Registro Oficial (coip/index_asamblea.py; decree-laws are not on it): every law on that list from 2023 to 19-X-2026 was "
     "downloaded and its text layer searched for the Code (coip/screen_laws.py, coip/screen.json). That search found "
     "one reform no index named (Ley Orgánica para el Fortalecimiento de la Ciberseguridad, 2026, art. 232). Coverage: "
     "acts published to 7-VIII-2026 as indexed; laws published from 25-VIII-2026 to 28-X-2026 whose editions are page "
