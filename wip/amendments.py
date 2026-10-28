@@ -286,78 +286,8 @@ def referendo_2018(u: Units) -> None:
     u.insert_after("art-407", None, s.grab("Se prohíbe todo tipo de minería metálica", "centros urbanos y zonas intangibles"))
 
 
-# ---------------------------------------------------------------- image-only gazette pages (OCR)
-
-# Word corrections applied to the raw OCR (ocr_pages.json). The en-US engine reads ó as ö, á as ä or å, ú as ü,
-# drops í, and misreads a few letters; each correction below was checked against the page image.
-OCR_FIXES = {
-    "ro377-2021": {"nümero": "número", "kilömetros": "kilómetros", "vias": "vías", "jurisdicciön": "jurisdicción",
-                   "autönomo": "autónomo"},
-    "ro568-2024": {"Articulo": "Artículo", "Repüblica": "República", "podrä": "podrá", "podrå": "podrá", "ano": "año",
-                   "lafecha": "la fecha", "objeciön": "objeción", "Io": "lo", "enviarä": "enviará",
-                   "OJicial": "Oficial", "Ojicial": "Oficial", "publicaciön": "publicación",
-                   "presentarå": "presentará", "restricciön": "restricción", "observarå": "observará",
-                   "aprobaciön": "aprobación", "sugeHdas": "sugeridas", "examinarä": "examinará", "dias": "días",
-                   "mayoria": "mayoría", "sesiön": "sesión", "Asambleä": "Asamblea", "senalado": "señalado",
-                   "entenderä": "entenderá", "Ia": "la", "dispondrå": "dispondrá", "promulgaciön": "promulgación",
-                   "objeciönfuera": "objeción fuera", "resolverä": "resolverá",
-                   # the page prints 'absoluta".' with a stray closing quote; OCR dropped both marks
-                   "absoluta": "absoluta."},
-}
-# words of the new text that the 2008 Constitution never uses (checked against the page image)
-OCR_NEW_WORDS = {"kilómetros", "planificados", "proyectados", "vías", "rurales"}
-
-
-class Ocr:
-    def __init__(self, name: str):
-        import ocr_pages
-        d = ocr_pages.load()[name]
-        self.name, self.url = name, d["url"]
-        self.lines = [ln for p in sorted(d["pages"], key=int) for ln in d["pages"][p].split("\n")
-                      if not rotext.HEADER.match(rotext.norm(ln)) and not re.fullmatch(r"\s*\d{1,3}\s*", ln)]
-
-    def grab(self, start: str, end: str, breaks: list[str], vocab: set[str]) -> list[str]:
-        """Lines from `start` through `end` (raw OCR anchors), corrected word by word, split before `breaks`."""
-        i = next(k for k, ln in enumerate(self.lines) if start in ln)
-        j = next(k for k in range(i, len(self.lines)) if end in self.lines[k])
-        text = " ".join(self.lines[i:j + 1])
-        a = text.index(start)
-        text = text[a:text.index(end, a) + len(end)]
-        fixes = OCR_FIXES[self.name]
-        text = re.sub(r"[^\W\d_]+", lambda m: fixes.get(m.group(0), m.group(0)), text.replace('"', " "))
-        text = re.sub(r"\s+", " ", text).strip()
-        for w in re.findall(r"[A-Za-zÁÉÍÓÚáéíóúñÑüÜäöå]+", text):
-            if not re.fullmatch(r"[A-Za-zÁÉÍÓÚáéíóúñÑ]+", w):
-                raise SystemExit(f"OCR word not corrected: {w!r}")
-            if w.lower() not in vocab and w.lower() not in OCR_NEW_WORDS:
-                raise SystemExit(f"OCR word not in the 2008 text nor listed: {w!r}")
-        for b in breaks:
-            if b not in text:
-                raise SystemExit(f"paragraph break anchor not found: {b!r}")
-            text = text.replace(" " + b, "\n" + b, 1)
-        return text.split("\n")
-
-
-def vocabulary(units: dict) -> set[str]:
-    return {w.lower() for u in units.values() for w in re.findall(r"[A-Za-zÁÉÍÓÚáéíóúñÑüÜ]+", u["text"])}
-
-
-VOCAB: set[str] = set()
-
-
-def enmienda_2021(u: Units) -> None:
-    o = Ocr("ro377-2021")
-    new = o.grab('"4. El nümero', 'provincial"', [], VOCAB)
-    new[-1] += "."  # printed 'provincial".': the full stop after the quote closes the numeral (see decisions)
-    u.insert_after("art-272", "3. ", new)
-
-
-def enmienda_2024(u: Units) -> None:
-    o = Ocr("ro568-2024")
-    new = o.grab('"Articulo 138.-', 'por inconstitucionalidad. "',
-                 ["Si la objeción fuera parcial", "La Asamblea examinará", "En ambos casos",
-                  "Si la objeción fuera también"], VOCAB)
-    u.set_unit("art-138", new)
+# The enmiendas of 2021 (art. 272) and 2024 (art. 138) are printed in the Registro Oficial only as page images
+# and are not replayed: see DECISIONS. No OCR text is used as legal text.
 
 
 RO_498_2024 = H + "eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiNDU4YzhmYjEtODY5NC00ZmQ2LThkMmQtYWYwOWViNzA5NzQ0LnBkZiJ9"
@@ -442,12 +372,6 @@ LAWS = {
         "kind": "court", "enacted": "2018-08-01", "published": "2019-04-30", "url": RO_EC79_2019,
         "restores": "enmiendas-2015",
     },
-    "enmienda-2021": {
-        "label": "Enmienda de 2021 (art. 272)",
-        "title": "Enmienda a la Constitución de la República del Ecuador (Asamblea Nacional, 17 de enero de 2021): "
-                 "art. 272, numeral 4",
-        "kind": "law", "enacted": "2021-01-17", "published": "2021-01-25", "url": RO_377_2021,
-    },
     "referendo-2023": {
         "label": "Referéndum de 2023 (rechazado)",
         "title": ("Referéndum del 5 de febrero de 2023 para enmendar la Constitución (Decreto Ejecutivo 607; ocho "
@@ -475,12 +399,6 @@ LAWS = {
         "note": ("The referendum of 21 April 2024 rejected questions D (international arbitration, art. 422) and E "
                  "(fixed-term and hourly work, art. 327); no words changed."),
     },
-    "enmienda-2024": {
-        "label": "Enmienda de 2024 (art. 138)",
-        "title": ("Enmienda a la Constitución de la República del Ecuador que sustituye el art. 138 (Asamblea Nacional, "
-                  "30 de mayo de 2024; dictamen 4-20-RC/20)"),
-        "kind": "law", "enacted": "2024-05-30", "published": "2024-05-30", "url": RO_568_2024,
-    },
     "referendo-2025": {
         "label": "Referéndum y consulta popular de 2025 (rechazados)",
         "title": ("Referéndum y Consulta Popular del 16 de noviembre de 2025 (Decretos Ejecutivos 147, 148 y 149, RO "
@@ -499,13 +417,11 @@ STEPS = [
     ("enmiendas-2015", "2017-05-24", lambda u: enmiendas_2015(u, "b"), RO_653_2015),
     ("referendo-2018", "2018-02-14", referendo_2018, RO_133_2017),
     ("cc-018-18-sin-cc", "2018-08-02", None, None),
-    ("enmienda-2021", "2021-01-25", enmienda_2021, RO_377_2021),
     ("referendo-2023", REF_2023_DAY, ["art-074", "art-079", "art-109", "art-112", "art-118", "art-120", "art-181",
                                       "art-207", "art-208", "art-209", "art-210", "art-405"], REF_2023_URL),
     ("referendo-2024-rechazos", "2024-04-21", ["art-327", "art-422"], RO_554_2024),
     ("reforma-parcial-2024", "2024-05-09", reforma_158_2024, RO_508_2024),
     ("referendo-2024", "2024-05-09", referendo_2024, RO_498_2024),
-    ("enmienda-2024", "2024-05-30", enmienda_2024, RO_568_2024),
     ("referendo-2025", "2025-11-16", ["art-005", "art-110", "art-118", "art-444"], RO_177_2025),
 ]
 
@@ -520,13 +436,9 @@ NOTES = {
                    "Constitucional 79, 30 April 2019). The court's auto of 17 April 2019 says the declaration took effect "
                    "on notification, so the 2015 wording fell and the earlier text came back, except arts. 114 and 144, "
                    "already replaced by the 2018 referendum."),
-    "2021-01-25": ("Registro Oficial, Tercer Suplemento 377, lunes 25 de enero de 2021 (in force on publication by its "
-                   "Disposición final). The page carrying the text is an image; its words were read by OCR."),
     "2024-05-09": ("Registro Oficial, Suplemento 554, 9 de mayo de 2024: results of the referéndum of 21 April 2024. "
                    "Wording: art. 158 reform as convoked by the CNE (Supl. 508, 29-II-2024); arts. 79 and 86 from the "
                    "annexes of Decreto Ejecutivo 163 (Segundo Supl. 498, 15-II-2024)."),
-    "2024-05-30": ("Registro Oficial, Tercer Suplemento 568, 30 de mayo de 2024 (in force on publication by its "
-                   "Disposición final). The pages carrying the text are images; their words were read by OCR."),
 }
 
 DECISIONS = [
@@ -556,15 +468,13 @@ DECISIONS = [
     "Interpretative rulings of the Corte Constitucional (which change no words) and a commercial consolidation's "
     "editorial replacement of 'imputado' by 'procesado' (from the Código Orgánico Integral Penal, which cannot amend "
     "the Constitution) are not commits.",
-    "The enmiendas of 2021 (art. 272, numeral 4) and 2024 (art. 138) are printed in the Registro Oficial only as page "
-    "images. Their words come from machine OCR of those pages (ocr_pages.py, raw output kept in ocr_data.py) with "
-    "the word corrections listed in amendments.OCR_FIXES (the engine had no Spanish model and drops or swaps "
-    "accents); every resulting word is either used in the 2008 text or listed in OCR_NEW_WORDS, and the result was "
-    "compared with the page images. Paragraph breaks follow the printed spacing. The 2024 art. 138 differs from the "
-    "2008 text only in the heading 'Artículo 138.-' and in 'con el voto de su mayoría absoluta', which corroborates "
-    "the OCR. The page prints 'absoluta\".' with a stray closing quote inside the quotation; the quote is dropped and "
-    "the full stop kept.",
-    "The 2021 enmienda is dated 25 January 2021, as its own masthead says (the portal's month listing says 26 January).",
+    "Not possible: the enmienda of 2021 (art. 272, new numeral 4; Registro Oficial, Tercer Suplemento 377, 25 "
+    "January 2021) and the enmienda of 2024 (art. 138, partial veto; Tercer Suplemento 568, 30 May 2024) are "
+    "printed in the Registro Oficial only as page images, with no text layer, and no machine-readable official "
+    "copy was found (Corte Constitucional, Asamblea Nacional, later Registro Oficial editions, official "
+    "consolidations). Text is never transcribed by OCR or by a model, so neither is replayed: from those dates "
+    "this record still shows the earlier wording of art. 272 (three numerals) and art. 138 (ratification by two "
+    "thirds), which is NOT the law in force.",
     "The 2024 partial reform of art. 158 (casillero A) is read from the CNE's convocation (Registro Oficial, Supl. 508, "
     "29 February 2024), which prints the annex approved by dictamen 7-22-RC/24, including the bracketed insertions "
     "'[a]' and 'límite[s]' exactly as printed. Its arts. 3 and 4 add two transitional provisions and a final provision "
@@ -609,7 +519,6 @@ def apply_all(versions: list[dict], laws: dict) -> None:
         laws[key] = {"label": law["label"], "title": law["title"], "kind": law["kind"], "enacted": law["enacted"],
                      "published": law["published"], "url": law["url"], "temporary_until": None,
                      "restores": law.get("restores"), "note": law.get("note")}
-    VOCAB.update(vocabulary(versions[0]["units"]))
     for law, day, edit, src in STEPS:
         prev = versions[-1]
         same_day = prev["from"] == day and len(versions) > 1

@@ -1,7 +1,7 @@
 """Prints the law of Ecuador as it stood on a given day, read from this repository's history.
 
-    python tools/vigente_el.py 2024-05-29 constitucion art-138   # art. 138 the day before the 2024 enmienda
-    python tools/vigente_el.py 2024-05-30 constitucion 138       # the same article, by number, as amended
+    python tools/vigente_el.py 2018-02-13 constitucion art-114   # art. 114 the day before the 2018 referendum
+    python tools/vigente_el.py 2018-02-14 constitucion 114       # the same article, by number, as amended
     python tools/vigente_el.py 2010-01-01 constitucion           # the whole Constitution on 1 January 2010
     python tools/vigente_el.py --law 2020-01-01 constitucion 158 # also name the law behind that wording
 

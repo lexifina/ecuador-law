@@ -22,11 +22,9 @@ Its history, all read from the Registro Oficial:
 | 2017-05-24 | Enmiendas de 2015 | Arts. 114 and 144 (indefinite re-election), deferred to this day by the enmiendas themselves |
 | 2018-02-14 | Referéndum de 2018 | Arts. 46, 112, 114, 144, 205, 207, 233, 407; general provisions 1 and 2 |
 | 2018-08-02 | Sentencia 018-18-SIN-CC | Struck down the 2015 enmiendas for their procedure: the earlier text returns (court ruling, `Restores:`) |
-| 2021-01-25 | Enmienda de 2021 | Art. 272, numeral 4 |
 | 2023-02-05 | Referéndum de 2023 | All eight proposals rejected: no words changed |
 | 2024-04-21 | Referéndum de 2024, questions D and E | Rejected: no words changed (arts. 327, 422) |
 | 2024-05-09 | Reforma parcial and Referéndum de 2024 | Arts. 79, 86, 158; general provision 3; the reform's own transitional and final provisions |
-| 2024-05-30 | Enmienda de 2024 | Art. 138 (presidential veto) |
 | 2025-11-16 | Referéndum y consulta popular de 2025 | All four questions rejected: no words changed (arts. 5, 110, 118, 444) |
 
 More acts follow as their history can be shown from official text; see "What it does not show".
@@ -64,7 +62,7 @@ After a rebuild, refresh tags with `git fetch --force --tags`: a plain fetch kee
 - Health checks: no merge commits on `main`, commit dates never go backwards, nothing dated in the future, and every commit's trailers parse with `git interpret-trailers --parse`.
 - **No official consolidated text exists.** The Registro Oficial publishes the gazette editions only. The history is a replay: the 2008 text from Registro Oficial No. 449, then each amending act, ruling and referendum read from its own edition, applying exactly the edits it states. Replacement wording is cut from the act's PDF between two anchors, and every shorter inserted phrase is checked to occur word for word in that PDF.
 - The replay was reconciled, for reading only, with a commercial consolidation (Lexis Finder, last amendment 25 January 2021, as republished by the Ministerio de Defensa): on that day 430 of the 444 articles have exactly the same words. The 14 others differ only where the consolidation corrected the gazette's spelling ("ei" for "el" in arts. 11 and 73, "étnia", "periodo", "unicamente", "unica", "valida"), which this record keeps as the gazette printed it, or where the consolidation's notes break its article boundaries (arts. 146, 148, 208, 313, 379, whose words match in full). No text was copied from it.
-- Two enmiendas (2021, art. 272; 2024, art. 138) are printed in the Registro Oficial only as page images. Their words were read by OCR, corrected word by word against the page images (each correction listed in `tools/amendments.py`), and checked against the vocabulary of the 2008 text. The new art. 138 differs from the old only where the enmienda says it does, which corroborates the reading.
+- Two enmiendas (2021, art. 272; 2024, art. 138) are printed in the Registro Oficial only as page images and are not in this record; see "What it does not show".
 
 ## What "author" means
 
@@ -74,6 +72,7 @@ Blame credits whole lines (one paragraph per line). Use `git log -p --word-diff`
 
 ## What it does not show
 
+- **Not possible: two enmiendas in force are missing.** The enmienda of 2021 (art. 272, new numeral 4 on rural roads; Registro Oficial, Tercer Suplemento 377, 25 January 2021) and the enmienda of 2024 (art. 138, partial veto, ratification by absolute majority; Tercer Suplemento 568, 30 May 2024) are printed in the Registro Oficial only as page images, and no machine-readable official copy was found. Their words are never transcribed by OCR or by a model, so this record does not carry them: **from 25 January 2021 art. 272 and from 30 May 2024 art. 138 here show the earlier wording, which is not the law in force.** Read those two articles in the Registro Oficial editions named above.
 - **Only the Constitution so far.** Other acts (the Código Civil, the data protection law) need the same replay from the gazette, act by act; they are added only when every version can be shown from the Registro Oficial.
 - **Spelling is the gazette's.** Where the Registro Oficial printed a typo ("ei", "Ileva"), the record keeps it.
 - **Court rulings that interpret** the Constitution without striking words (several since 2009) are not commits.
@@ -85,7 +84,7 @@ Blame credits whole lines (one paragraph per line). Use `git log -p --word-diff`
 
 `tools/fetch.py` downloads every gazette edition once through curl (one request per second, cached by the sha256 of the URL), `tools/parse.py` with `tools/rotext.py` and `tools/amendments.py` turns the cache into `corpus.json`, and the shared builder `tools/build.py` writes the history with `git fast-import`. The same corpus always gives the same hashes. `REPRODUCE.md` records every command, tool version, data hash and decision, and the result of a hash-for-hash rebuild.
 
-No generative AI model wrote legal text. Claude Opus 5.5 wrote the scripts, chose the sources and wrote the map of which provision each act changes; OCR read three image-only pages; see `REPRODUCE.md`.
+No generative AI model wrote legal text. Claude Opus 5.5 wrote the scripts, chose the sources and wrote the map of which provision each act changes. No OCR output is legal text here; see `REPRODUCE.md`.
 
 ## Sources
 
@@ -106,8 +105,9 @@ This repository is not legal advice and not an official publication.
 
 ## En español
 
-Historia del derecho ecuatoriano en git: un archivo por disposición y un commit por ley, fechado el día de su entrada en vigencia y firmado por la ley, sentencia o referéndum que hizo el cambio (`git blame` nombra la norma de cada párrafo). Contiene la Constitución de la República de 2008 tal como se publicó en el Registro Oficial No. 449 (20 de octubre de 2008) y todas sus modificaciones: el referéndum de 2011, las enmiendas de 2015 (y su caída por la sentencia 018-18-SIN-CC), el referéndum de 2018, las enmiendas de 2021 (art. 272) y 2024 (art. 138), la reforma parcial y el referéndum de 2024; los referéndums rechazados de 2023, 2024 (preguntas D y E) y 2025 constan como commits sin cambio de texto.
+Historia del derecho ecuatoriano en git: un archivo por disposición y un commit por ley, fechado el día de su entrada en vigencia y firmado por la ley, sentencia o referéndum que hizo el cambio (`git blame` nombra la norma de cada párrafo). Contiene la Constitución de la República de 2008 tal como se publicó en el Registro Oficial No. 449 (20 de octubre de 2008) y todas sus modificaciones: el referéndum de 2011, las enmiendas de 2015 (y su caída por la sentencia 018-18-SIN-CC), el referéndum de 2018, la reforma parcial y el referéndum de 2024; los referéndums rechazados de 2023, 2024 (preguntas D y E) y 2025 constan como commits sin cambio de texto.
 
 - Texto vigente en una fecha: `python tools/vigente_el.py 2017-01-01 constitucion 158`
 - Regla supletoria de vigencia: la ley rige desde su promulgación en el Registro Oficial, salvo que ella disponga otra cosa (Código Civil, art. 6).
-- Fuente: Registro Oficial. No existe una codificación oficial actualizada; cada versión se reconstruye aplicando el texto de cada norma modificatoria publicado en el Registro Oficial. Ningún modelo de IA generativa escribió texto legal; dos enmiendas impresas solo como imagen se leyeron por OCR y se corrigieron palabra por palabra contra la imagen.
+- Fuente: Registro Oficial. No existe una codificación oficial actualizada; cada versión se reconstruye aplicando el texto de cada norma modificatoria publicado en el Registro Oficial. Ningún modelo de IA generativa escribió texto legal y no se usa texto obtenido por OCR.
+- No fue posible: las enmiendas de 2021 (art. 272, numeral 4; Tercer Suplemento 377, 25-I-2021) y de 2024 (art. 138; Tercer Suplemento 568, 30-V-2024) se publicaron solo como imagen y no se halló copia oficial legible por máquina; desde esas fechas este registro muestra el texto anterior de esos dos artículos, que no es el vigente.

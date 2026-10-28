@@ -9,8 +9,8 @@ which are public.
 Changes made by Lexifina: each gazette edition was converted to one Markdown file per provision, one paragraph per
 line; spacing, quotes and dashes were normalised; and the versions were arranged as git commits credited to the laws,
 rulings and referendums that made each change. The wording of the law was not changed. Where a later version was
-rebuilt from an amending act, the text comes from that act as the Registro Oficial printed it; two acts printed only as
-page images were read by OCR and corrected word by word against the images. The Registro Oficial does not endorse
+rebuilt from an amending act, the text comes from that act as the Registro Oficial printed it (its text layer;
+no OCR). The Registro Oficial does not endorse
 this repository.
 
 Lexifina's own contributions (the arrangement of the history, the commit messages, the tables and the tools) are
