@@ -286,6 +286,131 @@ def referendo_2018(u: Units) -> None:
     u.insert_after("art-407", None, s.grab("Se prohíbe todo tipo de minería metálica", "centros urbanos y zonas intangibles"))
 
 
+# ---------------------------------------------------------------- image-only gazette pages (OCR)
+
+# Word corrections applied to the raw OCR (ocr_pages.json). The en-US engine reads ó as ö, á as ä or å, ú as ü,
+# drops í, and misreads a few letters; each correction below was checked against the page image.
+OCR_FIXES = {
+    "ro377-2021": {"nümero": "número", "kilömetros": "kilómetros", "vias": "vías", "jurisdicciön": "jurisdicción",
+                   "autönomo": "autónomo"},
+    "ro568-2024": {"Articulo": "Artículo", "Repüblica": "República", "podrä": "podrá", "podrå": "podrá", "ano": "año",
+                   "lafecha": "la fecha", "objeciön": "objeción", "Io": "lo", "enviarä": "enviará",
+                   "OJicial": "Oficial", "Ojicial": "Oficial", "publicaciön": "publicación",
+                   "presentarå": "presentará", "restricciön": "restricción", "observarå": "observará",
+                   "aprobaciön": "aprobación", "sugeHdas": "sugeridas", "examinarä": "examinará", "dias": "días",
+                   "mayoria": "mayoría", "sesiön": "sesión", "Asambleä": "Asamblea", "senalado": "señalado",
+                   "entenderä": "entenderá", "Ia": "la", "dispondrå": "dispondrá", "promulgaciön": "promulgación",
+                   "objeciönfuera": "objeción fuera", "resolverä": "resolverá",
+                   # the page prints 'absoluta".' with a stray closing quote; OCR dropped both marks
+                   "absoluta": "absoluta."},
+}
+# words of the new text that the 2008 Constitution never uses (checked against the page image)
+OCR_NEW_WORDS = {"kilómetros", "planificados", "proyectados", "vías", "rurales"}
+
+
+class Ocr:
+    def __init__(self, name: str):
+        import ocr_pages
+        d = ocr_pages.load()[name]
+        self.name, self.url = name, d["url"]
+        self.lines = [ln for p in sorted(d["pages"], key=int) for ln in d["pages"][p].split("\n")]
+
+    def grab(self, start: str, end: str, breaks: list[str], vocab: set[str]) -> list[str]:
+        """Lines from `start` through `end` (raw OCR anchors), corrected word by word, split before `breaks`."""
+        i = next(k for k, ln in enumerate(self.lines) if start in ln)
+        j = next(k for k in range(i, len(self.lines)) if end in self.lines[k])
+        text = " ".join(self.lines[i:j + 1])
+        a = text.index(start)
+        text = text[a:text.index(end, a) + len(end)]
+        fixes = OCR_FIXES[self.name]
+        words = [fixes.get(w, w) for w in text.replace('"', " ").split()]
+        text = re.sub(r"\s+", " ", " ".join(words)).strip()
+        for w in re.findall(r"[A-Za-zÁÉÍÓÚáéíóúñÑüÜäöå]+", text):
+            if not re.fullmatch(r"[A-Za-zÁÉÍÓÚáéíóúñÑ]+", w):
+                raise SystemExit(f"OCR word not corrected: {w!r}")
+            if w.lower() not in vocab and w.lower() not in OCR_NEW_WORDS:
+                raise SystemExit(f"OCR word not in the 2008 text nor listed: {w!r}")
+        for b in breaks:
+            if b not in text:
+                raise SystemExit(f"paragraph break anchor not found: {b!r}")
+            text = text.replace(" " + b, "\n" + b, 1)
+        return text.split("\n")
+
+
+def vocabulary(units: dict) -> set[str]:
+    return {w.lower() for u in units.values() for w in re.findall(r"[A-Za-zÁÉÍÓÚáéíóúñÑüÜ]+", u["text"])}
+
+
+VOCAB: set[str] = set()
+
+
+def enmienda_2021(u: Units) -> None:
+    o = Ocr("ro377-2021")
+    new = o.grab('"4. El nümero', 'provincial"', [], VOCAB)
+    new[-1] += "."  # printed 'provincial".': the full stop after the quote closes the numeral (see decisions)
+    u.insert_after("art-272", "3. ", new)
+
+
+def enmienda_2024(u: Units) -> None:
+    o = Ocr("ro568-2024")
+    new = o.grab('"Articulo 138.-', 'por inconstitucionalidad. "',
+                 ["Si la objeción fuera parcial", "La Asamblea examinará", "En ambos casos",
+                  "Si la objeción fuera también"], VOCAB)
+    u.set_unit("art-138", new)
+
+
+RO_498_2024 = H + "eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiNDU4YzhmYjEtODY5NC00ZmQ2LThkMmQtYWYwOWViNzA5NzQ0LnBkZiJ9"
+RO_508_2024 = H + "eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiM2NkZjMwNGMtMGU4Ny00YThjLThlYzQtNmMzY2RiMTdkODYyLnBkZiJ9"
+RO_554_2024 = H + "eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiMjQwYWI5MTQtMWVmOS00NTg5LWIzOTctY2M5MTA0NDAxZTcxLnBkZiJ9"
+RO_204_2022 = H + "eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiMzNhOGE3YTYtNTIwNC00YmU4LWIyNWMtN2Y0MmJjMDdmMDFkLnBkZiJ9"
+RO_129_2025 = HS + "eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiY2U4ZmU4ZTItZDc3My00MjNkLTg3ZDEtNGFmYTc5ODMxMDViLnBkZiJ9"
+RO_139_2025 = HS + "eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiYmM1ZGRjMmItZmMyYS00ZDc1LWIxMjEtYzFiMGJiNTAyNDBjLnBkZiJ9"
+RO_177_2025 = HS + "eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiNjcyMzI2ODQtMDBkYS00Njc1LWJhNGYtODJhNGMwMmFmNDUxLnBkZiJ9"
+
+
+def reforma_158_2024(u: Units) -> None:
+    s = Src(RO_508_2024)  # the annex as convoked by the CNE (PLE-CNE, RO Supl. 508, 29-II-2024)
+    s.check("Artículo 1.- Refórmese el texto del artículo 158 añadiendo, después del segundo inciso, lo siguiente:",
+            "Artículo 2.- Añádase a continuación de la disposición general segunda de la Constitución de la "
+            "República del Ecuador, la siguiente disposición:",
+            "Artículo 3.- Añádase a continuación de la disposición transitoria primera de la enmienda [sic] "
+            "constitucional publicada en el Registro Oficial 653, del 21 de diciembre del 2015, las siguientes "
+            "disposiciones:")
+    u.insert_after("art-158", "Las Fuerzas Armadas tienen como misión fundamental",
+                   s.grab("A fin de contar con el apoyo complementario de las Fuerzas Armadas a las funciones",
+                          "con apego irrestricto al ordenamiento jurídico", after="Refórmese el texto del artículo 158"))
+    u.set_unit("disp-general-03", s.grab("Disposición General Tercera. - La Corte Constitucional de oficio",
+                                         "que se dicten con fundamento en éste"),
+               label="Disposición general tercera", kind="general")
+    new = s.grab("Disposición Transitoria Segunda. - En el plazo de doscientos días",
+                 "en su informe anual de labores")
+    assert len(new) == 2 and new[1].startswith("Disposición Transitoria Tercera")
+    u.set_unit("reforma-2024-disp-transitoria-02", new[:1],
+               label="Reforma parcial de 2024, disposición transitoria segunda", kind="transitional")
+    u.set_unit("reforma-2024-disp-transitoria-03", new[1:],
+               label="Reforma parcial de 2024, disposición transitoria tercera", kind="transitional")
+    u.set_unit("reforma-2024-disp-final", s.grab("Disposición Final.- Hágase saber a la Corte Constitucional del "
+                                                 "contenido de la presente reforma parcial",
+                                                 "a partir el día de su publicación en el Registro Oficial"),
+               label="Reforma parcial de 2024, disposición final", kind="final")
+
+
+def referendo_2024(u: Units) -> None:
+    s = Src(RO_498_2024)  # Decreto Ejecutivo 163, 9-II-2024, with its annexes
+    s.check("i. Enmiéndese la Constitución de la República del Ecuador, sustituyéndose su artículo 79 por el siguiente:",
+            "i. Enmiéndese el artículo 86, número 2, y número 3, inciso segundo, de la Constitución, para que diga lo "
+            "que sigue:")
+    u.set_unit("art-079", s.grab("Art. 79.- La extradición se solicitará", "los convenios internacionales."))
+    n2 = s.grab("2. Será competente la jueza o juez constitucional especializado",
+                "Serán aplicables las siguientes normas de procedimiento")
+    assert len(n2) == 1
+    # the annex prints the numeral up to "normas de procedimiento [...]": the elided rest (":" and letters a-e) stays
+    u.set_para("art-086", "2. Será competente", [n2[0] + ":"])
+    u.set_para("art-086", "Las sentencias de primera instancia podrán ser apeladas",
+               s.grab("Las sentencias de primera instancia podrán ser apeladas para ante la Sala Especializada",
+                      "con la ejecución integral de la sentencia o resolución."))
+
+
 # ---------------------------------------------------------------- laws and order
 
 LAWS = {
@@ -313,6 +438,54 @@ LAWS = {
         "kind": "court", "enacted": "2018-08-01", "published": "2019-04-30", "url": RO_EC79_2019,
         "restores": "enmiendas-2015",
     },
+    "enmienda-2021": {
+        "label": "Enmienda de 2021 (art. 272)",
+        "title": "Enmienda a la Constitución de la República del Ecuador (Asamblea Nacional, 17 de enero de 2021): "
+                 "art. 272, numeral 4",
+        "kind": "law", "enacted": "2021-01-17", "published": "2021-01-25", "url": RO_377_2021,
+    },
+    "referendo-2023": {
+        "label": "Referéndum de 2023 (rechazado)",
+        "title": ("Referéndum del 5 de febrero de 2023 para enmendar la Constitución (Decreto Ejecutivo 607; ocho "
+                  "preguntas, convocatoria PLE-CNE-1-6-12-2022)"),
+        "kind": "referendum", "enacted": "2023-02-05", "published": None, "url": RO_204_2022,
+        "note": ("The referendum of 5 February 2023 rejected all eight proposed amendments (arts. 74, 79, 109, 112, "
+                 "118, 120, 181, 207 to 210 and 405); no words changed."),
+    },
+    "reforma-parcial-2024": {
+        "label": "Reforma parcial de 2024 (art. 158)",
+        "title": ("Reforma parcial de la Constitución (art. 158, apoyo complementario de las Fuerzas Armadas), aprobada "
+                  "en el referéndum del 21 de abril de 2024 (casillero A); dictamen 7-22-RC/24"),
+        "kind": "referendum", "enacted": "2024-04-21", "published": "2024-05-09", "url": RO_554_2024,
+    },
+    "referendo-2024": {
+        "label": "Referéndum de 2024",
+        "title": ("Enmiendas aprobadas en el referéndum del 21 de abril de 2024 (casilleros B y C: arts. 79 y 86; "
+                  "anexos del Decreto Ejecutivo 163, RO Segundo Supl. 498 de 15-II-2024)"),
+        "kind": "referendum", "enacted": "2024-04-21", "published": "2024-05-09", "url": RO_554_2024,
+    },
+    "referendo-2024-rechazos": {
+        "label": "Referéndum de 2024, preguntas rechazadas",
+        "title": "Referéndum del 21 de abril de 2024, casilleros D y E (arts. 422 y 327): rechazados",
+        "kind": "referendum", "enacted": "2024-04-21", "published": "2024-05-09", "url": RO_554_2024,
+        "note": ("The referendum of 21 April 2024 rejected questions D (international arbitration, art. 422) and E "
+                 "(fixed-term and hourly work, art. 327); no words changed."),
+    },
+    "enmienda-2024": {
+        "label": "Enmienda de 2024 (art. 138)",
+        "title": ("Enmienda a la Constitución de la República del Ecuador que sustituye el art. 138 (Asamblea Nacional, "
+                  "30 de mayo de 2024; dictamen 4-20-RC/20)"),
+        "kind": "law", "enacted": "2024-05-30", "published": "2024-05-30", "url": RO_568_2024,
+    },
+    "referendo-2025": {
+        "label": "Referéndum y consulta popular de 2025 (rechazados)",
+        "title": ("Referéndum y Consulta Popular del 16 de noviembre de 2025 (Decretos Ejecutivos 147, 148 y 149, RO "
+                  "Cuarto Supl. 129; Decreto 173, RO Quinto Supl. 139); resultados PLE-CNE-3-1-12-2025"),
+        "kind": "referendum", "enacted": "2025-11-16", "published": "2025-12-03", "url": RO_177_2025,
+        "note": ("The vote of 16 November 2025 rejected all four questions: foreign military bases (art. 5), state "
+                 "funding of political organisations (art. 110), a smaller Asamblea Nacional (art. 118) and the "
+                 "call of a constituent assembly under art. 444; no words changed."),
+    },
 }
 
 # (law, in-force day, edit, text source)
@@ -322,6 +495,14 @@ STEPS = [
     ("enmiendas-2015", "2017-05-24", lambda u: enmiendas_2015(u, "b"), RO_653_2015),
     ("referendo-2018", "2018-02-14", referendo_2018, RO_133_2017),
     ("cc-018-18-sin-cc", "2018-08-02", None, None),
+    ("enmienda-2021", "2021-01-25", enmienda_2021, RO_377_2021),
+    ("referendo-2023", REF_2023_DAY, ["art-074", "art-079", "art-109", "art-112", "art-118", "art-120", "art-181",
+                                      "art-207", "art-208", "art-209", "art-210", "art-405"], REF_2023_URL),
+    ("reforma-parcial-2024", "2024-05-09", reforma_158_2024, RO_508_2024),
+    ("referendo-2024", "2024-05-09", referendo_2024, RO_498_2024),
+    ("referendo-2024-rechazos", "2024-05-09", ["art-327", "art-422"], RO_554_2024),
+    ("enmienda-2024", "2024-05-30", enmienda_2024, RO_568_2024),
+    ("referendo-2025", "2025-12-03", ["art-005", "art-110", "art-118", "art-444"], RO_177_2025),
 ]
 
 NOTES = {
@@ -390,28 +571,47 @@ def apply_all(versions: list[dict], laws: dict) -> None:
         laws[key] = {"label": law["label"], "title": law["title"], "kind": law["kind"], "enacted": law["enacted"],
                      "published": law["published"], "url": law["url"], "temporary_until": None,
                      "restores": law.get("restores"), "note": law.get("note")}
+    VOCAB.update(vocabulary(versions[0]["units"]))
     for law, day, edit, src in STEPS:
         prev = versions[-1]
-        if edit is None:
-            new_units = restore_from(versions, LAWS[law]["restores"], prev["units"])
-            src_url = LAWS[law]["url"]
-        else:
-            u = Units(prev["units"])
-            edit(u)
-            new_units = u.u
+        same_day = prev["from"] == day and len(versions) > 1
+        if isinstance(edit, list):  # a vote that changed no words: credited to the provisions it concerned
+            new_units = prev["units"]
+            for k in edit:
+                if k not in new_units:
+                    raise SystemExit(f"{law}: no unit {k}")
+            credits = {k: [law] for k in edit}
             src_url = src
-        changed = sorted(k for k in set(prev["units"]) | set(new_units)
-                         if prev["units"].get(k) != new_units.get(k))
-        if not changed:
-            raise SystemExit(f"{law} {day}: no change")
+        else:
+            if edit is None:
+                new_units = restore_from(versions, LAWS[law]["restores"], prev["units"])
+                src_url = LAWS[law]["url"]
+            else:
+                u = Units(prev["units"])
+                edit(u)
+                new_units = u.u
+                src_url = src
+            changed = sorted(k for k in set(prev["units"]) | set(new_units)
+                             if prev["units"].get(k) != new_units.get(k))
+            if not changed:
+                raise SystemExit(f"{law} {day}: no change")
+            credits = {k: [law] for k in changed}
+        if same_day:  # several laws on one day share one version
+            for k, ls in credits.items():
+                prev["credits"].setdefault(k, [])
+                prev["credits"][k] += [x for x in ls if x not in prev["credits"][k]]
+            prev["units"] = dict(sorted(new_units.items(), key=lambda kv: _order(kv[0])))
+            continue
         versions.append({
             "from": day,
             "source_url": src_url,
-            "sha256": Src(src_url).sha256 if src_url != RO_EC79_2019 else _sha(src_url),
+            "sha256": _sha(src_url),
             "units": dict(sorted(new_units.items(), key=lambda kv: _order(kv[0]))),
-            "credits": {k: [law] for k in changed},
+            "credits": credits,
             "note": NOTES.get(day),
         })
+    for v in versions[1:]:
+        v["credits"] = dict(sorted(v["credits"].items(), key=lambda kv: _order(kv[0])))
 
 
 def _sha(url: str) -> str:
@@ -420,7 +620,7 @@ def _sha(url: str) -> str:
 
 def _order(key: str) -> tuple:
     groups = ["preambulo", "art-", "disp-general-", "disp-transitoria-", "disp-derogatoria", "regimen-transicion-",
-              "disp-final", "titulos"]
+              "disp-final", "reforma-2024-", "titulos"]
     for i, g in enumerate(groups):
         if key.startswith(g):
             return (i, key)
