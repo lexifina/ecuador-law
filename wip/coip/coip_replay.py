@@ -1100,6 +1100,11 @@ DECISIONS: list[str] = [
     "violencia sexual digital (Cuarto Supl. 526, 30-VIII-2021: 14 articles and 8 new ones); Ley Orgánica que regula "
     "el Uso Legítimo de la Fuerza (Tercer Supl. 131, 22-VIII-2022: 8 articles and new arts. 30.2, 533.1). Articles "
     "these acts add do not exist in this record.",
+    "COIP: the anticorruption reform of 2021 (Segundo Suplemento 392, 17-II-2021) is dated on publication (Código "
+    "Civil art. 6). A Lexis note (derechoecuador.com) says its Disposición final única puts it in force 180 days after "
+    "publication, but the edition's text layer holds only the cover, the Asamblea's letter, the certification and the "
+    "signature page; the law itself (pages 4 to 26), its vigencia clause included, is page images, so the clause "
+    "could not be read and the date is left as it is.",
     "COIP: sentencia 8-20-CN/21 (Edición Constitucional 222, 13-X-2021) strikes words that the anticorruption reform "
     "of February 2021 (not applied, image-only) put into art. 536; those words are not in this record's text, so the "
     "ruling is a version that changes no words, with a note.",
