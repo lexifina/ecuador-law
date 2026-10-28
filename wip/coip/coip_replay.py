@@ -61,6 +61,20 @@ EC90_2019 = ed("ec90-2019", "Ediciones Constitucionales")
 EC6_2019 = ed("ec6-2019", "Ediciones Constitucionales")
 EC21_2019 = _EDITIONS["ec21-2019"][0]["pdf"]
 S107_2019 = ed("s107-2019", "Primer Suplemento")
+S3_386_2021 = ed("s386-2021b", "Tercer Suplemento")
+S2_392_2021 = ed("s392-2021", "Segundo Suplemento")
+S5_452_2021 = ro("eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiNzE1OWU4NzctZDI2OS00ZDBjLWJlNTctOTk0YzRiNzU0MTAyLnBkZiJ9")  # civil/replay.py
+EC194_2021 = ed("ec194-2021", "Ediciones Constitucionales")
+S5_512_2021 = ed("s512-2021", "Quinto Suplemento")
+S5_525_2021 = ed("s525-2021", "Quinto Suplemento")
+S4_526_2021 = ed("s526-2021", "Cuarto Suplemento")
+EC222_2021 = ed("ec222-2021", "Ediciones Constitucionales")
+EC261_2022 = ed("ec261-2022", "Ediciones Constitucionales")
+EC267_2022 = ed("ec267-2022", "Ediciones Constitucionales")
+EC268_2022 = ed("ec268-2022", "Ediciones Constitucionales")
+EC20_2022 = ed("ec20-2022", "Ediciones Constitucionales")
+S3_131_2022 = ed("s131-2022", "Tercer Suplemento")
+S222_2023 = ed("s222-2023", "Primer Suplemento")
 
 
 def plazo_days(published: str, days: int) -> str:
@@ -398,6 +412,86 @@ def reformatoria_coip_2019(u: Units) -> None:
     s107_2019.apply(u, clean_src(S107_2019), HEADS)
 
 
+def cc_34_19_in_21(u: Units) -> None:
+    """Corte Constitucional, sentencia 34-19-IN/21 (Edición Constitucional 194, 29-VI-2021): the phrase 'en una
+    mujer que padezca de discapacidad mental' of art. 150 numeral 2 is unconstitutional."""
+    s = csrc(EC194_2021)
+    s.check('Declarar la inconstitucionalidad por el fondo del artículo 150 numeral 2 del Código Orgánico Integral '
+            'Penal en la frase "en una mujer que padezca de discapacidad mental"')
+    u.drop("art-150", " en una mujer que padezca de discapacidad mental", para="2. ")
+
+
+def cc_11_ruling_75(u: Units) -> None:
+    """Corte Constitucional (Edición Constitucional 261, 14-I-2022): 'máximo' and 'el tipo penal' of art. 75
+    numeral 1 are unconstitutional; the ruling states how the numeral reads until the Asamblea legislates."""
+    s = csrc(EC261_2022)
+    s.check('Declarar la inconstitucionalidad de las palabras "máximo" y "el tipo penal" del artículo 75 (1)')
+    i = s.index("El artículo 75 (1) del COIP, hasta que la Asamblea Nacional no adecúe la norma a esta sentencia, dirá:")
+    new = s.paras[i + 2]
+    if not new.startswith("1. Las penas restrictivas de libertad prescribirán en el tiempo de la pena"):
+        raise SystemExit("EC 261: reading of art. 75 (1) not found")
+    u.set_para("art-075", u.find("art-075", "1. "), [new])
+
+
+def cc_53_20_in_21(u: Units) -> None:
+    """Corte Constitucional, sentencia 53-20-IN/21 (Edición Constitucional 267, 25-I-2022): art. 47 numeral 20 is
+    unconstitutional."""
+    s = csrc(EC267_2022)
+    s.check("Declarar la inconstitucionalidad por el fondo artículo 47, numeral 20, del Código Orgánico Integral Penal.")
+    u.delete_para("art-047", "20. ")
+
+
+# footnote calls the text layer prints glued to words inside a ruling's quoted reading
+FOOTNOTE_CALLS = {"EC268_2022": [("coerción70;", "coerción;"), ("consentimiento71.", "consentimiento.")]}
+
+
+def cc_13_ruling_175(u: Units) -> None:
+    """Corte Constitucional (Edición Constitucional 268, 28-I-2022): additive constitutionality of art. 175
+    numeral 5, which 'en adelante se leerá' as the ruling prints it (three paragraphs; footnote calls removed)."""
+    s = csrc(EC268_2022)
+    i = s.index("declarar la constitucionalidad aditiva del artículo 175 numeral 5 del Código Orgánico Integral Penal, "
+                "el cual en adelante se leerá de la siguiente forma:")
+    new = s.paras[i + 2:i + 5]
+    if not (new[0].startswith("5. En los delitos sexuales") and new[2].startswith("a) El consentimiento")):
+        raise SystemExit("EC 268: reading not found")
+    for a, b in FOOTNOTE_CALLS["EC268_2022"]:
+        if a not in new[2]:
+            raise SystemExit(f"EC 268: {a!r} not found")
+        new[2] = new[2].replace(a, b)
+    a = u.find("art-175", "5. ")
+    u.set_para("art-175", a, new)
+
+
+def cc_77_ruling_476(u: Units) -> None:
+    """Corte Constitucional (Edición Constitucional 20, 16-III-2022): additive constitutionality of art. 476, first
+    inciso and numeral 6, which 'dirá' as the ruling prints them (its markers '(...)' and '(Las negritas se
+    incluyen)' are not part of the reading)."""
+    s = csrc(EC20_2022)
+    i = s.index("Declarar la constitucionalidad aditiva del primer inciso del artículo 476")
+    first = s.paras[i + 1]
+    tail = " (...) (Las negritas se incluyen)"
+    if not (first.startswith("Art. 476.- Interceptación") and first.endswith(tail)):
+        raise SystemExit("EC 20: reading of the first inciso")
+    u.set_para("art-476", 0, [first[:-len(tail)]])
+    j = s.index("Declarar la constitucionalidad aditiva del numeral 6 del artículo 476")
+    six, added = s.paras[j + 1], s.paras[j + 2]
+    if not six.startswith("(...) 6. ") or not added.endswith(" (Las negritas se incluyen)"):
+        raise SystemExit("EC 20: reading of numeral 6")
+    k = u.find("art-476", "6. ")
+    if u.paras("art-476")[k] != six[len("(...) "):]:
+        raise SystemExit("EC 20: numeral 6 does not match the Code's")
+    u.insert("art-476", k + 1, [added[:-len(" (Las negritas se incluyen)")]])
+
+
+def economia_campesina_2023(u: Units) -> None:
+    """Ley Orgánica para la Defensa y Desarrollo de la Economía Familiar Campesina (Primer Supl. 222, 4-I-2023),
+    Disposición reformatoria cuarta: numeral 4 of art. 308; in force on publication (its Disposición final)."""
+    s = csrc(S222_2023)
+    s.check("CUARTA.- Incorpórese como numeral 4 del artículo 308 del Código Orgánico Integral Penal el siguiente texto:")
+    new = quoted_para(s, "4. La persona que, de manera habitual")
+    u.insert("art-308", u.find("art-308", "3. ") + 1, new)
+
+
 def order(key: str) -> tuple:
     m = re.match(r"art-(\d{3})(?:-(\w+))?$", key)
     if m:
@@ -480,6 +574,77 @@ LAWS: dict[str, dict] = {
                                    published="2019-12-24", url=S107_2019,
                                    title="Ley Orgánica Reformatoria al Código Orgánico Integral Penal (Registro "
                                          "Oficial, Suplemento 107, 24-XII-2019)"),
+    "ley-movilidad-humana-2021": dict(label="Ley Reformatoria de la Ley Orgánica de Movilidad Humana (2021)",
+                                      kind="law", published="2021-02-05", url=S3_386_2021, note=IMAGE_ONLY,
+                                      title="Ley Orgánica Reformatoria de la Ley Orgánica de Movilidad Humana "
+                                            "(Registro Oficial, Tercer Suplemento 386, 5-II-2021): art. 91, first "
+                                            "inciso. NOT APPLIED (image-only edition)"),
+    "reformatoria-coip-2021": dict(label="Ley Reformatoria del COIP en materia anticorrupción (2021)", kind="law",
+                                   published="2021-02-17", url=S2_392_2021, note=IMAGE_ONLY,
+                                   title="Ley Orgánica Reformatoria del Código Orgánico Integral Penal en materia "
+                                         "anticorrupción (Registro Oficial, Segundo Suplemento 392, 17-II-2021): arts. "
+                                         "45, 47, 49, 60, 68, 69, 77, 270, 278, 280, 281, 285, 286, 430.1, 430.2, 536, "
+                                         "581, 630, 698, 699 and new arts. 294.1, 320.1, 422.1, 550.1, 581.1. NOT "
+                                         "APPLIED (image-only edition)"),
+    "ley-extincion-dominio-2021": dict(label="Ley Orgánica de Extinción de Dominio (2021)", kind="law",
+                                       published="2021-05-14", url=S5_452_2021, note=IMAGE_ONLY,
+                                       title="Ley Orgánica de Extinción de Dominio (Registro Oficial, Quinto "
+                                             "Suplemento 452, 14-V-2021): art. 452. NOT APPLIED (image-only edition)"),
+    "cc-34-19-in-21": dict(label="Sentencia 34-19-IN/21", kind="court", enacted="2021-04-28", published="2021-06-29",
+                           url=EC194_2021,
+                           title="Corte Constitucional, sentencia 34-19-IN/21 y acumulados (Edición Constitucional "
+                                 "194, 29-VI-2021): inconstitucionalidad de una frase del art. 150 numeral 2"),
+    "ley-transito-2021": dict(label="Ley Reformatoria de la Ley de Tránsito (2021)", kind="law", published="2021-08-10",
+                              url=S5_512_2021, note=IMAGE_ONLY,
+                              title="Ley Orgánica Reformatoria de la Ley Orgánica de Transporte Terrestre, Tránsito y "
+                                    "Seguridad Vial (Registro Oficial, Quinto Suplemento 512, 10-VIII-2021): arts. 17, "
+                                    "388 to 392, 404. NOT APPLIED (image-only edition)"),
+    "ley-comercio-ilicito-2021": dict(label="Ley contra el Comercio Ilícito (2021)", kind="law", published="2021-08-27",
+                                      url=S5_525_2021, note=IMAGE_ONLY,
+                                      title="Ley Orgánica que reforma diversos cuerpos legales para reforzar la "
+                                            "prevención y el combate al comercio ilícito (Registro Oficial, Quinto "
+                                            "Suplemento 525, 27-VIII-2021): arts. 60, 65, 208 A (and new 208 B, 208 C), "
+                                            "267, 299, 300, 301, 303, 317 and the final provisions. NOT APPLIED "
+                                            "(image-only edition)"),
+    "reformatoria-coip-violencia-digital-2021": dict(
+        label="Ley Reformatoria del COIP sobre violencia sexual digital (2021)", kind="law", published="2021-08-30",
+        url=S4_526_2021, note=IMAGE_ONLY,
+        title="Ley Orgánica Reformatoria del Código Orgánico Integral Penal para Prevenir y Combatir la Violencia "
+              "Sexual Digital y Fortalecer la Lucha contra los Delitos Informáticos (Registro Oficial, Cuarto "
+              "Suplemento 526, 30-VIII-2021): arts. 47, 103, 157, 166, 169, 170, 171, 175, 179, 230, 232, 234, 396, "
+              "497 and new arts. 154.2, 154.3, 172.1, 234.1 to 234.4, 477.1. NOT APPLIED (image-only edition)"),
+    "cc-8-20-cn-21": dict(label="Sentencia 8-20-CN/21", kind="court", published="2021-10-13", url=EC222_2021,
+                          note=("NOT APPLIED here: the ruling strikes the words 'en las infracciones sancionadas con "
+                                "pena privativa de libertad superior a cinco años, ni' from the first inciso of art. "
+                                "536 as worded by the anticorruption reform of February 2021, which this record could "
+                                "not apply (image-only edition); the words it strikes are not in this record's text."),
+                          title="Corte Constitucional, sentencia 8-20-CN/21 (Edición Constitucional 222, 13-X-2021): "
+                                "inconstitucionalidad de una frase del art. 536. NOT APPLIED (it strikes words of a "
+                                "reform this record could not apply)"),
+    "cc-ec261-2022": dict(label="Corte Constitucional, Edición Constitucional 261 (2022)", kind="court",
+                          published="2022-01-14", url=EC261_2022,
+                          title="Corte Constitucional, sentencia de consulta de norma sobre el art. 75 (1) (Edición "
+                                "Constitucional 261, 14-I-2022)"),
+    "cc-53-20-in-21": dict(label="Sentencia 53-20-IN/21", kind="court", published="2022-01-25", url=EC267_2022,
+                           title="Corte Constitucional, sentencia 53-20-IN/21 (Edición Constitucional 267, 25-I-2022): "
+                                 "inconstitucionalidad del art. 47 numeral 20"),
+    "cc-ec268-2022": dict(label="Corte Constitucional, Edición Constitucional 268 (2022)", kind="court",
+                          published="2022-01-28", url=EC268_2022,
+                          title="Corte Constitucional, sentencia de consulta de norma sobre el art. 175 numeral 5 "
+                                "(Edición Constitucional 268, 28-I-2022): constitucionalidad aditiva"),
+    "cc-ec20-2022": dict(label="Corte Constitucional, Edición Constitucional 20 (2022)", kind="court",
+                         published="2022-03-16", url=EC20_2022,
+                         title="Corte Constitucional, sentencia sobre el art. 476 (Edición Constitucional 20, "
+                               "16-III-2022): constitucionalidad aditiva del primer inciso y del numeral 6"),
+    "ley-uso-fuerza-2022": dict(label="Ley Orgánica que regula el Uso Legítimo de la Fuerza (2022)", kind="law",
+                                published="2022-08-22", url=S3_131_2022, note=IMAGE_ONLY,
+                                title="Ley Orgánica que regula el Uso Legítimo de la Fuerza (Registro Oficial, Tercer "
+                                      "Suplemento 131, 22-VIII-2022): arts. 30.1, 47, 274, 275, 293, 537, 685, 686 and "
+                                      "new arts. 30.2, 533.1. NOT APPLIED (image-only edition)"),
+    "ley-economia-campesina-2023": dict(label="Ley de la Economía Familiar Campesina (2023)", kind="law",
+                                        published="2023-01-04", url=S222_2023,
+                                        title="Ley Orgánica para la Defensa y Desarrollo de la Economía Familiar "
+                                              "Campesina (Registro Oficial, Suplemento 222, 4-I-2023)"),
 }
 
 # (law, in-force day, edit function, or the list of provisions a not-applied act concerns)
@@ -499,6 +664,27 @@ STEPS: list[tuple] = [
     ("cc-ec6-2019", "2019-08-15", ["art-581"]),
     ("cc-ec21-2019", "2019-11-13", ["art-653"]),
     ("reformatoria-coip-2019", plazo_days("2019-12-24", 180), reformatoria_coip_2019),
+    ("ley-movilidad-humana-2021", "2021-02-05", ["art-091"]),
+    ("reformatoria-coip-2021", "2021-02-17",
+     ["art-045", "art-047", "art-049", "art-060", "art-068", "art-069", "art-077", "art-270", "art-278", "art-280",
+      "art-281", "art-285", "art-286", "art-430-1", "art-430-2", "art-536", "art-581", "art-630", "art-698",
+      "art-699"]),
+    ("ley-extincion-dominio-2021", "2021-05-14", ["art-452"]),
+    ("cc-34-19-in-21", "2021-06-29", cc_34_19_in_21),
+    ("ley-transito-2021", "2021-08-10", ["art-017", "art-388", "art-389", "art-390", "art-391", "art-392", "art-404"]),
+    ("ley-comercio-ilicito-2021", "2021-08-27",
+     ["art-060", "art-065", "art-208-a", "art-267", "art-299", "art-300", "art-301", "art-303", "art-317"]),
+    ("reformatoria-coip-violencia-digital-2021", "2021-08-30",
+     ["art-047", "art-103", "art-157", "art-166", "art-169", "art-170", "art-171", "art-175", "art-179", "art-230",
+      "art-232", "art-234", "art-396", "art-497"]),
+    ("cc-8-20-cn-21", "2021-10-13", ["art-536"]),
+    ("cc-ec261-2022", "2022-01-14", cc_11_ruling_75),
+    ("cc-53-20-in-21", "2022-01-25", cc_53_20_in_21),
+    ("cc-ec268-2022", "2022-01-28", cc_13_ruling_175),
+    ("cc-ec20-2022", "2022-03-16", cc_77_ruling_476),
+    ("ley-uso-fuerza-2022", "2022-08-22",
+     ["art-030-1", "art-047", "art-274", "art-275", "art-293", "art-537", "art-685", "art-686"]),
+    ("ley-economia-campesina-2023", "2023-01-04", economia_campesina_2023),
 ]
 
 
