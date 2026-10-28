@@ -26,7 +26,9 @@ import parse_civil  # noqa: E402
 EDICIONES_2025 = "https://www.gob.ec/sites/default/files/regulations/2025-09/Documento_C%C3%B3digo-Civil-2025.pdf"
 LEXIS_2017 = "https://wipolex-res.wipo.int/edocs/lexdocs/laws/es/ec/ec118es.pdf"
 ART = re.compile(r"Art\.\s*(\d+)(?:\s*([A-Z])\b)?\s*\.?\s*-|Art\.\s*(?:…|\.\.\.)\s*\.?\s*-")
-HEADS = re.compile(r"\b(Par[aá]grafo \d+o\.|T[IÍ]TULO [IVXL]+|T[ií]tulo [IVXL]+|LIBRO [IVX]+|DISPOSICI[OÓ]N)")
+HEADS = re.compile(r"\s(Par[aá]grafo \d+o\.\s+[A-ZÁÉÍÓÚ¿]{2,}|T[IÍ]TULO [IVXL]+\b|T[ií]tulo [IVXL]+\s+[A-ZÁÉÍÓÚ]{2,}"
+                   r"|Libro [IVX]+\s+[A-ZÁÉÍÓÚ]{2,}|LIBRO [IVX]+|DISPOSICI[OÓ]N|[IVX]+ REGLAS|II$)")
+NOTE = re.compile(r"\s(?:Nota|Concordancias|Jurisprudencia):.*?(?:\d{4}\s?\)\s?\.?|\d{4}\s?\.)(?=\s|$)")
 
 
 def norm(s: str) -> str:
@@ -57,7 +59,7 @@ def split_articles(flat: str) -> dict[str, str]:
             marks.append((m.start(), "art-0036-1"))
     for (i, k), (j, _) in zip(marks, marks[1:] + [(len(flat), None)]):
         t = flat[i:j]
-        t = re.split(r"\s(?:Nota|Concordancias|Jurisprudencia):", t)[0]
+        t = re.split(r"\s(?:Nota|Concordancias|Jurisprudencia):", t)[0]  # notes follow the article text
         h = HEADS.search(t, 10)
         if h:
             t = t[:h.start()]
@@ -106,8 +108,8 @@ def compare(ours: dict, theirs: dict) -> dict[str, dict]:
             continue
         a = norm(ours[k]["text"].replace("\n", " ")) if k in ours else None
         b = norm(theirs[k]) if k in theirs else None
-        if a is not None and b is not None and b.startswith(f"Art. {int(k[4:8])}") and len(b) < 25:
-            b = None  # a derogated article left as a bare number with a note
+        if b is not None and re.fullmatch(r"Art\. \d+\w?\.-\s*\.?", b):
+            b = None  # a repealed article, left as a bare number with a note
         if a == b:
             continue
         r = difflib.SequenceMatcher(None, a or "", b or "").ratio()

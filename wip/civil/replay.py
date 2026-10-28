@@ -550,9 +550,12 @@ STEPS = [
     ("ley-extincion-dominio-2021", "2021-05-14", ["art-0603"]),
     ("ley-reformatoria-cc-convemar-2021", "2021-10-19", ["art-0606", "art-0609", "art-0610", "art-0613"]),
     ("cc-56-09-in-22", "2022-03-14", cc_56_09_in_22),
-    ("ley-salud-mental-2024", "2024-01-05", ["titulos", "art-0478", "art-0479", "art-0480", "art-0481", "art-0482",
-                                             "art-0484", "art-0485", "art-0486", "art-0487", "art-0489", "art-0496",
-                                             "art-1012"]),
+    # the index marks the heading of Título XXII and arts. 478-496, 1012; the comparison with the same consolidation
+    # also shows "demente(s)" replaced by "persona(s) con trastorno(s) mental(es)" in arts. 192, 518, 738, 1463, 2219, 2409
+    ("ley-salud-mental-2024", "2024-01-05", ["titulos", "art-0192", "art-0478", "art-0479", "art-0480", "art-0481",
+                                             "art-0482", "art-0484", "art-0485", "art-0486", "art-0487", "art-0489",
+                                             "art-0496", "art-0518", "art-0738", "art-1012", "art-1463", "art-2219",
+                                             "art-2409"]),
     ("ley-ahorro-monetizacion-2024", "2024-02-09", ["art-0603"]),
     ("ley-reformatoria-logidac-2024", "2024-03-13", ["art-0021"]),
     ("ley-victimas-femicidio-2024", "2024-06-27", ["art-1010"]),

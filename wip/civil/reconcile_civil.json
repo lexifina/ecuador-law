@@ -2,7 +2,7 @@
  "ediciones_2025": {
   "day": "2026-10-28",
   "articles_compared": 2428,
-  "disagree": 120,
+  "disagree": 66,
   "rows": {
    "art-0007": {
     "ratio": 1.0,
@@ -29,11 +29,6 @@
     "ours": "Art. 27.- En los casos en que la ley dispone que se oiga a los parientes de una persona, se entenderán comprendidos en esta denominación el cónyuge de dicha persona y sus consanguíneos, hasta el cuarto grado, de uno y otro sexo, mayores de edad. A falta de consanguíneos en suficiente número, serán oídos los afines hasta el segundo grado. Serán preferidos los descendientes y ascendientes a los colaterales, y entre éstos los de más cercano parentesco. Los parientes serán citados y comparecerán a ser oídos verbalmente, en la forma prescrita por el Código de Procedimiento Civil.",
     "theirs": "Art. 27.- En los casos en que la ley dispone que se oiga a los parientes de una persona, se entenderán comprendidos en esta denominación el cónyuge de dicha persona y sus consanguíneos, hasta el cuarto grado, de uno y otro sexo, mayores de edad. A falta de consanguíneos en suficiente número, serán oídos los afines hasta el segundo grado. Serán preferidos los descendientes y ascendientes a los colaterales, y entre éstos los de más cercano parentesco. Los parientes serán citados y comparecerán a ser oídos verbalmente, en la forma prescrita por el Código Orgánico General de Procesos."
    },
-   "art-0039": {
-    "ratio": 0.883,
-    "ours": "Art. 39.- La ley especial anterior no se deroga por la general posterior, si no se expresa.",
-    "theirs": "Art. 39.- La ley especial anterior no se deroga por la general posterior, si no se expresa. Libro I DE LAS PERSONAS"
-   },
    "art-0067": {
     "ratio": 0.849,
     "ours": "Art. 67.- 1a.- La presunción de muerte debe declararse por el juez del último domicilio que el desaparecido haya tenido en el Ecuador, justificándose previamente que se ignora su paradero; que se han hecho las posibles diligencias para averiguarlo, y que, desde la fecha de las últimas noticias que se tuvieron de la existencia del desaparecido, han transcurrido, por lo menos, dos años; 2. Entre estas pruebas será de rigor la citación al desaparecido que se practicará conforme con lo establecido para el efecto en el Código Orgánico General de Procesos. 3a.- La declaración podrá ser pedida por cualesquiera persona que tenga interés en ella, con tal que hayan transcurrido tres meses, a lo menos, desde la última citación; 5a.- El juez fijará como día presuntivo de la muerte, el último del primer año, contado desde la fecha de las últimas noticias; y transcurridos tres años desde la misma fecha, concederá la posesión provisional de los bienes del desaparecido; y, 6a.- Con todo, si después que una persona recibió una herida grave en la guerra, o naufragó la embarcación en que navegaba, o le sobrevino otro peligro semejante, no se ha sabido más de ella, y han transcurrido desde entonces seis meses, y practicándose la justificación y citaciones prevenidas en los ordinales anteriores, fijará el juez como día presuntivo de la muerte, el de la acción de guerra, naufragio o peligro, o, no siendo enteramente determinado ese día, adoptará un término medio entre el principio y el fin de la época en que pudo ocurrir el suceso, y concederá inmediatamente la posesión definitiva de los bienes del desaparecido.",
@@ -49,85 +44,10 @@
     "ours": "Art. 81.- Matrimonio es un contrato solemne por el cual un hombre y una mujer se unen con el fin de vivir juntos, procrear y auxiliarse mutuamente.",
     "theirs": "Art. 81.- Matrimonio es un contrato solemne por el cual dos personas se unen con el fin de vivir juntos y auxiliarse mutuamente."
    },
-   "art-0082": {
-    "ratio": 0.0,
-    "ours": null,
-    "theirs": "Art. 82.-"
-   },
-   "art-0084": {
-    "ratio": 0.0,
-    "ours": null,
-    "theirs": "Art. 84.-"
-   },
-   "art-0085": {
-    "ratio": 0.0,
-    "ours": null,
-    "theirs": "Art. 85.-"
-   },
-   "art-0086": {
-    "ratio": 0.0,
-    "ours": null,
-    "theirs": "Art. 86.-"
-   },
-   "art-0087": {
-    "ratio": 0.0,
-    "ours": null,
-    "theirs": "Art. 87.-"
-   },
-   "art-0088": {
-    "ratio": 0.0,
-    "ours": null,
-    "theirs": "Art. 88.-"
-   },
-   "art-0089": {
-    "ratio": 0.0,
-    "ours": null,
-    "theirs": "Art. 89.-"
-   },
-   "art-0090": {
-    "ratio": 0.0,
-    "ours": null,
-    "theirs": "Art. 90.-"
-   },
    "art-0102": {
     "ratio": 0.996,
     "ours": "Art. 102.- Son solemnidades esenciales para la validez del matrimonio: 1a.- La comparecencia de las partes, por sí o por medio de apoderado especial, ante la autoridad competente; 2a.- La constancia de carecer de impedimentos dirimentes; 3. La expresión libre y espontánea del consentimiento de los contrayentes y la determinación obligatoria de quien administrará la sociedad conyugal; 4a.- La presencia de dos testigos hábiles; y, 5a.- El otorgamiento y suscripción del acta correspondiente.",
     "theirs": "Art. 102.- Son solemnidades esenciales para la validez del matrimonio: 1a.- La comparecencia de las partes, por sí o por medio de apoderado especial, ante la autoridad competente; 2a.- La constancia de carecer de impedimentos dirimentes; 3a.- La expresión libre y espontánea del consentimiento de los contrayentes y la determinación obligatoria de quien administrará la sociedad conyugal; 4a.- La presencia de dos testigos hábiles; y, 5a.- El otorgamiento y suscripción del acta correspondiente."
-   },
-   "art-0109": {
-    "ratio": 0.0,
-    "ours": null,
-    "theirs": "Art. 109.-"
-   },
-   "art-0111": {
-    "ratio": 0.0,
-    "ours": null,
-    "theirs": "Art. 111.-"
-   },
-   "art-0121": {
-    "ratio": 0.0,
-    "ours": null,
-    "theirs": "Art. 121.-"
-   },
-   "art-0125": {
-    "ratio": 0.0,
-    "ours": null,
-    "theirs": "Art. 125.-"
-   },
-   "art-0135": {
-    "ratio": 0.0,
-    "ours": null,
-    "theirs": "Art. 135.-"
-   },
-   "art-0149": {
-    "ratio": 0.0,
-    "ours": null,
-    "theirs": "Art. 149.-"
-   },
-   "art-0154": {
-    "ratio": 0.0,
-    "ours": null,
-    "theirs": "Art. 154.-"
    },
    "art-0192": {
     "ratio": 0.967,
@@ -140,99 +60,9 @@
     "theirs": "Art. 229.- El haber de esta sociedad y sus cargas, la administración extraordinaria de sus bienes, la disolución y la liquidación de la sociedad y la partición de gananciales, se rigen por lo que este Código y el Código Orgánico General de Procesos disponen para la sociedad conyugal."
    },
    "art-0231": {
-    "ratio": 0.235,
+    "ratio": 0.996,
     "ours": "Art. 231.- Las reglas contenidas en el Título II, Libro Tercero de éste Código, referentes a los diversos órdenes de la sucesión intestada en lo que concierne al cónyuge, se aplicarán al conviviente que sobreviviere, del mismo modo que los preceptos relacionados a la porción conyugal.",
-    "theirs": "Art. 231.- Las reglas contenidas en el"
-   },
-   "art-0234": {
-    "ratio": 0.0,
-    "ours": null,
-    "theirs": "Art. 234.-"
-   },
-   "art-0235": {
-    "ratio": 0.0,
-    "ours": null,
-    "theirs": "Art. 235.-"
-   },
-   "art-0236": {
-    "ratio": 0.0,
-    "ours": null,
-    "theirs": "Art. 236.-"
-   },
-   "art-0237": {
-    "ratio": 0.0,
-    "ours": null,
-    "theirs": "Art. 237.-"
-   },
-   "art-0238": {
-    "ratio": 0.0,
-    "ours": null,
-    "theirs": "Art. 238.-"
-   },
-   "art-0239": {
-    "ratio": 0.0,
-    "ours": null,
-    "theirs": "Art. 239.-"
-   },
-   "art-0240": {
-    "ratio": 0.0,
-    "ours": null,
-    "theirs": "Art. 240.-"
-   },
-   "art-0241": {
-    "ratio": 0.0,
-    "ours": null,
-    "theirs": "Art. 241.-"
-   },
-   "art-0251": {
-    "ratio": 0.0,
-    "ours": null,
-    "theirs": "Art. 251.-"
-   },
-   "art-0253": {
-    "ratio": 0.0,
-    "ours": null,
-    "theirs": "Art. 253.-"
-   },
-   "art-0254": {
-    "ratio": 0.0,
-    "ours": null,
-    "theirs": "Art. 254.-"
-   },
-   "art-0256": {
-    "ratio": 0.0,
-    "ours": null,
-    "theirs": "Art. 256.-"
-   },
-   "art-0257": {
-    "ratio": 0.0,
-    "ours": null,
-    "theirs": "Art. 257.-"
-   },
-   "art-0260": {
-    "ratio": 0.0,
-    "ours": null,
-    "theirs": "Art. 260.-"
-   },
-   "art-0261": {
-    "ratio": 0.0,
-    "ours": null,
-    "theirs": "Art. 261.-"
-   },
-   "art-0262": {
-    "ratio": 0.0,
-    "ours": null,
-    "theirs": "Art. 262.-"
-   },
-   "art-0263": {
-    "ratio": 0.0,
-    "ours": null,
-    "theirs": "Art. 263.-"
-   },
-   "art-0264": {
-    "ratio": 0.0,
-    "ours": null,
-    "theirs": "Art. 264.-"
+    "theirs": "Art. 231.- Las reglas contenidas en el Título II, Libro Tercero de este Código, referentes a los diversos órdenes de la sucesión intestada en lo que concierne al cónyuge, se aplicarán al conviviente que sobreviviere, del mismo modo que los preceptos relacionados a la porción conyugal."
    },
    "art-0310": {
     "ratio": 0.983,
@@ -253,21 +83,6 @@
     "ratio": 0.917,
     "ours": "Art. 419.- La venta de cualquiera parte de los bienes del pupilo enumerados en los artículos anteriores, se hará en pública subasta; salvo lo establecido en el Código de Procedimiento Civil.",
     "theirs": "Art. 419.- La venta de cualquiera parte de los bienes del pupilo enumerados en los artículos anteriores, se hará en pública subasta; salvo lo establecido en el Código Orgánico General de Procesos."
-   },
-   "art-0453": {
-    "ratio": 0.836,
-    "ours": "Art. 453.- En lo tocante a la crianza y educación del pupilo está obligado el tutor a conformarse con la voluntad de la persona o personas encargadas de ellas, según lo ordenado en el Título XI; sin perjuicio de ocurrir al juez cuando lo crea conveniente.",
-    "theirs": "Art. 453.- En lo tocante a la crianza y educación del pupilo está obligado el tutor a conformarse con la voluntad de la persona o personas encargadas de ellas, según lo ordenado en el"
-   },
-   "art-0462": {
-    "ratio": 0.0,
-    "ours": null,
-    "theirs": "Art. 462.-"
-   },
-   "art-0473": {
-    "ratio": 0.0,
-    "ours": null,
-    "theirs": "Art. 473.-"
    },
    "art-0478": {
     "ratio": 0.912,
@@ -344,50 +159,15 @@
     "ours": "Art. 496.- Pueden ser nombradas para la curaduría de bienes del ausente las mismas personas que para la curaduría del demente, en conformidad con el Art. 484, y se observará el mismo orden de preferencia entre ellas. Podrá el juez, con todo, separarse de este orden, a petición de los herederos legítimos o de los acreedores, si lo estimare conveniente. Podrá asimismo nombrar más de un curador, y dividir entre ellos la administración, en el caso de bienes cuantiosos, situados en diferentes cantones.",
     "theirs": "Art. 496.- Pueden ser nombradas para la curaduría de bienes del ausente las mismas personas que para la curaduría de la persona con trastorno mental, en conformidad con el Art. 484, y se observará el mismo orden de preferencia entre ellas. Podrá el juez, con todo, separarse de este orden, a petición de los herederos legítimos o de los acreedores, si lo estimare conveniente. Podrá asimismo nombrar más de un curador, y dividir entre ellos la administración, en el caso de bienes cuantiosos, situados en diferentes cantones."
    },
-   "art-0497": {
-    "ratio": 0.0,
-    "ours": null,
-    "theirs": "Art. 497.-"
-   },
    "art-0518": {
-    "ratio": 0.946,
+    "ratio": 0.978,
     "ours": "Art. 518.- Son incapaces de toda tutela o curaduría: 1o.- Los ciegos; 2o.- Los mudos; 3o.- Los dementes, aunque no estén bajo interdicción; 4o.- Los fallidos, mientras no hayan sido rehabilitados; 5o.- Los que están privados de administrar sus propios bienes, por disipación; 6o.- Los que carecen de domicilio en la República; 7o.- Los que no saben leer ni escribir; 8o.- Los de mala conducta notoria; 9o.- Los condenados judicialmente a una pena de las designadas en el Art. 311, numeral 4o., aunque se les haya indultado de ella; 10o.- El cónyuge que haya dado causa para el divorcio, según el Art. 110, menos en el caso de los numerales 8o., y 11o. 11o.- El que ha sido privado de ejercer la patria potestad, según el Art. 311; y, 12o.- Los que, por torcida o descuidada administración, han sido removidos de una guarda anterior, o en el juicio subsiguiente a ésta han sido condenados, por fraude o culpa grave, a indemnizar al pupilo.",
-    "theirs": "Art. 518.- Son incapaces de toda tutela o curaduría: 1o.- Los ciegos; 2o.- Los mudos; 3o.- Las personas con trastornos mentales, aunque no estén bajo interdicción; 4o.- Los fallidos, mientras no hayan sido rehabilitados; 5o.- Los que están privados de administrar sus propios bienes, por disipación; 6o.- Los que carecen de domicilio en la República; 7o.- Los que no saben leer ni escribir; 8o.- Los de mala conducta notoria; 9o.- Los condenados judicialmente a una pena de las designadas en el Art. 311, numeral 4o., aunque se les haya indultado de ella; 10o.- El cónyuge que haya dado causa para el divorcio, según el Art. 110, menos en el caso de los numerales 8o., y 11o. 11o.- El que ha sido privado de ejercer la patria potestad, según el Art. 311; y, 12o.- Los que, por torcida o descuidada administración, han sido removidos de una guarda anterior, o en el juicio subsiguiente a ésta han sido condenados, por fraude o culpa grave, a indemnizar al pupilo. II REGLAS RELATIVAS A LAS PROFESIONES, EMPLEOS Y CARGOS PÚBLICOS"
-   },
-   "art-0519": {
-    "ratio": 0.962,
-    "ours": "Art. 519.- Son asimismo incapaces de toda tutela o curaduría: 1o.- Los individuos de la Fuerza Pública, que se hallen en actual servicio, incluso los comisarios, médicos, cirujanos y demás personas adictas a los cuerpos de línea o a las naves del Estado; y, 2o.- Los que tienen que ejercer por largo tiempo, o por tiempo indefinido, un cargo o comisión pública, fuera del territorio ecuatoriano.",
-    "theirs": "Art. 519.- Son asimismo incapaces de toda tutela o curaduría: 1o.- Los individuos de la Fuerza Pública, que se hallen en actual servicio, incluso los comisarios, médicos, cirujanos y demás personas adictas a los cuerpos de línea o a las naves del Estado; y, 2o.- Los que tienen que ejercer por largo tiempo, o por tiempo indefinido, un cargo o comisión pública, fuera del territorio ecuatoriano. III REGLAS RELATIVAS A LA EDAD"
-   },
-   "art-0521": {
-    "ratio": 0.907,
-    "ours": "Art. 521.- Cuando no hubiere certidumbre acerca de la edad, se juzgará de ella según el Art. 342; y si en consecuencia se discierne el cargo al tutor o curador nombrado, será válido y subsistirá, cualquiera que sea realmente la edad.",
-    "theirs": "Art. 521.- Cuando no hubiere certidumbre acerca de la edad, se juzgará de ella según el Art. 342; y si en consecuencia se discierne el cargo al tutor o curador nombrado, será válido y subsistirá, cualquiera que sea realmente la edad. IV REGLAS RELATIVAS A LAS RELACIONES DE FAMILIA"
-   },
-   "art-0525": {
-    "ratio": 0.593,
-    "ours": "Art. 525.- El cónyuge separado judicialmente no puede ser curador del otro.",
-    "theirs": "Art. 525.- El cónyuge separado judicialmente no puede ser curador del otro. V REGLAS RELATIVAS A LA OPOSICIÓN DE INTERESES O DIFERENCIA DE RELIGIÓN ENTRE EL GUARDADOR Y EL PUPILO"
-   },
-   "art-0528": {
-    "ratio": 0.927,
-    "ours": "Art. 528.- Las disposiciones del precedente artículo no comprenden al tutor o curador testamentario, si se prueba que el testador tenía conocimiento del crédito, deuda o litis, al tiempo de nombrar a dicho tutor o curador. Ni se extienden a los créditos, deudas o litis que fueren de poca importancia, en concepto del juez.",
-    "theirs": "Art. 528.- Las disposiciones del precedente artículo no comprenden al tutor o curador testamentario, si se prueba que el testador tenía conocimiento del crédito, deuda o litis, al tiempo de nombrar a dicho tutor o curador. Ni se extienden a los créditos, deudas o litis que fueren de poca importancia, en concepto del juez. VI REGLAS RELATIVAS A LA INCAPACIDAD SOBREVENIENTE"
-   },
-   "art-0530": {
-    "ratio": 0.877,
-    "ours": "Art. 530.- La demencia del tutor o curador viciará de nulidad todos los actos que durante ella hubieren ejecutado, aunque no hayan sido puestos en interdicción.",
-    "theirs": "Art. 530.- La demencia del tutor o curador viciará de nulidad todos los actos que durante ella hubieren ejecutado, aunque no hayan sido puestos en interdicción. VII REGLAS GENERALES SOBRE LAS INCAPACIDADES"
+    "theirs": "Art. 518.- Son incapaces de toda tutela o curaduría: 1o.- Los ciegos; 2o.- Los mudos; 3o.- Las personas con trastornos mentales, aunque no estén bajo interdicción; 4o.- Los fallidos, mientras no hayan sido rehabilitados; 5o.- Los que están privados de administrar sus propios bienes, por disipación; 6o.- Los que carecen de domicilio en la República; 7o.- Los que no saben leer ni escribir; 8o.- Los de mala conducta notoria; 9o.- Los condenados judicialmente a una pena de las designadas en el Art. 311, numeral 4o., aunque se les haya indultado de ella; 10o.- El cónyuge que haya dado causa para el divorcio, según el Art. 110, menos en el caso de los numerales 8o., y 11o. 11o.- El que ha sido privado de ejercer la patria potestad, según el Art. 311; y, 12o.- Los que, por torcida o descuidada administración, han sido removidos de una guarda anterior, o en el juicio subsiguiente a ésta han sido condenados, por fraude o culpa grave, a indemnizar al pupilo."
    },
    "art-0533": {
     "ratio": 0.449,
     "ours": "Art. 533.- Pueden excusarse de la tutela o curaduría: 1o.- El Presidente y Vicepresidente de la República, los Ministros de Estado, los Ministros de la Corte Suprema, Ministros de las Cortes Superiores, de los Tribunales Distritales Fiscal y Contencioso Administrativo; los fiscales; los jueces penales y los jueces de la niñez y adolescencia. 2o.- Los administradores y recaudadores de rentas fiscales; 3o.- Los que están obligados a servir por largo tiempo un empleo público a considerable distancia del lugar en que se ha de ejercer la guarda; 4o.- Los que tienen su domicilio a considerable distancia de dicho lugar; 5o.- Los que adolecen de grave enfermedad inhabilitante, o han cumplido sesenta y cinco años; 6o.- Los extremadamente pobres; 7o.- Los que ejercen ya dos guardas; y los que, estando casados o teniendo hijos bajo patria potestad, ejercen ya una guarda; pero no se tomarán en cuenta las curadurías especiales. Podrá el juez contar como dos la tutela o curaduría que fuere demasiado complicada y gravosa; y, 8o.- Los que tienen bajo su patria potestad cinco o más hijos; contándoseles también los que han muerto en acción de guerra bajo las banderas de la República.",
     "theirs": "Art. 533.- Pueden excusarse de la tutela o curaduría: 1o.- El Presidente y Vicepresidente de la República, los Ministros de Estado, los Ministros de la Corte Suprema, Ministros de las Cortes Superiores, de los Tribunales Distritales Fiscal y Contencioso Administrativo; los fiscales; los jueces penales y los jueces de la niñez y adolescencia."
-   },
-   "art-0543": {
-    "ratio": 0.0,
-    "ours": null,
-    "theirs": "Art. 543.-"
    },
    "art-0567": {
     "ratio": 0.962,
@@ -398,11 +178,6 @@
     "ratio": 0.9,
     "ours": "Art. 577.- Las corporaciones no pueden disolverse por sí mismas, sin la aprobación de la autoridad que legitimó su establecimiento. Pero pueden ser disueltas por ella, o por disposición de la ley, a pesar de la voluntad de sus miembros, si llegan a comprometer la seguridad del Estado.",
     "theirs": "Art. 577.- Las corporaciones no pueden disolverse por sí mismas, sin la aprobación de la autoridad que legitimó su establecimiento. Pero pueden ser disueltas por ella, o por disposición de la ley, a pesar de la voluntad de sus miembros, si llegan a comprometer la seguridad o los intereses del Estado, o no corresponden al objeto de su institución."
-   },
-   "art-0582": {
-    "ratio": 0.719,
-    "ours": "Art. 582.- Las fundaciones perecen por la destrucción de los bienes destinados a su manutención.",
-    "theirs": "Art. 582.- Las fundaciones perecen por la destrucción de los bienes destinados a su manutención. Libro II DE LOS BIENES Y DE SU DOMINIO, POSESIÓN, USO, GOCE Y LIMITACIONES"
    },
    "art-0603": {
     "ratio": 0.467,
@@ -459,11 +234,6 @@
     "ours": "Art. 933.- La reivindicación o acción de dominio es la que tiene el dueño de una cosa singular, de que no está en posesión, para que el poseedor de ella sea condenado a restituirsela.",
     "theirs": "Art. 933.- La reivindicación o acción de dominio es la que tiene el dueño de una cosa singular, de que no está en posesión, para que el poseedor de ella sea condenado a restituírsela."
    },
-   "art-0992": {
-    "ratio": 0.935,
-    "ours": "Art. 992.- Las acciones concedidas en este Título, para la indemnización del daño padecido, prescriben al cabo de un año completo. Las dirigidas a precaver el daño no prescriben mientras haya justo motivo de temerlo. Si las dirigidas contra una obra nueva no se propusieren dentro del año, los denunciados o querellados serán amparados en el juicio posesorio, y el denunciante o querellante podrá solamente perseguir su derecho por la vía ordinaria. Pero ni aún esta acción tendrá lugar cuando, según las reglas dadas para la servidumbre, haya prescrito el derecho.",
-    "theirs": "Art. 992.- Las acciones concedidas en este Título, para la indemnización del daño padecido, prescriben al cabo de un año completo. Las dirigidas a precaver el daño no prescriben mientras haya justo motivo de temerlo. Si las dirigidas contra una obra nueva no se propusieren dentro del año, los denunciados o querellados serán amparados en el juicio posesorio, y el denunciante o querellante podrá solamente perseguir su derecho por la vía ordinaria. Pero ni aún esta acción tendrá lugar cuando, según las reglas dadas para la servidumbre, haya prescrito el derecho. Libro III DE LA SUCESIÓN POR CAUSA DE MUERTE, Y DE LAS DONACIONES ENTRE VIVOS"
-   },
    "art-1001": {
     "ratio": 0.998,
     "ours": "Art. 1001.- En toda sucesión por causa de muerte, para llevar a ejecución las disposiciones del difunto o de la ley, se deducirán del acervo o masa de bienes que el difunto ha dejado, inclusos los créditos hereditarios: 1o.- Las costas de la publicación del testamento, si lo hubiere, las anexas a la apertura de la sucesión, lo que se debiere por la última enfermedad, y los gastos funerales; 2o.- Las deudas hereditarias; 3o.- El impuesto progresivo que causen las sucesiones indivisas; y, 4o.- La porción conyugal a que hubiere lugar en todos los órdenes de sucesión. El resto es el aservo líquido de que dispone el testador o la ley.",
@@ -478,11 +248,6 @@
     "ratio": 0.956,
     "ours": "Art. 1012.- Es asimismo indigno de suceder al impúber, demente o persona sorda que no pueda darse a entender de manera verbal, por escrito o por lengua de señas, el ascendiente o descendiente, que, siendo llamado a sucederle abintestato, no pidió que se le nombrara tutor o curador, y permaneció en esta omisión un año entero; a menos que aparezca haberle sido imposible pedirlo por sí o por procurador. Si fueren muchos los llamados a la sucesión, la diligencia de uno de ellos aprovechará a los demás. Transcurrido el año recaerá la obligación antedicha en los llamados en segundo grado a la sucesión intestada. La obligación no se extiende a los menores, ni en general a los que viven bajo curaduría. Esta indignidad desaparece desde que el impúber llega a la pubertad, o el demente o sordomudo toma la administración de sus bienes.",
     "theirs": "Art. 1012.- Es asimismo indigno de suceder al impúber, persona con trastorno mental o persona sorda que no pueda darse a entender de manera verbal, por escrito o por lengua de señas, el ascendiente o descendiente, que, siendo llamado a sucederle abintestato, no pidió que se le nombrara tutor o curador, y permaneció en esta omisión un año entero; a menos que aparezca haberle sido imposible pedirlo por sí o por procurador. Si fueren muchos los llamados a la sucesión, la diligencia de uno de ellos aprovechará a los demás. Transcurrido el año recaerá la obligación antedicha en los llamados en segundo grado a la sucesión intestada. La obligación no se extiende a los menores, ni en general a los que viven bajo curaduría. Esta indignidad desaparece desde que el impúber llega a la pubertad, o la persona con trastorno mental o sordomudo toma la administración de sus bienes."
-   },
-   "art-1050": {
-    "ratio": 0.0,
-    "ours": null,
-    "theirs": "Art. 1050.-"
    },
    "art-1267": {
     "ratio": 0.998,
@@ -504,50 +269,25 @@
     "ours": "Art. 1362.- No ha lugar a esta acción: 1.- Si la evicción o la molestia procedieren de causa superviniente a la partición; 2.- Si la acción de saneamiento se hubiere expresamente renunciado; y, 3.- Si el partícipe ha sufrido la molestia o la evicción, por su culpa.",
     "theirs": "Art. 1362.- No ha lugar a esta acción: 1.- Si la evicción o la molestia procedieren de causa superveniente a la partición; 2.- Si la acción de saneamiento se hubiere expresamente renunciado; y, 3.- Si el partícipe ha sufrido la molestia o la evicción, por su culpa."
    },
-   "art-1452": {
-    "ratio": 0.769,
-    "ours": "Art. 1452.- En lo demás, las donaciones remuneratorias quedan sujetas a las reglas de este Título.",
-    "theirs": "Art. 1452.- En lo demás, las donaciones remuneratorias quedan sujetas a las reglas de este Título. Libro IV DE LAS OBLIGACIONES EN GENERAL Y DE LOS CONTRATOS"
-   },
    "art-1463": {
     "ratio": 0.969,
     "ours": "Art. 1463.- Son absolutamente incapaces los dementes, los impúberes y los persona sorda que no pueda darse a entender de manera verbal, por escrito o por lengua de señas. Sus actos no surten ni aún obligaciones naturales, y no admiten caución. Son también incapaces los menores adultos, los que se hallan en interdicción de administrar sus bienes, y las personas jurídicas. Pero la incapacidad de estas clases de personas no es absoluta, y sus actos pueden tener valor en ciertas circunstancias y bajo ciertos respectos determinados por las leyes. Además de estas incapacidades hay otras particulares, que consisten en la prohibición que la ley ha impuesto a ciertas personas para ejecutar ciertos actos.",
     "theirs": "Art. 1463.- Son absolutamente incapaces las personas con trastornos mentales, los impúberes y la persona sorda que no pueda darse a entender de manera verbal, por escrito o por lengua de señas. Sus actos no surten ni aún obligaciones naturales, y no admiten caución. Son también incapaces los menores adultos, los que se hallan en interdicción de administrar sus bienes, y las personas jurídicas. Pero la incapacidad de estas clases de personas no es absoluta, y sus actos pueden tener valor en ciertas circunstancias y bajo ciertos respectos determinados por las leyes. Además de estas incapacidades hay otras particulares, que consisten en la prohibición que la ley ha impuesto a ciertas personas para ejecutar ciertos actos."
-   },
-   "art-1509": {
-    "ratio": 0.269,
-    "ours": "Art. 1509.- Las disposiciones del Título IV del Libro III sobre asignaciones testamentarias condicionales o modales, se aplican a las convenciones en lo que no pugne con lo dispuesto en los artículos precedentes.",
-    "theirs": "Art. 1509.- Las disposiciones del"
-   },
-   "art-1514": {
-    "ratio": 0.354,
-    "ours": "Art. 1514.- Lo dicho en el Título IV del Libro III sobre asignaciones testamentarias a día, se aplica a las convenciones.",
-    "theirs": "Art. 1514.- Lo dicho en el"
    },
    "art-1550": {
     "ratio": 0.996,
     "ours": "Art. 1550.- Si de dos codeudores de un hecho que debe efectuarse en común, el uno está pronto a cumplirlo, y el otro lo rehusa o retarda, éste solo será responsable de los perjuicios que de la inejecución o retardo del hecho resultaren al acreedor.",
     "theirs": "Art. 1550.- Si de dos codeudores de un hecho que debe efectuarse en común, el uno está pronto a cumplirlo, y el otro lo rehúsa o retarda, éste solo será responsable de los perjuicios que de la inejecución o retardo del hecho resultaren al acreedor."
    },
-   "art-1572": {
-    "ratio": 0.943,
-    "ours": "Art. 1572.- La indemnización de perjuicios comprende el daño emergente y el lucro cesante, ya provengan de no haberse cumplido la obligación, o de haberse cumplido imperfectamente, o de haberse retardado el cumplimiento. Exceptúanse los casos en que la ley la limita al daño emergente. Exceptúanse también las indemnizaciones por daño moral determinadas en el Título XXXIII del Libro IV de este Código.",
-    "theirs": "Art. 1572.- La indemnización de perjuicios comprende el daño emergente y el lucro cesante, ya provengan de no haberse cumplido la obligación, o de haberse cumplido imperfectamente, o de haberse retardado el cumplimiento. Exceptúanse los casos en que la ley la limita al daño emergente. Exceptúanse también las indemnizaciones por daño moral determinadas en el"
+   "art-1591": {
+    "ratio": 0.957,
+    "ours": "Art. 1591.- El pago en que se debe transferir la propiedad no es válido, sino en cuanto el que paga es dueño de la cosa pagada, o la paga con el consentimiento del dueño. Tampoco es válido el pago en que se debe transferir la propiedad, sino en cuanto el que paga tiene facultad de enajenar. Sin embargo, cuando la cosa pagada es fungible, y el acreedor la ha consumido de buena fe, se valida el pago, aunque haya sido hecho por el que no era dueño, o no tuvo facultad de enajenar.",
+    "theirs": "Art. 1591.- El pago en que se debe transferir la propiedad no es válido, sino en cuanto el que paga es dueño de la cosa pagada, o la paga con el consentimiento del dueño. Tampoco es válido el pago en que se debe transferir la propiedad, sino en cuanto el que paga tiene facultad de enajenar. Sin embargo, cuando la cosa pagada es fungible, y el acreedor la ha consumido de buena fe, se valida el pago, aunque haya sido hecho por el que no era dueño, o no tuvo facultad de enajenar. Parágrafo 3o. A QUIÉN DEBE HACERSE EL PAGO"
    },
    "art-1605": {
     "ratio": 0.926,
     "ours": "Art. 1605.- Si hubiere mudado de domicilio el acreedor o el deudor, entre la celebración del contrato y el pago, se hará siempre éste en el lugar en que sin esa mudanza correspondería, salvo que las partes dispongan de común acuerdo otra cosa Parágrafo 5o. Cómo debe hacerse el pago",
     "theirs": "Art. 1605.- Si hubiere mudado de domicilio el acreedor o el deudor, entre la celebración del contrato y el pago, se hará siempre éste en el lugar en que sin esa mudanza correspondería, salvo que las partes dispongan de común acuerdo otra cosa."
-   },
-   "art-1617": {
-    "ratio": 0.0,
-    "ours": null,
-    "theirs": "Art. 1617.-"
-   },
-   "art-1618": {
-    "ratio": 0.0,
-    "ours": null,
-    "theirs": "Art. 1618.-"
    },
    "art-1638": {
     "ratio": 0.305,
@@ -559,20 +299,10 @@
     "ours": "Art. 1643.- No se pueden pedir alimentos y beneficio de competencia a un mismo tiempo. El deudor elegirá. Título XV De la novación",
     "theirs": "Art. 1643.- No se pueden pedir alimentos y beneficio de competencia a un mismo tiempo. El deudor elegirá."
    },
-   "art-1716": {
-    "ratio": 0.0,
-    "ours": null,
-    "theirs": "Art. 1716.-"
-   },
    "art-1731": {
     "ratio": 0.917,
     "ours": "Art. 1731.- Sobre el juramento deferido por el juez o por una de las partes a la otra, y sobre la inspección personal del juez, se estará a lo dispuesto en el Código de Procedimiento Civil.",
     "theirs": "Art. 1731.- Sobre el juramento deferido por el juez o por una de las partes a la otra, y sobre la inspección personal del juez, se estará a lo dispuesto en el Código Orgánico General de Procesos."
-   },
-   "art-1764": {
-    "ratio": 0.938,
-    "ours": "Art. 1764.- Las obligaciones del vendedor se reducen en general a dos: la entrega o tradición, y el saneamiento de la cosa vendida. La tradición se sujetará a las reglas dadas en el Título VI del Libro II.",
-    "theirs": "Art. 1764.- Las obligaciones del vendedor se reducen en general a dos: la entrega o tradición, y el saneamiento de la cosa vendida. La tradición se sujetará a las reglas dadas en el"
    },
    "art-2145": {
     "ratio": 0.985,
@@ -609,7 +339,7 @@
  "lexis_2017": {
   "day": "2017-04-12",
   "articles_compared": 2428,
-  "disagree": 205,
+  "disagree": 193,
   "rows": {
    "art-0007": {
     "ratio": 0.997,
@@ -711,11 +441,6 @@
     "ours": null,
     "theirs": "Art. 111.- Nota: Artículo derogado por Ley No. 0, publicada en Registro Oficial Suplemento 526 de 19 de Junio del 2015 ."
    },
-   "art-0121": {
-    "ratio": 0.0,
-    "ours": null,
-    "theirs": "Art. 121.-"
-   },
    "art-0125": {
     "ratio": 0.0,
     "ours": null,
@@ -781,11 +506,6 @@
     "ours": "Art. 215.- Si a uno de los cónyuges se hiciere una donación o se dejare una herencia o legado, con la condición precisa de que en las cosas donadas, heredadas o legadas, no tenga la administración el otro, y si dicha donación, herencia o legado fueren aceptados por el beneficiario, se observarán las reglas siguientes: 1a.- Con respecto a las cosas donadas, heredadas o legadas, se observarán las disposiciones del artículo 220; 2a.- Las cosas a que se refiere la regla anterior ingresarán al patrimonio personal del respectivo cónyuge; y, 3a.- Serán exclusivamente de cada cónyuge los frutos de las cosas que administra y todo lo que con ellos adquiera.",
     "theirs": "Art. 215.- Si a uno de los cónyuges se hiciere una donación o se dejare una herencia o legado, con la condición precisa de que en las cosas donadas, heredadas o legadas, no tenga la administración el otro, y si dicha donación, herencia o legado fueren aceptados por el beneficiario, se observarán las reglas siguientes: 1. Con respecto a las cosas donadas, heredadas o legadas, se observarán las disposiciones del artículo 220; 2. Las cosas a que se refiere la regla anterior ingresarán al patrimonio personal del respectivo cónyuge; y, 3. Serán exclusivamente de cada cónyuge los frutos de las cosas que administra y todo lo que con ellos adquiera."
    },
-   "art-0231": {
-    "ratio": 0.235,
-    "ours": "Art. 231.- Las reglas contenidas en el Título II, Libro Tercero de éste Código, referentes a los diversos órdenes de la sucesión intestada en lo que concierne al cónyuge, se aplicarán al conviviente que sobreviviere, del mismo modo que los preceptos relacionados a la porción conyugal.",
-    "theirs": "Art. 231.- Las reglas contenidas en el"
-   },
    "art-0234": {
     "ratio": 0.0,
     "ours": null,
@@ -845,16 +565,6 @@
     "ratio": 0.0,
     "ours": null,
     "theirs": "Art. 256.- Nota: Artículo derogado por Ley No. 0, publicada en Registro Oficial Suplemento 526 de 19 de Junio del 2015 ."
-   },
-   "art-0257": {
-    "ratio": 0.0,
-    "ours": null,
-    "theirs": "Art. 257.-"
-   },
-   "art-0260": {
-    "ratio": 0.0,
-    "ours": null,
-    "theirs": "Art. 260.-"
    },
    "art-0261": {
     "ratio": 0.0,
@@ -925,11 +635,6 @@
     "ratio": 0.984,
     "ours": "Art. 400.- Están obligados a prestar fianza todos los tutores o curadores, exceptuados solamente: 1o.- El cónyuge y los ascendientes y descendientes; 2o.- Los interinos, llamados por poco tiempo a servir el cargo; 3o.- Los que se dan para un negocio particular, sin administración de bienes; y, 4o.- Podrá también ser relevado de la fianza, cuando el pupilo tuviere pocos bienes, el tutor o curador que fuere persona de conocida probidad y de suficientes facultades para responder de ellos.",
     "theirs": "Art. 400.- Están obligados a prestar fianza todos los tutores o curadores, exceptuados solamente: 1. El cónyuge y los ascendientes y descendientes; 2. Los interinos, llamados por poco tiempo a servir el cargo; 3. Los que se dan para un negocio particular, sin administración de bienes; y, 4. Podrá también ser relevado de la fianza, cuando el pupilo tuviere pocos bienes, el tutor o curador que fuere persona de conocida probidad y de suficientes facultades para responder de ellos."
-   },
-   "art-0453": {
-    "ratio": 0.836,
-    "ours": "Art. 453.- En lo tocante a la crianza y educación del pupilo está obligado el tutor a conformarse con la voluntad de la persona o personas encargadas de ellas, según lo ordenado en el Título XI; sin perjuicio de ocurrir al juez cuando lo crea conveniente.",
-    "theirs": "Art. 453.- En lo tocante a la crianza y educación del pupilo está obligado el tutor a conformarse con la voluntad de la persona o personas encargadas de ellas, según lo ordenado en el"
    },
    "art-0462": {
     "ratio": 0.0,
@@ -1096,6 +801,11 @@
     "ours": "Art. 851.- Son causas de extinción del patrimonio familiar ya constituido: 1a.- El fallecimiento de todos los beneficiarios, si el constituyente es célibe; 2a.- La terminación del estado de matrimonio, siempre que hubieren fallecido los beneficiarios; 3a.- El acuerdo entre los cónyuges si no existiere algún hijo o nieto de uno de ellos o de ambos, que tuviere derecho a ser beneficiario; y, 4a.- La subrogación por otro patrimonio que podrá ser autorizada por el juez o el notario o notaria, previa solicitud del instituyente. El juez calificará la conveniencia en interés común de los beneficiarios.",
     "theirs": "Art. 851.- Son causas de extinción del patrimonio familiar ya constituido: 1. El fallecimiento de todos los beneficiarios, si el constituyente es célibe; 2. La terminación del estado de matrimonio, siempre que hubieren fallecido los beneficiarios; 3. El acuerdo entre los cónyuges si no existiere algún hijo o nieto de uno de ellos o de ambos, que tuviere derecho a ser beneficiario; y, 4. La subrogación por otro patrimonio que podrá ser autorizada por el juez o el notario o notaria, previa solicitud del instituyente. El juez o el notario o notaria calificará la conveniencia en interés común de los beneficiarios."
    },
+   "art-0871": {
+    "ratio": 0.885,
+    "ours": "Art. 871.- Las disposiciones de este Título se entenderán sin perjuicio de lo que dispongan las leyes especiales u ordenanzas generales o locales sobre las servidumbres.",
+    "theirs": "Art. 871.- Las disposiciones de este Título se entenderán sin perjuicio de lo que dispongan las leyes especiales u ordenanzas generales o locales sobre las servidumbres. Parágrafo 1o. De las servidumbres naturales"
+   },
    "art-0872": {
     "ratio": 0.998,
     "ours": "Art. 872.- El predio inferior está sujeto a recibir las aguas que descienden del predio superior naturalmente, esto es, sin que la mano del hombre contribuya a ello. No se puede, por consiguiente, dirigir un albañal o acequia sobre el predio vecino, si no se ha constituído esta servidumbre especial. En el predio sirviente no se puede hacer cosa alguna que estorbe la servidumbre natural, ni en el predio dominante, cosa alguna que la grave. La modificación al curso de las aguas se sujetará a lo dispuesto en la Ley de Aguas.",
@@ -1145,11 +855,6 @@
     "ratio": 0.978,
     "ours": "Art. 1043.- No son hábiles para testar: 1o.- El menor de dieciocho años; 2o.- El que se hallare en interdicción por causa de demencia; 3o.- El que actualmente no estuviere en su sano juicio, por ebriedad u otra causa; y, 4o.- El que de palabra o por escrito no pudiere expresar su voluntad claramente. Las personas no comprendidas en esta enumeración son hábiles para testar.",
     "theirs": "Art. 1043.- No son hábiles para testar: 1. El menor de dieciocho años; 2. El que se hallare en interdicción por causa de demencia; 3. El que actualmente no estuviere en su sano juicio, por ebriedad u otra causa; y, 4. El que de palabra o por escrito no pudiere expresar su voluntad claramente. Las personas no comprendidas en esta enumeración son hábiles para testar."
-   },
-   "art-1050": {
-    "ratio": 0.0,
-    "ours": null,
-    "theirs": "Art. 1050.-"
    },
    "art-1064": {
     "ratio": 0.999,
@@ -1256,20 +961,10 @@
     "ours": "Art. 1463.- Son absolutamente incapaces los dementes, los impúberes y los persona sorda que no pueda darse a entender de manera verbal, por escrito o por lengua de señas. Sus actos no surten ni aún obligaciones naturales, y no admiten caución. Son también incapaces los menores adultos, los que se hallan en interdicción de administrar sus bienes, y las personas jurídicas. Pero la incapacidad de estas clases de personas no es absoluta, y sus actos pueden tener valor en ciertas circunstancias y bajo ciertos respectos determinados por las leyes. Además de estas incapacidades hay otras particulares, que consisten en la prohibición que la ley ha impuesto a ciertas personas para ejecutar ciertos actos.",
     "theirs": "Art. 1463.- Son absolutamente incapaces los dementes, los impúberes y la (sic) persona sorda que no pueda darse a entender de manera verbal, por escrito o por lengua de señas. Sus actos no surten ni aún obligaciones naturales, y no admiten caución. Son también incapaces los menores adultos, los que se hallan en interdicción de administrar sus bienes, y las personas jurídicas. Pero la incapacidad de estas clases de personas no es absoluta, y sus actos pueden tener valor en ciertas circunstancias y bajo ciertos respectos determinados por las leyes. Además de estas incapacidades hay otras particulares, que consisten en la prohibición que la ley ha impuesto a ciertas personas para ejecutar ciertos actos."
    },
-   "art-1509": {
-    "ratio": 0.269,
-    "ours": "Art. 1509.- Las disposiciones del Título IV del Libro III sobre asignaciones testamentarias condicionales o modales, se aplican a las convenciones en lo que no pugne con lo dispuesto en los artículos precedentes.",
-    "theirs": "Art. 1509.- Las disposiciones del"
-   },
    "art-1512": {
     "ratio": 0.99,
     "ours": "Art. 1512.- El pago de la obligación no puede exigirse antes de expirar el plazo, si no es: 1o.- Al deudor constituido en quiebra o que se halle en notoria insolvencia; y, 2o.- Al deudor cuyas cauciones, por hecho o culpa suya, se han extinguido o han disminuido considerablemente de valor. Pero, en este caso, el deudor podrá reclamar el beneficio del plazo, renovando o mejorando las cauciones.",
     "theirs": "Art. 1512.- El pago de la obligación no puede exigirse antes de expirar el plazo, si no es: 1. Al deudor constituido en quiebra o que se halle en notoria insolvencia; y, 2. Al deudor cuyas cauciones, por hecho o culpa suya, se han extinguido o han disminuido considerablemente de valor. Pero, en este caso, el deudor podrá reclamar el beneficio del plazo, renovando o mejorando las cauciones."
-   },
-   "art-1514": {
-    "ratio": 0.354,
-    "ours": "Art. 1514.- Lo dicho en el Título IV del Libro III sobre asignaciones testamentarias a día, se aplica a las convenciones.",
-    "theirs": "Art. 1514.- Lo dicho en el"
    },
    "art-1542": {
     "ratio": 0.999,
@@ -1296,11 +991,6 @@
     "ours": "Art. 1570.- La promesa de celebrar un contrato no produce obligación alguna; salvo que concurran las circunstancias siguientes: 1.- Que la promesa conste por escrito; y por escritura pública, cuando fuere de celebrar un contrato para cuya validez se necesita de tal solemnidad, conforme a las disposiciones de este Código; 2.- Que el contrato prometido no sea de los que las leyes declaran ineficaces; 3.- Que la promesa contenga un plazo o condición que fije la época de la celebración del contrato; y, 4.- Que en ella se especifique de tal manera el contrato prometido, que sólo falten, para que sea perfecto, la tradición de la cosa, o las solemnidades que las leyes prescriban. Concurriendo estas circunstancias habrá lugar a lo prevenido en el artículo precedente.",
     "theirs": "Art. 1570.- La promesa de celebrar un contrato no produce obligación alguna; salvo que concurran las circunstancias siguientes: 1. Que la promesa conste por escrito; y por escritura pública, cuando fuere de celebrar un contrato para cuya validez se necesita de tal solemnidad, conforme a las disposiciones de este Código; 2. Que el contrato prometido no sea de los que las leyes declaran ineficaces; 3. Que la promesa contenga un plazo o condición que fije la época de la celebración del contrato; y, 4. Que en ella se especifique de tal manera el contrato prometido, que sólo falten, para que sea perfecto, la tradición de la cosa, o las solemnidades que las leyes prescriban. Concurriendo estas circunstancias habrá lugar a lo prevenido en el artículo precedente."
    },
-   "art-1572": {
-    "ratio": 0.943,
-    "ours": "Art. 1572.- La indemnización de perjuicios comprende el daño emergente y el lucro cesante, ya provengan de no haberse cumplido la obligación, o de haberse cumplido imperfectamente, o de haberse retardado el cumplimiento. Exceptúanse los casos en que la ley la limita al daño emergente. Exceptúanse también las indemnizaciones por daño moral determinadas en el Título XXXIII del Libro IV de este Código.",
-    "theirs": "Art. 1572.- La indemnización de perjuicios comprende el daño emergente y el lucro cesante, ya provengan de no haberse cumplido la obligación, o de haberse cumplido imperfectamente, o de haberse retardado el cumplimiento. Exceptúanse los casos en que la ley la limita al daño emergente. Exceptúanse también las indemnizaciones por daño moral determinadas en el"
-   },
    "art-1575": {
     "ratio": 0.997,
     "ours": "Art. 1575.- Si la obligación es de pagar una cantidad de dinero, la indemnización de perjuicios por la mora está sujeta a las reglas siguientes: 1.- Se siguen debiendo los intereses convencionales, si se ha pactado un interés superior al legal, o empiezan a deberse los intereses legales, en el caso contrario; quedando, sin embargo, en su fuerza las disposiciones especiales que autoricen el cobro de los intereses corrientes, en ciertos casos; 2.- El acreedor no tiene necesidad de justificar perjuicios cuando sólo cobra intereses. En tal caso basta el hecho del retardo; 3.- Los intereses atrasados no producen interés; y, 4.- La regla anterior se aplica a toda especie de rentas, cánones y pensiones periódicas.",
@@ -1325,16 +1015,6 @@
     "ratio": 0.996,
     "ours": "Art. 1616.- La consignación debe ser precedida de oferta; y para que ésta sea válida, reunirá las circunstancias que siguen: 1.- Que sea hecha por una persona capaz de pagar; 2.- Que sea hecha al acreedor, siendo éste capaz de recibir el pago, o a su legítimo representante; 3.- Que si la obligación es a plazo o bajo condición suspensiva, haya expirado el plazo o se haya cumplido la condición; 4.- Que se ofrezca ejecutar el pago en el lugar debido; y, 5.- Que el deudor ponga en manos del juez una minuta de lo que debe, con los intereses vencidos, si los hubiere, y los demás cargos líquidos, comprendiendo en ella una descripción individual de la cosa ofrecida.",
     "theirs": "Art. 1616.- La consignación debe ser precedida de oferta; y para que ésta sea válida, reunirá las circunstancias que siguen: 1. Que sea hecha por una persona capaz de pagar; 2. Que sea hecha al acreedor, siendo éste capaz de recibir el pago, o a su legítimo representante; 3. Que si la obligación es a plazo o bajo condición suspensiva, haya expirado el plazo o se haya cumplido la condición; 4. Que se ofrezca ejecutar el pago en el lugar debido; y, 5. Que el deudor ponga en manos del juez una minuta de lo que debe, con los intereses vencidos, si los hubiere, y los demás cargos líquidos, comprendiendo en ella una descripción individual de la cosa ofrecida."
-   },
-   "art-1617": {
-    "ratio": 0.0,
-    "ours": null,
-    "theirs": "Art. 1617.-"
-   },
-   "art-1618": {
-    "ratio": 0.0,
-    "ours": null,
-    "theirs": "Art. 1618.-"
    },
    "art-1626": {
     "ratio": 0.997,
@@ -1375,16 +1055,6 @@
     "ratio": 0.997,
     "ours": "Art. 1672.- La compensación se opera por el solo ministerio de la ley y aún sin conocimiento de los deudores; y ambas deudas se extinguen recíprocamente en sus respectivos valores, desde que una y otra reúnen las calidades siguientes: 1.- Que sean ambas de dinero o de cosas fungibles o indeterminadas, de igual género y calidad; 2.- Que ambas deudas sean líquidas; y, 3.- Que ambas sean actualmente exigibles. Las esperas concedidas al deudor impiden la compensación; pero esta disposición no se aplica al plazo de gracia concedido por un acreedor a su deudor.",
     "theirs": "Art. 1672.- La compensación se opera por el solo ministerio de la ley y aún sin conocimiento de los deudores; y ambas deudas se extinguen recíprocamente en sus respectivos valores, desde que una y otra reúnen las calidades siguientes: 1. Que sean ambas de dinero o de cosas fungibles o indeterminadas, de igual género y calidad; 2. Que ambas deudas sean líquidas; y, 3. Que ambas sean actualmente exigibles. Las esperas concedidas al deudor impiden la compensación; pero esta disposición no se aplica al plazo de gracia concedido por un acreedor a su deudor."
-   },
-   "art-1716": {
-    "ratio": 0.0,
-    "ours": null,
-    "theirs": "Art. 1716.-"
-   },
-   "art-1764": {
-    "ratio": 0.938,
-    "ours": "Art. 1764.- Las obligaciones del vendedor se reducen en general a dos: la entrega o tradición, y el saneamiento de la cosa vendida. La tradición se sujetará a las reglas dadas en el Título VI del Libro II.",
-    "theirs": "Art. 1764.- Las obligaciones del vendedor se reducen en general a dos: la entrega o tradición, y el saneamiento de la cosa vendida. La tradición se sujetará a las reglas dadas en el"
    },
    "art-1786": {
     "ratio": 0.997,
@@ -1432,9 +1102,9 @@
     "theirs": "Art. 1912.- Estará obligado especialmente el inquilino: 1. A conservar la integridad interior de las paredes, techos, pavimentos y cañerías, reponiendo las piedras, ladrillos y tejas que durante el arrendamiento se quiebren o desencajen; 2. A reponer, en las ventanas, puertas y tabiques, los cristales quebrados; y, 3. A mantener en estado de servicio las puertas, ventanas y cerraduras. Se entenderá que ha recibido el edificio en buen estado bajo todos estos respectos, a menos que se pruebe lo contrario."
    },
    "art-1914": {
-    "ratio": 0.967,
+    "ratio": 0.84,
     "ours": "Art. 1914.- El arrendador tendrá derecho para expeler al inquilino que empleare la casa o edificio en un objeto ilícito, o que teniendo facultad de subarrendar, subarriende a personas de notoria mala conducta, las que podrán ser igualmente expelidas.",
-    "theirs": "Art. 1914.- El arrendador tendrá derecho para expeler al inquilino que empleare la casa o edificio en un objeto ilícito, o que teniendo facultad de subarrendar, subarriende a personas de notoria mala conducta, las que podrán ser igualmente expelidas. * CODIGO CIVIL ("
+    "theirs": "Art. 1914.- El arrendador tendrá derecho para expeler al inquilino que empleare la casa o edificio en un objeto ilícito, o que teniendo facultad de subarrendar, subarriende a personas de notoria mala conducta, las que podrán ser igualmente expelidas. * CODIGO CIVIL (LIBRO IV): Arts. 1478, 1480, 1482, 1879, 1887. * LEY DE INQUILINATO: Arts. 30."
    },
    "art-1934": {
     "ratio": 0.998,
@@ -1496,11 +1166,6 @@
     "ours": "Art. 2127.- Las partes podrán estipular que el depositario responda de toda especie de culpa. A falta de estipulación, responderá solamente de la culpa grave. Pero será responsable de la leve en los casos siguientes: 1.- Si se ha ofrecido espontáneamente, o ha pretendido que se le prefiera a otra persona para depositarlo; y, 2.- Si tiene algún interés personal en el depósito, sea porque se le permita usar de él en ciertos casos, sea porque se le conceda remuneración.",
     "theirs": "Art. 2127.- Las partes podrán estipular que el depositario responda de toda especie de culpa. A falta de estipulación, responderá solamente de la culpa grave. Pero será responsable de la leve en los casos siguientes: 1. Si se ha ofrecido espontáneamente, o ha pretendido que se le prefiera a otra persona para depositarlo; y, 2. Si tiene algún interés personal en el depósito, sea porque se le permita usar de él en ciertos casos, sea porque se le conceda remuneración."
    },
-   "art-2143": {
-    "ratio": 0.994,
-    "ours": "Art. 2143.- El depósito necesario de que se hace cargo un adulto que no tiene la libre administración de sus bienes, pero que está en su sana razón, constituye un cuasicontrato que obliga al depositario, sin la autorización de su representante legal.",
-    "theirs": "Art. 2143.- El depósito necesario de que se hace cargo un adulto que no tiene la libre administración de sus bienes, pero que está en su sana razón, constituye un cuasicontrato que obliga al depositario, sin la autorización de su representante legal. II"
-   },
    "art-2163": {
     "ratio": 0.99,
     "ours": "Art. 2163.- Los principales contratos aleatorios son: 1.- El contrato de seguro; 2.- El préstamo a la gruesa ventura; 3.- El juego; 4.- La apuesta; y, 5.- La constitución de renta vitalicia. Los dos primeros pertenecen al Código de Comercio.",
@@ -1512,9 +1177,9 @@
     "theirs": "Art. 2212.- La comunidad termina: 1. Por la reunión de las cuotas de todos los comuneros en una sola persona; 2. Por la destrucción de la cosa común; y, 3. Por la división del haber común."
    },
    "art-2221": {
-    "ratio": 0.874,
+    "ratio": 0.771,
     "ours": "Art. 2221.- Los padres serán siempre responsables de los delitos o cuasidelitos cometidos por sus hijos menores, y que conocidamente provengan de la mala educación, o de los hábitos viciosos que les han dejado adquirir.",
-    "theirs": "Art. 2221.- Los padres serán siempre responsables de los delitos o cuasidelitos cometidos por sus hijos menores, y que conocidamente provengan de la mala educación, o de los hábitos viciosos que les han dejado adquirir. * CODIGO CIVIL (TITULO PRELIMINAR): Arts. 21. * CODIGO CIVIL ("
+    "theirs": "Art. 2221.- Los padres serán siempre responsables de los delitos o cuasidelitos cometidos por sus hijos menores, y que conocidamente provengan de la mala educación, o de los hábitos viciosos que les han dejado adquirir. * CODIGO CIVIL (TITULO PRELIMINAR): Arts. 21. * CODIGO CIVIL (LIBRO I): Arts. 268. * CODIGO DE LA NIÑEZ Y ADOLESCENCIA: Arts. 66."
    },
    "art-2229": {
     "ratio": 0.997,
@@ -1532,9 +1197,9 @@
     "theirs": "Art. 2250.- Están obligados a dar fianza a petición del acreedor: 1. El deudor que lo haya estipulado; 2. El deudor cuyas facultades disminuyan en términos de poner en peligro manifiesto el cumplimiento de su obligación; 3. El deudor de quien haya motivo de temer que se ausente del territorio del Estado con ánimo de establecerse en otra parte, mientras no deje bienes suficientes para la seguridad de sus obligaciones; y, 4. El deudor que hubiere constituido válidamente patrimonio familiar sobre una parte de sus bienes, en forma tal que no quedare debidamente respaldada la deuda."
    },
    "art-2259": {
-    "ratio": 0.97,
+    "ratio": 0.915,
     "ours": "Art. 2259.- El fiador reconvenido goza del beneficio de excusión, en virtud del cual podrá exigir que, antes de procederse contra él, se persiga la deuda en los bienes del deudor principal y en las hipotecas o prendas constituidas por éste para la seguridad de la misma deuda.",
-    "theirs": "Art. 2259.- El fiador reconvenido goza del beneficio de excusión, en virtud del cual podrá exigir que, antes de procederse contra él, se persiga la deuda en los bienes del deudor principal y en las hipotecas o prendas constituidas por éste para la seguridad de la misma deuda. * CODIGO CIVIL ("
+    "theirs": "Art. 2259.- El fiador reconvenido goza del beneficio de excusión, en virtud del cual podrá exigir que, antes de procederse contra él, se persiga la deuda en los bienes del deudor principal y en las hipotecas o prendas constituidas por éste para la seguridad de la misma deuda. * CODIGO CIVIL (LIBRO IV): Arts. 2268, 2286, 2309."
    },
    "art-2260": {
     "ratio": 0.994,
@@ -1630,6 +1295,11 @@
     "ratio": 0.997,
     "ours": "Art. 2412.- Los derechos reales se adquieren por la prescripción de la misma manera que el dominio, y están sujetos a las mismas reglas, salvo las excepciones siguientes: 1.- El derecho de herencia se adquiere por la prescripción extraordinaria de quince años; y, 2.- El derecho de servidumbre se adquiere según el Art. 926.",
     "theirs": "Art. 2412.- Los derechos reales se adquieren por la prescripción de la misma manera que el dominio, y están sujetos a las mismas reglas, salvo las excepciones siguientes: 1. El derecho de herencia se adquiere por la prescripción extraordinaria de quince años; y, 2. El derecho de servidumbre se adquiere según el Art. 926."
+   },
+   "art-2420": {
+    "ratio": 0.883,
+    "ours": "Art. 2420.- La prescripción que extingue las obligaciones se suspende en favor de las personas designadas en el numeral 1o. del Art. 2409. Transcurridos quince años, no se tomarán en cuenta las suspensiones a que se refiere el inciso precedente.",
+    "theirs": "Art. 2420.- La prescripción que extingue las obligaciones se suspende en favor de las personas designadas en el numeral 1o. del Art. 2409. Transcurridos quince años, no se tomarán en cuenta las suspensiones a que se refiere el inciso precedente. Parágrafo 4o. De ciertas acciones que prescriben en corto tiempo"
    },
    "art-2423": {
     "ratio": 0.997,
