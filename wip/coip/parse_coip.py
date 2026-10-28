@@ -17,6 +17,7 @@ sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(HERE.parent))
 import coip_base  # noqa: E402
 import coip_replay as R  # noqa: E402
+import index_el2026  # noqa: E402
 
 OUT = Path(os.environ.get("COIP_OUT", HERE.parent / "corpus.d" / "60-coip.json"))
 RETRIEVED = "2026-10-28"
@@ -100,7 +101,27 @@ def sources(act: dict) -> list[dict]:
          "url": "https://faolex.fao.org/docs/pdf/ecu204126.pdf", "retrieved": RETRIEVED, "requests": 1,
          "licence": "Lexis copyright; read only, nothing copied.",
          "notes": "Index of amending acts and rulings to 8-III-2023 (coip/index_lexis.py)."},
+        {"name": "Ediciones Legales consolidation of the COIP (Servicio Nacional de Aduana copy, last reform 29-IV-2026)",
+         "url": "https://www.aduana.gob.ec/wp-content/uploads/2026/05/CODIGO-ORGANICO-INTEGRAL-PENAL-COIP.pdf",
+         "retrieved": RETRIEVED, "requests": 1,
+         "licence": "All rights reserved (Ediciones Legales); read only, nothing copied.",
+         "notes": "Index of amending acts and rulings of 2023 to 2026 (coip/index_el2026.py)."},
+        {"name": "Andina Ediciones compilation of the COIP (legalcloud.ec copy, updated to 24-VIII-2026)",
+         "url": index_el2026.ANDINA2026, "retrieved": RETRIEVED, "requests": 1,
+         "licence": "All rights reserved (Andina Ediciones); read only, nothing copied.",
+         "notes": "Index of amending acts from May to August 2026 (coip/index_el2026.py --andina)."},
+        {"name": "Asamblea Nacional, leyes aprobadas (published in the Registro Oficial)",
+         "url": "https://www.asambleanacional.gob.ec/es/leyes-aprobadas", "retrieved": RETRIEVED,
+         "requests": 6 + len(screened()),
+         "licence": "No licence stated; official site.",
+         "notes": "List of laws with their Registro Oficial references (coip/index_asamblea.py); each law's edition "
+                  "from 2023 on (the Asamblea's copy, the same bytes as the Registro Oficial's) was searched in its "
+                  "text layer for reforms of the Code (coip/screen_laws.py, coip/screen.json)."},
     ]
+
+
+def screened() -> dict:
+    return json.loads((HERE / "screen.json").read_text(encoding="utf-8"))
 
 
 def main() -> None:
