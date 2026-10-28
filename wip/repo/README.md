@@ -120,6 +120,50 @@ tomada del texto del Registro Oficial que publicó la reforma. No existe una cod
 reformas publicadas solo como imagen (2019-2024, tabla anterior) no están aplicadas: los artículos indicados conservan
 su texto anterior desde esa fecha.
 
+## Código Orgánico Integral Penal (COIP, 2014)
+
+`coip/` holds the Criminal Code as enacted (Registro Oficial Suplemento 180, 10 February 2014; in force 10 August
+2014, 180 days after publication) and 30 versions to 4 January 2023. Each later version replays one amending act or
+constitutional ruling, cut from the text layer of its own Registro Oficial edition, on its in-force day; no version
+carries wording from an act published after that day. The 2019 reform (Supplement 107, 118 provisions, in force 22 June
+2020) is the largest.
+
+**History ends on 4 January 2023.** Reforms published later (a 2023 security law, the February 2024 law on the internal
+armed conflict, the 2024 reform carrying out the referendum's penal questions, and 2025 laws) have not been indexed or
+checked yet and are missing: the files show the law as of early 2023 at best.
+
+### Changes that are missing (not applied)
+
+These acts are printed only as page images, with no text layer, and this repository does not OCR. Each has a commit on
+its date that changes no words and says "NOT APPLIED". From that date on, the articles listed keep their earlier
+wording, which is no longer the law:
+
+| In force | Act | Articles whose current wording is missing |
+| --- | --- | --- |
+| 2017-12-29 | Ley Orgánica para la Reactivación de la Economía (Segundo Supl. 150) | 299 |
+| 2019-06-03 | Corte Constitucional, Edición Constitucional 90 | 202 |
+| 2019-08-15 | Sentencia 5-13-IN/19 (Edición Constitucional 6) | 581 |
+| 2019-11-13 | Corte Constitucional, Edición Constitucional 21 | 653 |
+| 2021-02-05 | Ley Reformatoria de la Ley Orgánica de Movilidad Humana (Tercer Supl. 386) | 91 |
+| 2021-02-17 | Ley Reformatoria del COIP en materia anticorrupción (Segundo Supl. 392) | 45, 47, 49, 60, 68, 69, 77, 270, 278, 280, 281, 285, 286, 430.1, 430.2, 536, 581, 630, 698, 699; new 294.1, 320.1, 422.1, 550.1, 581.1 |
+| 2021-05-14 | Ley Orgánica de Extinción de Dominio (Quinto Supl. 452) | 452 |
+| 2021-08-10 | Ley Reformatoria de la Ley de Tránsito (Quinto Supl. 512) | 17, 388-392, 404 |
+| 2021-08-27 | Ley contra el comercio ilícito (Quinto Supl. 525) | 60, 65, 208 A, 267, 299, 300, 301, 303, 317; new 208 B, 208 C |
+| 2021-08-30 | Ley Reformatoria del COIP sobre violencia sexual digital (Cuarto Supl. 526) | 47, 103, 157, 166, 169, 170, 171, 175, 179, 230, 232, 234, 396, 497; new 154.2, 154.3, 172.1, 234.1-234.4, 477.1 |
+| 2021-10-13 | Sentencia 8-20-CN/21 (strikes words the 2021 anticorruption reform added) | 536 |
+| 2022-08-22 | Ley Orgánica que regula el Uso Legítimo de la Fuerza (Tercer Supl. 131) | 30.1, 47, 274, 275, 293, 537, 685, 686; new 30.2, 533.1 |
+
+The acts were found through two editorial consolidations, read only as indexes (Ediciones Legales to October 2021, Lexis
+to March 2023). On 13 October 2021 the replayed text agrees with the Ediciones Legales consolidation in 663 of 754
+articles; each difference is classified in REPRODUCE.md (decisions).
+
+### En español
+
+`coip/` contiene el Código Orgánico Integral Penal publicado en el Suplemento 180 (10-II-2014, vigente desde el
+10-VIII-2014) y 30 versiones hasta el 4 de enero de 2023, cada una tomada del texto del Registro Oficial que publicó la
+reforma o la sentencia. Las reformas publicadas solo como imagen (tabla anterior) no están aplicadas, y las reformas
+posteriores a enero de 2023 aún no están incorporadas.
+
 ## How it is built
 
 `tools/fetch.py` downloads every gazette edition once through curl (one request per second, cached by the sha256 of the URL), `tools/parse.py` with `tools/rotext.py` and `tools/amendments.py` turns the cache into `corpus.json`, and the shared builder `tools/build.py` writes the history with `git fast-import`. The same corpus always gives the same hashes. `REPRODUCE.md` records every command, tool version, data hash and decision, and the result of a hash-for-hash rebuild.
