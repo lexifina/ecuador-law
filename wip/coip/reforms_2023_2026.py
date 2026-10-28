@@ -277,4 +277,253 @@ def lavado_2024(u: Units) -> None:
     u.remove("art-368")
     new = R.open_quote(s, "Tres.- Sustitúyase el artículo 553 por el siguiente:", "SEGUNDA.- Refórmese en el Código "
                        "Orgánico Monetario")
-    whole(u, "553", ['"' + new[0]] + new[1:])
+    whole(u, "553", new)
+
+
+# ---------------------------------------------------------------- 2025: Sexto Supl. 56 and Tercer Supl. 68
+
+def solidaridad_2025(u: Units) -> None:
+    """Ley Orgánica de Solidaridad Nacional (Registro Oficial, Sexto Suplemento 56, 10-VI-2025), Disposición
+    reformatoria segunda, numerals 1 to 21, and Disposición derogatoria segunda (art. 296); in force on publication
+    (its Disposición final)."""
+    s = R.csrc(R.S6_56_2025)
+    P = items(s, "SEGUNDA.- Refórmese en el Código Orgánico Integral Penal, lo siguiente:",
+              "TERCERA.- Refórmese en la Ley Orgánica de Personal y Disciplina",
+              r"(\d+)\. (?:A continuación|Incorpórese|Sustitúyase|Agréguese)", range(1, 22))
+
+    def pay(k: int) -> list[str]:
+        return unq(P[k][1])
+
+    # 1. art. 47: numerals 25 and 26 after numeral 24
+    check(P[1][0], "A continuación del numeral 24 del artículo 47")
+    if R.editable(u, "art-047"):
+        raise SystemExit("S56 1: art. 47 is current")
+    # 2. art. 72: numeral 8 after numeral 7
+    check(P[2][0], "A continuación del numeral 7 del artículo 72")
+    if R.editable(u, "art-072"):
+        if u.paras("art-072")[-1][:3] != "7. ":
+            raise SystemExit("S56 2: numeral 7 is not the last")
+        u.insert("art-072", u.count("art-072"), pay(2))
+    # 3. art. 77: a last inciso
+    check(P[3][0], "Incorpórese en el artículo 77 el siguiente último inciso")
+    if R.editable(u, "art-077"):
+        u.insert("art-077", u.count("art-077"), pay(3))
+    # 4. after art. 139: a section heading and arts. 139.1, 139.2
+    check(P[4][0], "A continuación del artículo 139, agréguese")
+    new = pay(4)
+    if not new[0].startswith("Sección Quinta De los delitos cometidos"):
+        raise SystemExit("S56 4: heading")
+    j = next(i for i, p in enumerate(new) if p.startswith("Art. 139.2.-"))
+    add(u, new[1:j], "139.1")
+    add(u, new[j:], "139.2")
+    R.HEADS.insert(u, new[0], before="art-139-1")
+    # 5. art. 220: the 'trasantepenúltimo' inciso replaced and the 'antepenúltimo' removed (incisos counted from the
+    #    end, numerals not counted)
+    check(P[5][0], "Sustitúyase el trasantepenúltimo y elimínese el antepenúltimo inciso del artículo 220")
+    if R.editable(u, "art-220"):
+        ps = u.paras("art-220")
+        inc = [i for i, p in enumerate(ps) if i > 0 and not re.match(r"\d+\. |[a-z]\) ", p)]
+        tras, ante = inc[-4], inc[-3]
+        if ante != tras + 1 or not ps[tras].startswith("La tenencia o posesión de sustancias estupefacientes"):
+            raise SystemExit("S56 5: incisos of art. 220")
+        u.set_para("art-220", tras, pay(5), count=2)
+    # 6-10. arts. 228, 262, 264, 265, 266 substituted
+    for k, n in ((6, "228"), (7, "262"), (8, "264"), (9, "265"), (10, "266")):
+        check(P[k][0], f"Sustitúyase el artículo {n}, por el siguiente:")
+        whole(u, n, P[k][1])
+    # 11-13, 16, 18, 21. new articles
+    for k, n in ((11, "267.1"), (12, "362.1"), (13, "474.5"), (16, "534.1"), (18, "542.1"), (21, "699.1")):
+        check(P[k][0], "A continuación del artículo")
+        add(u, P[k][1], n)
+    # 14. art. 480: numeral 8 after numeral 7
+    check(P[14][0], "A continuación del numeral 7 del artículo 480")
+    if R.editable(u, "art-480"):
+        u.insert("art-480", u.find("art-480", "7. ") + 1, pay(14))
+    # 15. art. 482: numeral 6 after numeral 5
+    check(P[15][0], "Agréguese a continuación del numeral 5 del artículo 482")
+    if R.editable(u, "art-482"):
+        if u.paras("art-482")[-1][:3] != "5. ":
+            raise SystemExit("S56 15: numeral 5 is not the last")
+        u.insert("art-482", u.count("art-482"), pay(15))
+    # 17. art. 536: a final inciso
+    check(P[17][0], "Agréguese como inciso final del artículo 536")
+    if R.editable(u, "art-536"):
+        u.insert("art-536", u.count("art-536"), pay(17))
+    # 19. after art. 651.6: a section heading and art. 651.7
+    check(P[19][0], "A continuación del artículo 651.6, agréguese")
+    new = pay(19)
+    if not new[0].startswith("Sección Sexta Procedimiento unificado"):
+        raise SystemExit("S56 19: heading")
+    add(u, new[1:], "651.7")
+    R.HEADS.insert(u, new[0], before="art-651-7")
+    # 20. art. 562: a final inciso
+    check(P[20][0], "Agréguese el siguiente inciso final en el artículo 562")
+    if R.editable(u, "art-562"):
+        u.insert("art-562", u.count("art-562"), pay(20))
+    # Disposición derogatoria segunda: art. 296
+    s.check("SEGUNDA. - Deróguese el artículo 296 del Código Orgánico Integral Penal.")
+    u.remove("art-296")
+
+
+def integridad_2025(u: Units) -> None:
+    """Ley Orgánica de Integridad Pública (Registro Oficial, Tercer Suplemento 68, 26-VI-2025), Disposición
+    reformatoria segunda, numerals 1 to 13 (printed without quotation marks), and Disposición derogatoria tercera
+    (art. 699.1); in force on publication (its Disposición final)."""
+    s = R.csrc(R.S3_68_2025)
+    P = items(s, "Segunda.- Refórmese el Código Orgánico Integral Penal en lo siguiente:",
+              "Tercera.- Refórmese el Código de la Niñez y Adolescencia",
+              r"(\d+)\. (?:Agréguese|En el|Sustitúyase|Elimínese|A continuación)", range(1, 14))
+
+    def plain(k: int) -> list[str]:
+        return [p.strip() for p in P[k][1]]
+
+    # 1. art. 45: a numeral 8
+    check(P[1][0], "Agréguese en el artículo 45 el siguiente numeral")
+    if R.editable(u, "art-045"):
+        raise SystemExit("S68 1: art. 45 is current")
+    # 2. art. 61: a) a phrase of the first inciso; b) incisos added at the end
+    check(P[2][0], 'a) En el primer inciso, sustitúyase la frase "Procede en delitos sancionados con pena privativa de '
+                   'libertad mayor a cinco años" por la siguiente frase: "Procede en todos los delitos sancionados con '
+                   'pena privativa de libertad". b) Agréguese como inciso final lo siguiente:')
+    if R.editable(u, "art-061"):
+        u.sub("art-061", "Procede en delitos sancionados con pena privativa de libertad mayor a cinco años",
+              "Procede en todos los delitos sancionados con pena privativa de libertad", para=0)
+        u.insert("art-061", u.count("art-061"), plain(2))
+    # 3. art. 61.1
+    check(P[3][0], "Agréguese a continuación del artículo 61, el siguiente artículo")
+    add(u, P[3][1], "61.1")
+    # 4. art. 72 numeral 8 (added by the Ley de Solidaridad Nacional) substituted
+    check(P[4][0], "Sustitúyase el numeral 8 del artículo 72, por el siguiente")
+    if R.editable(u, "art-072"):
+        new = plain(4)
+        if len(new) != 1 or not new[0].startswith("8. "):
+            raise SystemExit("S68 4: payload")
+        u.set_para("art-072", u.find("art-072", "8. "), new)
+    # 5, 6, 8. arts. 268, 272, 360 substituted
+    for k, n in ((5, "268"), (6, "272"), (8, "360")):
+        check(P[k][0], f"Sustitúyase el artículo {n}")
+        whole(u, n, P[k][1])
+    # 7. the heading of Sección Segunda of Capítulo Quinto removed, and art. 277 substituted
+    check(P[7][0], 'Elimínese el título de la Sección Segunda denominado "Contravenciones contra la Tutela Judicial '
+                   'Efectiva" del Capítulo Quinto y sustitúyase el artículo 277 por el siguiente:')
+    R.HEADS.remove(u, "SECCIÓN SEGUNDA Contravenciones contra la tutela judicial efectiva")
+    whole(u, "277", P[7][1])
+    # 9. art. 480 numeral 8: a phrase added
+    check(P[9][0], 'En el artículo 480 numeral 8, luego de la frase "las fuerzas del orden" agréguese la frase: "o la '
+                   'entidad rectora del Sistema Nacional de Inteligencia".')
+    if R.editable(u, "art-480"):
+        u.sub("art-480", "las fuerzas del orden", "las fuerzas del orden o la entidad rectora del Sistema Nacional de "
+              "Inteligencia", para="8. ")
+    # 10. art. 529: an inciso after the first
+    check(P[10][0], "A continuación del primer inciso del artículo 529 agréguese el siguiente inciso")
+    if R.editable(u, "art-529"):
+        u.insert("art-529", 1, plain(10))
+    # 11. art. 633.1
+    check(P[11][0], "Agréguese a continuación del artículo 633, el siguiente artículo")
+    add(u, P[11][1], "633.1")
+    # 12, 13. arts. 698 and 699, last inciso: a phrase
+    check(P[12][0], 'En el último inciso del artículo 698, sustitúyase la frase final "y extorsión."')
+    check(P[13][0], 'En el último inciso del artículo 699, sustitúyase la frase final "y extorsión."')
+    for key in ("art-698", "art-699"):
+        if R.editable(u, key):
+            raise SystemExit(f"S68: {key} is current")
+    # Disposición derogatoria tercera: art. 699.1 (added by the Ley de Solidaridad Nacional sixteen days earlier)
+    s.check("Tercera.- Deróguese el artículo 699.1 del Código Orgánico Integral Penal.")
+    u.remove("art-699-1")
+
+
+# ---------------------------------------------------------------- 2026: Cuarto Supl. 275 and Quinto Supl. 290
+
+def penitenciario_2026(u: Units) -> None:
+    """Ley Orgánica Reformatoria para el Fortalecimiento del Sistema Penitenciario (Registro Oficial, Cuarto
+    Suplemento 275, 29-IV-2026), Capítulo II, arts. 7 to 24; in force on publication (its Disposición final). Each
+    article carries its quotation inside its own paragraph."""
+    s = R.csrc(R.S4_275_2026)
+    P = items(s, "DE LAS REFORMAS AL CÓDIGO ORGÁNICO INTEGRAL PENAL", "Capítulo III", r"Artículo (\d+)\.- ",
+              range(7, 25), inline=True)
+
+    def pay(k: int) -> list[str]:
+        return unq(P[k][1])
+
+    # 7. art. 565: a last paragraph
+    check(P[7][0], "Agréguese como último párrafo del artículo 565 el siguiente texto:")
+    if R.editable(u, "art-565"):
+        u.insert("art-565", u.count("art-565"), pay(7))
+    # 8, 10-14, 16-18, 22. articles substituted
+    for k, n in ((8, "668"), (10, "668.2"), (11, "669"), (12, "674"), (13, "675"), (14, "678"), (16, "684"),
+                 (17, "685"), (18, "691"), (22, "715")):
+        check(P[k][0], f"Sustitúyase el artículo {n} por el siguiente:")
+        whole(u, n, P[k][1])
+    # 9. art. 668.1, second inciso
+    check(P[9][0], "Sustitúyase el segundo inciso del artículo 668.1 por el siguiente:")
+    if R.editable(u, "art-668-1"):
+        new = pay(9)
+        if len(new) != 1:
+            raise SystemExit("S275 9: payload")
+        u.set_para("art-668-1", 1, new)
+    # 15. arts. 678-A and 678-B
+    check(P[15][0], "Agréguense a continuación del artículo 678 los siguientes artículos:")
+    new = pay(15)
+    j = next(i for i, p in enumerate(new) if p.startswith("Art. 678-B.-"))
+    add(u, new[:j], "678-A")
+    add(u, new[j:], "678-B")
+    # 19. art. 694-A
+    check(P[19][0], "Agréguese a continuación del artículo 694 el siguiente artículo:")
+    add(u, P[19][1], "694-A")
+    # 20, 21. arts. 698 (a final inciso) and 699 (a numeral 3)
+    check(P[20][0], "Agréguese al final del artículo 698 el siguiente inciso:")
+    check(P[21][0], "Agréguese a continuación del numeral 2 del artículo 699 el siguiente numeral 3:")
+    for key in ("art-698", "art-699"):
+        if R.editable(u, key):
+            raise SystemExit(f"S275: {key} is current")
+    # 23. art. 724: numerals 23 to 31 at the end
+    check(P[23][0], "Agréguese al final del artículo 724 los siguientes numerales:")
+    if R.editable(u, "art-724"):
+        u.insert("art-724", u.count("art-724"), pay(23))
+    # 24. Título VI, arts. 731 to 734
+    check(P[24][0], 'a continuación del Título V "De la Repatriación", incorpórese el siguiente:')
+    new = pay(24)
+    if new[0] != "TÍTULO VI RÉGIMEN PENITENCIARIO ESPECIAL":
+        raise SystemExit("S275 24: heading")
+    starts = [i for i, p in enumerate(new) if re.match(r"Artículo 73[1-4]\.-", p)] + [len(new)]
+    if len(starts) != 5 or starts[0] != 1:
+        raise SystemExit("S275 24: articles")
+    for a, b, n in zip(starts, starts[1:], ("731", "732", "733", "734")):
+        add(u, new[a:b], n)
+    R.HEADS.insert(u, new[0], before="art-731")
+
+
+def ciberseguridad_2026(u: Units) -> None:
+    """Ley Orgánica para el Fortalecimiento de la Ciberseguridad (Registro Oficial, Quinto Suplemento 290,
+    22-V-2026), art. 11: an inciso at the end of art. 232; in force on publication (its Disposición final)."""
+    s = R.csrc(R.S5_290_2026)
+    s.check('Artículo 11.- Al final del artículo 232 añadir el siguiente inciso: "No constituyen delito las acciones de '
+            'acceso, prueba o evaluación')
+    if R.editable(u, "art-232"):
+        raise SystemExit("S290: art. 232 is current")
+
+
+# ---------------------------------------------------------------- rulings with a text layer
+
+def cc_61_18_in_23(u: Units) -> None:
+    """Corte Constitucional, sentencia 61-18-IN/23 (Edición Constitucional 319, 26-II-2024): the phrase 'pena
+    privativa de libertad de cinco a quince días' of art. 383 is unconstitutional; the other penalties stay."""
+    s = R.csrc(R.EC319_2024)
+    s.check('Declarar la inconstitucionalidad por el fondo de la frase "pena privativa de libertad de cinco a quince '
+            'días" del artículo 383 del Código Orgánico Integral Penal')
+    u.drop("art-383", "pena privativa de libertad de cinco a quince días", para=0)
+
+
+def cc_49_21_cn_25(u: Units) -> None:
+    """Corte Constitucional, sentencia 49-21-CN/25 (Edición Constitucional 15, 2-IV-2025): the phrase 'tampoco se
+    podrá sustituir la prisión preventiva por otra medida cautelar cuando se trate de un caso de reincidencia' of art.
+    536 is unconstitutional. In this record it is the whole last inciso, which goes."""
+    s = R.csrc(R.EC15_2025)
+    phrase = "tampoco se podrá sustituir la prisión preventiva por otra medida cautelar cuando se trate de un caso de " \
+             "reincidencia"
+    s.check(f'Declarar inconstitucional la frase contenida en el último inciso primero del artículo 536 del COIP que '
+            f'establece: "{phrase}".')
+    ps = u.paras("art-536")
+    if ps[-1] != phrase[0].upper() + phrase[1:] + ".":
+        raise SystemExit("EC 15: last inciso of art. 536")
+    u.put("art-536", ps[:-1])

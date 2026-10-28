@@ -75,6 +75,26 @@ EC268_2022 = ed("ec268-2022", "Ediciones Constitucionales")
 EC20_2022 = ed("ec20-2022", "Ediciones Constitucionales")
 S3_131_2022 = ed("s131-2022", "Tercer Suplemento")
 S222_2023 = ed("s222-2023", "Primer Suplemento")
+# 2023 to 2026 (coip/find_editions.py; amending acts indexed by coip/index_el2026.py and coip/index_asamblea.py)
+S279_2023 = ed("s279-2023", "Primer Suplemento")
+S471_2024 = ed("s471-2024", "Primer Suplemento")
+S2_496_2024 = ed("s496-2024", "Segundo Suplemento")
+EC319_2024 = ed("ec319-2024", "Ediciones Constitucionales")
+S3_588_2024 = ed("s588-2024", "Tercer Suplemento")
+S599_2024 = ed("s599-2024", "Primer Suplemento")
+S4_610_2024 = ed("s610-2024", "Cuarto Suplemento")
+S5_700_2024 = ed("s700-2024", "Quinto Suplemento")
+EC8_2025 = ed("ec8-2025", "Ediciones Constitucionales")
+EC15_2025 = ed("ec15-2025", "Ediciones Constitucionales")
+S5_38_2025 = ed("s38-2025", "Quinto Suplemento")
+S6_56_2025 = ed("s56-2025", "Sexto Suplemento")
+S3_68_2025 = ed("s68-2025", "Tercer Suplemento")
+EC96_2025 = ed("ec96-2025", "Ediciones Constitucionales")
+S7_151_2025 = ed("s151-2025", "Séptimo Suplemento")
+S4_275_2026 = ed("s275-2026", "Cuarto Suplemento")
+S5_290_2026 = ed("s290-2026", "Quinto Suplemento")
+S5_316_2026 = ed("s316-2026", "Quinto Suplemento")
+S5_343_2026 = ed("s343-2026", "Quinto Suplemento")
 
 
 def plazo_days(published: str, days: int) -> str:
@@ -520,6 +540,38 @@ IMAGE_ONLY = ("NOT APPLIED here: the Registro Oficial edition that publishes it 
               "and this repository does not OCR. Its wording is missing from the files named in this commit; they "
               "keep the earlier text (provisions named from the editorial indexes: Ediciones Legales 2021, Lexis 2023).")
 
+IMAGE_ONLY_2026 = ("NOT APPLIED here: the Registro Oficial edition that publishes it is page images without a text "
+                   "layer, and this repository does not OCR. Its wording is missing from the files named in this "
+                   "commit; they keep the earlier text (provisions named from the editorial indexes: Ediciones Legales "
+                   "2026, Andina Ediciones 2026).")
+
+
+def termino_days(published: str, days: int, holidays: tuple[str, ...]) -> str:
+    """In force after a término of `days` días hábiles counted from publication (Saturdays, Sundays and the given
+    national holidays not counted, the publication day not counted): the day after the last of them, as for
+    plazo_days."""
+    d = dt.date.fromisoformat(published)
+    n = 0
+    while n < days:
+        d += dt.timedelta(days=1)
+        if d.weekday() < 5 and d.isoformat() not in holidays:
+            n += 1
+    return (d + dt.timedelta(days=1)).isoformat()
+
+
+def import_reforms():
+    import reforms_2023_2026
+    return reforms_2023_2026
+
+
+def later(name: str):
+    """Edit function defined in coip/reforms_2023_2026.py (imported when the step runs)."""
+    def edit(u: Units) -> None:
+        getattr(import_reforms(), name)(u)
+    edit.__name__ = name
+    return edit
+
+
 LAWS: dict[str, dict] = {
     "comf-2014": dict(label="Código Orgánico Monetario y Financiero", kind="law", enacted="2014-07-24",
                       published="2014-09-12", url=S2_332_2014,
@@ -654,6 +706,118 @@ LAWS: dict[str, dict] = {
                                         published="2023-01-04", url=S222_2023,
                                         title="Ley Orgánica para la Defensa y Desarrollo de la Economía Familiar "
                                               "Campesina (Registro Oficial, Suplemento 222, 4-I-2023)"),
+    # ---- 2023 to 2026
+    "ley-seguridad-integral-2023": dict(
+        label="Ley Reformatoria para la Seguridad Integral (2023)", kind="law", enacted="2023-03-14",
+        published="2023-03-29", url=S279_2023,
+        title="Ley Orgánica Reformatoria a Varios Cuerpos Legales para el Fortalecimiento de las Capacidades "
+              "Institucionales y la Seguridad Integral (Registro Oficial, Suplemento 279, 29-III-2023), arts. 38 to 126"),
+    "ley-salud-mental-2024": dict(
+        label="Ley Orgánica de Salud Mental (2024)", kind="law", published="2024-01-05", url=S471_2024,
+        note=IMAGE_ONLY_2026,
+        title="Ley Orgánica de Salud Mental (Registro Oficial, Suplemento 471, 5-I-2024), Disposición reformatoria "
+              "primera: art. 76. NOT APPLIED (image-only edition)"),
+    "ley-ahorro-monetizacion-2024": dict(
+        label="Ley Orgánica para el Ahorro y la Monetización de Recursos (2024)", kind="law", published="2024-02-09",
+        url=S2_496_2024, note=IMAGE_ONLY_2026,
+        title="Ley Orgánica para el Ahorro y la Monetización de Recursos Económicos para el Financiamiento de la Lucha "
+              "contra la Corrupción (Registro Oficial, Segundo Suplemento 496, 9-II-2024), Disposición reformatoria "
+              "segunda: arts. 69 and 443. NOT APPLIED (image-only edition)"),
+    "cc-61-18-in-23": dict(
+        label="Sentencia 61-18-IN/23", kind="court", published="2024-02-26", url=EC319_2024,
+        title="Corte Constitucional, sentencia 61-18-IN/23 (Edición Constitucional 319, 26-II-2024): "
+              "inconstitucionalidad de la frase 'pena privativa de libertad de cinco a quince días' del art. 383"),
+    "ley-reparacion-femicidio-2024": dict(
+        label="Ley de Reparación a Familiares de Víctimas de Femicidio (2024)", kind="law", published="2024-06-27",
+        url=S3_588_2024, note=IMAGE_ONLY_2026,
+        title="Ley Orgánica de Acompañamiento y Reparación Transformadora e Integral a Hijas, Hijos, Madres, Padres y "
+              "demás familiares de víctimas de femicidio y otras muertes violentas por razones de género (Registro "
+              "Oficial, Tercer Suplemento 588, 27-VI-2024), Disposición reformatoria primera: arts. 78.1, 441, 520, "
+              "558.1, 570 and a new art. 77.1. NOT APPLIED (image-only edition)"),
+    "ley-consulta-popular-2024": dict(
+        label="Ley para la Aplicación de la Consulta Popular de 2024", kind="law", published="2024-07-12",
+        url=S599_2024, note=IMAGE_ONLY_2026,
+        title="Ley Orgánica para la Aplicación de la Consulta Popular y Referéndum del 21 de abril de 2024 (Registro "
+              "Oficial, Suplemento 599, 12-VII-2024), which carries out the referendum's penal questions: arts. 92, "
+              "140, 143, 162, 260, 317, 362, 366, 367, 369, 698, 699 and new arts. 360.1, 474.2, 474.3, 474.4. NOT "
+              "APPLIED (image-only edition)"),
+    "ley-lavado-2024": dict(
+        label="Ley Orgánica contra el Lavado de Activos (2024)", kind="law", published="2024-07-29", url=S4_610_2024,
+        title="Ley Orgánica de Prevención, Detección y Combate del Delito de Lavado de Activos y de la Financiación de "
+              "Otros Delitos (Registro Oficial, Cuarto Suplemento 610, 29-VII-2024), Disposición reformatoria primera; "
+              "in force a year after publication"),
+    "dl-477-2024": dict(
+        label="Decreto Ley 477 (2024)", kind="decree", published="2024-12-10", url=S5_700_2024, note=IMAGE_ONLY_2026,
+        title="Ley Orgánica para la Mejora Recaudatoria a través del Combate al Lavado de Activos, Decreto Ley 477 "
+              "(Registro Oficial, Quinto Suplemento 700, 10-XII-2024): arts. 69 and 552. NOT APPLIED (image-only "
+              "edition)"),
+    "cc-94-24-in-25": dict(
+        label="Sentencia 94-24-IN/25", kind="court", published="2025-03-27", url=EC8_2025,
+        note=("Declares Decreto Ley 477 of 2024 unconstitutional in form, with retroactive effect. This record could "
+              "not apply that decree (image-only edition), so the ruling changes none of the words here."),
+        title="Corte Constitucional, sentencia 94-24-IN/25 (Edición Constitucional 8, 27-III-2025): "
+              "inconstitucionalidad por la forma, con efectos retroactivos, del Decreto Ley 477"),
+    "cc-49-21-cn-25": dict(
+        label="Sentencia 49-21-CN/25", kind="court", published="2025-04-02", url=EC15_2025,
+        title="Corte Constitucional, sentencia 49-21-CN/25 (Edición Constitucional 15, 2-IV-2025): "
+              "inconstitucionalidad de una frase del último inciso del art. 536"),
+    "ley-transito-2025": dict(
+        label="Ley Reformatoria de la Ley de Tránsito (2025)", kind="law", published="2025-05-14", url=S5_38_2025,
+        note=IMAGE_ONLY_2026,
+        title="Ley Orgánica Reformatoria a la Ley Orgánica de Transporte Terrestre, Tránsito y Seguridad Vial (Registro "
+              "Oficial, Quinto Suplemento 38, 14-V-2025), Disposición reformatoria primera: art. 388. NOT APPLIED "
+              "(image-only edition)"),
+    "ley-solidaridad-2025": dict(
+        label="Ley Orgánica de Solidaridad Nacional (2025)", kind="law", enacted="2025-06-07", published="2025-06-10",
+        url=S6_56_2025,
+        title="Ley Orgánica de Solidaridad Nacional (Registro Oficial, Sexto Suplemento 56, 10-VI-2025), Disposición "
+              "reformatoria segunda and Disposición derogatoria segunda; annulled with retroactive effect by sentencia "
+              "51-25-IN/25"),
+    "ley-integridad-2025": dict(
+        label="Ley Orgánica de Integridad Pública (2025)", kind="law", enacted="2025-06-24", published="2025-06-26",
+        url=S3_68_2025,
+        title="Ley Orgánica de Integridad Pública (Registro Oficial, Tercer Suplemento 68, 26-VI-2025), Disposición "
+              "reformatoria segunda and Disposición derogatoria tercera; its penal reforms annulled with retroactive "
+              "effect by sentencia 52-25-IN/25"),
+    "cc-52-25-in-25": dict(
+        label="Sentencia 52-25-IN/25", kind="court", published="2025-10-03", url=EC96_2025,
+        restores="ley-integridad-2025",
+        title="Corte Constitucional, sentencia 52-25-IN/25 y acumulados (Edición Constitucional 96, 3-X-2025): "
+              "inconstitucionalidad por la forma de la Ley Orgánica de Integridad Pública, con efectos retroactivos, "
+              "entre otras en materia penal y de ejecución de penas"),
+    "cc-51-25-in-25": dict(
+        label="Sentencia 51-25-IN/25", kind="court", published="2025-10-03", url=EC96_2025,
+        restores="ley-solidaridad-2025",
+        title="Corte Constitucional, sentencia 51-25-IN/25 y acumulados (Edición Constitucional 96, 3-X-2025): "
+              "inconstitucionalidad por la forma de la totalidad de la Ley Orgánica de Solidaridad Nacional, con efecto "
+              "retroactivo a partir de su publicación"),
+    "ley-movilidad-humana-2025": dict(
+        label="Ley Reformatoria de la Ley Orgánica de Movilidad Humana (2025)", kind="law", published="2025-10-24",
+        url=S7_151_2025, note=IMAGE_ONLY_2026,
+        title="Ley Orgánica Reformatoria a la Ley Orgánica de Movilidad Humana (Registro Oficial, Séptimo Suplemento "
+              "151, 24-X-2025), Disposición reformatoria primera: arts. 12, 61, 667.1, 729, 730 and a new art. 633.1. "
+              "NOT APPLIED (image-only edition)"),
+    "ley-penitenciaria-2026": dict(
+        label="Ley Reformatoria del Sistema Penitenciario (2026)", kind="law", published="2026-04-29",
+        url=S4_275_2026,
+        title="Ley Orgánica Reformatoria para el Fortalecimiento del Sistema Penitenciario (Registro Oficial, Cuarto "
+              "Suplemento 275, 29-IV-2026), arts. 7 to 24"),
+    "ley-ciberseguridad-2026": dict(
+        label="Ley Orgánica de Ciberseguridad (2026)", kind="law", published="2026-05-22", url=S5_290_2026,
+        title="Ley Orgánica para el Fortalecimiento de la Ciberseguridad (Registro Oficial, Quinto Suplemento 290, "
+              "22-V-2026), art. 11"),
+    "ley-uniformes-2026": dict(
+        label="Ley contra el Uso Delictivo de Uniformes (2026)", kind="law", published="2026-07-01", url=S5_316_2026,
+        note=IMAGE_ONLY_2026,
+        title="Ley Orgánica Reformatoria para Prevenir y Sancionar el Uso Delictivo de Uniformes, Insignias y "
+              "Distintivos Institucionales para el Fortalecimiento de la Seguridad Pública (Registro Oficial, Quinto "
+              "Suplemento 316, 1-VII-2026), arts. 1 to 3: arts. 47, 69 and new arts. 362.1, 362.2. NOT APPLIED "
+              "(image-only edition)"),
+    "ley-extradicion-2026": dict(
+        label="Ley Orgánica de Extradición (2026)", kind="law", published="2026-08-07", url=S5_343_2026,
+        note=IMAGE_ONLY_2026,
+        title="Ley Orgánica de Extradición (Registro Oficial, Quinto Suplemento 343, 7-VIII-2026), Disposición "
+              "reformatoria segunda: art. 541. NOT APPLIED (image-only edition)"),
 }
 
 # (law, in-force day, edit function, or the list of provisions a not-applied act concerns)
