@@ -26,7 +26,9 @@ import fitz  # noqa: E402
 EL2026 = "https://www.aduana.gob.ec/wp-content/uploads/2026/05/CODIGO-ORGANICO-INTEGRAL-PENAL-COIP.pdf"
 ANDINA2026 = ("https://legalcloud.ec/wp-content/uploads/2026/08/"
               "Codigo-Organico-Integral-Penal-COIP-24-08-2026-Normativa-Ecuatoriana-1.pdf")
-ART = re.compile(r"^\s*Art(?:[íi]culo)?\.?\s*(\d+(?:\s*\.\s*\d+)*(?:\s*(?:bis|ter|[A-Z]\b))?)\s*\.?\s*-", re.M)
+# an article heading "Art. 61.- Expulsión ..." or "Art. 678-A. Clasificación ..." anywhere in a line: the notes sit
+# inside the heading, so the heading need not start the line
+ART = re.compile(r"\bArt\.\s*(\d+(?:\.\d+)*(?:-[A-Z])?)\s*\.\s*-?\s*[A-ZÁÉÍÓÚ(]")
 JUNK = re.compile(r"https://edicioneslegales\.com\.ec/|Pág\. \d+ de \d+|Todos los derechos reservados\. Prohibida su "
                   r"reproducción parcial o total\.|Piense en el medio ambiente\. Imprima solo de ser necesario\.")
 ROM = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII"]

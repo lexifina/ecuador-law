@@ -877,5 +877,101 @@
   "mentions": 0,
   "snippets": [],
   "bytes": 12373890
+ },
+ "https://www.asambleanacional.gob.ec/es/system/files/leyorg1.pdf": {
+  "n": "5",
+  "title": "Ley Orgánica para la Gestión del Riesgo de Desastres (incluye Fe de Erratas)",
+  "ro": "R.O. No. 488, Tercer Suplemento, de 30-01-2024",
+  "date": "2024-01-30",
+  "pdf": "https://www.asambleanacional.gob.ec/es/system/files/leyorg1.pdf",
+  "pages": 103,
+  "no_text_pages": 96,
+  "mentions": 0,
+  "snippets": [],
+  "bytes": 18847138
+ },
+ "https://www.asambleanacional.gob.ec/es/system/files/ro_-_ley_publicada.pdf": {
+  "n": "6",
+  "title": "Ley Orgánica Reformatoria a la Ley Orgánica para la Planificación Integral de la Circunscripción Territorial Especial Amazónica",
+  "ro": "R.O. No. 488, Suplemento, de 30-01-2024",
+  "date": "2024-01-30",
+  "pdf": "https://www.asambleanacional.gob.ec/es/system/files/ro_-_ley_publicada.pdf",
+  "pages": 89,
+  "no_text_pages": 84,
+  "mentions": 0,
+  "snippets": [],
+  "bytes": 16617610
+ },
+ "https://www.asambleanacional.gob.ec/es/system/files/registro_oficial_-_ley_organica_para_la_igualdad_salarial.pdf": {
+  "n": "4",
+  "title": "Ley Orgánica para la Igualdad Salarial entre Mujeres y Hombres",
+  "ro": "R.O. No. 481, Suplemento, de 19-01-2024",
+  "date": "2024-01-19",
+  "pdf": "https://www.asambleanacional.gob.ec/es/system/files/registro_oficial_-_ley_organica_para_la_igualdad_salarial.pdf",
+  "pages": 25,
+  "no_text_pages": 22,
+  "mentions": 0,
+  "snippets": [],
+  "bytes": 6040010
+ },
+ "https://www.asambleanacional.gob.ec/es/system/files/registro_oficial_-_ley_de_competitividad_energetica.pdf": {
+  "n": "3",
+  "title": "Ley Orgánica de Competitividad Energética",
+  "ro": "R.O. No. 475, Segundo Suplemento, de 11-01-2024",
+  "date": "2024-01-11",
+  "pdf": "https://www.asambleanacional.gob.ec/es/system/files/registro_oficial_-_ley_de_competitividad_energetica.pdf",
+  "pages": 30,
+  "no_text_pages": 28,
+  "mentions": 0,
+  "snippets": [],
+  "bytes": 4704514
+ },
+ "https://www.asambleanacional.gob.ec/es/system/files/regist1.pdf": {
+  "n": "2",
+  "title": "Ley Orgánica de Salud Mental",
+  "ro": "R.O. No. 471, Suplemento, de 05-01-2024",
+  "date": "2024-01-05",
+  "pdf": "https://www.asambleanacional.gob.ec/es/system/files/regist1.pdf",
+  "pages": 73,
+  "no_text_pages": 70,
+  "mentions": 0,
+  "snippets": [],
+  "bytes": 22543230
+ },
+ "https://www.asambleanacional.gob.ec/es/system/files/ro-ley_de_eficiencia_economica.pdf": {
+  "n": "1",
+  "title": "Ley Orgánica de Eficiencia Económica y Generación de Empleo",
+  "ro": "R.O. No. 461, Suplemento, de 20-12-2023",
+  "date": "2023-12-20",
+  "pdf": "https://www.asambleanacional.gob.ec/es/system/files/ro-ley_de_eficiencia_economica.pdf",
+  "pages": 149,
+  "no_text_pages": 147,
+  "mentions": 0,
+  "snippets": [],
+  "bytes": 5147622
+ },
+ "https://www.asambleanacional.gob.ec/es/system/files/ro-335-supl-20-06-2023.pdf": {
+  "n": "58",
+  "title": "Decreto Ley Orgánica para el Fortalecimiento de la Economía Familiar.",
+  "ro": "R.O. No. 335, Suplemento, de 20-06-2023",
+  "date": "2023-06-20",
+  "pdf": "https://www.asambleanacional.gob.ec/es/system/files/ro-335-supl-20-06-2023.pdf",
+  "pages": 34,
+  "no_text_pages": 28,
+  "mentions": 0,
+  "snippets": [],
+  "bytes": 5465118
+ },
+ "https://www.asambleanacional.gob.ec/es/system/files/ro-311-supl-16-05-2023.pdf": {
+  "n": "57",
+  "title": "Ley Orgánica Reformatoria de Diversos Cuerpos Legales, para el Fortalecimiento, Protección, Impulso y Promoción de las Organizaciones de la Economía Popular y Solidaria, Artesanos, Pequeños Productores, Microempresas y Emprendimientos.",
+  "ro": "R.O. No. 311, Suplemento, de 16-05-2023",
+  "date": "2023-05-16",
+  "pdf": "https://www.asambleanacional.gob.ec/es/system/files/ro-311-supl-16-05-2023.pdf",
+  "pages": 45,
+  "no_text_pages": 0,
+  "mentions": 0,
+  "snippets": [],
+  "bytes": 1225205
  }
 }
