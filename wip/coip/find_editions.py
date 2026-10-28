@@ -65,6 +65,27 @@ TARGETS = {
     "ec267-2022": ("constitucional", "2022-01-25", 267),
     "ec268-2022": ("constitucional", "2022-01-28", 268),
     "s899-2016": ("suplemento", "2016-12-09", 899),
+    # 2023-2026 (coip/index_el2026.py, coip/index_asamblea.py); a fourth item keeps only the edition of that title
+    "s279-2023": ("suplemento", "2023-03-29", 279, "Primer Suplemento"),
+    "s471-2024": ("suplemento", "2024-01-05", 471, "Primer Suplemento"),
+    "s496-2024": ("suplemento", "2024-02-09", 496, "Segundo Suplemento"),
+    "s516-2024": ("suplemento", "2024-03-12", 516, "Primer Suplemento"),
+    "ec319-2024": ("constitucional", "2024-02-26", 319, "Ediciones Constitucionales"),
+    "s588-2024": ("suplemento", "2024-06-27", 588, "Tercer Suplemento"),
+    "s599-2024": ("suplemento", "2024-07-12", 599, "Primer Suplemento"),
+    "s610-2024": ("suplemento", "2024-07-29", 610, "Cuarto Suplemento"),
+    "s700-2024": ("suplemento", "2024-12-10", 700, "Quinto Suplemento"),
+    "ec8-2025": ("constitucional", "2025-03-27", 8, "Ediciones Constitucionales"),
+    "ec15-2025": ("constitucional", "2025-04-02", 15, "Ediciones Constitucionales"),
+    "s38-2025": ("suplemento", "2025-05-14", 38, "Quinto Suplemento"),
+    "s56-2025": ("suplemento", "2025-06-10", 56, "Sexto Suplemento"),
+    "s68-2025": ("suplemento", "2025-06-26", 68, "Tercer Suplemento"),
+    "ec78-2025": ("constitucional", "2025-09-19", 78, "Ediciones Constitucionales"),
+    "ec96-2025": ("constitucional", "2025-10-03", 96, "Ediciones Constitucionales"),
+    "s151-2025": ("suplemento", "2025-10-24", 151, "Séptimo Suplemento"),
+    "s275-2026": ("suplemento", "2026-04-29", 275, "Cuarto Suplemento"),
+    "s316-2026": ("suplemento", "2026-07-01", 316, "Quinto Suplemento"),
+    "s343-2026": ("suplemento", "2026-08-07", 343, "Quinto Suplemento"),
 }
 OUT = HERE / "editions.json"
 
@@ -74,14 +95,14 @@ def main(argv: list[str]) -> None:
     names = argv or list(TARGETS)
     found = json.loads(OUT.read_text(encoding="utf-8")) if OUT.exists() else {}
     for name in names:
-        prod, day, num = TARGETS[name]
+        prod, day, num, *only = TARGETS[name]
         y, m = int(day[:4]), int(day[5:7])
         # the portal's listing date can be a day or two off the masthead (RO 386 of 2021: listed 6-II, printed 5-II),
         # so the number decides, within three days of the date the indexes give
         import datetime as _dt
         d0 = _dt.date.fromisoformat(day)
         eds = [e for e in ro_index.editions(prod, y, m) if e["number"] == num and e["date"]
-               and abs((_dt.date.fromisoformat(e["date"]) - d0).days) <= 3]
+               and abs((_dt.date.fromisoformat(e["date"]) - d0).days) <= 3 and (not only or e["title"] == only[0])]
         if not eds:
             print(f"== {name}: no {prod} {num} on {day}")
             continue

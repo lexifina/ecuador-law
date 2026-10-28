@@ -634,5 +634,29 @@
   "mentions": 0,
   "snippets": [],
   "bytes": 11697904
+ },
+ "https://www.asambleanacional.gob.ec/es/system/files/regist1_2.pdf": {
+  "n": "26",
+  "title": "Ley para la Prevención y Control de Cáncer Uterino",
+  "ro": "R.O. No. 687, Cuarto Suplemento, de 20-11-2024",
+  "date": "2024-11-20",
+  "pdf": "https://www.asambleanacional.gob.ec/es/system/files/regist1_2.pdf",
+  "pages": 19,
+  "no_text_pages": 17,
+  "mentions": 0,
+  "snippets": [],
+  "bytes": 4862550
+ },
+ "https://www.asambleanacional.gob.ec/es/system/files/registro_oficial_3.pdf": {
+  "n": "25",
+  "title": "Ley de Armas, Municiones, Explosivos y Materiales Relacionados",
+  "ro": "R.O. No. 680, Cuarto Suplemento, de 11-11-2024",
+  "date": "2024-11-11",
+  "pdf": "https://www.asambleanacional.gob.ec/es/system/files/registro_oficial_3.pdf",
+  "pages": 54,
+  "no_text_pages": 48,
+  "mentions": 0,
+  "snippets": [],
+  "bytes": 31322003
  }
 }
