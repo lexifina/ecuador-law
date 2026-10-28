@@ -86,14 +86,35 @@ def join_lines(lines: list[str]) -> str:
     return re.sub(r" {2,}", " ", out).strip()
 
 
-def chunks(pdf_path, first_page: int = 0, last_page: int | None = None) -> list[list[list[str]]]:
-    """Per text block (column), the list of paragraphs (each a list of raw lines)."""
+def _overlapped(blocks: list) -> set[int]:
+    """Indexes of text blocks that lie mostly (>= half their area) inside a block holding more text: the stray
+    fragments some editions carry over their real text (Suplemento 175 of 2018, page 28)."""
+    out = set()
+    for i, b in enumerate(blocks):
+        area = max((b[2] - b[0]) * (b[3] - b[1]), 1e-6)
+        for j, c in enumerate(blocks):
+            if i == j or len(c[4]) <= len(b[4]):
+                continue
+            w = min(b[2], c[2]) - max(b[0], c[0])
+            h = min(b[3], c[3]) - max(b[1], c[1])
+            if w > 0 and h > 0 and w * h >= area / 2:
+                out.add(i)
+                break
+    return out
+
+
+def chunks(pdf_path, first_page: int = 0, last_page: int | None = None,
+           drop_overlaps: bool = False) -> list[list[list[str]]]:
+    """Per text block (column), the list of paragraphs (each a list of raw lines). With drop_overlaps, text blocks
+    lying inside a fuller block are skipped (off by default, so existing outputs are unchanged)."""
     doc = fitz.open(pdf_path)
     out = []
     last = len(doc) if last_page is None else last_page
     for pn in range(first_page, last):
-        for b in doc[pn].get_text("blocks", sort=False):
-            if b[6] != 0:
+        blocks = [b for b in doc[pn].get_text("blocks", sort=False) if b[6] == 0]
+        skip = _overlapped(blocks) if drop_overlaps else set()
+        for bi, b in enumerate(blocks):
+            if bi in skip:
                 continue
             paras: list[list[str]] = []
             cur: list[str] = []
@@ -125,10 +146,10 @@ def chunks(pdf_path, first_page: int = 0, last_page: int | None = None) -> list[
     return out
 
 
-def paragraphs(pdf_path, first_page: int = 0, last_page: int | None = None) -> list[str]:
+def paragraphs(pdf_path, first_page: int = 0, last_page: int | None = None, drop_overlaps: bool = False) -> list[str]:
     """Paragraph strings in reading order, with paragraphs re-joined across column/page breaks."""
     out: list[str] = []
-    for paras in chunks(pdf_path, first_page, last_page):
+    for paras in chunks(pdf_path, first_page, last_page, drop_overlaps):
         for i, p in enumerate(paras):
             text = join_lines(p)
             if not text:
