@@ -1,0 +1,82 @@
+day,kind,law,acts,files,branch
+2005-06-24,start,,codigo-civil,2427,main
+2005-08-10,law,cc-fe-erratas-2005-08,codigo-civil,1,main
+2005-12-20,law,cc-fe-erratas-2005-12,codigo-civil,1,main
+2006-05-19,law,tc-002-06-di,codigo-civil,0,main
+2008-10-20,start,constitucion-2008,constitucion,508,main
+2010-09-23,law,cc-025-10-scn-cc,codigo-civil,0,main
+2011-05-19,law,cc-0001-11-sin-cc,codigo-civil,1,main
+2011-07-13,law,referendo-2011,constitucion,7,main
+2012-06-26,law,ley-creditos-vivienda-vehiculos-2012,codigo-civil,2,main
+2012-09-25,law,ley-organica-discapacidades-2012,codigo-civil,11,main
+2012-09-26,law,ley-defensa-derechos-laborales-2012,codigo-civil,1,main
+2012-12-03,law,ley-buros-credito-2012,codigo-civil,1,main
+2014-08-10,start,coip-2014,coip,799,main
+2014-09-12,law,comf-2014,codigo-civil coip,3,main
+2015-06-19,law,ley-reformatoria-codigo-civil-2015,codigo-civil,97,main
+2015-09-30,law,reformatoria-coip-2015,coip,13,main
+2015-10-26,law,ley-drogas-2015,coip,3,main
+2015-12-21,law,enmiendas-2015,constitucion,13,main
+2016-01-25,law,ley-drogas-2015,coip,1,main
+2016-03-14,law,ley-tierras-2016,coip,1,main
+2016-05-22,law,cogep-2015,codigo-civil,28,main
+2016-07-21,law,ley-lavado-2016,coip,1,main
+2017-05-24,law,enmiendas-2015,constitucion,2,main
+2017-12-29,law,ley-reactivacion-2017,coip,0,main
+2018-02-05,law,ley-violencia-mujeres-2018,coip,5,main
+2018-02-14,law,referendo-2018,constitucion coip,18,main
+2018-04-12,law,codigo-organico-ambiente-2017,codigo-civil,1,main
+2018-08-02,law,cc-018-18-sin-cc,constitucion,13,main
+2019-04-30,law,ley-deporte-2019,coip,1,main
+2019-05-06,law,ley-defensoria-2019,coip,2,main
+2019-06-03,law,cc-ec90-2019,coip,0,main
+2019-07-08,law,cc-10-18-cn-19,codigo-civil,0,main
+2019-08-15,law,cc-ec6-2019,coip,0,main
+2019-11-13,law,cc-ec21-2019,coip,0,main
+2020-06-22,law,reformatoria-coip-2019,coip,118,main
+2021-02-05,law,ley-movilidad-humana-2021,coip,0,main
+2021-02-17,law,reformatoria-coip-2021,coip,0,main
+2021-05-14,law,ley-extincion-dominio-2021,codigo-civil coip,0,main
+2021-06-29,law,cc-34-19-in-21,coip,1,main
+2021-08-10,law,ley-transito-2021,coip,0,main
+2021-08-27,law,ley-comercio-ilicito-2021,coip,0,main
+2021-08-30,law,reformatoria-coip-violencia-digital-2021,coip,0,main
+2021-10-13,law,cc-8-20-cn-21,coip,0,main
+2021-10-19,law,ley-reformatoria-cc-convemar-2021,codigo-civil,0,main
+2022-01-14,law,cc-ec261-2022,coip,1,main
+2022-01-25,law,cc-53-20-in-21,coip,1,main
+2022-01-28,law,cc-ec268-2022,coip,1,main
+2022-03-14,law,cc-56-09-in-22,codigo-civil,2,main
+2022-03-16,law,cc-ec20-2022,coip,1,main
+2022-08-22,law,ley-uso-fuerza-2022,coip,0,main
+2023-01-04,law,ley-economia-campesina-2023,coip,1,main
+2023-02-05,law,referendo-2023,constitucion,0,main
+2023-02-07,start,ley-transformacion-digital-2023,ley-transformacion-digital,101,main
+2023-02-07,start,lotaip-2023,lotaip,66,main
+2023-05-13,law,ley-seguridad-integral-2023,coip,85,main
+2024-01-05,law,ley-salud-mental-2024,codigo-civil coip,0,main
+2024-02-09,law,ley-ahorro-monetizacion-2024,codigo-civil coip,0,main
+2024-02-26,law,cc-61-18-in-23,coip,1,main
+2024-03-13,law,ley-reformatoria-logidac-2024,codigo-civil,0,main
+2024-04-21,law,referendo-2024-rechazos,constitucion,0,main
+2024-05-09,law,referendo-2024,constitucion,2,main
+2024-05-09,law,reforma-parcial-2024,constitucion,5,main
+2024-05-29,law,cc-21-23-in-24,lotaip,1,main
+2024-06-27,law,ley-victimas-femicidio-2024,codigo-civil coip,0,main
+2024-07-12,law,ley-consulta-popular-2024,coip,0,main
+2024-12-10,law,dl-477-2024,coip,0,main
+2025-03-27,law,cc-94-24-in-25,coip,0,main
+2025-04-02,law,cc-49-21-cn-25,coip,1,main
+2025-05-14,law,ley-transito-2025,coip,0,main
+2025-06-10,law,ley-solidaridad-2025,coip,21,main
+2025-06-13,law,ley-reformatoria-telecomunicaciones-2025,ley-transformacion-digital,0,main
+2025-06-26,law,ley-integridad-2025,coip,12,main
+2025-07-30,law,ley-lavado-2024,coip,3,main
+2025-10-03,law,cc-52-25-in-25,coip,12,main
+2025-10-03,law,cc-51-25-in-25,coip,21,main
+2025-10-24,law,ley-movilidad-humana-2025,coip,0,main
+2025-11-16,law,referendo-2025,constitucion,0,main
+2026-04-29,law,ley-penitenciaria-2026,coip,21,main
+2026-05-22,law,ley-ciberseguridad-2026,coip ley-transformacion-digital,35,main
+2026-07-01,law,ley-uniformes-2026,coip,0,main
+2026-08-07,law,ley-extradicion-2026,coip,0,main
