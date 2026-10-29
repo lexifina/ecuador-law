@@ -12,6 +12,8 @@ It follows the shared design of [lexifina/global-law](https://github.com/lexifin
 | `codigo-civil/` | Código Civil (Codificación 2005-010) | 22 | From the 2005 codification to 27 June 2024 (see "Código Civil" below) |
 | `coip/` | Código Orgánico Integral Penal (2014) | 50 | From the Code as published on 10 February 2014 to 7 August 2026 (see "COIP" below) |
 | `codigo-comercio/` | Código de Comercio (2019) | 3 | As published on 29 May 2019, then its amendments to 7 February 2023 (see "Código de Comercio" below) |
+| `cogep/` | Código Orgánico General de Procesos (2015) | 17 | From the Code as enacted (in force 22 May 2016) to 3 October 2025; **preview only, not today's text** (see "COGEP" below) |
+| `codigo-trabajo/` | Código del Trabajo (Codificación 2005-017) | 15 | From the 2005 codification to 12 September 2014 only; **preview only, the history stops in 2014** (see "Código del Trabajo" below) |
 
 The Constitution is complete: 444 articles, the preamble, the 30 transitional provisions, the Disposición derogatoria, the 30 articles of the Régimen de transición, the Disposición final, the general provisions added since 2018, and the headings of its titles, chapters and sections (`constitucion/titulos.md`).
 
@@ -223,6 +225,76 @@ index only.
 7-II-2023, tomadas del texto del Registro Oficial. La Ley de Modernización a la Ley de Compañías (2020), publicada solo
 como imagen, no está aplicada: faltan los arts. 607.1 a 607.6. Las reformas posteriores publicadas solo como imagen
 (posiblemente la de 13-X-2025) no se han podido leer.
+
+## Código Orgánico General de Procesos (COGEP, 2015)
+
+**Preview only.** `cogep/` is built on the `preview` branch and not published on `main`, because its current text
+cannot be shown to equal an official or official-publisher consolidated text: four of its amending acts and rulings
+were printed only as page images, which this repository does not OCR, no consolidation newer than 7 February 2023 was
+found, and 50 of the 97 laws published from 2023 to October 2026 are image-only, so whether they amend the Code is
+unknown.
+
+The Code as published in the Registro Oficial, Suplemento 506 (22 May 2015): 439 articles, its general, transitional,
+amending, repealing and final provisions, and its headings (`cogep/titulos.md`). It took effect twelve months after
+publication (22 May 2016), which is the date of the first version; the provisions its Disposición final segunda put in
+force earlier (abandono, citación, copias certificadas, inquilinato, remate) are not dated separately. Amending acts were
+found from the notes of a Lexis consolidation to 7 February 2023 (read as an index only) and, after it, by searching the
+gazette text of every law on the Asamblea Nacional's list.
+
+| In force | Law or ruling | What it did |
+| --- | --- | --- |
+| 2016-05-22 | Código Orgánico General de Procesos | As enacted |
+| 2016-05-22 | Ley de Incentivos para Asociaciones Público-Privadas (Supl. 652, 2015) | Art. 329 (before the Code took effect) |
+| 2016-12-09 | Código Orgánico de la Economía Social de los Conocimientos (Supl. 899) | New article after art. 133 |
+| 2017-05-31 | Corte Constitucional, Edición Constitucional 1 | **Not applied** (image-only): art. 137 |
+| 2017-11-14 | Sentencia 006-17-SCN-CC (Edición Constitucional 19) | **Not applied** (image-only): words added to arts. 23 and 25; arts. 27, 28 |
+| 2018-07-07 | Código Orgánico Administrativo (Segundo Supl. 31, 2017) | Arts. 14 A, 53, 326, 327, 370 A; general provision 4 |
+| 2018-08-21 | Ley Orgánica para el Fomento Productivo (Supl. 309) | Arts. 102-106 ('laudo arbitral'); repealing provision 13 |
+| 2019-06-26 | Ley Orgánica Reformatoria del COGEP (Supl. 517) | 70 articles (recusación, citación, abandono, apelación, casación, procedimiento sumario, títulos de ejecución) |
+| 2020-12-08 | Ley Orgánica Reformatoria del COFJ (Supl. 345) | **Not applied** (image-only): arts. 53, 55, new 53.1 |
+| 2021-02-23 | Sentencia 92-15-IN/21 | Last inciso of art. 324 |
+| 2021-04-09 | Sentencia 19-20-CN/21 | Conditioned reading of art. 22 num. 8: no words changed |
+| 2021-05-14 | Ley Orgánica de Extinción de Dominio (Quinto Supl. 452) | **Not applied** (image-only): arts. 1, 36 |
+| 2021-11-29 | Ley Orgánica para el Desarrollo Económico (Tercer Supl. 587) | **Not applied** (image-only): arts. 10, 76, 317, 324 |
+| 2022-07-15 | Sentencia 36-16-IN/22 | Art. 27 as published in 2015 (already replaced): no words changed |
+| 2023-02-07 | Ley Orgánica para la Transformación Digital y Audiovisual (Tercer Supl. 245) | Arts. 4, 53, 55, 55.1, 115, 193, 194, 196, 347, 363, 373, 405 (art. 25 not applied: see below) |
+| 2025-06-26 | Ley Orgánica de Integridad Pública (Tercer Supl. 68) | Arts. 96, 146, 326, 327, 332 |
+| 2025-10-03 | Sentencia 52-25-IN/25 | The whole law unconstitutional: the earlier wording of those five articles returns |
+
+- Arts. 1, 10, 23, 25, 36, 76, 317 and 324 keep wording that is not the law in force after the dates above, and
+  art. 53.1 is missing; the 2023 amendment of incisos 2 and 4 of art. 25 is not applied either, because the article
+  already lacked the 2017 ruling's words.
+- On 7 February 2023 the text agrees with the Lexis consolidation in 358 articles; every difference is classified in
+  REPRODUCE.md (decisions).
+
+### En español
+
+`cogep/` contiene el Código Orgánico General de Procesos (Suplemento 506, 22-V-2015, vigente desde el 22-V-2016) y sus
+reformas hasta el 3-X-2025, tomadas del texto del Registro Oficial. Solo está en la rama `preview`: cuatro reformas y
+sentencias se publicaron solo como imagen (Edición Constitucional 1 y 19 de 2017, Suplemento 345 de 2020, Quinto
+Suplemento 452 y Tercer Suplemento 587 de 2021) y no están aplicadas, y no se halló una codificación posterior a febrero
+de 2023; el texto final no es el vigente.
+
+## Código del Trabajo (Codificación 2005)
+
+**Preview only, and the history stops on 12 September 2014.** `codigo-trabajo/` holds the Codificación 2005-017
+(Registro Oficial, Suplemento 167, 16 December 2005) and every act and ruling that amended it up to the Código Orgánico
+Monetario y Financiero (12 September 2014), each applied from its gazette text: the Leyes 2006-28 (with its fe de
+erratas), 2006-39, 2006-40, 2006-48, 2006-60 and 2007-77, the codification's fe de erratas (2006), the Mandato
+Constituyente No. 8 (2008, which repealed hourly work and labour intermediation), the 2009 reform of maternity and
+paternity leave, the Código de la Producción (2010), sentencia 031-10-SCN-CC (2011), the Ley para la Defensa de los
+Derechos Laborales (2012) and the Código Orgánico Monetario y Financiero (2014).
+
+The reforms after September 2014 are not in this record yet: the Ley Orgánica para la Justicia Laboral (2015) and some
+25 later acts and rulings to February 2023, among them the COGEP, the Ley de Apoyo Humanitario (2020) and the 2023 laws
+(one ruling of 2018 is image-only), and whatever the image-only laws of 2023-2026 changed. **The files of
+`codigo-trabajo/` are therefore the text of September 2014, not the law in force today.**
+
+### En español
+
+`codigo-trabajo/` contiene la Codificación 2005-017 del Código del Trabajo y sus reformas hasta el 12-IX-2014, tomadas
+del texto del Registro Oficial. Las reformas posteriores (desde la Ley Orgánica para la Justicia Laboral de 2015) aún no
+están aplicadas: el texto final es el de septiembre de 2014, no el vigente. Solo está en la rama `preview`.
 
 ## How it is built
 

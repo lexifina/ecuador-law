@@ -156,8 +156,13 @@ def base_units() -> dict:
 
 # ---------------------------------------------------------------- helpers for the amending acts
 
+STRAY_ACCENT = re.compile(r"(?<=[áéíóúÁÉÍÓÚ])́+")
+
+
 def q(s: Src, anchor: str, count: int = 1, after: str | None = None) -> list[list[str]]:
-    return [split_items(b) for b in s.quoted(anchor, count=count, after=after)]
+    """Quoted blocks after an anchor, literals one per line; a combining acute accent the text layer sets after an
+    already accented vowel ('convocará́') is dropped (decisions)."""
+    return [split_items([STRAY_ACCENT.sub("", p) for p in b]) for b in s.quoted(anchor, count=count, after=after)]
 
 
 def whole(u: Units, s: Src, n: int, anchor: str, after: str | None = None, key: str | None = None) -> None:
@@ -171,7 +176,7 @@ def innominate(u: Units, after_n: int, block: list[str], start: int = 1) -> list
     """Split a quoted block of 'Art. ...-' articles into units art-NNNN-1, -2 ... placed after art. after_n."""
     arts: list[list[str]] = []
     for p in block:
-        if re.match(r"^Art\.\s*\.{3}|^Art\.\s*\(\.\.\.\)|^Art\.\s*innumerado", p):
+        if re.match(r"^Art\.\s*\.{3}|^Art\.{3}\s|^Art\.\s*\(\.\.\.\)|^Art\.\s*innumerado", p):
             arts.append([p])
         elif arts:
             arts[-1].append(p)
@@ -382,7 +387,7 @@ def ley_2006_48(u: Units) -> None:
         raise SystemExit(f"Ley 2006-48 art. 1: {b[:2]}")
     heading_before(u, "TITULO .... DEL TRABAJO PARA PERSONAS CON DISCAPACIDAD", [b[0] + " " + b[1]])
     keys = innominate(u, 346, b[2:], start=4)
-    if len(keys) != 20:
+    if len(keys) != 21:
         raise SystemExit(f"Ley 2006-48: {len(keys)} articles")
     (b,) = q(s, "Art. 2.- A continuación del artículo 557, agréguese el siguiente artículo innumerado:")
     innominate(u, 557, b)
@@ -466,10 +471,36 @@ def ley_2009_licencias(u: Units) -> None:
     innominate(u, 152, s.paras[j + 1:k])
 
 
+S644_2009 = ed("s644-2009", "Primer Suplemento")
+
+
+def ley_fondo_reserva_2009(u: Units) -> None:
+    """Ley para el Pago Mensual del Fondo de Reserva y Régimen Solidario de Cesantía por parte del Estado (Suplemento
+    644, 29-VII-2009), art. 4 (arts. 95 and 201); in force on publication (its Disposición final). Where the act
+    inserts or removes words of a series, the commas of the series are kept once (decisions)."""
+    s = Src(S644_2009)
+    s.check('1.- En el artículo 95, luego de la palabra "utilidades" inclúyase las palabras "el pago mensual del fondo de '
+            'reserva,"; suprímase las palabras "decimoquinto y decimosexto sueldos"; y entre decimotercera y decimocuarta '
+            'remuneraciones agréguese la conjunción "y".',
+            '2.- En el artículo 201 elimínese la palabra "o anualmente", y al final del artículo luego de la palabra '
+            '"Instituto", añádese "y en el caso de que el trabajador haya decidido no recibirla de manera mensual y '
+            'directa por parte del empleador."',
+            "Disposición Final.- Esta ley entrará en vigencia desde la fecha de su publicación en el Registro Oficial.")
+    u.sub("art-0095", "el porcentaje legal de utilidades, los viáticos",
+          "el porcentaje legal de utilidades, el pago mensual del fondo de reserva, los viáticos", para=1)
+    u.sub("art-0095", "remuneraciones, decimoquinto y decimosexto sueldos, componentes", "remuneraciones, componentes",
+          para=1)
+    u.sub("art-0095", "la decimotercera, decimocuarta remuneraciones", "la decimotercera y decimocuarta remuneraciones",
+          para=1)
+    u.drop("art-0201", "o anualmente")
+    u.sub("art-0201", "a dicho Instituto.", "a dicho Instituto y en el caso de que el trabajador haya decidido no "
+          "recibirla de manera mensual y directa por parte del empleador.")
+
+
 def copci_2010(u: Units) -> None:
     """Código Orgánico de la Producción, Comercio e Inversiones (Suplemento 351, 29-XII-2010), Disposición
-    reformatoria quinta; in force on publication. Its numeral 5 (art. 95) names words the codified inciso words
-    otherwise ('la decimotercera, decimocuarta remuneraciones,'): not applied."""
+    reformatoria quinta; in force on publication. Its numeral 5 (art. 95) names the words 'la decimotercera y
+    decimocuarta remuneraciones,' as the Ley de 2009 on the fondo de reserva left them."""
     s = Src(S351_2010)
     s.check("Las disposiciones de este Código y sus derogatorias entrarán en vigencia desde la fecha de su promulgación en el Registro Oficial.")
     top = "QUINTA.- Refórmese el Código de Trabajo en las siguientes disposiciones:"
@@ -493,6 +524,11 @@ def copci_2010(u: Units) -> None:
     u.put("art-0017", ps)
     (b,) = q(s, "4. A continuación del Artículo 23 agréguese el siguiente artículo:", after=top)
     u.set_unit("art-0023-1", b, label="Art. 23.1")
+    s.check('5. En el segundo inciso del Art. 95 del Código del Trabajo, a continuación de la frase "la decimotercera y '
+            'decimocuarta remuneraciones,", agréguese el siguiente texto: "la compensación económica para el salario '
+            'digno,"')
+    u.sub("art-0095", "la decimotercera y decimocuarta remuneraciones,", "la decimotercera y decimocuarta remuneraciones, "
+          "la compensación económica para el salario digno,", para=1)
 
 
 def cc_031_10_scn_cc(u: Units) -> None:
@@ -531,6 +567,506 @@ def comf_2014(u: Units) -> None:
     u.insert("art-0036", u.count("art-0036"), [new])
 
 
+S483_2015 = ed("s483-2015", "Tercer Suplemento")
+CSAL = "Consejo Nacional de Salarios"
+
+
+def ley_justicia_laboral_2015(u: Units) -> None:
+    """Ley Orgánica para la Justicia Laboral y Reconocimiento del Trabajo en el Hogar (Tercer Suplemento 483,
+    20-IV-2015), Capítulo I (arts. 1-59), in force on publication (its Disposición final), except its art. 15 (art.
+    97.1), which its Disposición transitoria tercera puts in force on 1-I-2016 (ley_justicia_laboral_2015_art15).
+    Read with plain rotext.paragraphs (codes/strict.py drops half of this edition)."""
+    s = Src(S483_2015)
+    s.check("La presente Ley Orgánica para la Justicia Laboral y Reconocimiento del Trabajo en el Hogar, entrará en "
+            "vigencia a partir de la fecha de su publicación en el Registro Oficial.",
+            "Tercera.- La reforma a que se refiere el Artículo 15 de esta Ley entrará en vigor a partir del 1 de enero del 2016.")
+    whole(u, s, 11, "Artículo 1.- Sustitúyase el artículo 11 por el siguiente:")
+    whole(u, s, 14, "Artículo 2.- Sustitúyase el artículo 14 por el siguiente:")
+    whole(u, s, 15, "Artículo 3.- Sustitúyase el artículo 15 por el siguiente:")
+    (b,) = q(s, "Artículo 4.- A continuación del artículo 16 agréguese el siguiente:")
+    if not b[0].startswith("Art. 16.1.-"):
+        raise SystemExit("Justicia Laboral art. 4")
+    u.set_unit("art-0016-1", b, label="Art. 16.1")
+    whole(u, s, 19, "Artículo 5.- Sustitúyase el artículo 19 por el siguiente:")
+    (b,) = q(s, "Artículo 6.- Sustitúyanse los párrafos primero y segundo del artículo 20, por los siguientes:")
+    if not b[0].startswith("Art. 20.- Cruce de información.-") or len(b) != 1:
+        raise SystemExit("Justicia Laboral art. 6")
+    u.set_para("art-0020", 0, b, count=2)
+    s.check('Artículo 7.- En el título del Parágrafo Segundo del Capítulo I del Título I, elimínese la frase: "de enganche"')
+    u.drop("titulos", "de enganche", para="Parágrafo 2do. De los contratos de enganche")
+    s.check("Artículo 8.- Deróguense los artículos 24, 25, 26, 27, 28, 29 y 30.")
+    for n in range(24, 31):
+        u.remove(art_key(n))
+    (b,) = q(s, "1. Sustitúyase el numeral 7 por el siguiente:", after="Artículo 9.- En el artículo 42")
+    u.set_para("art-0042", u.find("art-0042", "7. Llevar un registro"), b)
+    s.check('"El contrato laboral deberá ser escrito e inscrito en la Inspección del Trabajo correspondiente, que '
+            'mantendrá un registro específico para el caso.".')
+    # the sentence opens its paragraph: the space after it goes with it
+    u.drop("art-0042", "El contrato laboral deberá ser escrito e inscrito en la Inspección del Trabajo correspondiente, "
+           "que mantendrá un registro específico para el caso. ")
+    s.check('Artículo 10.- En el párrafo 4 del Capítulo VI del Título I, sustitúyase el título "De la política de '
+            'salarios" por "De las políticas de trabajo y salarios".')
+    u.sub("titulos", "Parágrafo 4to. De la política de salarios", "Parágrafo 4to. De las políticas de trabajo y salarios")
+    whole(u, s, 118, "Artículo 11.- Sustitúyase el artículo 118 por el siguiente:")
+    whole(u, s, 119, "Artículo 12.- Sustitúyase el artículo 119 por el siguiente:")
+    s.check('Artículo 13.- En los artículos 81, 117, 120, 121, 122, 123, 124, 125, 126 y 127 del Código del Trabajo, '
+            'sustitúyase las palabras "Consejo Nacional de Salarios" por "Consejo Nacional de Trabajo y Salarios".')
+    for n in (81, 117, 120, 121, 122, 123, 124, 125, 126, 127):
+        k = art_key(n)
+        u.put(k, [p.replace(CSAL, "Consejo Nacional de Trabajo y Salarios") for p in u.paras(k)])
+    (b,) = q(s, "Artículo 14.- Sustitúyase el segundo inciso del artículo 32, por el siguiente:")
+    if not u.paras("art-0032")[1].startswith("En consecuencia, el empleador no podrá despedir ni desahuciar"):
+        raise SystemExit("art. 32 second inciso")
+    u.set_para("art-0032", 1, b)
+    # art. 15 (art. 97.1): 1-I-2016
+    whole(u, s, 100, "Artículo 16.- Sustitúyase al artículo 100 por el siguiente:")
+    whole(u, s, 103, "Artículo 17.- Sustitúyase el artículo 103 por el siguiente:")
+    (b,) = q(s, "Artículo 18.- A continuación del artículo 103, agréguese el siguiente:")
+    if not b[0].startswith("Art. 103.1.-"):
+        raise SystemExit("Justicia Laboral art. 18")
+    u.set_unit("art-0103-1", b, label="Art. 103.1")
+    whole(u, s, 104, "Artículo 19.- Sustitúyase el artículo 104 por el siguiente:")
+    whole(u, s, 106, "Artículo 20.- Sustitúyase el artículo 106, por el siguiente:")
+    whole(u, s, 111, "Artículo 21.- Sustitúyase el artículo 111, por el siguiente:")
+    # art. 22: the quotation of art. 113 is never closed; it runs to the next article of the act
+    i = s.index("Artículo 22.- Sustitúyase el artículo 113, por el siguiente:")
+    j = s.index("Artículo 23. - A continuación del artículo 133")
+    b = list(s.paras[i + 1:j])
+    if not (len(b) == 4 and b[0].startswith('"Art. 113.- Derecho a la decimocuarta remuneración.-')
+            and all(x.count('"') == 0 for x in b[1:])):
+        raise SystemExit("Justicia Laboral art. 22")
+    b[0] = b[0][1:]
+    u.set_unit("art-0113", split_items(b))
+    (b,) = q(s, "Artículo 23. - A continuación del artículo 133, agréguese el siguiente artículo Innumerado:")
+    if not b[0].startswith("Art. 133.1.-"):
+        raise SystemExit("Justicia Laboral art. 23")
+    u.set_unit("art-0133-1", b, label="Art. 133.1")
+    s.check('1. En el tercer inciso del Artículo 154, elimínese la frase: "ni de desahucio".', "2. Deróguese el último inciso.")
+    u.drop("art-0154", "ni de desahucio", para=2)
+    if u.count("art-0154") != 4:
+        raise SystemExit("art. 154: four incisos expected")
+    u.put("art-0154", u.paras("art-0154")[:3])
+    s.check("Artículo 25.- En el primer párrafo del cuarto artículo innumerado, agregado a continuación del artículo "
+            "156, suprímase lo siguiente:",
+            '"Este certificado deberá acompañarse al contrato cuando éste sea registrado en las dependencias del '
+            'Ministerio de Trabajo y Empleo.".')
+    u.drop("art-0156-4", "Este certificado deberá acompañarse al contrato cuando éste sea registrado en las "
+           "dependencias del Ministerio de Trabajo y Empleo.", para=0)
+    (b,) = q(s, "Artículo 26.- Sustitúyase el numeral 9 del artículo 169 por el siguiente:")
+    u.set_para("art-0169", u.find("art-0169", "9. Por desahucio."), b)
+    s.check("Artículo 27.- Al final del número 1 del artículo 173, sustitúyase el punto y coma (;) por punto seguido "
+            "(.), y añádase lo siguiente:")
+    (b,) = q(s, "Artículo 27.- Al final del número 1 del artículo 173")
+    i = u.find("art-0173", "1. Por injurias graves")
+    ps = u.paras("art-0173")
+    if not ps[i].endswith(";"):
+        raise SystemExit("art. 173 num. 1")
+    ps[i] = ps[i][:-1] + ". " + b[0]
+    u.put("art-0173", ps)
+    s.check("Artículo 28.- En el artículo 175, elimínese la frase: ''desahuciar ni\".")
+    u.drop("art-0175", "desahuciar ni")
+    s.check("Artículo 29.- Deróguese el artículo 181.")
+    u.remove("art-0181")
+    (b,) = q(s, "1. Sustitúyase el primer inciso del artículo 184 por el siguiente:", after="Artículo 30.-")
+    u.set_para("art-0184", 0, b)
+    (b,) = q(s, "2. Sustitúyase el segundo inciso por el siguiente:", after="Artículo 30.-")
+    u.set_para("art-0184", 1, b)
+    whole(u, s, 185, "Artículo 31.- Sustitúyase el artículo 185, por lo siguiente:")
+    s.check("Artículo 32.- Deróguese el artículo 186.")
+    u.remove("art-0186")
+    whole(u, s, 187, "Artículo 33.- Sustitúyase el artículo 187 por el siguiente:")
+    s.check("Artículo 34.- Deróguese el artículo 189.")
+    u.remove("art-0189")
+    (b,) = q(s, "Artículo 35.- Añádanse a continuación del artículo 195, los siguientes artículos:")
+    arts: list[list[str]] = []
+    for p in b:
+        m = re.match(r"Art\. 195\.(\d)\.-", p)
+        if m:
+            if int(m.group(1)) != len(arts) + 1:
+                raise SystemExit("Justicia Laboral art. 35: numbering")
+            arts.append([p])
+        else:
+            arts[-1].append(p)
+    if len(arts) != 3:
+        raise SystemExit("Justicia Laboral art. 35: three articles expected")
+    for n, a in enumerate(arts, 1):
+        u.set_unit(art_key(195, str(n)), a, label=f"Art. 195.{n}")
+    (b,) = q(s, "Artículo 36.- Agréguese un párrafo final en el artículo 220, con el siguiente texto:")
+    u.insert("art-0220", u.count("art-0220"), b)
+    s.check("Artículo 37.- En el título del artículo 233, elimínese \"y desahucio\" y en el inciso primero del mismo, "
+            "elimínese la frase ''desahuciar ni\".")
+    u.drop("art-0233", "y desahucio", para=0)
+    u.drop("art-0233", "desahuciar ni", para=0)
+    s.check("Artículo 38.- Deróguese el artículo 264.", "Artículo 40.- Deróguese el artículo 266.")
+    u.remove("art-0264")
+    whole(u, s, 265, "Artículo 39.- Sustitúyase el artículo 265, por el siguiente:")
+    u.remove("art-0266")
+    s.check('Artículo 41.- En el primer párrafo del artículo 275, elimínese lo siguiente:',
+            '"Una copia del registro se enviará a la Dirección de Empleo y Recursos Humanos.".')
+    u.drop("art-0275", "Una copia del registro se enviará a la Dirección de Empleo y Recursos Humanos.", para=0)
+    s.check("Artículo 42.- Deróguese el artículo 277.")
+    u.remove("art-0277")
+    s.check('"que los empleadores se hayan inscrito en el registro de empleadores del trabajo a domicilio, '
+            'exigiéndoles la presentación del correspondiente certificado;".')
+    u.drop("art-0283", "que los empleadores se hayan inscrito en el registro de empleadores del trabajo a domicilio, "
+           "exigiéndoles la presentación del correspondiente certificado;", para="1.-")
+    s.check('", debidamente registrado en el Ministerio de Trabajo y Empleo"')
+    u.drop("art-0285", ", debidamente registrado en el Ministerio de Trabajo y Empleo", para=1)
+    whole(u, s, 310, "Artículo 45.- Sustitúyase el artículo 310 por el siguiente:")
+    s.check("Artículo 46.- Deróguense los artículos 311 y 312.")
+    u.remove("art-0311")
+    u.remove("art-0312")
+    whole(u, s, 452, "Artículo 47.- Sustitúyase el artículo 452 por el siguiente:")
+    whole(u, s, 455, "Artículo 48.- Sustitúyase el artículo 455, por el siguiente:")
+    (b,) = q(s, "1. Sustitúyase el número 3 por el siguiente:", after="Artículo 49.- En el artículo 459")
+    u.set_para("art-0459", u.find("art-0459", "3. La directiva"), b)
+    (b,) = q(s, "2. Sustitúyase el número 4 por el siguiente:", after="Artículo 49.- En el artículo 459")
+    u.set_para("art-0459", u.find("art-0459", "4. Los miembros"), comma_end(b))
+    (b,) = q(s, "Artículo 50.- Sustitúyase el número 5 del artículo 462 por el siguiente:")
+    u.set_para("art-0462", u.find("art-0462", "5. Controlar"), comma_end(b))
+    s.check('Artículo 51.- En el número 2 del artículo 497, elimínese "o desahuciare".')
+    u.drop("art-0497", "o desahuciare", para="2. ")
+    (b,) = q(s, "Artículo 52.- A continuación del primer inciso del artículo 539 agréguese el siguiente párrafo:")
+    u.insert("art-0539", 1, b)
+    s.check('Artículo 53.- En el número 5 del artículo 545, suprímase la frase "notificar los desahucios".')
+    u.drop("art-0545", "notificar los desahucios", para="5. ")
+    s.check("Artículo 54.- Deróguese el artículo 560.", "Artículo 55.- Deróguense los artículos 562 y 563.")
+    for n in (560, 562, 563):
+        u.remove(art_key(n))
+    whole(u, s, 624, "Artículo 56.- Sustitúyase el artículo 624, por el siguiente:")
+    whole(u, s, 566, "Artículo 57.- Sustitúyase el artículo 566 por el siguiente:")
+    s.check('Artículo 58.- En el primer inciso del artículo 630, a continuación de la palabra "multas" agréguese "y de '
+            'las utilidades a favor de personas trabajadoras y ex trabajadoras señaladas en el artículo 104 de este '
+            'Código.".')
+    # the full stop inside the quotation ends the act's sentence, not the inserted words (decisions)
+    u.sub("art-0630", "recaudación de las multas se empleará", "recaudación de las multas y de las utilidades a favor de "
+          "personas trabajadoras y ex trabajadoras señaladas en el artículo 104 de este Código se empleará", para=0)
+    (b,) = q(s, "Artículo 59.- En el artículo 224 de éste Código, incorpórese los siguientes párrafos:")
+    u.insert("art-0224", u.count("art-0224"), b)
+
+
+S506_2015 = ed("s506-2015", "Primer Suplemento")
+COGEP_TOP = "SEXTA.- Refórmense en el Código del Trabajo, las siguientes disposiciones:"
+
+
+def cogep_2015_abandono(u: Units) -> None:
+    """Código Orgánico General de Procesos (Suplemento 506, 22-V-2015), Disposición reformatoria sexta num. 9 (art.
+    634, término para el abandono): in force on publication, as its Disposición final segunda says of the rules 'que
+    regulan períodos de abandono'; the rest of its reforms wait twelve months (cogep_2015)."""
+    s = Src(S506_2015)
+    s.check("con excepción de las normas que reforman el Código Orgánico de la Función Judicial, la Ley Notarial y la "
+            "Ley de Arbitraje y Mediación y aquellas que regulan períodos de abandono, copias certificadas, registro de "
+            "contratos de inquilinato y citación, que entrarán en vigencia a partir de la fecha de publicación de esta Ley.")
+    whole(u, s, 634, "9. Sustitúyase el artículo 634 por el siguiente:", after=COGEP_TOP)
+
+
+def cogep_2015(u: Units) -> None:
+    """COGEP, Disposición reformatoria sexta nums. 1-8 and Disposición derogatoria octava, in force twelve months
+    after publication (its Disposición final segunda): 22-V-2016."""
+    s = Src(S506_2015)
+    s.check("SEGUNDA.- El Código Orgánico General de Procesos entrará en vigencia luego de transcurridos doce meses, "
+            "contados a partir de su publicación en el Registro Oficial")
+    whole(u, s, 6, "1. Sustitúyase el artículo 6 por el siguiente:", after=COGEP_TOP)
+    (b,) = q(s, "2. Agréguese en el artículo 153 como último inciso el siguiente texto:", after=COGEP_TOP)
+    u.insert("art-0153", u.count("art-0153"), b)
+    whole(u, s, 491, "3. Sustitúyase el artículo 491 por el siguiente:", after=COGEP_TOP)
+    s.check('4. Añádase en el artículo 571 a continuación de la palabra "excepción" la palabra "previa".')
+    u.sub("art-0571", "como excepción.", "como excepción previa.")
+    whole(u, s, 572, "5. Sustitúyase el artículo 572 por el siguiente:", after=COGEP_TOP)
+    whole(u, s, 575, "6. Sustitúyase el artículo 575 por el siguiente:", after=COGEP_TOP)
+    whole(u, s, 577, "7. Sustitúyase el artículo 577 por el siguiente:", after=COGEP_TOP)
+    (b,) = q(s, "8. Sustitúyase el segundo inciso del artículo 606 por el siguiente:", after=COGEP_TOP)
+    u.set_para("art-0606", 1, b)
+    s.check("OCTAVA.- Deróguense los artículos 568, 570, 574, 576, 578, 579, 580, 581, 582, 583, 584, 585, 586, 587, "
+            "590, 591, 592, 593, 596, 597, 598, 599, 600, 601, 602, 603, 604, 605, 607, 608, 609, 610, 611, 612, 613, "
+            "614, 616, 618, 619 y 620 del Código del Trabajo")
+    for n in [568, 570, 574, 576, 578, 579, 580, 581, 582, 583, 584, 585, 586, 587, 590, 591, 592, 593, 596, 597, 598,
+              599, 600, 601, 602, 603, 604, 605, 607, 608, 609, 610, 611, 612, 613, 614, 616, 618, 619, 620]:
+        u.remove(art_key(n))
+
+
+S720_2016 = ed("s720-2016", "Primer Suplemento")
+S906_2016 = ed("s906-2016", "Primer Suplemento")
+S1008_2017 = ed("s1008-2017", "Primer Suplemento")
+S116_2017 = ed("s116-2017", "Primer Suplemento")
+S175_2018 = ed("s175-2018", "Primer Suplemento")
+EC40_2018 = ed("ec40-2018", "Ediciones Constitucionales")
+S309_2018 = ed("s309-2018", "Primer Suplemento")
+S517_2019 = ed("s517-2019", "Primer Suplemento")
+S229_2020 = ed("s229-2020", "Primer Suplemento")
+EC231_2021 = ed("ec231-2021", "Ediciones Constitucionales")
+S222_2023 = ed("s222-2023", "Primer Suplemento")
+S234_2023 = ed("s234-2023", "Primer Suplemento")
+S242_2023 = ed("s242-2023", "Primer Suplemento")
+
+
+def drop_conj(u: Units, key: str, prefix: str) -> None:
+    """An act's 'al final del numeral N, elimínese: "y"': the closing '; y,' of that numeral becomes ';'."""
+    i = u.find(key, prefix)
+    ps = u.paras(key)
+    if not ps[i].endswith("; y,"):
+        raise SystemExit(f"{key} {prefix!r}: does not end '; y,'")
+    ps[i] = ps[i][:-3]
+    u.put(key, ps)
+
+
+def end_with(u: Units, key: str, prefix: str, old: str, new: str) -> None:
+    """Replace the final punctuation `old` of one paragraph with `new`, as an act directs."""
+    i = u.find(key, prefix)
+    ps = u.paras(key)
+    if not ps[i].endswith(old):
+        raise SystemExit(f"{key} {prefix!r}: does not end {old!r}")
+    ps[i] = ps[i][:-len(old)] + new
+    u.put(key, ps)
+
+
+def ley_trabajo_juvenil_2016(u: Units) -> None:
+    """Ley Orgánica para la Promoción del Trabajo Juvenil, Regulación Excepcional de la Jornada de Trabajo, Cesantía y
+    Seguro de Desempleo (Suplemento 720, 28-III-2016), arts. 3-5; in force on publication (its Disposición final)."""
+    s = Src(S720_2016)
+    s.check("Las disposiciones de la presente Ley entrarán en vigencia a partir de su publicación en el Registro Oficial.")
+    (b,) = q(s, "Artículo 3.- A continuación del artículo 34, añádase el siguiente parágrafo y los artículos que lo contienen:")
+    if b[0] != "Parágrafo 3o Del contrato de trabajo juvenil":
+        raise SystemExit(f"Trabajo juvenil art. 3: {b[0]!r}")
+    heading_before(u, "Capítulo II De la capacidad para contratar", [b[0]])
+    arts: list[list[str]] = []
+    for p in b[1:]:
+        m = re.match(r"Art\. 34\.(\d)\.-", p)
+        if m:
+            if int(m.group(1)) != len(arts) + 1:
+                raise SystemExit("Trabajo juvenil art. 3: numbering")
+            arts.append([p])
+        else:
+            arts[-1].append(p)
+    if len(arts) != 4:
+        raise SystemExit("Trabajo juvenil art. 3: four articles expected")
+    for n, a in enumerate(arts, 1):
+        u.set_unit(art_key(34, str(n)), a, label=f"Art. 34.{n}")
+    (b,) = q(s, "Artículo 4.- A continuación del artículo 47, añádanse los siguientes artículos:")
+    i = next(k for k, p in enumerate(b) if p.startswith("Art. 47.2.-"))
+    if not b[0].startswith("Art. 47.1.-"):
+        raise SystemExit("Trabajo juvenil art. 4")
+    u.set_unit("art-0047-1", b[:i], label="Art. 47.1")
+    u.set_unit("art-0047-2", b[i:], label="Art. 47.2")
+    # art. 5: printed without quotation marks, up to the next Capítulo of the act
+    i = s.index("Artículo 5.- A continuación del artículo 152, añádase el siguiente artículo innumerado:")
+    j = s.index("Reformas a la Ley de Seguridad Social", after="Artículo 5.- A continuación del artículo 152")
+    b = list(s.paras[i + 1:j - 1])
+    if not (b[0].startswith("Artículo ... .- Licencia o permiso sin remuneración") and s.paras[j - 1] == "CAPÍTULO III"):
+        raise SystemExit("Trabajo juvenil art. 5")
+    # the text layer splits one word: 'est e hecho' (decisions)
+    b = [p.replace("por est e hecho", "por este hecho") for p in b]
+    # placed after the articles innumerados of 2009 so that their file names stay (decisions)
+    if "art-0152-3" in u.u:
+        raise SystemExit("art-0152-3 exists")
+    u.set_unit("art-0152-3", b, label="Art. innumerado 3 (tras el art. 152)")
+
+
+def ley_feriados_2016(u: Units) -> None:
+    """Ley Orgánica Reformatoria a la Ley Orgánica del Servicio Público y al Código del Trabajo (Suplemento 906,
+    20-XII-2016), art. 3 (art. 65, días de descanso obligatorio); in force on publication (its Disposición final)."""
+    s = Src(S906_2016)
+    s.check("Las disposiciones de la presente Ley Orgánica entrarán en vigencia a partir de su publicación en el Registro Oficial.",
+            'Artículo 3.- Refórmase el artículo 65 del Código del Trabajo, de la siguiente manera:',
+            '1. En el primer inciso, sustitúyase la frase "y 25 de diciembre", por la siguiente: ", 25 de diciembre y los '
+            'días lunes y martes de carnaval".')
+    u.sub("art-0065", " y 25 de diciembre", ", 25 de diciembre y los días lunes y martes de carnaval", para=0)
+    (b,) = q(s, "2. Añádanse como tercer y cuarto incisos, los siguientes:", after="Artículo 3.- Refórmase el artículo 65")
+    if u.count("art-0065") != 2 or len(b) != 2:
+        raise SystemExit("art. 65")
+    u.insert("art-0065", 2, b)
+
+
+def ley_sector_publico_2017(u: Units) -> None:
+    """Ley Orgánica Reformatoria a las Leyes que rigen el Sector Público (Suplemento 1008, 19-V-2017), art. 22: an
+    article innumerado after art. 247; in force on publication (its Disposición final única)."""
+    s = Src(S1008_2017)
+    s.check("la que entrará en vigencia a partir de la fecha de su publicación en el Registro Oficial.")
+    (b,) = q(s, "Art. 22.- A continuación del artículo 247 incorpórese el siguiente artículo innumerado:")
+    if not b[0].startswith("Art....- La negociación y contratación colectiva en el sector público"):
+        raise SystemExit("Sector público art. 22")
+    u.set_unit("art-0247-1", b, label="Art. innumerado (tras el art. 247)")
+
+
+def ley_acoso_laboral_2017(u: Units) -> None:
+    """Ley Orgánica Reformatoria a la LOSEP y al Código del Trabajo para prevenir el Acoso Laboral (Suplemento 116,
+    9-XI-2017), arts. 4-10; in force on publication (its Disposición final). Read through codes/strict.py: the plain
+    text layer interleaves stray fragments into art. 9. The numeral or literal an act names ('añádase un numeral 36',
+    'un literal m)') opens the added paragraph (decisions)."""
+    s = SSrc(S116_2017)
+    s.check("Las disposiciones de la presente Ley Orgánica Reformatoria entrarán en vigencia a partir de su publicación "
+            "en el Registro Oficial.")
+    (b,) = q(s, "Artículo 4. Incluir un artículo no numerado después del artículo 46:")
+    if not b[0].startswith("Definición de acoso laboral:") or len(b) != 1:
+        raise SystemExit("Acoso laboral art. 4")
+    u.set_unit("art-0046-1", b, label="Art. innumerado (tras el art. 46)")
+    (b,) = q(s, "Artículo 5: En el artículo 42, añádase un numeral 36, que dirá:")
+    if not u.paras("art-0042")[-1].startswith("35.-"):
+        raise SystemExit("art. 42: numeral 35 is not last")
+    u.insert("art-0042", u.count("art-0042"), ["36. " + b[0]])
+    (b,) = q(s, "Artículo 6. En el artículo 44, añádase un literal m) que dirá:")
+    # literal l) is followed by the article's closing inciso on fines ('En caso de reincidencia ...')
+    u.insert("art-0044", u.find("art-0044", "l) Recibir en trabajos") + 1, ["m) " + b[0]])
+    (b,) = q(s, "Artículo 7. En el artículo 46, añádase un literal j) que dirá:")
+    u.insert("art-0046", u.count("art-0046"), ["j) " + b[0]])
+    s.check('Artículo 8. En el artículo 172, al final del numeral 6, elimínese: "y"; al final de numeral 7, sustitúyase '
+            'el punto final ".", por "; y," y añádase un numeral 8, que dirá:')
+    (b,) = q(s, "Artículo 8. En el artículo 172, al final del numeral 6")
+    drop_conj(u, "art-0172", "6. Por denuncia")
+    end_with(u, "art-0172", "7. Por no acatar", ".", "; y,")
+    u.insert("art-0172", u.count("art-0172"), ["8. " + b[0]])
+    s.check('Artículo 9. En el artículo 173, al final del numeral 2, elimínese: "y"; al final del numeral 3, sustitúyase '
+            'el punto final: ".", por "y,"; y añádase un num eral 4, que dirá:')
+    (b,) = q(s, "Artículo 9. En el artículo 173, al final del numeral 2")
+    if len(b) != 2:
+        raise SystemExit("Acoso laboral art. 9")
+    drop_conj(u, "art-0173", "2. Por disminución")
+    end_with(u, "art-0173", "3. Por exigir", ".", " y,")
+    u.insert("art-0173", u.count("art-0173"), ["4. " + b[0], b[1]])
+    s.check('Artículo 10.- En el artículo 545, al final del numeral 7, elimínese: "y"; el numeral 8 pasa a ser numeral 9, '
+            'el numeral 8 dirá: "En los casos de acoso laboral, podrá disponer se efectúen las disculpas públicas de quien '
+            'cometió la conducta". Y al final del numeral 8, sustitúyase el punto final por "; y,".')
+    drop_conj(u, "art-0545", "7. Imponer multas")
+    u.sub("art-0545", "8. Las demás conferidas", "9. Las demás conferidas", para="8. Las demás")
+    u.insert("art-0545", u.find("art-0545", "9. Las demás"), ["8. En los casos de acoso laboral, podrá disponer se "
+                                                              "efectúen las disculpas públicas de quien cometió la "
+                                                              "conducta; y,"])
+
+
+def ley_violencia_mujeres_2018(u: Units) -> None:
+    """Ley Orgánica Integral para Prevenir y Erradicar la Violencia contra las Mujeres (Suplemento 175, 5-II-2018),
+    Disposición reformatoria primera: a numeral '10.' after numeral 9 of art. 42, without renumbering the numerals
+    that follow (so art. 42 has two numerals 10). In force on publication."""
+    s = Src(S175_2018)
+    s.check('PRIMERA.- Agrégase a continuación del numeral 9 del artículo 42 del Código de Trabajo, el numeral siguiente:')
+    new = s.inline("PRIMERA.- Agrégase a continuación del numeral 9 del artículo 42 del Código de Trabajo, el numeral siguiente:")
+    if not new.startswith("10. Conceder a las trabajadoras víctimas de violencia de género"):
+        raise SystemExit("Violencia mujeres DR primera")
+    u.insert("art-0042", u.find("art-0042", "9. Conceder a los trabajadores el tiempo") + 1, [new])
+
+
+def ley_fomento_productivo_2018(u: Units) -> None:
+    """Ley Orgánica para el Fomento Productivo, Atracción de Inversiones, Generación de Empleo, y Estabilidad y
+    Equilibrio Fiscal (Suplemento 309, 21-VIII-2018), art. 50 (art. 112); in force on publication."""
+    s = Src(S309_2018)
+    (b,) = q(s, "Artículo 50.- Sustitúyase el artículo 112 por el siguiente:")
+    if not b[0].startswith("Art. 112. Exclusión de la decimotercera remuneración.-"):
+        raise SystemExit("Fomento productivo art. 50")
+    u.set_unit("art-0112", b)
+
+
+def ley_reformatoria_cogep_2019(u: Units) -> None:
+    """Ley Orgánica Reformatoria del COGEP (Suplemento 517, 26-VI-2019), Disposición reformatoria primera (art.
+    195.2); in force on publication (its Disposición final)."""
+    s = Src(S517_2019)
+    s.check("La presente reforma entrará en vigencia a partir de su publicación en el Registro Oficial.")
+    (b,) = q(s, "PRIMERA.- Reformase el artículo 195.2 del Código de Trabajo por el siguiente texto:")
+    if not b[0].startswith("Art. 195.2.- Acción de despido ineficaz."):
+        raise SystemExit("Reformatoria COGEP 2019")
+    u.set_unit("art-0195-2", b)
+
+
+def ley_apoyo_humanitario_2020(u: Units) -> None:
+    """Ley Orgánica de Apoyo Humanitario para combatir la crisis sanitaria derivada del COVID-19 (Suplemento 229,
+    22-VI-2020), Disposiciones reformatorias primera (teletrabajo, an article innumerado after art. 16) and segunda
+    (art. 363 num. 4); in force on publication (its Disposición final). Its Disposición interpretativa única
+    (art. 169 num. 6) changes no words of the Code (decisions)."""
+    s = Src(S229_2020)
+    s.check("Disposición Final.- La presente Ley entrará en vigencia a partir de su publicación en el Registro Oficial.")
+    (b,) = q(s, "Primera.- Agréguese el siguiente artículo innumerado a continuación del artículo 16 del Código del Trabajo:")
+    if not b[0].startswith("Artículo (...).- Del teletrabajo.-"):
+        raise SystemExit("Apoyo humanitario DR primera")
+    u.set_unit("art-0016-2", b, label="Art. innumerado (teletrabajo, tras el art. 16)")
+    (b,) = q(s, "Segunda.- Añádase al final del artículo 363 del Código del Trabajo como un nuevo numeral la siguiente categoría:")
+    u.insert("art-0363", u.count("art-0363"), b)
+
+
+def cc_36_19_in_21(u: Units) -> None:
+    """Corte Constitucional, sentencia 36-19-IN/21 (Edición Constitucional 231, 4-XI-2021): 'posteriores al parto' in
+    the third inciso of art. 155 is unconstitutional and is to read 'a partir de que haya concluido su licencia por
+    maternidad'."""
+    s = Src(EC231_2021)
+    s.check('2. Declarar la inconstitucionalidad por el fondo de la frase "posteriores al parto" del inciso tercero del '
+            'artículo 155 del Código de Trabajo y determinar que en su lugar deberá decir:',
+            '"Art. 155.- Guardería infantil y lactancia [...] Durante los doce (12) meses a partir de que haya concluido su '
+            'licencia por maternidad, la jornada de la madre lactante durará seis (6) horas, de conformidad con la '
+            'necesidad de la beneficiaria".')
+    u.sub("art-0155", "posteriores al parto", "a partir de que haya concluido su licencia por maternidad", para=2)
+
+
+def ley_juventudes_2023(u: Units) -> None:
+    """Ley Orgánica de las Juventudes (Suplemento 222, 4-I-2023), Disposición reformatoria primera: art. 34.1 and two
+    final incisos of art. 42 num. 27; in force on publication (its Disposición final única)."""
+    s = Src(S222_2023)
+    top = "PRIMERA.- REFORMA EL CÓDIGO DEL TRABAJO:"
+    s.check("ÚNICA.- La presente Ley entrará en vigencia a partir de la fecha de su publicación en el Registro Oficial.")
+    (b,) = q(s, "1. Sustitúyase el Art. 34.1 por el siguiente texto:", after=top)
+    if not b[0].startswith("Trabajo Juvenil.-"):
+        raise SystemExit("Juventudes 1")
+    # printed without the article's number, as the act gives it (decisions)
+    u.set_unit("art-0034-1", b)
+    (b,) = q(s, "2. Agréguese los siguientes incisos finales al numeral 27 del artículo 42:", after=top)
+    i = u.find("art-0042", "27. Conceder permiso")
+    if not u.paras("art-0042")[i + 1].startswith("El becario"):
+        raise SystemExit("art. 42 num. 27")
+    u.insert("art-0042", i + 2, b)
+
+
+def ley_economia_violeta_2023(u: Units) -> None:
+    """Ley Orgánica para Impulsar la Economía Violeta (Suplemento 234, 20-I-2023), arts. 22-25; in force on
+    publication (its Disposición final única)."""
+    s = Src(S234_2023)
+    s.check("ÚNICA.- La presente Ley entrará en vigencia a partir de su publicación en el Registro Oficial.")
+    (b,) = q(s, "Artículo 22.- A continuación del artículo 42, agréguese el siguiente artículo:")
+    if not b[0].startswith("Art. 42.1.-"):
+        raise SystemExit("Economía violeta 22")
+    u.set_unit("art-0042-1", b, label="Art. 42.1")
+    (b,) = q(s, "Artículo 23.- Sustitúyase el artículo 79 por el siguiente artículo:")
+    if not b[0].startswith("Artículo 79.- Igualdad de remuneración.-"):
+        raise SystemExit("Economía violeta 23")
+    u.set_unit("art-0079", b)
+    (b,) = q(s, "Artículo 24.- Luego del primer inciso del artículo 152, agréguese lo siguiente:")
+    u.insert("art-0152", 1, b)
+    (b,) = q(s, "Artículo 25.- A continuación del artículo 154, añádase el siguiente artículo innumerado:")
+    if not b[0].startswith("Art. (...).- Licencia con remuneración por el período de lactancia.-"):
+        raise SystemExit("Economía violeta 25")
+    u.set_unit("art-0154-1", b, label="Art. innumerado (tras el art. 154)")
+
+
+def clean_242(p: str) -> str:
+    """Suplemento 242 (2023): the running head 'Miércoles 1º de febrero de 2023' sits inside paragraphs, and 'podrá'
+    carries two stray combining accents (decisions)."""
+    return p.replace("Miércoles 1º de febrero de 2023 ", "").replace("á́́", "á")
+
+
+def ley_derechos_trabajadores_2023(u: Units) -> None:
+    """Ley Orgánica Reformatoria a Varias Leyes para la Defensa y Garantía de los Derechos Individuales y Colectivos
+    de los Trabajadores (Suplemento 242, 1-II-2023), arts. 1-3; in force on publication (its Disposición final)."""
+    s = Src(S242_2023)
+    s.check("ÚNICA.- La presente Ley entrará en vigencia a partir de su publicación en el Registro Oficial.")
+    (b,) = q(s, "Artículo 1.- Sustitúyase el numeral 25 del artículo 42 del Código del Trabajo, por el siguiente texto:")
+    if not b[0].startswith("25. Pagar al trabajador reemplazante"):
+        raise SystemExit("Derechos trabajadores 1")
+    u.set_para("art-0042", u.find("art-0042", "25. Pagar al trabajador reemplazante"), [clean_242(p) for p in b])
+    (b,) = q(s, "Artículo 2.- Sustitúyase el artículo 57 del Código del Trabajo por el siguiente texto:")
+    b = [clean_242(p) for p in b]
+    if not b[0].startswith("Art. 57.- División de la jornada.- La jornada ordinaria de trabajo podrá ser dividida"):
+        raise SystemExit(f"Derechos trabajadores 2: {b[0][:90]!r}")
+    u.set_unit("art-0057", b)
+    (b,) = q(s, "Artículo 3.- Añádase al final del artículo 58 del Código del Trabajo, el siguiente párrafo:")
+    u.insert("art-0058", u.count("art-0058"), b)
+
+
+def ley_justicia_laboral_2015_art15(u: Units) -> None:
+    """Art. 15 of the Ley Orgánica para la Justicia Laboral: art. 97.1 (cap on profit shares), in force on 1-I-2016
+    (its Disposición transitoria tercera)."""
+    s = Src(S483_2015)
+    (b,) = q(s, "Artículo 15.- A continuación del artículo 97, agréguese el siguiente artículo:")
+    if not b[0].startswith("Art. 97.1.-"):
+        raise SystemExit("Justicia Laboral art. 15")
+    u.set_unit("art-0097-1", b, label="Art. 97.1")
+
+
 # ---------------------------------------------------------------- laws, steps, part
 
 BASE_LAW = "codificacion-ct-2005-017"
@@ -553,6 +1089,99 @@ LAWS = {
     "ley-2006-39": dict(label="Ley 2006-39 Reformatoria al Código del Trabajo", kind="law", enacted="2006-03-28",
                         published="2006-04-13", url=RO250_2006,
                         title="Ley 2006-39 Reformatoria al Código del Trabajo (trabajo de adolescentes)"),
+    "ley-2006-40": dict(label="Ley 2006-40 Reformatoria del Código del Trabajo", kind="law", published="2006-04-27",
+                        url=RO259_2006, title="Ley 2006-40 Reformatoria del Código del Trabajo (examen médico de menores)"),
+    "ley-2006-48": dict(label="Ley 2006-48 Reformatoria al Código del Trabajo", kind="law", published="2006-06-23",
+                        url=S298_2006, title="Ley 2006-48 Reformatoria al Código del Trabajo (intermediación laboral y "
+                                             "tercerización de servicios complementarios)"),
+    "fe-erratas-codificacion-ct-2006": dict(label="Fe de erratas de la Codificación del Código del Trabajo (2006)",
+                                            kind="law", published="2006-08-23", url=RO340_2006,
+                                            title="Fe de erratas de la Codificación 2005-017 del Código del Trabajo "
+                                                  "(Comisión de Legislación y Codificación, Registro Oficial 340)"),
+    "ley-2006-60": dict(label="Ley 2006-60 Reformatoria al Código del Trabajo", kind="law", published="2006-10-30",
+                        url=S387_2006, title="Ley 2006-60 Reformatoria al Código del Trabajo (trabajadores mineros)"),
+    "ley-2007-77": dict(label="Ley 2007-77 Reformatoria al Código del Trabajo", kind="law", published="2007-05-02",
+                        url=RO75_2007, title="Ley Reformatoria al Código del Trabajo (decimocuarta remuneración)"),
+    "mandato-constituyente-8": dict(label="Mandato Constituyente 8 (2008)", kind="law", published="2008-05-06",
+                                    url=S330_2008,
+                                    title="Mandato Constituyente No. 8 (eliminación de la tercerización, la "
+                                          "intermediación laboral y la contratación por horas)"),
+    "ley-reformatoria-loscca-ct-2009": dict(label="Ley Reformatoria a la LOSCCA y al Código del Trabajo (2009)",
+                                            kind="law", published="2009-02-13", url=S528_2009,
+                                            title="Ley Orgánica Reformatoria a la Ley Orgánica de Servicio Civil y "
+                                                  "Carrera Administrativa y al Código del Trabajo"),
+    "ley-fondo-reserva-2009": dict(label="Ley para el Pago Mensual del Fondo de Reserva (2009)", kind="law",
+                                   published="2009-07-29", url=S644_2009,
+                                   title="Ley para el Pago Mensual del Fondo de Reserva y Régimen Solidario de Cesantía "
+                                         "por parte del Estado"),
+    "copci-2010": dict(label="Código Orgánico de la Producción, Comercio e Inversiones (2010)", kind="law",
+                       published="2010-12-29", url=S351_2010,
+                       title="Código Orgánico de la Producción, Comercio e Inversiones, Disposición reformatoria quinta"),
+    "cc-031-10-scn-cc": dict(label="Sentencia 031-10-SCN-CC", kind="court", published="2011-01-27", url=S372_2011,
+                             title="Corte Constitucional, sentencia 031-10-SCN-CC: inconstitucionalidad del inciso "
+                                   "segundo del art. 581"),
+    "ley-derechos-laborales-2012": dict(label="Ley Orgánica para la Defensa de los Derechos Laborales (2012)",
+                                        kind="law", published="2012-09-26", url=S797_2012,
+                                        title="Ley Orgánica para la Defensa de los Derechos Laborales"),
+    "comf-2014": dict(label="Código Orgánico Monetario y Financiero", kind="law", enacted="2014-07-24",
+                      published="2014-09-12", url=S332_2014,
+                      title="Código Orgánico Monetario y Financiero (Registro Oficial, Segundo Suplemento 332, 12-IX-2014)"),
+    "ley-justicia-laboral-2015": dict(label="Ley Orgánica para la Justicia Laboral (2015)", kind="law",
+                                      enacted="2015-04-17", published="2015-04-20", url=S483_2015,
+                                      title="Ley Orgánica para la Justicia Laboral y Reconocimiento del Trabajo en el "
+                                            "Hogar"),
+    "cogep-2015": dict(label="Código Orgánico General de Procesos", kind="law", published="2015-05-22", url=S506_2015,
+                       title="Código Orgánico General de Procesos (Registro Oficial, Suplemento 506, 22-V-2015)"),
+    "ley-trabajo-juvenil-2016": dict(label="Ley Orgánica para la Promoción del Trabajo Juvenil (2016)", kind="law",
+                                     enacted="2016-03-22", published="2016-03-28", url=S720_2016,
+                                     title="Ley Orgánica para la Promoción del Trabajo Juvenil, Regulación Excepcional de "
+                                           "la Jornada de Trabajo, Cesantía y Seguro de Desempleo"),
+    "ley-feriados-2016": dict(label="Ley Orgánica Reformatoria a la LOSEP y al Código del Trabajo (2016)", kind="law",
+                              enacted="2016-12-16", published="2016-12-20", url=S906_2016,
+                              title="Ley Orgánica Reformatoria a la Ley Orgánica del Servicio Público y al Código del "
+                                    "Trabajo (días de descanso obligatorio)"),
+    "ley-sector-publico-2017": dict(label="Ley Orgánica Reformatoria a las Leyes que rigen el Sector Público (2017)",
+                                    kind="law", published="2017-05-19", url=S1008_2017,
+                                    title="Ley Orgánica Reformatoria a las Leyes que rigen el Sector Público"),
+    "ley-acoso-laboral-2017": dict(label="Ley Orgánica Reformatoria para prevenir el Acoso Laboral (2017)", kind="law",
+                                   published="2017-11-09", url=S116_2017,
+                                   title="Ley Orgánica Reformatoria a la Ley Orgánica del Servicio Público y al Código del "
+                                         "Trabajo para prevenir el Acoso Laboral"),
+    "ley-violencia-mujeres-2018": dict(label="Ley Orgánica contra la Violencia hacia las Mujeres (2018)", kind="law",
+                                       published="2018-02-05", url=S175_2018,
+                                       title="Ley Orgánica Integral para Prevenir y Erradicar la Violencia contra las "
+                                             "Mujeres"),
+    "cc-ec40-2018": dict(label="Corte Constitucional, Edición Constitucional 40 (2018)", kind="court",
+                         published="2018-04-06", url=EC40_2018, note=IMAGE_ONLY,
+                         title="Corte Constitucional, resolución publicada el 6-IV-2018 (cited by the Lexis index as "
+                               "'Resolución No. 2, Registro Oficial Suplemento 40'): modulación de los efectos de los "
+                               "arts. 15 y 49 de la Ley Orgánica para la Justicia Laboral (arts. 97.1 y 459). NOT "
+                               "APPLIED (image-only edition)"),
+    "ley-fomento-productivo-2018": dict(label="Ley Orgánica para el Fomento Productivo (2018)", kind="law",
+                                        published="2018-08-21", url=S309_2018,
+                                        title="Ley Orgánica para el Fomento Productivo, Atracción de Inversiones, "
+                                              "Generación de Empleo, y Estabilidad y Equilibrio Fiscal"),
+    "ley-reformatoria-cogep-2019": dict(label="Ley Orgánica Reformatoria del COGEP (2019)", kind="law",
+                                        enacted="2019-06-20", published="2019-06-26", url=S517_2019,
+                                        title="Ley Orgánica Reformatoria al Código Orgánico General de Procesos"),
+    "ley-apoyo-humanitario-2020": dict(label="Ley Orgánica de Apoyo Humanitario (2020)", kind="law",
+                                       published="2020-06-22", url=S229_2020,
+                                       title="Ley Orgánica de Apoyo Humanitario para combatir la crisis sanitaria "
+                                             "derivada del COVID-19"),
+    "cc-36-19-in-21": dict(label="Sentencia 36-19-IN/21", kind="court", enacted="2021-09-22", published="2021-11-04",
+                           url=EC231_2021,
+                           title="Corte Constitucional, sentencia 36-19-IN/21: inconstitucionalidad sustitutiva de la "
+                                 "frase 'posteriores al parto' del art. 155 (Edición Constitucional 231)"),
+    "ley-juventudes-2023": dict(label="Ley Orgánica de las Juventudes (2023)", kind="law", published="2023-01-04",
+                                url=S222_2023, title="Ley Orgánica de las Juventudes"),
+    "ley-economia-violeta-2023": dict(label="Ley Orgánica para Impulsar la Economía Violeta (2023)", kind="law",
+                                      published="2023-01-20", url=S234_2023,
+                                      title="Ley Orgánica para Impulsar la Economía Violeta"),
+    "ley-derechos-trabajadores-2023": dict(label="Ley Orgánica Reformatoria para la Defensa de los Derechos de los "
+                                                 "Trabajadores (2023)", kind="law", published="2023-02-01",
+                                           url=S242_2023,
+                                           title="Ley Orgánica Reformatoria a Varias Leyes para la Defensa y Garantía de "
+                                                 "los Derechos Individuales y Colectivos de los Trabajadores"),
 }
 
 # (law key(s), in-force day, edit function or list of provisions for an act that is not applied); a tuple of law keys
@@ -561,6 +1190,35 @@ STEPS = [
     ("ley-2006-28", "2006-01-30", ley_2006_28),
     (("ley-2006-28", "fe-erratas-ley-2006-28"), "2006-03-07", erratas_2006_28),
     ("ley-2006-39", "2006-04-13", ley_2006_39),
+    ("ley-2006-40", "2006-04-27", ley_2006_40),
+    ("ley-2006-48", "2006-06-23", ley_2006_48),
+    ("fe-erratas-codificacion-ct-2006", "2006-08-23", erratas_2006_216),
+    ("ley-2006-60", "2006-10-30", ley_2006_60),
+    ("ley-2007-77", "2007-05-02", ley_2007_77),
+    ("mandato-constituyente-8", "2008-05-06", mandato_8),
+    ("ley-reformatoria-loscca-ct-2009", "2009-02-13", ley_2009_licencias),
+    ("ley-fondo-reserva-2009", "2009-07-29", ley_fondo_reserva_2009),
+    ("copci-2010", "2010-12-29", copci_2010),
+    ("cc-031-10-scn-cc", "2011-01-27", cc_031_10_scn_cc),
+    ("ley-derechos-laborales-2012", "2012-09-26", ley_derechos_laborales_2012),
+    ("comf-2014", "2014-09-12", comf_2014),
+    ("ley-justicia-laboral-2015", "2015-04-20", ley_justicia_laboral_2015),
+    ("cogep-2015", "2015-05-22", cogep_2015_abandono),
+    ("ley-justicia-laboral-2015", "2016-01-01", ley_justicia_laboral_2015_art15),
+    ("ley-trabajo-juvenil-2016", "2016-03-28", ley_trabajo_juvenil_2016),
+    ("cogep-2015", "2016-05-22", cogep_2015),
+    ("ley-feriados-2016", "2016-12-20", ley_feriados_2016),
+    ("ley-sector-publico-2017", "2017-05-19", ley_sector_publico_2017),
+    ("ley-acoso-laboral-2017", "2017-11-09", ley_acoso_laboral_2017),
+    ("ley-violencia-mujeres-2018", "2018-02-05", ley_violencia_mujeres_2018),
+    ("cc-ec40-2018", "2018-04-06", ["art-0097-1", "art-0459"]),
+    ("ley-fomento-productivo-2018", "2018-08-21", ley_fomento_productivo_2018),
+    ("ley-reformatoria-cogep-2019", "2019-06-26", ley_reformatoria_cogep_2019),
+    ("ley-apoyo-humanitario-2020", "2020-06-22", ley_apoyo_humanitario_2020),
+    ("cc-36-19-in-21", "2021-11-04", cc_36_19_in_21),
+    ("ley-juventudes-2023", "2023-01-04", ley_juventudes_2023),
+    ("ley-economia-violeta-2023", "2023-01-20", ley_economia_violeta_2023),
+    ("ley-derechos-trabajadores-2023", "2023-02-01", ley_derechos_trabajadores_2023),
 ]
 
 DECISIONS = [
@@ -570,6 +1228,10 @@ DECISIONS = [
     "Código del Trabajo: every later version replays an amending act's own Registro Oficial text on the version before it, in order of entry into force: whole articles and paragraphs are cut from the act's PDF after an anchor phrase, and every short phrase an act inserts or replaces is checked to occur word for word in the act's PDF.",
     "Código del Trabajo: Ley 2006-28 (RO 198, 30-I-2006) was written against the numbering before the 2005 codification; the Congress's fe de erratas (RO 223, 7-III-2006) moved three of its provisions: numeral 35 of art. 42 is added after numeral 34 (not 'substituted'), the Título on work of persons with disabilities goes after art. 346 (not 352) and the new text on prescription replaces art. 403 (not 409). Its numerals 2 and 33 of art. 42 fit the codified text as published and are dated 30-I-2006; the three corrected provisions are dated 7-III-2006 and credited to both the law and the fe de erratas. The substituted article, printed 'Art. 409.-', is numbered 'Art. 403.-' as the fe de erratas directs.",
     "Código del Trabajo: Ley 2006-39 (RO 250, 13-IV-2006) is applied as worded where the words it names occur once in the codified text. Not applied, because the codification already worded the provision otherwise or the words occur more than once or not at all: art. 8 a) ('menores' -> 'adolescentes de quince años' in art. 139: twice), art. 17 a) (art. 158 num. 1: the codified numeral already speaks of 'los mecanismos de transferencia de los conocimientos'), art. 22 ('menores de edad' in art. 381: twice) and art. 23 ('Tribunal de Menores': in neither art. 381 nor art. 402). Its art. 17 b) adds a numeral '4.' after the existing numeral 4 of art. 158, and art. 19 inserts the new text as the third inciso of art. 262, before the inciso that was third. In art. 151 'el Consejo Nacional de la Niñez y Adolescencia' becomes 'los jueces de la niñez y adolescencia ...' (the article 'el' goes with the name it introduced). Art. 20 replaces the last phrase of art. 268 without the full stop the act sets inside its quotation marks.",
+    "Código del Trabajo: WHERE THE HISTORY STOPS. Every act and ruling that amended the Code from the codification of 16-XII-2005 to 12-IX-2014 is applied from the text layer of its gazette edition (index: the 'Nota:' lines of a Lexis-style consolidation, 'Última modificación: 01-02-2023', reading only). The reforms after 12-IX-2014 are NOT in this record yet: the Ley Orgánica para la Justicia Laboral y Reconocimiento del Trabajo en el Hogar (Tercer Suplemento 483, 20-IV-2015, about 60 provisions) and some 25 later acts and rulings to 1-II-2023 that the index names (among them the COGEP of 2015, the Ley de Apoyo Humanitario of 2020 and the laws of January and February 2023; Edición Constitucional 40 of 2018 is image-only), plus whatever the image-only laws of 2023-2026 changed. The last version here (12-IX-2014) is therefore NOT the law in force today, and this part stays on the preview branch.",
+    "Código del Trabajo: acts with no vigencia clause of their own (Leyes 2006-40, 2006-60, the Ley Orgánica para la Defensa de los Derechos Laborales of 2012) are dated by their publication (Código Civil art. 6); the others state that they are in force on publication.",
+    "Código del Trabajo: the Ley 2006-48 on intermediación laboral and tercerización (Suplemento 298, 23-VI-2006) added a Capítulo of 21 articles innumerados after art. 346 and one after art. 557; the Mandato Constituyente No. 8 (Suplemento 330, 6-V-2008) repealed that law and, in the Code, art. 11 h), 14 g), 19 j), the second inciso of art. 41, the incisos sexto to décimo tercero of art. 17 and the words 'por horas' (in its heading, which now reads 'de temporada y.-' as the repeal leaves it; Lexis also drops the 'y') and 'o intermediarios' (three times in art. 100). The Mandato is in force 'en forma inmediata, sin perjuicio de su publicación'; its printed date of adoption (30-III-2008) does not match the Asamblea's record of 30-IV-2008, so the version is dated by its publication, 6-V-2008. Its tacit effect on the fines of art. 628 changes no words and is not a version.",
+    "Código del Trabajo: the Código Orgánico de la Producción, Comercio e Inversiones (Suplemento 351, 29-XII-2010), Disposición reformatoria quinta, is applied except its numeral 5 (art. 95), whose words do not occur in the codified inciso ('la decimotercera, decimocuarta remuneraciones,'): not applied. The Disposición general of the Ley Reformatoria a la LOSCCA y al Código del Trabajo (Suplemento 528, 13-II-2009), which Lexis prints under art. 637, is that law's own provision, not the Code's, and is not a unit.",
 ]
 
 AI_USE = [
