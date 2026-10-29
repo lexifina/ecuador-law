@@ -1,6 +1,6 @@
 {
  "day": "2023-02-01",
- "agree": 539,
+ "agree": 540,
  "differ": {
   "art-0001": [
    "'Ambito' -> 'Ámbito'"
@@ -18,25 +18,25 @@
    "'esté' -> 'este'"
   ],
   "art-0024": [
-   "only in Lexis"
+   "only in the consolidation"
   ],
   "art-0025": [
-   "only in Lexis"
+   "only in the consolidation"
   ],
   "art-0026": [
-   "only in Lexis"
+   "only in the consolidation"
   ],
   "art-0027": [
-   "only in Lexis"
+   "only in the consolidation"
   ],
   "art-0028": [
-   "only in Lexis"
+   "only in the consolidation"
   ],
   "art-0029": [
-   "only in Lexis"
+   "only in the consolidation"
   ],
   "art-0030": [
-   "only in Lexis"
+   "only in the consolidation"
   ],
   "art-0034-2": [
    "'Juvenil. -' -> 'Juvenil.-'"
@@ -74,9 +74,6 @@
    "'Salarios (CONADES),' -> 'Salarios\",'",
    "'Consejo' -> '\"Consejo'",
    "'Salarios,' -> 'Salarios\",'"
-  ],
-  "art-0118": [
-   "'convocará́' -> 'convocará'"
   ],
   "art-0120": [
    "'Consejo' -> '\"Consejo'",
@@ -130,7 +127,7 @@
    "'libras' -> ''"
   ],
   "art-0146": [
-   "only in Lexis"
+   "only in the consolidation"
   ],
   "art-0149": [
    "'TITULO' -> 'TÍTULO'"
@@ -173,13 +170,13 @@
    "'Código.' -> 'Código;'"
   ],
   "art-0181": [
-   "only in Lexis"
+   "only in the consolidation"
   ],
   "art-0186": [
-   "only in Lexis"
+   "only in the consolidation"
   ],
   "art-0189": [
-   "only in Lexis"
+   "only in the consolidation"
   ],
   "art-0195-2": [
    "'ineficaz.' -> 'ineficaz.-'"
@@ -217,19 +214,19 @@
    "only here"
   ],
   "art-0264": [
-   "only in Lexis"
+   "only in the consolidation"
   ],
   "art-0266": [
-   "only in Lexis"
+   "only in the consolidation"
   ],
   "art-0268-1": [
    "only here"
   ],
   "art-0269": [
-   "only in Lexis"
+   "only in the consolidation"
   ],
   "art-0277": [
-   "only in Lexis"
+   "only in the consolidation"
   ],
   "art-0283": [
    "'1.-' -> '1.'",
@@ -246,10 +243,10 @@
    "'Mas' -> 'Más'"
   ],
   "art-0311": [
-   "only in Lexis"
+   "only in the consolidation"
   ],
   "art-0312": [
-   "only in Lexis"
+   "only in the consolidation"
   ],
   "art-0346": [
    "'' -> 'CAPÍTULO... DE LA INTERMEDIACIÓN LABORAL Y DE LA TERCERIZACIÓN DE SERVICIOS COMPLEMENTARIOS'"
@@ -290,142 +287,142 @@
    "'Ambito' -> 'Ámbito'"
   ],
   "art-0560": [
-   "only in Lexis"
+   "only in the consolidation"
   ],
   "art-0562": [
-   "only in Lexis"
+   "only in the consolidation"
   ],
   "art-0563": [
-   "only in Lexis"
+   "only in the consolidation"
   ],
   "art-0567": [
    "'Colectivos\".' -> 'Colectivos.'"
   ],
   "art-0568": [
-   "only in Lexis"
+   "only in the consolidation"
   ],
   "art-0570": [
-   "only in Lexis"
+   "only in the consolidation"
   ],
   "art-0571": [
    "'' -> 'previa'"
   ],
   "art-0574": [
-   "only in Lexis"
+   "only in the consolidation"
   ],
   "art-0576": [
-   "only in Lexis"
+   "only in the consolidation"
   ],
   "art-0578": [
-   "only in Lexis"
+   "only in the consolidation"
   ],
   "art-0579": [
-   "only in Lexis"
+   "only in the consolidation"
   ],
   "art-0580": [
-   "only in Lexis"
+   "only in the consolidation"
   ],
   "art-0581": [
-   "only in Lexis"
+   "only in the consolidation"
   ],
   "art-0582": [
-   "only in Lexis"
+   "only in the consolidation"
   ],
   "art-0583": [
-   "only in Lexis"
+   "only in the consolidation"
   ],
   "art-0584": [
-   "only in Lexis"
+   "only in the consolidation"
   ],
   "art-0585": [
-   "only in Lexis"
+   "only in the consolidation"
   ],
   "art-0586": [
-   "only in Lexis"
+   "only in the consolidation"
   ],
   "art-0587": [
-   "only in Lexis"
+   "only in the consolidation"
   ],
   "art-0589": [
    "'' -> 'Ver IMPUGNACIÓN DE VISTO BUENO LABORAL, Gaceta Judicial. Año I. Serie XVII. Nro. 1. Pág 1. (Quito, 26 de Julio de 1999).'"
   ],
   "art-0590": [
-   "only in Lexis"
+   "only in the consolidation"
   ],
   "art-0591": [
-   "only in Lexis"
+   "only in the consolidation"
   ],
   "art-0592": [
-   "only in Lexis"
+   "only in the consolidation"
   ],
   "art-0593": [
-   "only in Lexis"
+   "only in the consolidation"
   ],
   "art-0596": [
-   "only in Lexis"
+   "only in the consolidation"
   ],
   "art-0597": [
-   "only in Lexis"
+   "only in the consolidation"
   ],
   "art-0598": [
-   "only in Lexis"
+   "only in the consolidation"
   ],
   "art-0599": [
-   "only in Lexis"
+   "only in the consolidation"
   ],
   "art-0600": [
-   "only in Lexis"
+   "only in the consolidation"
   ],
   "art-0601": [
-   "only in Lexis"
+   "only in the consolidation"
   ],
   "art-0602": [
-   "only in Lexis"
+   "only in the consolidation"
   ],
   "art-0603": [
-   "only in Lexis"
+   "only in the consolidation"
   ],
   "art-0604": [
-   "only in Lexis"
+   "only in the consolidation"
   ],
   "art-0605": [
-   "only in Lexis"
+   "only in the consolidation"
   ],
   "art-0607": [
-   "only in Lexis"
+   "only in the consolidation"
   ],
   "art-0608": [
-   "only in Lexis"
+   "only in the consolidation"
   ],
   "art-0609": [
-   "only in Lexis"
+   "only in the consolidation"
   ],
   "art-0610": [
-   "only in Lexis"
+   "only in the consolidation"
   ],
   "art-0611": [
-   "only in Lexis"
+   "only in the consolidation"
   ],
   "art-0612": [
-   "only in Lexis"
+   "only in the consolidation"
   ],
   "art-0613": [
-   "only in Lexis"
+   "only in the consolidation"
   ],
   "art-0614": [
-   "only in Lexis"
+   "only in the consolidation"
   ],
   "art-0616": [
-   "only in Lexis"
+   "only in the consolidation"
   ],
   "art-0618": [
-   "only in Lexis"
+   "only in the consolidation"
   ],
   "art-0619": [
-   "only in Lexis"
+   "only in the consolidation"
   ],
   "art-0620": [
-   "only in Lexis"
+   "only in the consolidation"
   ],
   "art-0630": [
    "'Código' -> 'Código,'"

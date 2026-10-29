@@ -59,7 +59,8 @@ def sri() -> dict[str, str]:
     path = HERE.parent / ".cache" / hashlib.sha256(SRI.encode()).hexdigest()
     t = "\n".join(p.get_text() for p in fitz.open(path))
     t = re.sub(r"Pág\. \d+ de \d+", " ", t)
-    t = re.split(r"\nDISPOSICIONES TRANSITORIAS\s*\n", t)[0]
+    t = re.split(r"\nDISPOSICIONES TRANSITORIAS\s*\n", t)
+    t = "\n".join(t[:-1]) if len(t) > 1 else t[0]  # the Code's own come last (Ley 2006-48 has some after art. 346)
     t = re.sub(r"\s+", " ", t)
     out: dict[str, str] = {}
     marks = list(re.finditer(r"Art\.\s*(\d+)(?:\.(\d+))?\s*\.?-", t))
@@ -76,11 +77,11 @@ def sri() -> dict[str, str]:
     return out
 
 
-def ours(path: Path) -> dict[str, str]:
+def ours(path: Path, day: str = DAY) -> dict[str, str]:
     act = json.loads(path.read_text(encoding="utf-8"))["acts"][0]
     units = dict(act["versions"][0]["units"])
     for v in act["versions"][1:]:
-        if v["from"] > DAY:
+        if v["from"] > day:
             break
         for k, x in (v.get("changes") or {}).items():
             if x is None:
@@ -91,8 +92,11 @@ def ours(path: Path) -> dict[str, str]:
 
 
 def main(argv: list[str]) -> None:
+    use_sri = "--sri" in argv
+    argv = [x for x in argv if x != "--sri"]
     path = Path(argv[0]) if argv else HERE.parent / "corpus.d" / "90-trabajo.json"
-    a, b = ours(path), lexis()
+    day = SRI_DAY if use_sri else DAY
+    a, b = ours(path, day), (sri() if use_sri else lexis())
     rows = {}
     same = 0
     for k in sorted(set(a) | set(b)):
@@ -103,9 +107,9 @@ def main(argv: list[str]) -> None:
         sm = difflib.SequenceMatcher(None, x.split(), y.split(), autojunk=False)
         d = [f"{' '.join(x.split()[i1:i2])!r} -> {' '.join(y.split()[j1:j2])!r}"
              for op, i1, i2, j1, j2 in sm.get_opcodes() if op != "equal"]
-        rows[k] = d[:8] if k in a and k in b else ["only here" if k in a else "only in Lexis"]
-    out = HERE / "reconcile_trabajo.json"
-    out.write_text(json.dumps({"day": DAY, "agree": same, "differ": rows}, ensure_ascii=False, indent=1) + "\n",
+        rows[k] = d[:8] if k in a and k in b else ["only here" if k in a else "only in the consolidation"]
+    out = HERE / ("reconcile_trabajo_sri.json" if use_sri else "reconcile_trabajo.json")
+    out.write_text(json.dumps({"day": day, "agree": same, "differ": rows}, ensure_ascii=False, indent=1) + "\n",
                    encoding="utf-8", newline="\n")
     print(f"{same} agree, {len(rows)} differ -> {out.name}")
     for k, d in rows.items():
