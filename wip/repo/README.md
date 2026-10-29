@@ -13,7 +13,7 @@ It follows the shared design of [lexifina/global-law](https://github.com/lexifin
 | `coip/` | Código Orgánico Integral Penal (2014) | 50 | From the Code as published on 10 February 2014 to 7 August 2026 (see "COIP" below) |
 | `codigo-comercio/` | Código de Comercio (2019) | 3 | As published on 29 May 2019, then its amendments to 7 February 2023 (see "Código de Comercio" below) |
 | `cogep/` | Código Orgánico General de Procesos (2015) | 17 | From the Code as enacted (in force 22 May 2016) to 3 October 2025; **preview only, not today's text** (see "COGEP" below) |
-| `codigo-trabajo/` | Código del Trabajo (Codificación 2005-017) | 15 | From the 2005 codification to 12 September 2014 only; **preview only, the history stops in 2014** (see "Código del Trabajo" below) |
+| `codigo-trabajo/` | Código del Trabajo (Codificación 2005-017) | 37 | From the 2005 codification to 20 June 2025, text-layer reforms only; **preview only, not the law in force** (image-only reforms of 2018-2025 missing; see "Código del Trabajo" below) |
 
 The Constitution is complete: 444 articles, the preamble, the 30 transitional provisions, the Disposición derogatoria, the 30 articles of the Régimen de transición, the Disposición final, the general provisions added since 2018, and the headings of its titles, chapters and sections (`constitucion/titulos.md`).
 
@@ -277,24 +277,37 @@ de 2023; el texto final no es el vigente.
 
 ## Código del Trabajo (Codificación 2005)
 
-**Preview only, and the history stops on 12 September 2014.** `codigo-trabajo/` holds the Codificación 2005-017
-(Registro Oficial, Suplemento 167, 16 December 2005) and every act and ruling that amended it up to the Código Orgánico
-Monetario y Financiero (12 September 2014), each applied from its gazette text: the Leyes 2006-28 (with its fe de
-erratas), 2006-39, 2006-40, 2006-48, 2006-60 and 2007-77, the codification's fe de erratas (2006), the Mandato
-Constituyente No. 8 (2008, which repealed hourly work and labour intermediation), the 2009 reform of maternity and
-paternity leave, the Código de la Producción (2010), sentencia 031-10-SCN-CC (2011), the Ley para la Defensa de los
-Derechos Laborales (2012) and the Código Orgánico Monetario y Financiero (2014).
+**Preview only, and the text is not the law in force: it follows every reform with a text layer up to 20 June 2025
+but misses image-only reforms from 2018 on (see below), and nothing after 20 June 2025 could be applied.**
+`codigo-trabajo/` holds the Codificación 2005-017 (Registro Oficial, Suplemento 167, 16 December 2005) and every act and
+ruling that amended it, each applied from its own gazette text: the Leyes 2006-28 (with its fe de erratas), 2006-39,
+2006-40, 2006-48, 2006-60 and 2007-77, the codification's fe de erratas (2006), the Mandato Constituyente No. 8 (2008),
+the 2009 laws on maternity leave and on the monthly fondo de reserva, the Código de la Producción (2010), sentencia
+031-10-SCN-CC (2011), the Ley para la Defensa de los Derechos Laborales (2012), the Código Orgánico Monetario y
+Financiero (2014), the Ley Orgánica para la Justicia Laboral (2015, about 60 provisions; its cap on profit shares from
+1 January 2016), the COGEP (2015, mostly in force 22 May 2016), the laws on youth employment (2016), public holidays
+(2016), the public sector (2017), workplace harassment (2017), violence against women (2018), Fomento Productivo
+(2018), the COGEP reform (2019), Apoyo Humanitario (2020, teletrabajo), sentencia 36-19-IN/21, the laws of January and
+February 2023 (Juventudes, Economía Violeta, workers' rights), the Ley del Derecho al Cuidado Humano (May 2023) and the
+law of 20 June 2025 on workers with disabilities and catastrophic illnesses.
 
-The reforms after September 2014 are not in this record yet: the Ley Orgánica para la Justicia Laboral (2015) and some
-25 later acts and rulings to February 2023, among them the COGEP, the Ley de Apoyo Humanitario (2020) and the 2023 laws
-(one ruling of 2018 is image-only), and whatever the image-only laws of 2023-2026 changed. **The files of
-`codigo-trabajo/` are therefore the text of September 2014, not the law in force today.**
+Not applied, because the gazette edition is page images only (no OCR): the Corte Constitucional's ruling of April 2018
+on arts. 97.1 and 459; the law of 16 May 2024 on violence and harassment at work (arts. 42, 44, 46.1, 172, 173, 545
+keep their earlier words); the law of 27 June 2024 on families of femicide victims (a new art. 152.3 is missing); and
+the law of 1 August 2025 that reforms the Code on domestic work (its articles are images, so even the provisions it
+changes are unknown here). About 40 image-only laws published after June 2024 could not be checked for reforms of the
+Code at all. No official consolidation reaches today: the newest from a public body is the SRI's of 27 June 2024,
+which this record matches except for the differences listed in `REPRODUCE.md` (decisions). **The files of
+`codigo-trabajo/` are therefore not the law in force today.**
 
 ### En español
 
-`codigo-trabajo/` contiene la Codificación 2005-017 del Código del Trabajo y sus reformas hasta el 12-IX-2014, tomadas
-del texto del Registro Oficial. Las reformas posteriores (desde la Ley Orgánica para la Justicia Laboral de 2015) aún no
-están aplicadas: el texto final es el de septiembre de 2014, no el vigente. Solo está en la rama `preview`.
+`codigo-trabajo/` contiene la Codificación 2005-017 del Código del Trabajo y todas sus reformas publicadas con capa de
+texto en el Registro Oficial hasta el 20-VI-2025, tomadas del texto de cada edición. No se aplican las reformas cuya
+edición es solo imagen (sentencia de abril de 2018 sobre los arts. 97.1 y 459; leyes de 16-V-2024 sobre violencia y
+acoso laboral, de 27-VI-2024 sobre víctimas de femicidio y de 1-VIII-2025 sobre el trabajo del hogar), ni se pudieron
+revisar unas 40 leyes posteriores a junio de 2024 publicadas solo como imagen: el texto final no es el vigente. Solo
+está en la rama `preview`.
 
 ## How it is built
 
