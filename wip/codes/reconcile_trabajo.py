@@ -46,6 +46,36 @@ def lexis() -> dict[str, str]:
     return out
 
 
+SRI = ("https://web.archive.org/web/20250422103829id_/https://www.sri.gob.ec/o/sri-portlet-biblioteca-alfresco-internet/"
+       "descargar/a5c99ffe-c498-4722-b408-fe672321c82c/Codigo_Trabajo_act_27062024.pdf")
+SRI_DAY = "2024-06-27"
+
+
+def sri() -> dict[str, str]:
+    """The SRI's consolidation 'Última modificación: Tercer Suplemento del Registro Oficial 588 de 27 de junio de 2024'
+    (Internet Archive capture 20250422103829): numbered articles without the SRI's notes in parentheses and 'Nota(s):'."""
+    import hashlib
+    import fitz
+    path = HERE.parent / ".cache" / hashlib.sha256(SRI.encode()).hexdigest()
+    t = "\n".join(p.get_text() for p in fitz.open(path))
+    t = re.sub(r"Pág\. \d+ de \d+", " ", t)
+    t = re.split(r"\nDISPOSICIONES TRANSITORIAS\s*\n", t)[0]
+    t = re.sub(r"\s+", " ", t)
+    out: dict[str, str] = {}
+    marks = list(re.finditer(r"Art\.\s*(\d+)(?:\.(\d+))?\s*\.?-", t))
+    for i, m in enumerate(marks):
+        body = t[m.start():marks[i + 1].start() if i + 1 < len(marks) else len(t)]
+        body = re.sub(r"\((?:[^()]|\([^()]*\))*R\.\s?O\.(?:[^()]|\([^()]*\))*\)\.?-?", "", body)
+        body = re.split(r"\sNotas?:", body)[0]
+        body = re.split(r"\sArt\.\s*(?:\.\.\.|\(\.\.\.\)|innumerado)", body)[0]
+        body = re.sub(r"\s(?:TÍTULO|TITULO|Capítulo|CAPÍTULO|CAPITULO|Parágrafo|PARÁGRAFO) [IVXL0-9]+[a-z]*\.?\s[A-ZÁÉÍÓÚ ,]+$", "",
+                      body)
+        n = int(m.group(1))
+        key = f"art-{n:04d}" + (f"-{int(m.group(2))}" if m.group(2) else "")
+        out.setdefault(key, body)
+    return out
+
+
 def ours(path: Path) -> dict[str, str]:
     act = json.loads(path.read_text(encoding="utf-8"))["acts"][0]
     units = dict(act["versions"][0]["units"])

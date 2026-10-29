@@ -1057,6 +1057,77 @@ def ley_derechos_trabajadores_2023(u: Units) -> None:
     u.insert("art-0058", u.count("art-0058"), b)
 
 
+S309_2023 = ed("s309-2023", "Primer Suplemento")
+S559_2024 = ed("s559-2024", "Primer Suplemento")
+S588_2024 = ed("s588-2024", "Tercer Suplemento")
+S64_2025 = ed("s64-2025", "Quinto Suplemento")
+S94_2025 = ed("s94-2025", "Segundo Suplemento")
+
+# provisions an image-only reform amended (Lexis/SRI index) and no applied act has replaced whole since: a later
+# partial amendment of them is not applied (the file would mix wording that never stood together) but is credited
+# with a version note; filled by replay() from the list steps from 2024 on
+STALE: set[str] = set()
+PARTLY = ("Partly NOT APPLIED here: an earlier reform this record could not apply (image-only edition) had already "
+          "amended {}, so this act's partial amendment of {} is not applied either; {} the earlier text, which is not "
+          "the law from this date.")
+
+
+def ley_cuidado_humano_2023(u: Units) -> None:
+    """Ley Orgánica del Derecho al Cuidado Humano (Suplemento 309, 12-V-2023), Disposiciones reformatorias, Capítulos
+    II (Código del Trabajo) and III (repeal of arts. 24 and 25 of the Ley de Economía Violeta, whose words leave art.
+    152 and the article innumerado after art. 154); in force on publication (its Disposición final única). Its
+    Capítulo II primera names 'plazo de diez días', which art. 152 does not contain: not applied (decisions)."""
+    s = Src(S309_2023)
+    s.check("ÚNICA.- La presente Ley entrará en vigencia desde su publicación en el Registro Oficial",
+            'PRIMERA.- En el segundo párrafo del artículo 152 del Código del Trabajo, sustitúyase las palabras: "plazo de '
+            'diez días" por las siguientes: "plazo de quince (15) días".')
+    if any("plazo de diez días" in p for p in u.paras("art-0152")):
+        raise SystemExit("art. 152 now holds 'plazo de diez días'")
+    (b,) = q(s, "SEGUNDA.- Sustitúyase el artículo innumerado que se encuentra a continuación del artículo 152 del Código "
+                "del Trabajo, que versa sobre la")
+    if not (b[0].startswith("Art. 152.1.- Licencia o permiso sin remuneración para el cuidado de los hijos.-")
+            and "cuidado de los hijos" in u.paras("art-0152-3")[0]):
+        raise SystemExit("Cuidado humano segunda")
+    u.set_unit("art-0152-3", b)
+    u.u["art-0152-3"]["label"] = "Art. 152.1"
+    s.check('TERCERA.- En el tercer párrafo del artículo 155 del Código del Trabajo, sustitúyase las palabras: "Durante '
+            'los doce (12) meses" por las siguientes: "Durante los quince (15) meses".')
+    u.sub("art-0155", "Durante los doce (12) meses", "Durante los quince (15) meses", para=2)
+    (b,) = q(s, "CUARTA.- Sustitúyase el segundo artículo innumerado que se encuentra a continuación del artículo 152 del "
+                "Código del Trabajo que versa sobre la")
+    if not (b[0].startswith("Art. 155.2.- Licencia por Adopción.-") and "Licencia por Adopción" in u.paras("art-0152-1")[0]):
+        raise SystemExit("Cuidado humano cuarta")
+    u.set_unit("art-0152-1", b)
+    u.u["art-0152-1"]["label"] = "Art. 155.2 (licencia por adopción, tras el art. 152)"
+    s.check("PRIMERA.- Deróguese el artículo 24 incorporado en la Ley Orgánica para impulsar la Economía Violeta",
+            "SEGUNDA.- Deróguese el artículo 25 incorporado en la Ley Orgánica para Impulsar la Economía Violeta")
+    ps = u.paras("art-0152")
+    if not (ps[1].startswith("No obstante la madre podrá, de común acuerdo con el padre")
+            and ps[2].startswith("Las instituciones públicas o privadas que cuenten con más de 50 empleados")):
+        raise SystemExit("art. 152: the incisos of 2023 are not where expected")
+    u.put("art-0152", ps[:1] + ps[3:])
+    u.remove("art-0154-1")
+
+
+def ley_derechos_discapacidad_2025(u: Units) -> None:
+    """Ley Orgánica Reformatoria a Diversos Cuerpos Legales para Garantizar los Derechos Laborales de las Personas con
+    Discapacidad, Enfermedades Raras, Huérfanas, Catastróficas y de Alta Complejidad y sus Sustitutos (Quinto
+    Suplemento 64, 20-VI-2025), arts. 10-11; in force on publication (its Disposición final única). Art. 10 adds
+    numerals 37 and 38 to art. 42, which the image-only Ley of 16-V-2024 had amended: not applied (STALE)."""
+    s = Src(S64_2025)
+    s.check("entrará en vigencia a partir de su publicación en el Registro Oficial.",
+            "Artículo 10.- Refórmese el artículo 42 del Código del Trabajo agregando los siguientes numerales:")
+    if "art-0042" not in STALE:
+        raise SystemExit("art. 42 expected STALE")
+    u.skipped.append("art-0042")
+    i = s.index("Artículo 11.- Agréguese después del artículo 152.3 del Código del Trabajo el siguiente artículo que "
+                "diga lo siguiente:")
+    b = [s.paras[i + 1]]
+    if not (b[0].startswith("Artículo 152.4 Incentivos no Económicos.-") and s.paras[i + 2] == "DISPOSICIÓN GENERAL"):
+        raise SystemExit("Derechos discapacidad art. 11")
+    u.set_unit("art-0152-4", b, label="Art. 152.4")
+
+
 def ley_justicia_laboral_2015_art15(u: Units) -> None:
     """Art. 15 of the Ley Orgánica para la Justicia Laboral: art. 97.1 (cap on profit shares), in force on 1-I-2016
     (its Disposición transitoria tercera)."""
@@ -1073,6 +1144,7 @@ BASE_LAW = "codificacion-ct-2005-017"
 IMAGE_ONLY = ("NOT APPLIED here: the Registro Oficial edition that publishes it is page images without a text layer, "
               "and this repository does not OCR. Its wording is missing: the files named in this commit keep the "
               "earlier text (provisions named from the Lexis index).")
+IMAGE_ONLY_SRI = IMAGE_ONLY.replace("the Lexis index", "the SRI consolidation of 27-VI-2024")
 
 LAWS = {
     BASE_LAW: dict(label="Codificación 2005-017 del Código del Trabajo", kind="law", enacted="2005-10-18",
@@ -1177,6 +1249,29 @@ LAWS = {
     "ley-economia-violeta-2023": dict(label="Ley Orgánica para Impulsar la Economía Violeta (2023)", kind="law",
                                       published="2023-01-20", url=S234_2023,
                                       title="Ley Orgánica para Impulsar la Economía Violeta"),
+    "ley-cuidado-humano-2023": dict(label="Ley Orgánica del Derecho al Cuidado Humano (2023)", kind="law",
+                                    published="2023-05-12", url=S309_2023,
+                                    title="Ley Orgánica del Derecho al Cuidado Humano"),
+    "ley-violencia-acoso-laboral-2024": dict(
+        label="Ley Orgánica Reformatoria para la Erradicación de la Violencia y el Acoso Laboral (2024)", kind="law",
+        published="2024-05-16", url=S559_2024, note=IMAGE_ONLY_SRI,
+        title="Ley Orgánica Reformatoria para la Erradicación de la Violencia y el Acoso en todas las Modalidades de "
+              "Trabajo (Registro Oficial, Suplemento 559, 16-V-2024). NOT APPLIED (image-only edition)"),
+    "ley-victimas-femicidio-2024": dict(
+        label="Ley Orgánica de Reparación a Familiares de Víctimas de Femicidio", kind="law", published="2024-06-27",
+        url=S588_2024,
+        note=("NOT APPLIED here: the Registro Oficial edition that publishes it (Tercer Suplemento 588) is page images "
+              "without a text layer, and this repository does not OCR. Its Disposición reformatoria octava adds an "
+              "article 152.3 (licencia o permiso sin remuneración) after art. 152, which is missing from this record "
+              "(provision named from the SRI consolidation of 27-VI-2024)."),
+        title="Ley Orgánica de Acompañamiento y Reparación Transformadora e Integral a Hijas, Hijos, Madres, Padres y "
+              "demás Familiares de Víctimas de Femicidio y otras Muertes Violentas por Razones de Género"),
+    "ley-derechos-discapacidad-2025": dict(
+        label="Ley Orgánica Reformatoria para los Derechos Laborales de las Personas con Discapacidad (2025)",
+        kind="law", published="2025-06-20", url=S64_2025,
+        title="Ley Orgánica Reformatoria a Diversos Cuerpos Legales para Garantizar los Derechos Laborales de las "
+              "Personas con Discapacidad, Enfermedades Raras, Huérfanas, Catastróficas y de Alta Complejidad y sus "
+              "Sustitutos"),
     "ley-derechos-trabajadores-2023": dict(label="Ley Orgánica Reformatoria para la Defensa de los Derechos de los "
                                                  "Trabajadores (2023)", kind="law", published="2023-02-01",
                                            url=S242_2023,
@@ -1219,7 +1314,16 @@ STEPS = [
     ("ley-juventudes-2023", "2023-01-04", ley_juventudes_2023),
     ("ley-economia-violeta-2023", "2023-01-20", ley_economia_violeta_2023),
     ("ley-derechos-trabajadores-2023", "2023-02-01", ley_derechos_trabajadores_2023),
+    ("ley-cuidado-humano-2023", "2023-05-12", ley_cuidado_humano_2023),
+    ("ley-violencia-acoso-laboral-2024", "2024-05-16",
+     ["art-0042", "art-0044", "art-0046-1", "art-0172", "art-0173", "art-0545"]),
+    ("ley-victimas-femicidio-2024", "2024-06-27", ["art-0152"]),
+    ("ley-derechos-discapacidad-2025", "2025-06-20", ley_derechos_discapacidad_2025),
 ]
+
+# image-only reforms whose amended provisions become STALE (the femicidio law only adds an article, art. 152.3)
+STALE_BY = {"ley-violencia-acoso-laboral-2024": ["art-0042", "art-0044", "art-0046-1", "art-0172", "art-0173",
+                                                 "art-0545"]}
 
 DECISIONS = [
     "Código del Trabajo: the oldest version is the Codificación 2005-017 (Registro Oficial Suplemento 167, 16-XII-2005), in force from its publication (its Artículo final: the Code, its reforms and repeals are in force from their publication). The Code dates from 1938; older texts are not part of this history, so the first version is credited to the publisher as the oldest version available.",
@@ -1242,6 +1346,7 @@ AI_USE = [
 def replay(first: dict) -> list[dict]:
     out = []
     units = first
+    STALE.clear()
     for law, day, edit in STEPS:
         laws_ = list(law) if isinstance(law, tuple) else [law]
         url = LAWS[laws_[-1]]["url"]
@@ -1249,17 +1354,30 @@ def replay(first: dict) -> list[dict]:
             for k in edit:
                 if k not in units:
                     raise SystemExit(f"{law}: no unit {k}")
-            out.append({"from": day, "source_url": url, "sha256": sha_of(url), "changes": {},
-                        "credits": {k: laws_ for k in sorted(edit, key=order)}})
+            STALE.update(STALE_BY.get(law, []))
+            v = {"from": day, "source_url": url, "sha256": sha_of(url), "changes": {},
+                 "credits": {k: laws_ for k in sorted(edit, key=order)}}
+            if LAWS[laws_[-1]].get("note"):
+                v["note"] = LAWS[laws_[-1]]["note"]
+            if out and out[-1]["from"] == day:
+                v["same_day"] = True
+            out.append(v)
             continue
         u = Units(units)
+        u.skipped = []
         edit(u)
         new = dict(sorted(u.u.items(), key=lambda kv: order(kv[0])))
         changed = sorted((k for k in set(units) | set(new) if units.get(k) != new.get(k)), key=order)
+        skipped = sorted(set(u.skipped) - set(changed), key=order)
         if not changed:
             raise SystemExit(f"{law}: no change")
         v = {"from": day, "source_url": url, "sha256": sha_of(url),
-             "changes": {k: new.get(k) for k in changed}, "credits": {k: laws_ for k in changed}}
+             "changes": {k: new.get(k) for k in changed},
+             "credits": {k: laws_ for k in sorted(set(changed) | set(skipped), key=order)}}
+        if skipped:
+            names = ", ".join(new[k].get("label") or k for k in skipped)
+            v["note"] = PARTLY.format(names, "it" if len(skipped) == 1 else "them",
+                                      "it keeps" if len(skipped) == 1 else "they keep")
         if out and out[-1]["from"] == day:
             v["same_day"] = True
         out.append(v)
