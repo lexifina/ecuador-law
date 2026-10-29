@@ -1,0 +1,887 @@
+{
+ "country": "EC",
+ "acts": [
+  {
+   "slug": "constitucion",
+   "short": "CRE",
+   "title": "Constitución de la República del Ecuador",
+   "url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiMDZmMTE3NmQtMGMxNC00OTNmLWFhZGYtMjQ0ZmQ0OWQ1OTVmLnBkZiJ9",
+   "versions": [
+    {
+     "from": "2008-10-20",
+     "units": 508,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiMDZmMTE3NmQtMGMxNC00OTNmLWFhZGYtMjQ0ZmQ0OWQ1OTVmLnBkZiJ9",
+     "sha256": "93a23b0ce6478432484a9e0f5d56effdd1153bf0f807fbaf6d0cb3e6d6822ebe"
+    },
+    {
+     "from": "2011-07-13",
+     "units": 508,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiY2M1YTUwMjYtZTcyMS00NTExLWFlMmEtZGE2MjZlMDllYjUzLnBkZiJ9",
+     "sha256": "ce0038b4a93c375f9d767c0e97c83d3c18f957a4c8f5156a39415cd228b22fec"
+    },
+    {
+     "from": "2015-12-21",
+     "units": 508,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiYzFhZWNmOTgtMjczYS00MDRmLThmYmEtZTg4N2ZjZTE5NTZmLnBkZiJ9",
+     "sha256": "9f9dceadfac1632fee612e5355236a50935a5e9145fef9c997a0b679ca5871d7"
+    },
+    {
+     "from": "2017-05-24",
+     "units": 508,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiYzFhZWNmOTgtMjczYS00MDRmLThmYmEtZTg4N2ZjZTE5NTZmLnBkZiJ9",
+     "sha256": "9f9dceadfac1632fee612e5355236a50935a5e9145fef9c997a0b679ca5871d7"
+    },
+    {
+     "from": "2018-02-14",
+     "units": 510,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiYTg1ZGM4YzMtM2U4ZS00OGI5LWI1YjEtZGJmZWQzZGJhNWE0LnBkZiJ9",
+     "sha256": "4e6db274a372ea0a4050098a403c6ea4da73017ae38749b8ba78fbdc5b572be3"
+    },
+    {
+     "from": "2018-08-02",
+     "units": 510,
+     "source_url": "https://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiYjQzZGNhZWEtY2ZjYy00MDU3LTk3ZjctMDY3MGE1ODJjODczLnBkZiJ9",
+     "sha256": "b1313ce08d578eb8323d1ff5a894037a0a0b983571534f37597cf34334aea0dd"
+    },
+    {
+     "from": "2023-02-05",
+     "units": 510,
+     "source_url": "https://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiNzhjYjM2YWQtNjQyOC00OWVhLTliOTktZWEwN2I3Y2M0YzI4LnBkZiJ9",
+     "sha256": "80d1627258027d4de4650f1a336c719bb59784b3b31e368cdbe9ab44ab92cf9f"
+    },
+    {
+     "from": "2024-04-21",
+     "units": 510,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiMjQwYWI5MTQtMWVmOS00NTg5LWIzOTctY2M5MTA0NDAxZTcxLnBkZiJ9",
+     "sha256": "db55a3ac60f71c4f9072cce171e16375dc945bd084f83a94cf8094527453d7a0"
+    },
+    {
+     "from": "2024-05-09",
+     "units": 514,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiM2NkZjMwNGMtMGU4Ny00YThjLThlYzQtNmMzY2RiMTdkODYyLnBkZiJ9",
+     "sha256": "1cf73f8f9b387a937f65fb361ad54152fc54750c572ff2353bbec68bc52c17a3"
+    },
+    {
+     "from": "2025-11-16",
+     "units": 514,
+     "source_url": "https://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiNjcyMzI2ODQtMDBkYS00Njc1LWJhNGYtODJhNGMwMmFmNDUxLnBkZiJ9",
+     "sha256": "400743bc731fab97e5f759ee5408485bcf392146de441cdcd4207720d43e0465"
+    }
+   ]
+  },
+  {
+   "slug": "codigo-civil",
+   "short": "CC",
+   "title": "Código Civil (Codificación 2005-010)",
+   "url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiYzMwNzA4MTgtYTg5NC00OTA3LWFmNGItZTI3NDZlNmQxODJlLnBkZiJ9",
+   "versions": [
+    {
+     "from": "2005-06-24",
+     "units": 2427,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiYzMwNzA4MTgtYTg5NC00OTA3LWFmNGItZTI3NDZlNmQxODJlLnBkZiJ9",
+     "sha256": "10a3e99962bfacd9f8ef129e181002b2a4c52043276a4948741aff93b483f390"
+    },
+    {
+     "from": "2005-08-10",
+     "units": 2427,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiZDVlMTU4NDEtZDkyZC00NDM4LTlhZTctNzlkYWZlN2NjOWZlLnBkZiJ9",
+     "sha256": "d472f7b19d9f38a0c6dc97fca9592ce15186b3b10ad5fc2e3e83723d4021b8bf"
+    },
+    {
+     "from": "2005-12-20",
+     "units": 2427,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiZTY2NWRkMzQtNTY5MC00MWQ5LThkMzAtMzAzZmFkNmFiY2IyLnBkZiJ9",
+     "sha256": "2b0db0b3a7dd47e73a106351d0da90e14f249366162d508591233b0637992bf8"
+    },
+    {
+     "from": "2006-05-19",
+     "units": 2427,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiYzIwZDljNzMtZTFkNy00OTVjLWI1N2YtNzY1YWNlMTU4MDAwLnBkZiJ9",
+     "sha256": "ce730d9df009597fb2d88ef5a21606865366a3490b4f400397f0410162dfcbff"
+    },
+    {
+     "from": "2010-09-23",
+     "units": 2427,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiYjJhNDAxYmItNDJjMy00MTkyLTliMjEtMTg1Y2RjZTgxMTI0LnBkZiJ9",
+     "sha256": "b7edae29ee21d7c4803e3176263ee9c0148df114e6127328675786925a2bd06b"
+    },
+    {
+     "from": "2011-05-19",
+     "units": 2427,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiZjQ5ZDdkYTItYzQ2OC00NmRjLTkyM2QtM2RhMzE4MDY5MjNmLnBkZiJ9",
+     "sha256": "05aa1442d21d041924c2815f8148c0602b929db29db849d70a32ac2245c9278d"
+    },
+    {
+     "from": "2012-06-26",
+     "units": 2427,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiZjA4NGQxYWEtNzNlYS00NTQ1LTk0NjMtZjgzYjlkZGQxNjc4LnBkZiJ9",
+     "sha256": "573366bfd0ccb0559682b1676b302d1382733281b6d2ffdafa84446d35105022"
+    },
+    {
+     "from": "2012-09-25",
+     "units": 2427,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiY2E5NGRlNjEtYmFhNC00ZDc3LWE4MDctODU0OThkYmQ1NTk2LnBkZiJ9",
+     "sha256": "86d137bf719c7f499098da3b66928d9ecfb312633e4e8f2076c999a157e833ce"
+    },
+    {
+     "from": "2012-09-26",
+     "units": 2428,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiYTEzMjRiNDYtOTBjNy00NjBlLTg5OTItOTIxMGVmOGI1MzI3LnBkZiJ9",
+     "sha256": "c0e873c710186f797c5fcde36bccc90bbb12791fa6ffa45623a6fb93b0c6ca19"
+    },
+    {
+     "from": "2012-12-03",
+     "units": 2428,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiZWM0MTIyMWUtZDI1OC00NDJiLWJkNzAtNDI5OGM4MDNhMjdiLnBkZiJ9",
+     "sha256": "daae50dd6d987e1c84b3482e19f464ed5d641da014b8e2c1f2b83bcc133a54ba"
+    },
+    {
+     "from": "2014-09-12",
+     "units": 2428,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiNDIwM2NhZGUtMzY2Yy00ZWIzLTgzZmQtZDI5Yzg3NGY3ZjU0LnBkZiJ9",
+     "sha256": "a2071aa84bc723aa10f8ccab8603e5f6778809d9f98ce4402ead06c7897c2bb3"
+    },
+    {
+     "from": "2015-06-19",
+     "units": 2395,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiZDE4NTIwNDMtZTg4OS00NmM1LWI3MDUtYmE2ODgzMmNiZDUyLnBkZiJ9",
+     "sha256": "b0f0aabfcdd9f4a409412d0e876212ad1473d3a968e2702af2e242f5d463e332"
+    },
+    {
+     "from": "2016-05-22",
+     "units": 2390,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiOGZmZjFhOTEtYWFiYi00YjE0LTllYzEtODkxODAxYjk3MTQ2LnBkZiJ9",
+     "sha256": "e579214e03fd40f98cabfea3b81202ed2299fa3abb49f284ae942896dc6abd07"
+    },
+    {
+     "from": "2018-04-12",
+     "units": 2390,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiODk0Yjc3Y2YtZTIyMy00M2IwLTg3ODAtYTAyNWQ2YzM2NDBlLnBkZiJ9",
+     "sha256": "033ffdd280975aabb0b89f6634b4e7f9462b3a835d49abcbbecefdaed96e61af"
+    },
+    {
+     "from": "2019-07-08",
+     "units": 2390,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiNDY3MjQyMzEtN2Y2OC00ODNmLWI1Y2UtMzJjYzQ2MmM5NzMwLnBkZiJ9",
+     "sha256": "f319cf0f02d111837a73319cf5f3f7c1a8218d17f85d17229f42ced98c451fa6"
+    },
+    {
+     "from": "2021-05-14",
+     "units": 2390,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiNzE1OWU4NzctZDI2OS00ZDBjLWJlNTctOTk0YzRiNzU0MTAyLnBkZiJ9",
+     "sha256": "31c5a6d12a322acc50a5adf97c93ec1bbc9494c6efc2bdeedbda1aa5faf6c148"
+    },
+    {
+     "from": "2021-10-19",
+     "units": 2390,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiNjVlNzdhNGItMmQ2NS00MWEyLTk5NTgtZmFhNjNmMjU3NzBhLnBkZiJ9",
+     "sha256": "83ba0f77725c979833f7f1afeb59c237f7191a93cef8dfb5a6cff9ab256edfe7"
+    },
+    {
+     "from": "2022-03-14",
+     "units": 2390,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiZjE3ODBiMDgtNWM1Mi00MGJhLTlhYjgtYzcwNDg1MzY1MjljLnBkZiJ9",
+     "sha256": "7908faca1c1b416f6acf0dc2a176549ba670bba379c4c9fb5316010198564e9d"
+    },
+    {
+     "from": "2024-01-05",
+     "units": 2390,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiZGU1NjI0MjctNTlhMy00NTNiLWEwMzUtZGNjNjNhYTA0NzU5LnBkZiJ9",
+     "sha256": "0a30255d3906e054238eb0e5c87ac4bc1c2ba75bd2bcfca5861d3b44972dd79f"
+    },
+    {
+     "from": "2024-02-09",
+     "units": 2390,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiZTU0ZDJlY2MtYzkzNi00NDkxLTk0OTMtM2UzMzA2MTNhZTlhLnBkZiJ9",
+     "sha256": "cd024989c1a149b42ba526c803370dbc3943af8552ce1e7ecdb23e6a8e88afd2"
+    },
+    {
+     "from": "2024-03-13",
+     "units": 2390,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiN2ZhNDgwZDgtOTU0NS00NzY5LWE1NWMtM2Q3NWMyZmE1ZTQwLnBkZiJ9",
+     "sha256": "62369635dc57668cea1407f5d90d97ae8f8db3370fed98eab2524909adf16eab"
+    },
+    {
+     "from": "2024-06-27",
+     "units": 2390,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiNjk3NGIxZDMtODkzMS00MTU3LThmYmMtOGQ0MGNiNTA0MDcxLnBkZiJ9",
+     "sha256": "bf65995d6bff5d59b3b6516a63bd10d66b02e6ed9f8fc714c74fc0fb0a1c28c5"
+    }
+   ]
+  },
+  {
+   "slug": "coip",
+   "short": "COIP",
+   "title": "Código Orgánico Integral Penal",
+   "url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiMjkwYzMxODUtNTY0OC00MzNjLTk1ZDEtZDg0NjY1NDc5NWI0LnBkZiJ9",
+   "versions": [
+    {
+     "from": "2014-08-10",
+     "units": 799,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiMjkwYzMxODUtNTY0OC00MzNjLTk1ZDEtZDg0NjY1NDc5NWI0LnBkZiJ9",
+     "sha256": "a367740de0267075d8a7b665ab41c6f735050b4708ce1f2b6caf9d2febd3a1a9"
+    },
+    {
+     "from": "2014-09-12",
+     "units": 799,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiNDIwM2NhZGUtMzY2Yy00ZWIzLTgzZmQtZDI5Yzg3NGY3ZjU0LnBkZiJ9",
+     "sha256": "a2071aa84bc723aa10f8ccab8603e5f6778809d9f98ce4402ead06c7897c2bb3"
+    },
+    {
+     "from": "2015-09-30",
+     "units": 800,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiYjRhYmVjNzQtZDJkNS00YzZiLTgzNDQtZDVjZDI4M2YzZDgxLnBkZiJ9",
+     "sha256": "93a2fb2a9557831f9e698f029736977de3152db74d670cc7c5a90cbacd1e2d7a"
+    },
+    {
+     "from": "2015-10-26",
+     "units": 800,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiMmRiZTlmNjUtMDdlMC00MDI5LWE5YjctOWJiMzgyZTc0YTVkLnBkZiJ9",
+     "sha256": "be03a9d7803bb1ab1f8662cf88e512e6d7757304c6213ca13cc4684e545eb125"
+    },
+    {
+     "from": "2016-01-25",
+     "units": 799,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiMmRiZTlmNjUtMDdlMC00MDI5LWE5YjctOWJiMzgyZTc0YTVkLnBkZiJ9",
+     "sha256": "be03a9d7803bb1ab1f8662cf88e512e6d7757304c6213ca13cc4684e545eb125"
+    },
+    {
+     "from": "2016-03-14",
+     "units": 799,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiYzNkY2VjMmYtYTg1Ni00ZDU1LThjYzItMDdmNTFiOWM0YjRlLnBkZiJ9",
+     "sha256": "1026d0db2f9e20071ee440410029868051564b1e27140aa27322f663adec785f"
+    },
+    {
+     "from": "2016-07-21",
+     "units": 799,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiMDAzYWM3NDctY2M5Ni00Y2IyLWEyNDktNWE5N2M0YWQzYThkLnBkZiJ9",
+     "sha256": "4badde0b566b25542c7969df091de746eb7e5401ca43b23d3ea95a1984c5f4fb"
+    },
+    {
+     "from": "2017-12-29",
+     "units": 799,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiNzFiNTJhNDctOWRjMS00MjE2LThjZDktY2EwOWIyNDIxMWNmLnBkZiJ9",
+     "sha256": "25e04fa6782034101a5931e2db195aa6b8f900628a6c98c1f4c554ac595440d7"
+    },
+    {
+     "from": "2018-02-05",
+     "units": 801,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiNWY4OGU1NWYtZGY1YS00NTcyLTgxNzUtNzIzYTVlNmJhZWUyLnBkZiJ9",
+     "sha256": "4d3376348e116e631a9173e5d60927483586b05db2bbee147110a3cbe1dee879"
+    },
+    {
+     "from": "2018-02-14",
+     "units": 801,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiOGMwNTA4ZmMtYTQ0NS00MWRlLTk3OWEtZmZiMjY5NGMyNWQ0LnBkZiJ9",
+     "sha256": "646748f7552fa346fd283a0aa4f01ce332739ece2411e8257e84c3ae84ea58d0"
+    },
+    {
+     "from": "2019-04-30",
+     "units": 801,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiOTcxMmIwODktOGRmYi00MWQ5LTkxMjMtMGJlYzFjZDUzYjVlLnBkZiJ9",
+     "sha256": "9998082533fd9e1ded4fca12cd4bb1573edcf17f4d4249dad5d8abcdd32bfff9"
+    },
+    {
+     "from": "2019-05-06",
+     "units": 802,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiY2U5ZWJkMTItMGFlYS00YzM3LTkzYzctZjlkNjNjNDYwYWIwLnBkZiJ9",
+     "sha256": "70a874145649a68ce4eff15b0df365214821ad775ac8ffa64aeb46bfcce0eeff"
+    },
+    {
+     "from": "2019-06-03",
+     "units": 802,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiMTliYmRjOTctNTlhNy00NGJkLWEyYWUtNTUxODQ2MThmNWU5LnBkZiJ9",
+     "sha256": "e24d6b4c1a493e314e0be69bf7e8b53591973df4e3d89e911d5d348e21c667c0"
+    },
+    {
+     "from": "2019-08-15",
+     "units": 802,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiOWRjNjM1NTUtMTZiOS00M2M0LWFlZDQtODE4MzdmYjRmNzBiLnBkZiJ9",
+     "sha256": "799ec34f9505e683aa8cd2ae8d7ec4f1322edc95793cc6a9fbf589645c03a381"
+    },
+    {
+     "from": "2019-11-13",
+     "units": 802,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiMWMxMGMxZjAtMzc3ZC00MjUwLTk3ZDUtZjUxODY3YmVmZjZiLnBkZiJ9",
+     "sha256": "4e54c0de1dee22cdcbc178285d3e104bc83f4ed2fafb084c29232dc82e7bd37f"
+    },
+    {
+     "from": "2020-06-22",
+     "units": 826,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiYTIwNDJjMmUtYTAwYy00NGI2LTkyYzAtOWU5MTY3ZDlkMGUxLnBkZiJ9",
+     "sha256": "cb5a1798e4310e0301f5f72ec8a0018937ca64d7f9a347688c14a470ade551df"
+    },
+    {
+     "from": "2021-02-05",
+     "units": 826,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiNjM1NzI4N2QtZmMzYi00MDdmLThmM2YtYzQ5ZmViNTEyMDY1LnBkZiJ9",
+     "sha256": "0d3e605d55aee0b47b88051e925ef70d3335c314e18ff6e4bb4d3530ce9408ca"
+    },
+    {
+     "from": "2021-02-17",
+     "units": 826,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiZmJlZjNjNjEtY2QyNS00MzYzLWJlYmMtOTUyZTA3NjY0NGMzLnBkZiJ9",
+     "sha256": "86636145d3e1963bbee14576f9d78127ae0f89cafcea20206def14263b02475d"
+    },
+    {
+     "from": "2021-05-14",
+     "units": 826,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiNzE1OWU4NzctZDI2OS00ZDBjLWJlNTctOTk0YzRiNzU0MTAyLnBkZiJ9",
+     "sha256": "31c5a6d12a322acc50a5adf97c93ec1bbc9494c6efc2bdeedbda1aa5faf6c148"
+    },
+    {
+     "from": "2021-06-29",
+     "units": 826,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiZDlkYWI4NGUtZTU2Yi00MGMzLWI4ZGEtOTUzMWE2YmUyZGI2LnBkZiJ9",
+     "sha256": "c77f755a3f5556acbd4a99d3cb7fcf132348391f3b5f24451ecc638b9601a52c"
+    },
+    {
+     "from": "2021-08-10",
+     "units": 826,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiMjAzM2FiNjMtNTIzNC00NGY4LThjNDEtZTAzYzZjMzRlMzhjLnBkZiJ9",
+     "sha256": "c97e6d6ad42fc5b0490ce781416ead596ff7e0f7a0fcc2b2af420a083ea77eed"
+    },
+    {
+     "from": "2021-08-27",
+     "units": 826,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiM2FmMzRiYWQtZjQ1Ny00ODA1LThhZmMtZTA4N2Y3NzQ1YWIyLnBkZiJ9",
+     "sha256": "67fd5950ad15ceaee101af1d55b32507fc4721d0770c2109e9053921f5adde81"
+    },
+    {
+     "from": "2021-08-30",
+     "units": 826,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiZDI4Zjk1N2ItYmE1Yy00Zjg0LTkyMjUtN2M3MmVlYTkzMGEzLnBkZiJ9",
+     "sha256": "5fbb2fa8984ac301243d8a5e63bc94dc1b3b80a2d75ec514cdf89ddb05b56a6b"
+    },
+    {
+     "from": "2021-10-13",
+     "units": 826,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiMjFmMTcxNzUtMDdmNS00MmM0LWI4MjYtZjNjMmVhNjQ0Mjk3LnBkZiJ9",
+     "sha256": "93770a8b44164b264e73b422ae9ae02b19dd58e1a7e4f77083288b7f355febcd"
+    },
+    {
+     "from": "2022-01-14",
+     "units": 826,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiZjgxY2UzN2EtYjAwYS00M2U4LWE5OWUtYWMzYmFiNjcyY2FmLnBkZiJ9",
+     "sha256": "845f5288df7abc503d9f52799e8975d6f8fa6b7601074cfe786a0dd536076ea2"
+    },
+    {
+     "from": "2022-01-25",
+     "units": 826,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiYzg2MzViNWItZGQyZC00YjhmLTg4ZmMtZTU1NjM1Yzk0OWI1LnBkZiJ9",
+     "sha256": "6ea4d9fac424e1f9efeba696828a34bd0203b1234ac3a4d19bad228898108a08"
+    },
+    {
+     "from": "2022-01-28",
+     "units": 826,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiMTY3ZGM4YmItMjFkMC00YTg3LWE3NWYtMzIxZDRmOTU5Y2U1LnBkZiJ9",
+     "sha256": "ef96b0e393e5ecd65cb42cd0ddc2323f53b49399ffdfd1189fbf3e91ec6aed3b"
+    },
+    {
+     "from": "2022-03-16",
+     "units": 826,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiNjRhOTE3YmMtM2Y5Yy00NWVhLTk1OGItNWQ0ZDZhMjI0OTQzLnBkZiJ9",
+     "sha256": "110779b0bf9ca1f32a2dbef38331a2cc8987cde1fde9bcfde56c49d24d096e74"
+    },
+    {
+     "from": "2022-08-22",
+     "units": 826,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiNDAxZmZkZGMtNThlMS00N2ZhLWJiYzUtYjk5ZDY3NTBkM2FjLnBkZiJ9",
+     "sha256": "74b14de65bcb7a6319f5f2187228703a92168de9b7416c8fc278399663710e01"
+    },
+    {
+     "from": "2023-01-04",
+     "units": 826,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiMDNmOTYyNTItYjQwOS00NWE3LTg3MzMtMGFmMzI2YTFkZjFhLnBkZiJ9",
+     "sha256": "55cd7d5538e66617d11d3ccf93d718a55063caa8c1f88238aecb7bc669cfd36f"
+    },
+    {
+     "from": "2023-05-13",
+     "units": 854,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiYzJkNTM5MDEtNDdiNS00ZTMzLTg3ZDctYzI2MmVhZWYwYjYyLnBkZiJ9",
+     "sha256": "5ddcc62da8fdef910a4348b970c16b3c791269c050895d3dadf4cd2e94eeceb2"
+    },
+    {
+     "from": "2024-01-05",
+     "units": 854,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiZGU1NjI0MjctNTlhMy00NTNiLWEwMzUtZGNjNjNhYTA0NzU5LnBkZiJ9",
+     "sha256": "0a30255d3906e054238eb0e5c87ac4bc1c2ba75bd2bcfca5861d3b44972dd79f"
+    },
+    {
+     "from": "2024-02-09",
+     "units": 854,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiZTU0ZDJlY2MtYzkzNi00NDkxLTk0OTMtM2UzMzA2MTNhZTlhLnBkZiJ9",
+     "sha256": "cd024989c1a149b42ba526c803370dbc3943af8552ce1e7ecdb23e6a8e88afd2"
+    },
+    {
+     "from": "2024-02-26",
+     "units": 854,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiOTM1NTI2MGYtYWQxOS00N2JiLWFhYTEtNzk0ZmM0ODkzM2RkLnBkZiJ9",
+     "sha256": "b9bd26a01945469652a95be8da3a2b6eda57258a91cb9ad4b24bd931ac617cda"
+    },
+    {
+     "from": "2024-06-27",
+     "units": 854,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiNjk3NGIxZDMtODkzMS00MTU3LThmYmMtOGQ0MGNiNTA0MDcxLnBkZiJ9",
+     "sha256": "bf65995d6bff5d59b3b6516a63bd10d66b02e6ed9f8fc714c74fc0fb0a1c28c5"
+    },
+    {
+     "from": "2024-07-12",
+     "units": 854,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiZjg0ZWU0YmYtODE3ZS00ODliLTkwNGItMTg0YmMzMGU2Yjc0LnBkZiJ9",
+     "sha256": "f61e5c2a9f9aafa225d9cd88386468aedf8a3ed0c884845249f11a7ba844705d"
+    },
+    {
+     "from": "2024-12-10",
+     "units": 854,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiMDBmOWM3MWEtZTgwNS00MzU1LTg1NzAtYzBiMmRkMDY1ZGRmLnBkZiJ9",
+     "sha256": "016e2d6994f3d4e1c2f160ed2415cc6417d79600ff2a3e23f0772beeb1ac2116"
+    },
+    {
+     "from": "2025-03-27",
+     "units": 854,
+     "source_url": "https://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiZGM0YzMyMTAtYWVlMS00MTcxLTgzNjUtNTA3MzhjNTQyOGM3LnBkZiJ9",
+     "sha256": "889da3b039abc1c692de9c15182a773ed91db833c0dee6490e954501acc0a031"
+    },
+    {
+     "from": "2025-04-02",
+     "units": 854,
+     "source_url": "https://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiMjQ4M2JhM2QtNDZjZi00NGM2LTlhMTUtNTkyZGMzYzg5MjZiLnBkZiJ9",
+     "sha256": "853b20d1dd83c7bcf2f59428747eea14bf298183088d37841e9ea19c8a8eb426"
+    },
+    {
+     "from": "2025-05-14",
+     "units": 854,
+     "source_url": "https://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiNjIzMmRkZjMtYjkxOC00MTgwLTk1M2UtMTZlZGU0OWQ1MmQxLnBkZiJ9",
+     "sha256": "bc43256a3b914a01e800b3b5ce9f2ab779aa53e99c710d868903cfc8ed10fe8b"
+    },
+    {
+     "from": "2025-06-10",
+     "units": 862,
+     "source_url": "https://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiNDgxOGVjYzUtYTVjYi00Njk5LWFiZmQtODMxMTJlM2Q2Yjk0LnBkZiJ9",
+     "sha256": "dabaf1117d7b5623541fc001b700fde3e40e46625107e75269a5f3b03b2230f4"
+    },
+    {
+     "from": "2025-06-26",
+     "units": 863,
+     "source_url": "https://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiYmU4NDg4OTctMzIzNy00YjBiLWI0NWItNWI3YTAxYmJmOTA5LnBkZiJ9",
+     "sha256": "f22d2eda61b2cf1b4e43d3952ae59bcd1756aecabddd9bcdd9079dfa83ef7594"
+    },
+    {
+     "from": "2025-07-30",
+     "units": 861,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiYTU3YjIwNmUtOGIyZS00ODg4LWI5N2YtYzAxZGU4NTBkZTljLnBkZiJ9",
+     "sha256": "e5df5e7a0d7f1fb711f16053ff4c1aec8b8efe60cb91ff52c3822137d84c3ecf"
+    },
+    {
+     "from": "2025-10-03",
+     "units": 860,
+     "source_url": "https://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiNjk4MGI1YmMtMjM3MS00YmNlLThhZGUtZDEwZTllMzUxMzI0LnBkZiJ9",
+     "sha256": "8a75bc7775012dbd838ec872de9be4b08e4407bc067342491eb51d54740cd687"
+    },
+    {
+     "from": "2025-10-03",
+     "units": 852,
+     "source_url": "https://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiNjk4MGI1YmMtMjM3MS00YmNlLThhZGUtZDEwZTllMzUxMzI0LnBkZiJ9",
+     "sha256": "8a75bc7775012dbd838ec872de9be4b08e4407bc067342491eb51d54740cd687"
+    },
+    {
+     "from": "2025-10-24",
+     "units": 852,
+     "source_url": "https://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiYjYxMzdmOTEtYWIxYS00NTM5LThmYzYtMDQ5MGE1ZDNjZjI2LnBkZiJ9",
+     "sha256": "75aa02f46af9dc39001912b5489e54894c06e57d60c4e286ea85cff4ce68125d"
+    },
+    {
+     "from": "2026-04-29",
+     "units": 859,
+     "source_url": "https://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiNmIyNjhjMGYtYjgxYy00MGY3LThjMmEtZTM1Mzg1NzIzMmEyLnBkZiJ9",
+     "sha256": "03adac6e2e69910473c3bec22e406dcc41c2947fe47afb2d307a65d7cf78e7c4"
+    },
+    {
+     "from": "2026-05-22",
+     "units": 859,
+     "source_url": "https://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiYTU2YzBiOTQtNzU3ZC00YzQ3LTk2NTItMTJiNjFkZGZiMDQzLnBkZiJ9",
+     "sha256": "0d2fb2bb3c76f85f8d3d1024f8137a3438091e4d1a788b30134fc65b4f8fd542"
+    },
+    {
+     "from": "2026-07-01",
+     "units": 859,
+     "source_url": "https://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiYTNmNWFiODAtODA2ZC00NGRkLWIzMzUtNGI1OGMxODkyYjgzLnBkZiJ9",
+     "sha256": "caeebd57e1284a1cdc2d22957aa5c5e1f41d3178e5e9808e15210a6639e97af7"
+    },
+    {
+     "from": "2026-08-07",
+     "units": 859,
+     "source_url": "https://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiOTMwZGJhZmMtYTk2Yi00ZGNiLWFkZjctZGZlMjM3NWJlZWVjLnBkZiJ9",
+     "sha256": "2c45b5c91690289de63849b67210ab3b24688e78e845108d4c518e7748e41273"
+    }
+   ]
+  },
+  {
+   "slug": "codigo-comercio",
+   "short": "CCom",
+   "title": "Código de Comercio",
+   "url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiYWNkMzY5YjMtYzIxNC00YWE2LWFlN2MtY2NmNzQ2ZjZlMjFmLnBkZiJ9",
+   "versions": [
+    {
+     "from": "2019-05-29",
+     "units": 1359,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiYWNkMzY5YjMtYzIxNC00YWE2LWFlN2MtY2NmNzQ2ZjZlMjFmLnBkZiJ9",
+     "sha256": "d930af6ba4bb6511e12cde52ba298ff64dfd8e3665ffa8d7b10c6a9dc2037e11"
+    },
+    {
+     "from": "2020-12-10",
+     "units": 1359,
+     "source_url": "https://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjogInJvIiwgInV1aWQiOiAiMmVhOGRmODQtZDMyYS00MGUxLWI3YWMtY2E3OTM5ZjA5OGY5LnBkZiJ9",
+     "sha256": "db1aac58ab0a1c36f8adb84d5bc969ecda2f9dfd204b49a2e436b0fc2ee94d0f"
+    },
+    {
+     "from": "2023-02-07",
+     "units": 1362,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiN2U1MmIzZDctMGJhNS00YzU4LWE0NzQtMDBlMTlmY2JlMTI3LnBkZiJ9",
+     "sha256": "d3a646f546b449a00c0083951c20782783db462346472232fdc9e1d6857f10d4"
+    }
+   ]
+  },
+  {
+   "slug": "cogep",
+   "short": "COGEP",
+   "title": "Código Orgánico General de Procesos",
+   "url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiOGZmZjFhOTEtYWFiYi00YjE0LTllYzEtODkxODAxYjk3MTQ2LnBkZiJ9",
+   "versions": [
+    {
+     "from": "2016-05-22",
+     "units": 480,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiOGZmZjFhOTEtYWFiYi00YjE0LTllYzEtODkxODAxYjk3MTQ2LnBkZiJ9",
+     "sha256": "e579214e03fd40f98cabfea3b81202ed2299fa3abb49f284ae942896dc6abd07"
+    },
+    {
+     "from": "2016-05-22",
+     "units": 480,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiOTY1MDAyOWMtYzkwYi00MmJlLTgyNmItMTAxYjJmZjE1ODI5LnBkZiJ9",
+     "sha256": "82e04a80fb45894e312549401f90c3215f6b0e1be3384c854f85e3257fd6933a"
+    },
+    {
+     "from": "2016-12-09",
+     "units": 481,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiNmNkYWQ4ZGQtYjRlYS00MTdlLThkMzMtZmVhMGYzYjY1NmY4LnBkZiJ9",
+     "sha256": "cb0497cea6477f4b43b14226633b936904b203ab39879299a76c562ec79294bd"
+    },
+    {
+     "from": "2017-05-31",
+     "units": 481,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiMDk0M2UyMjYtZmY3Yy00MjJiLTk4ZWItNzFjZGE0MjYyZmFlLnBkZiJ9",
+     "sha256": "32fea46407bd3712c9918d06ee38c27e2b7d9cd3bc71eb3f2a28cca158d4b57f"
+    },
+    {
+     "from": "2017-11-14",
+     "units": 481,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiMzAyYTVmMTgtMGEyOC00YWFmLTgyZDQtY2FjY2FlZjhlOTk3LnBkZiJ9",
+     "sha256": "adb5528233b6f9677a904c938a7da9a1e657cb7d506ce3e36a89dc8bde968070"
+    },
+    {
+     "from": "2018-07-07",
+     "units": 484,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiZTFhOGY3ZGYtZWMzMC00MTI0LWIzNDQtMzJjYTYzMzdkYjJmLnBkZiJ9",
+     "sha256": "9cacf109e79604a7f83f14da998034e2f33b2a99741df0548678286f1deec079"
+    },
+    {
+     "from": "2018-08-21",
+     "units": 483,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiNDMxY2EwMGItMzllZS00MDdiLWE0MzAtNjk4ZDQzMmM3Yzk5LnBkZiJ9",
+     "sha256": "1b6584acbf3faf62a6beaf330cba31378524f69cbc6cb6a81f91d7fe8717e818"
+    },
+    {
+     "from": "2019-06-26",
+     "units": 484,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiNDgzM2ZhYzQtYzYwZS00MjEzLWFhY2ItMTUyNWMzMmM5NWFjLnBkZiJ9",
+     "sha256": "7f3ff38913008b30244313e60111607a85a62a17910d80b3dd33f83214beaa3b"
+    },
+    {
+     "from": "2020-12-08",
+     "units": 484,
+     "source_url": "https://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjogInJvIiwgInV1aWQiOiAiZjAwYzc1NTctY2U5MS00ODY3LTkyMmEtM2M3ZTFiOTE2ZDdiLnBkZiJ9",
+     "sha256": "6706f79f3a6b8c5faf10eec933acdf34fc18f90a0b5b2fbfb1c1b8075ae3fdb7"
+    },
+    {
+     "from": "2021-02-23",
+     "units": 484,
+     "source_url": "https://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjogInJvIiwgInV1aWQiOiAiNGNjYzFkZDQtOTg1Yi00NTMzLThjNTMtYTYyNTQ1MzRmZGVlLnBkZiJ9",
+     "sha256": "45eb3a9498607e8d5db6dbf5001f7b595a3124ae51f2a0e3eb3810f6455a963c"
+    },
+    {
+     "from": "2021-04-09",
+     "units": 484,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiMmQ3YjRkYzctMGE5Ny00NWJjLTliZDItOGVmNDkxNDlkYjFkLnBkZiJ9",
+     "sha256": "646a4ca9a0dcf739dbaa1424633c7d449ca8b0fbb8e94f8b3843df9a9d86affb"
+    },
+    {
+     "from": "2021-05-14",
+     "units": 484,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiNzE1OWU4NzctZDI2OS00ZDBjLWJlNTctOTk0YzRiNzU0MTAyLnBkZiJ9",
+     "sha256": "31c5a6d12a322acc50a5adf97c93ec1bbc9494c6efc2bdeedbda1aa5faf6c148"
+    },
+    {
+     "from": "2021-11-29",
+     "units": 484,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiM2E4YTNiNTktNzQ0My00ZmU0LWFlMmMtOWZjNjljODI1MDhkLnBkZiJ9",
+     "sha256": "b017031e6ed6f7685af485ca633e75ead1d792cf68efb6b06a3b3f9bd5288803"
+    },
+    {
+     "from": "2022-07-15",
+     "units": 484,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiNjBlOTY4NzktMzMzOS00NDI0LTllMDktYTY1ZTA0YWE4NWEzLnBkZiJ9",
+     "sha256": "57f34b7eccb06aa2716985e880d4a5e875a97d4ff3dff451f99b42519c08d97a"
+    },
+    {
+     "from": "2023-02-07",
+     "units": 485,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiN2U1MmIzZDctMGJhNS00YzU4LWE0NzQtMDBlMTlmY2JlMTI3LnBkZiJ9",
+     "sha256": "d3a646f546b449a00c0083951c20782783db462346472232fdc9e1d6857f10d4"
+    },
+    {
+     "from": "2025-06-26",
+     "units": 485,
+     "source_url": "https://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiYmU4NDg4OTctMzIzNy00YjBiLWI0NWItNWI3YTAxYmJmOTA5LnBkZiJ9",
+     "sha256": "f22d2eda61b2cf1b4e43d3952ae59bcd1756aecabddd9bcdd9079dfa83ef7594"
+    },
+    {
+     "from": "2025-10-03",
+     "units": 485,
+     "source_url": "https://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiNjk4MGI1YmMtMjM3MS00YmNlLThhZGUtZDEwZTllMzUxMzI0LnBkZiJ9",
+     "sha256": "8a75bc7775012dbd838ec872de9be4b08e4407bc067342491eb51d54740cd687"
+    }
+   ]
+  },
+  {
+   "slug": "codigo-trabajo",
+   "short": "CT",
+   "title": "Código del Trabajo",
+   "url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiZGY1NGIwMzctZDM0NS00YzZlLWE5MzgtYzMzYjU3Mjk2YTFiLnBkZiJ9",
+   "versions": [
+    {
+     "from": "2005-12-16",
+     "units": 649,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiZGY1NGIwMzctZDM0NS00YzZlLWE5MzgtYzMzYjU3Mjk2YTFiLnBkZiJ9",
+     "sha256": "e038582c6b0e9a4ff5d1c178479b7c92f10acd4570cd77a2593ab4e5d1ec808f"
+    },
+    {
+     "from": "2006-01-30",
+     "units": 649,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiMjI0NWY4ZmMtNzJkMC00NjI3LTljZjYtYmZjMDc5NWUzM2MzLnBkZiJ9",
+     "sha256": "1aabdf838e0cede394cc9dbdc5760b3c1c7aa94a0a00c644101c7324efcbc4b3"
+    },
+    {
+     "from": "2006-03-07",
+     "units": 652,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiYmU3ODliYTItZjFiZi00NTE5LWE0N2ItMjJhNmMzNGUzNGU1LnBkZiJ9",
+     "sha256": "84eebdd63e70b8aae2812b9fd018a486b51ecf1ba9c309c72e32cbffbb10e8ae"
+    },
+    {
+     "from": "2006-04-13",
+     "units": 651,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiNTQ3NGM4N2EtMmY3NC00NDE1LTg2NjctMTc4ODM4YTA1NjYzLnBkZiJ9",
+     "sha256": "dfde10b49f02302ca1e7b0e64bf16bae0c2d9e8b09d0141c27b8ac06d407053b"
+    },
+    {
+     "from": "2006-04-27",
+     "units": 656,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiZTNlYWM3MTItOTAwMS00MTJhLThlY2MtNjMxNjUzNWZiMjZjLnBkZiJ9",
+     "sha256": "8b9b3c20cfbc0b85b416eb83f2c129b648a97c4c6c5c1a15440923e91052dbc9"
+    },
+    {
+     "from": "2006-06-23",
+     "units": 678,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiMTQ1ZjUxOTQtNWUwOS00YTcwLWE2NmUtNDEzNTNmOGEwOTYxLnBkZiJ9",
+     "sha256": "be3d9c15a255315069b1d8eb66e1df59edec2eae59fe9722f0932eab0f3b83ef"
+    },
+    {
+     "from": "2006-08-23",
+     "units": 678,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiNDU4NDlhOTUtMTgxOS00MGZhLWI1ZDctNmYzZmE1YThmMTA0LnBkZiJ9",
+     "sha256": "665f044949e4d7f2098e9ea812a436bcf1ad27bd81c44b63f2f171baa4f2754a"
+    },
+    {
+     "from": "2006-10-30",
+     "units": 679,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiMzE2NGM4Y2EtMzkyZS00YmMwLWIzZTYtYzg5NDAwZWE3MmM4LnBkZiJ9",
+     "sha256": "b7ad59436f04c0595be6b2a6772d7b47d0faa9b915b1c4b4ce0ff34691539b2f"
+    },
+    {
+     "from": "2007-05-02",
+     "units": 679,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiZDI3NmE5YmMtNDhlYi00NGM2LTkzMWMtNWU1ZDY1MjE0MzU5LnBkZiJ9",
+     "sha256": "21d719deee4916d5995ffd85ed85245f147b2e60c688c4e225b8f41cb0b8fcf2"
+    },
+    {
+     "from": "2008-05-06",
+     "units": 657,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiM2FjZTZhMzAtNjEyYi00Y2M0LThmN2QtNmQzOTBkYmFkNTg3LnBkZiJ9",
+     "sha256": "629088b84e3f6c575067199cf53e6b227f69efde0823cc72a7a4dc5e33cf2d60"
+    },
+    {
+     "from": "2009-02-13",
+     "units": 659,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiY2M3NzYwYjItNzFjOC00MjM2LTljMDgtMzY1MmU0MWVkZjM5LnBkZiJ9",
+     "sha256": "f6c0e39508d50abd576d8f74bf07bf6caf3a6215cd74506db386b65871858f48"
+    },
+    {
+     "from": "2009-07-29",
+     "units": 659,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiYTRhMDliZjAtNmFlMy00NGFiLTlmM2UtOTllNWFlOGU3NWVjLnBkZiJ9",
+     "sha256": "e62601da15a8a2a51819ed59b54871c9c8e3de484d98ed75f6925e820963e191"
+    },
+    {
+     "from": "2010-12-29",
+     "units": 661,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiODk5N2JjYTAtOTQ3MC00NWNlLWFjYjktZTZhN2RmNDRkMzRiLnBkZiJ9",
+     "sha256": "19455a3e961451226e127f3419278466cf935656e34748dad88121e35eef43f3"
+    },
+    {
+     "from": "2011-01-27",
+     "units": 661,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiZjRiMjY3ZGQtOTlhNC00NDNhLTg2MzEtYjNhNGIxNDYwMWMxLnBkZiJ9",
+     "sha256": "e1714de916d8457eeb3589fa35a4f9770fd44e4b72f8b69155f841cb5a84494a"
+    },
+    {
+     "from": "2012-09-26",
+     "units": 661,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiYTEzMjRiNDYtOTBjNy00NjBlLTg5OTItOTIxMGVmOGI1MzI3LnBkZiJ9",
+     "sha256": "c0e873c710186f797c5fcde36bccc90bbb12791fa6ffa45623a6fb93b0c6ca19"
+    },
+    {
+     "from": "2014-09-12",
+     "units": 661,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiNDIwM2NhZGUtMzY2Yy00ZWIzLTgzZmQtZDI5Yzg3NGY3ZjU0LnBkZiJ9",
+     "sha256": "a2071aa84bc723aa10f8ccab8603e5f6778809d9f98ce4402ead06c7897c2bb3"
+    },
+    {
+     "from": "2015-04-20",
+     "units": 649,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiNmEyNGZkODktNmU5NC00YzUyLTkxZjQtZjY1ZmZjNGZjMWE2LnBkZiJ9",
+     "sha256": "fe5d760da5a09dbdb92be80667faf0128a17b9bcc4b24db737a7c523ae041ef7"
+    },
+    {
+     "from": "2015-05-22",
+     "units": 649,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiOGZmZjFhOTEtYWFiYi00YjE0LTllYzEtODkxODAxYjk3MTQ2LnBkZiJ9",
+     "sha256": "e579214e03fd40f98cabfea3b81202ed2299fa3abb49f284ae942896dc6abd07"
+    },
+    {
+     "from": "2016-01-01",
+     "units": 650,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiNmEyNGZkODktNmU5NC00YzUyLTkxZjQtZjY1ZmZjNGZjMWE2LnBkZiJ9",
+     "sha256": "fe5d760da5a09dbdb92be80667faf0128a17b9bcc4b24db737a7c523ae041ef7"
+    },
+    {
+     "from": "2016-03-28",
+     "units": 657,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiN2RmYjMyMmQtODEzNy00MzY2LWEyODctYTIyMGE5OWQyMTJmLnBkZiJ9",
+     "sha256": "596296ad232183ffdd4f6c012dc5f95c2ee7607d5fab093805805b917da4d228"
+    },
+    {
+     "from": "2016-05-22",
+     "units": 617,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiOGZmZjFhOTEtYWFiYi00YjE0LTllYzEtODkxODAxYjk3MTQ2LnBkZiJ9",
+     "sha256": "e579214e03fd40f98cabfea3b81202ed2299fa3abb49f284ae942896dc6abd07"
+    },
+    {
+     "from": "2016-12-20",
+     "units": 617,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiNjY4NDI5OTEtNmU1Zi00NDNmLWE4OTgtYmU2MWVjNTUyZjRkLnBkZiJ9",
+     "sha256": "4f8e2c5d0aa9fe4ba81003319fea5bccff384e8cefa68e6f56dce0a81084984d"
+    },
+    {
+     "from": "2017-05-19",
+     "units": 618,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiMzcyNjI1ZGQtNDFkMy00NmEyLWIzZWEtY2Q3NDVjMDZhYzU4LnBkZiJ9",
+     "sha256": "22947a22732381bdd9ecad9ab8c9110ce1cf232bc00252577715beb5484cedff"
+    },
+    {
+     "from": "2017-11-09",
+     "units": 619,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiNDM1ZDJhZTgtZTYyZC00OTg3LWJlY2YtYjVhY2IwOTA1ZmI0LnBkZiJ9",
+     "sha256": "891aa5f5cdb5faab12d986e60934e9aace2eecd595ac579f7f77dc004553822c"
+    },
+    {
+     "from": "2018-02-05",
+     "units": 619,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiNWY4OGU1NWYtZGY1YS00NTcyLTgxNzUtNzIzYTVlNmJhZWUyLnBkZiJ9",
+     "sha256": "4d3376348e116e631a9173e5d60927483586b05db2bbee147110a3cbe1dee879"
+    },
+    {
+     "from": "2018-04-06",
+     "units": 619,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiNDRlZWViMWUtNmJiNy00YjIzLWFhODItYTkyNzM3Y2ZhMzU1LnBkZiJ9",
+     "sha256": "dc07d2dab7ce83abd8daeba4a5298453ef32d62469fff68aea6c08ddbf57849c"
+    },
+    {
+     "from": "2018-08-21",
+     "units": 619,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiNDMxY2EwMGItMzllZS00MDdiLWE0MzAtNjk4ZDQzMmM3Yzk5LnBkZiJ9",
+     "sha256": "1b6584acbf3faf62a6beaf330cba31378524f69cbc6cb6a81f91d7fe8717e818"
+    },
+    {
+     "from": "2019-06-26",
+     "units": 619,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiNDgzM2ZhYzQtYzYwZS00MjEzLWFhY2ItMTUyNWMzMmM5NWFjLnBkZiJ9",
+     "sha256": "7f3ff38913008b30244313e60111607a85a62a17910d80b3dd33f83214beaa3b"
+    },
+    {
+     "from": "2020-06-22",
+     "units": 620,
+     "source_url": "https://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjogInJvIiwgInV1aWQiOiAiODE0MTc5NWItOTk2My00MTdmLWExMjctMDI1ZWQ3OTY0Njk0LnBkZiJ9",
+     "sha256": "48d5f2e39fa32db9f87109daab916373b9fd84763afb52fbcf2d3c3b25aad6e9"
+    },
+    {
+     "from": "2021-11-04",
+     "units": 620,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiZDQxMmUwZWMtMDYzNS00NDBiLThmMmUtYjc1ODRhMGE2YmNiLnBkZiJ9",
+     "sha256": "16ae0a89022ca93c0bf7243aab38d45273e4bab4662443f3e82cf2a8c23ff0f9"
+    },
+    {
+     "from": "2023-01-04",
+     "units": 620,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiMDNmOTYyNTItYjQwOS00NWE3LTg3MzMtMGFmMzI2YTFkZjFhLnBkZiJ9",
+     "sha256": "55cd7d5538e66617d11d3ccf93d718a55063caa8c1f88238aecb7bc669cfd36f"
+    },
+    {
+     "from": "2023-01-20",
+     "units": 622,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiNTkxNjkzYjktN2IwMy00ZGMxLWE3MDctZTg0MWE5ZDAxMDIwLnBkZiJ9",
+     "sha256": "3e2ae04c56491e7b33300171feeece4a259279c69c09addf6b08168fa8ef37f2"
+    },
+    {
+     "from": "2023-02-01",
+     "units": 622,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiNzgzM2ViZGEtMjMzZC00NDllLThiYzYtYmQ1N2ViYWViOGE3LnBkZiJ9",
+     "sha256": "e1b80e358b4b81ef83d2bb9420eb1aab500452ea7bfb35e38ed025d5783c20ac"
+    },
+    {
+     "from": "2023-05-12",
+     "units": 621,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiMGJmMWM2MmMtNTViMy00NDA0LTk2ZWYtMjBmNDRmODA1MDU4LnBkZiJ9",
+     "sha256": "228024c9433340d826b536b5af0613ca43b585348eeaecd67d4badc110ad9e40"
+    },
+    {
+     "from": "2024-05-16",
+     "units": 621,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiNzVkOWJiMDctZjA0Ni00MjI5LWEzOTYtMzcyNTgzNDhmYTI2LnBkZiJ9",
+     "sha256": "f8026de6d46c3b488e8df5dd0670564bf6bead0ad342beb254db4e8a3ec61a6b"
+    },
+    {
+     "from": "2024-06-27",
+     "units": 621,
+     "source_url": "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiNjk3NGIxZDMtODkzMS00MTU3LThmYmMtOGQ0MGNiNTA0MDcxLnBkZiJ9",
+     "sha256": "bf65995d6bff5d59b3b6516a63bd10d66b02e6ed9f8fc714c74fc0fb0a1c28c5"
+    },
+    {
+     "from": "2025-06-20",
+     "units": 622,
+     "source_url": "https://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiOWMxY2Q4ZjktYTIzOS00Nzc1LTg2YTAtNTJhN2FkMGU0NGFjLnBkZiJ9",
+     "sha256": "71d038bf22c5b0b6db2f9f0c5d7a55792daa78fea176569584744a7de2668208"
+    }
+   ]
+  }
+ ]
+}
