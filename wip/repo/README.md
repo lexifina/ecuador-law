@@ -9,6 +9,9 @@ It follows the shared design of [lexifina/global-law](https://github.com/lexifin
 | Folder | Act | Versions | History |
 | --- | --- | ---: | --- |
 | `constitucion/` | Constitución de la República del Ecuador (2008) | 12 | As published on 20 October 2008, then every amendment, court ruling and referendum to 16 November 2025 |
+| `codigo-civil/` | Código Civil (Codificación 2005-010) | 22 | From the 2005 codification to 27 June 2024 (see "Código Civil" below) |
+| `coip/` | Código Orgánico Integral Penal (2014) | 50 | From the Code as published on 10 February 2014 to 7 August 2026 (see "COIP" below) |
+| `codigo-comercio/` | Código de Comercio (2019) | 3 | As published on 29 May 2019, then its amendments to 7 February 2023 (see "Código de Comercio" below) |
 
 The Constitution is complete: 444 articles, the preamble, the 30 transitional provisions, the Disposición derogatoria, the 30 articles of the Régimen de transición, the Disposición final, the general provisions added since 2018, and the headings of its titles, chapters and sections (`constitucion/titulos.md`).
 
@@ -73,7 +76,7 @@ Blame credits whole lines (one paragraph per line). Use `git log -p --word-diff`
 ## What it does not show
 
 - **Not possible: two enmiendas in force are missing.** The enmienda of 2021 (art. 272, new numeral 4 on rural roads; Registro Oficial, Tercer Suplemento 377, 25 January 2021) and the enmienda of 2024 (art. 138, partial veto, ratification by absolute majority; Tercer Suplemento 568, 30 May 2024) are printed in the Registro Oficial only as page images, and no machine-readable official copy was found. Their words are never transcribed by OCR or by a model, so this record does not carry them: **from 25 January 2021 art. 272 and from 30 May 2024 art. 138 here show the earlier wording, which is not the law in force.** Read those two articles in the Registro Oficial editions named above.
-- **Three acts so far:** the Constitution, the Código Civil and the Código Orgánico Integral Penal (COIP). The data protection law of 2021 is printed only as page images, so it cannot be built from the gazette's text.
+- **Four acts so far:** the Constitution, the Código Civil, the Código Orgánico Integral Penal (COIP) and the Código de Comercio. The data protection law of 2021 is printed only as page images, so it cannot be built from the gazette's text.
 - **Spelling is the gazette's.** Where the Registro Oficial printed a typo ("ei", "Ileva"), the record keeps it.
 - **Court rulings that interpret** the Constitution without striking words (several since 2009) are not commits.
 - **The 2015 enmiendas' own transitional and final provisions**, and the 2018 transitional regime for the Consejo de Participación Ciudadana y Control Social, belong to the amending acts, not to the Constitution's text, and are not added. The 2024 reform did add its own transitional and final provisions to the Constitution, and they are here as `reforma-2024-*`.
@@ -193,6 +196,33 @@ reformas parciales posteriores de los artículos que esas reformas dejaron desac
 imagen después del 24 de agosto de 2026 no se han podido revisar. La Ley de Solidaridad Nacional y las reformas penales
 de la Ley de Integridad Pública (2025) se aplican y se deshacen el 3-X-2025, con las sentencias 51-25-IN/25 y
 52-25-IN/25.
+
+## Código de Comercio (2019)
+
+`codigo-comercio/` holds the Código de Comercio as published in the Registro Oficial, Suplemento 497 (29 May 2019),
+in force on publication: 1,348 articles, its general, transitional, repealing and final provisions, and its headings
+(`codigo-comercio/titulos.md`). The Asamblea Nacional's list of laws from 2019 to October 2026 was screened, law by law,
+for amendments to the Code in each law's gazette text; the Lexis consolidation of 10 December 2020 was read as an
+index only.
+
+| In force | Law | What it did |
+| --- | --- | --- |
+| 2019-05-29 | Código de Comercio | As enacted |
+| 2020-12-10 | Ley de Modernización a la Ley de Compañías (Tercer Supl. 347) | **Not applied:** printed only as page images. It adds Capítulo Tercero, arts. 607.1-607.6 (asociación o cuentas de participación), which are missing here from this day |
+| 2023-02-07 | Ley Orgánica para la Transformación Digital y Audiovisual (Tercer Supl. 245) | Arts. 78-80, 84, 85, 88, 90, 92, 95, 96, 109, 112, 126, 272; new articles after 112, 113 and 189 (electronic títulos valor) |
+
+- Many laws since 2020 are printed only as page images, so whether they amend the Code could not be read. A later
+  consolidation is reported to name 13 October 2025 as its last reform (the Ley Orgánica Reformatoria del Código
+  Orgánico Monetario y Financiero, Sexto Supl. 142, image-only); any change it made is missing.
+- On 10 December 2020 the text agrees with the Lexis consolidation in 1,321 of 1,348 articles; each difference is
+  classified in REPRODUCE.md (decisions).
+
+### En español
+
+`codigo-comercio/` contiene el Código de Comercio publicado en el Suplemento 497 (29-V-2019) y sus reformas hasta el
+7-II-2023, tomadas del texto del Registro Oficial. La Ley de Modernización a la Ley de Compañías (2020), publicada solo
+como imagen, no está aplicada: faltan los arts. 607.1 a 607.6. Las reformas posteriores publicadas solo como imagen
+(posiblemente la de 13-X-2025) no se han podido leer.
 
 ## How it is built
 

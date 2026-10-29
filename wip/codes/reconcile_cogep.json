@@ -1,0 +1,286 @@
+{
+ "day": "2023-02-07",
+ "agree": 358,
+ "differ": {
+  "art-001": [
+   "'electoral' -> 'electoral, de extinción de dominio'"
+  ],
+  "art-008": [
+   "'judiciales.' -> 'judiciales.-'"
+  ],
+  "art-010": [
+   "'' -> '11. Del Domicilio especial establecido por la Administración Tributaria para un contribuyente.'",
+   "'el lugar donde tenga su' -> 'la dependencia más cercana a la'",
+   "'principal.' -> 'del Tribunal.'"
+  ],
+  "art-011": [
+   "'excluyente.' -> 'excluyente.-'"
+  ],
+  "art-015": [
+   "'' -> 'CAPÍTULO II ACUMULACIÓN'"
+  ],
+  "art-023": [
+   "'' -> 'en el término de 2 días'"
+  ],
+  "art-025": [
+   "'recusado' -> 'recusado, en el término de veinticuatro horas,'"
+  ],
+  "art-027": [
+   "'traslado.-' -> 'traslado.'",
+   "'audiencia' -> 'audiencia.'"
+  ],
+  "art-028": [
+   "'Audiencia:' -> 'Audiencia.'"
+  ],
+  "art-030": [
+   "'jurídicas.' -> 'jurídicas,'"
+  ],
+  "art-036": [
+   "'La persona que' -> 'De conformidad con la Constitución de la República, el Código Orgánico de la Función Judicial y la Ley Orgánica de la Defensoría Pública, las personas que,'",
+   "'económica, social o cultural,' -> 'de vulnerabilidad,'",
+   "'pueda' -> 'puedan'",
+   "'privada,' -> 'privada'",
+   "'recurrirá' -> 'recurrirán'",
+   "'' -> 'Los jueces de todas las materias no penales observarán las disposiciones y los parámetros establecidos para los servicios de patrocinio jurídico gratuito de la Defensoría Pública, contemplados en la Ley Orgánica de la Defensoría Pública y en la normativa que para el efecto emita el Defensor Público General.'"
+  ],
+  "art-039": [
+   "'nacional.' -> 'nacional,'"
+  ],
+  "art-045": [
+   "'' -> 'CAPÍTULO IV TERCERÍAS'"
+  ],
+  "art-050": [
+   "'' -> 'CAPÍTULO V LITIS CONSORCIO'"
+  ],
+  "art-051": [
+   "'Litisconsorcio.' -> 'Litis consorcio.'"
+  ],
+  "art-052": [
+   "'' -> 'LIBRO II ACTIVIDAD PROCESAL TÍTULO I DISPOSICIONES GENERALES CAPÍTULO I CITACIÓN'"
+  ],
+  "art-053": [
+   "'' -> 'Citación.-'"
+  ],
+  "art-053-1": [
+   "only in Lexis"
+  ],
+  "art-054": [
+   "'personal.' -> 'personal.-'"
+  ],
+  "art-065": [
+   "'Notificación.' -> 'Notificación.-'"
+  ],
+  "art-066": [
+   "'general.' -> 'general.-'"
+  ],
+  "art-067": [
+   "'diligencias.' -> 'diligencias.-'"
+  ],
+  "art-076": [
+   "'' -> 'En materia tributaria, procede la suspensión de términos en el caso de presentación de una solicitud para mediación, conforme las reglas previstas en el Código Tributario.'"
+  ],
+  "art-078": [
+   "'' -> 'CAPÍTULO V AUDIENCIA'"
+  ],
+  "art-079": [
+   "'admisibles.' -> 'admisibles,'"
+  ],
+  "art-101": [
+   "'' -> 'CAPITULO VII SENTENCIAS, LAUDOS ARBITRALES Y ACTAS DE MEDIACIÓN EXPEDIDOS EN EL EXTRANJERO'"
+  ],
+  "art-102": [
+   "'sentencias, laudos arbitrales' -> 'sentencias'",
+   "'sentencias, laudos arbitrales' -> 'sentencias'"
+  ],
+  "art-103": [
+   "'sentencias, laudos arbitrales' -> 'sentencias'"
+  ],
+  "art-104": [
+   "'sentencias, laudos arbitrales' -> 'sentencias'",
+   "'sentencias, laudos arbitrales' -> 'sentencias'",
+   "'y laudos arbitrales' -> ''"
+  ],
+  "art-105": [
+   "'sentencias, laudos' -> 'sentencias'"
+  ],
+  "art-106": [
+   "'Código.' -> 'Código,'"
+  ],
+  "art-111": [
+   "'' -> 'CAPÍTULO IX NULIDAD DE SENTENCIA'"
+  ],
+  "art-115": [
+   "'' -> 'Expediente electrónico.'"
+  ],
+  "art-119": [
+   "'' -> 'TÍTULO II DILIGENCIAS PREPARATORIAS'"
+  ],
+  "art-1263": [
+   "only in Lexis"
+  ],
+  "art-133": [
+   "'' -> 'Art....- Providencias preventivas en materia de propiedad intelectual.- Con el fin de evitar que se produzca o continúe la infracción sobre derechos de propiedad intelectual, o de evitar que las mercancías ingresen en los circuitos comerciales, inclusive las mercancías importadas, o bien para preservar las pruebas pertinentes relacionadas con la presunta infracción, el juez de lo civil a petición de parte y previo informe favorable de la autoridad competente en materia de Propiedad Intelectual, podrá disponer la adopción de las siguientes providencias preventivas: a) Cese inmediato de la actividad que constituya la presunta infracción, que comprenderá: 1. La suspensión de la actividad infractora o la prohibición al infractor de reanudarla, o ambas; 2. La clausura provisional del local o establecimiento, que se expedirá necesariamente cuando las mercancías infractoras o ejemplares ilícitos constituyan parte sustancial del comercio habitual del infractor; 3. El retiro del comercio de las mercancías, ejemplares ilícitos u objetos infractores y su depósito judicial. b) La suspensión de la actividad de utilización, explotación, venta, oferta en venta, importación o exportación, reproducción, puesta a disposición, comunicación o distribución, según proceda; y, c) El secuestro o la retención; el mismo que podrá ordenarse sobre bienes que aseguren el pago de la indemnización, sobre los productos o mercancías que violen derechos de propiedad intelectual, así como sobre los equipos, aparatos y medios utilizados para cometer la infracción y sobre los ejemplares originales que hayan servido para la reproducción o comunicación. La demanda principal para este tipo de acciones, se iniciarán ante el juez Civil competente mediante procedimiento sumario, de acuerdo a las disposiciones de este Código.'"
+  ],
+  "art-133-1": [
+   "only here"
+  ],
+  "art-137": [
+   "'Sí' -> 'Si'"
+  ],
+  "art-140": [
+   "'' -> 'LIBRO III DISPOSICIONES COMUNES A TODOS LOS PROCESOS TÍTULO I ACTOS DE PROPOSICIÓN CAPÍTULO I DEMANDA'"
+  ],
+  "art-143": [
+   "'documentos:' -> 'documentos;'"
+  ],
+  "art-159": [
+   "'de' -> 'dé'"
+  ],
+  "art-186": [
+   "'' -> 'SECCIÓN II DECLARACIÓN DE PARTE Y DECLARACIÓN DE TESTIGOS'"
+  ],
+  "art-220": [
+   "'' -> 'CAPÍTULO IV PRUEBA PERICIAL SECCIÓN I PERITO'"
+  ],
+  "art-227": [
+   "'' -> 'CAPÍTULO V INSPECCIÓN JUDICIAL'"
+  ],
+  "art-232": [
+   "'' -> 'TITULO III FORMAS EXTRAORDINARIAS DE CONCLUSIÓN DEL PROCESO CAPITULO I CONCILIACIÓN Y TRANSACCIÓN'"
+  ],
+  "art-234": [
+   "'única' -> 'única,'"
+  ],
+  "art-240": [
+   "'' -> 'CAPITULO IV ALLANAMIENTO'"
+  ],
+  "art-244": [
+   "'' -> 'CAPÍTULO V ABANDONO'"
+  ],
+  "art-247": [
+   "'2.-' -> '2.'"
+  ],
+  "art-249": [
+   "'abandono:' -> 'abandono.'"
+  ],
+  "art-252": [
+   "'' -> 'CAPÍTULO II ACLARACIÓN, AMPLIACIÓN, REVOCATORIA Y REFORMA'"
+  ],
+  "art-273": [
+   "'casará' -> 'casara'",
+   "'pronunciará' -> 'pronunciara'"
+  ],
+  "art-277": [
+   "'' -> 'CAPÍTULO V RECURSO DE HECHO'"
+  ],
+  "art-291": [
+   "'' -> 'SECCIÓN II AUDIENCIA PRELIMINAR'"
+  ],
+  "art-295": [
+   "'litisconsorcio' -> 'litis consorcio'"
+  ],
+  "art-296": [
+   "'' -> 'SECCIÓN III AUDIENCIA DE JUICIO'"
+  ],
+  "art-314": [
+   "'' -> '(sic)'",
+   "'rehúsen' -> 'rehusen'"
+  ],
+  "art-317": [
+   "'' -> 'Podrá suspenderse la sustanciación de los procesos de competencia del Tribunal Distrital de lo Contencioso con la presentación de la solicitud de mediación de la parte actora conforme a las reglas contenidas en la Sección 6a del Código Tributario. La sustanciación del proceso se retomará una vez que el Tribunal haya sido notificado con el acuerdo transaccional parcial o con la razón de que no existieron posturas conciliadas durante el proceso de mediación. En el caso de que el Tribunal sea notificado con un acuerdo transaccional total entre las partes procesales, se archivará inmediatamente la causa sin condena en costas.'"
+  ],
+  "art-324": [
+   "'se' -> ''",
+   "'con' -> ''"
+  ],
+  "art-325": [
+   "'' -> 'SECCIÓN III PROCEDIMIENTO CONTENCIOSO ADMINISTRATIVO'"
+  ],
+  "art-326": [
+   "'acciones:' -> 'acciones;'"
+  ],
+  "art-331": [
+   "'' -> '(sic)'"
+  ],
+  "art-332": [
+   "'Procedencia.' -> 'Procedencia.-'"
+  ],
+  "art-334": [
+   "'cuentas.' -> 'cuentas,'",
+   "'' -> '5.Nota: Numeral derogado por artículo 60 de Ley No. 0, publicada en Registro Oficial Suplemento 517 de 26 de Junio del 2019.'"
+  ],
+  "art-337": [
+   "'' -> 'SECCIÓN II PAGO POR CONSIGNACIÓN'"
+  ],
+  "art-339": [
+   "'' -> 'SECCIÓN IV DIVORCIO O TERMINACIÓN DE UNIÓN DE HECHO POR MUTUO CONSENTIMIENTO'"
+  ],
+  "art-340": [
+   "'consentimiento.-' -> 'consentimiento.'"
+  ],
+  "art-341": [
+   "'inventario.' -> 'inventarío.'"
+  ],
+  "art-344": [
+   "'Si' -> 'Sí'"
+  ],
+  "art-346": [
+   "'' -> 'TÍTULO II PROCEDIMIENTOS EJECUTIVOS CAPÍTULO I PROCEDIMIENTO EJECUTIVO'"
+  ],
+  "art-355": [
+   "'' -> 'CAPÍTULO II PROCEDIMIENTO MONITORIO'"
+  ],
+  "art-361": [
+   "'' -> 'LIBRO V EJECUCIÓN TÍTULO I EJECUCIÓN CAPÍTULO I REGLAS GENERALES'"
+  ],
+  "art-375": [
+   "'de la o' -> ''"
+  ],
+  "art-376": [
+   "'este,' -> 'éste,'"
+  ],
+  "art-380": [
+   "'rehúsa' -> 'rehusa'"
+  ],
+  "art-383": [
+   "'al' -> 'el (sic)'"
+  ],
+  "art-390": [
+   "'embargo.' -> 'embargo.-'"
+  ],
+  "art-392": [
+   "'obligación.' -> 'obligación,'"
+  ],
+  "art-394": [
+   "'' -> 'CAPÍTULO III REMATE DE LOS BIENES EMBARGADOS Y LIQUIDACIÓN DEL CRÉDITO'"
+  ],
+  "art-396": [
+   "'ejecutante.' -> 'ejecutante.-'"
+  ],
+  "art-406": [
+   "'remate.' -> 'remate.-'",
+   "'casos:' -> 'casos;'"
+  ],
+  "art-407": [
+   "'registrales,' -> 'regístrales,'"
+  ],
+  "art-413": [
+   "'' -> 'TÍTULO II PROCEDIMIENTO CONCURSAL CAPÍTULO I REGLAS GENERALES'"
+  ],
+  "art-416": [
+   "'' -> '(sic)'"
+  ],
+  "art-418": [
+   "'' -> 'CAPÍTULO II PROCEDIMIENTO'"
+  ],
+  "art-427": [
+   "'este,' -> 'éste,'"
+  ],
+  "art-429": [
+   "'manera:' -> 'manera;'"
+  ],
+  "art-435": [
+   "'' -> '(sic)'"
+  ]
+ }
+}
