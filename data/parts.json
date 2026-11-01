@@ -1,0 +1,47 @@
+{
+ "parts": {
+  "50-civil.json": {
+   "acts": [
+    "codigo-civil"
+   ],
+   "sha256": "c8f0da51d385839fe6d47f9726ff6330bd593ea39b89ee1a27cf80343c6c1137"
+  },
+  "60-coip.json": {
+   "acts": [
+    "coip"
+   ],
+   "sha256": "8458bb56dc2772620d6a66355e2ae44ae8a52e2545d9d54fc86e3d88aee6a5a5"
+  },
+  "95-lotaip.json": {
+   "acts": [
+    "lotaip"
+   ],
+   "sha256": "87e09bd1bbaa394b95ab570d2187b4d106a3100317ac47c9282cd6a4fed4518d"
+  },
+  "96-transformacion-digital.json": {
+   "acts": [
+    "ley-transformacion-digital"
+   ],
+   "sha256": "d116d8bbcecc12143a10e51a7c1a4becd5044681995b28308df5b426de7148eb"
+  },
+  "97-discapacidad.json": {
+   "acts": [
+    "ley-personas-discapacidad"
+   ],
+   "sha256": "8b32db71c24aba8c5c9f20e703ebec5f52e7948ec4c520010b008b9bd5c613d2"
+  },
+  "98-competencia-desleal.json": {
+   "acts": [
+    "ley-competencia-desleal"
+   ],
+   "sha256": "3410819abd1d4a4f35750ac2f3fafe88011ba042b5a1514b01823c9d03944930"
+  },
+  "99-inteligencia.json": {
+   "acts": [
+    "ley-inteligencia"
+   ],
+   "sha256": "4fc199d7c9daddb5310451fe1d3ca01581ae99d148af8e4ca9deb119559f37a0"
+  }
+ },
+ "schema": 1
+}
