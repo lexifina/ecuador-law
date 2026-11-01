@@ -1,0 +1,10 @@
+{
+  "path": "ec",
+  "code": "EC",
+  "name": "Ecuador",
+  "level": "country",
+  "repo": "https://github.com/lexifina/ecuador-law",
+  "build": "published: constitution (2008 text + 11 amending events 2011-2025), Código Civil, COIP, LOTAIP 2023, Ley de Transformación Digital 2023, Ley de Personas con Discapacidad 2025, Ley contra la Competencia Desleal 2025, Ley de Inteligencia 2025; preview only: Código de Comercio, COGEP, Código del Trabajo; all replayed from the Registro Oficial",
+  "register": "https://claude.ai/artifact/DdS9F6yqpPZtV2i7FGQhYZ",
+  "register_date": "2026-10-28"
+}

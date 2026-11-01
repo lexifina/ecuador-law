@@ -1,0 +1,42 @@
+{
+ "codificacion_2005": {
+  "what": "Registro Oficial Suplemento 46, 24-VI-2005: Codificación 2005-010 del Código Civil",
+  "urls": [
+   "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiYzMwNzA4MTgtYTg5NC00OTA3LWFmNGItZTI3NDZlNmQxODJlLnBkZiJ9"
+  ]
+ },
+ "amending_acts": {
+  "what": "Registro Oficial editions of every amending act, ruling and erratum (law key -> URL in civil/replay.py LAWS)",
+  "urls": [
+   "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiZDVlMTU4NDEtZDkyZC00NDM4LTlhZTctNzlkYWZlN2NjOWZlLnBkZiJ9",
+   "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiZTY2NWRkMzQtNTY5MC00MWQ5LThkMzAtMzAzZmFkNmFiY2IyLnBkZiJ9",
+   "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiYzIwZDljNzMtZTFkNy00OTVjLWI1N2YtNzY1YWNlMTU4MDAwLnBkZiJ9",
+   "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiYjJhNDAxYmItNDJjMy00MTkyLTliMjEtMTg1Y2RjZTgxMTI0LnBkZiJ9",
+   "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiZjQ5ZDdkYTItYzQ2OC00NmRjLTkyM2QtM2RhMzE4MDY5MjNmLnBkZiJ9",
+   "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiZjA4NGQxYWEtNzNlYS00NTQ1LTk0NjMtZjgzYjlkZGQxNjc4LnBkZiJ9",
+   "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiY2E5NGRlNjEtYmFhNC00ZDc3LWE4MDctODU0OThkYmQ1NTk2LnBkZiJ9",
+   "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiYTEzMjRiNDYtOTBjNy00NjBlLTg5OTItOTIxMGVmOGI1MzI3LnBkZiJ9",
+   "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiZWM0MTIyMWUtZDI1OC00NDJiLWJkNzAtNDI5OGM4MDNhMjdiLnBkZiJ9",
+   "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiNDIwM2NhZGUtMzY2Yy00ZWIzLTgzZmQtZDI5Yzg3NGY3ZjU0LnBkZiJ9",
+   "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiZDE4NTIwNDMtZTg4OS00NmM1LWI3MDUtYmE2ODgzMmNiZDUyLnBkZiJ9",
+   "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiOGZmZjFhOTEtYWFiYi00YjE0LTllYzEtODkxODAxYjk3MTQ2LnBkZiJ9",
+   "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiODk0Yjc3Y2YtZTIyMy00M2IwLTg3ODAtYTAyNWQ2YzM2NDBlLnBkZiJ9",
+   "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiNDY3MjQyMzEtN2Y2OC00ODNmLWI1Y2UtMzJjYzQ2MmM5NzMwLnBkZiJ9",
+   "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiNzE1OWU4NzctZDI2OS00ZDBjLWJlNTctOTk0YzRiNzU0MTAyLnBkZiJ9",
+   "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiNjVlNzdhNGItMmQ2NS00MWEyLTk5NTgtZmFhNjNmMjU3NzBhLnBkZiJ9",
+   "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiZjE3ODBiMDgtNWM1Mi00MGJhLTlhYjgtYzcwNDg1MzY1MjljLnBkZiJ9",
+   "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiZGU1NjI0MjctNTlhMy00NTNiLWEwMzUtZGNjNjNhYTA0NzU5LnBkZiJ9",
+   "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiZTU0ZDJlY2MtYzkzNi00NDkxLTk0OTMtM2UzMzA2MTNhZTlhLnBkZiJ9",
+   "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiN2ZhNDgwZDgtOTU0NS00NzY5LWE1NWMtM2Q3NWMyZmE1ZTQwLnBkZiJ9",
+   "http://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/eyJjYXJwZXRhIjoicm8iLCJ1dWlkIjoiNjk3NGIxZDMtODkzMS00MTU3LThmYmMtOGQ0MGNiNTA0MDcxLnBkZiJ9"
+  ]
+ },
+ "reconciliation": {
+  "what": "Unofficial consolidations, read only (index and comparison)",
+  "urls": [
+   "https://www.gob.ec/sites/default/files/regulations/2025-09/Documento_C%C3%B3digo-Civil-2025.pdf",
+   "https://wipolex-res.wipo.int/edocs/lexdocs/laws/es/ec/ec118es.pdf",
+   "https://www.gob.ec/regulaciones/codigo-civil-codificacion-no-2005-010"
+  ]
+ }
+}

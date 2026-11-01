@@ -1,0 +1,18 @@
+The legal texts come from the Registro Oficial of the Republic of Ecuador:
+
+  Source: Registro Oficial del Ecuador, órgano de la Corte Constitucional,
+  https://www.registroficial.gob.ec, retrieved 28 October 2026.
+
+The Registro Oficial states no licence for its editions. They are official legal texts of the Republic of Ecuador,
+which are public.
+
+Changes made by Lexifina: each gazette edition was converted to one Markdown file per provision, one paragraph per
+line; spacing, quotes and dashes were normalised; and the versions were arranged as git commits credited to the laws,
+rulings and referendums that made each change. The wording of the law was not changed. Where a later version was
+rebuilt from an amending act, the text comes from that act as the Registro Oficial printed it (its text layer;
+no OCR). The Registro Oficial does not endorse
+this repository.
+
+Lexifina's own contributions (the arrangement of the history, the commit messages, the tables and the tools) are
+dedicated to the public domain under CC0 1.0 Universal:
+https://creativecommons.org/publicdomain/zero/1.0/legalcode
