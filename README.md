@@ -1,35 +1,41 @@
-# Ecuador: law history in git
+# Ecuador: historia del derecho en git
 
+**Español** · [English](README.en.md)
 
-The law of Ecuador as a git history: one file per provision, one commit per version on the day it took effect, and the law, ruling or referendum that made each change as the commit's author. `git blame` names the act behind every paragraph; `git log` lists every change to an article; picking a date gives the text in force that day.
+<picture>
+<source media="(prefers-color-scheme: dark)" srcset="data/es/effort-dark.svg">
+<img alt="El derecho ecuatoriano en este repositorio: qué contiene, los cambios por año de entrada en vigor, la completitud frente a las fuentes oficiales y la exactitud de lo que contiene" src="data/es/effort-light.svg" width="880">
+</picture>
 
-Part of [lexifina/global-law](https://github.com/lexifina/global-law), one git history for every country's law: this is Ecuador's national law, which global-law reads at `ecuador/national/acts/`.
+El derecho del Ecuador como historia de git: un archivo por disposición, un commit por versión el día en que entró en vigencia, y la ley, la sentencia o el referéndum que hizo cada cambio como autor del commit. `git blame` indica la norma que está detrás de cada párrafo; `git log` enumera todos los cambios de un artículo; al elegir una fecha se obtiene el texto vigente ese día.
 
-**What is in it now:** the Constitution of 2008 and 7 other acts (the Código Civil, the Código Orgánico Integral Penal and five organic laws of 2023 to 2025), with 92 versions from 2005 to 2026. Each act's own `README.md` (for example [`constitucion/README.md`](constitucion/README.md)) lists its provisions and how often each changed; [`data/laws.csv`](data/laws.csv) lists every law, ruling and referendum in the record.
+Forma parte de [lexifina/global-law](https://github.com/lexifina/global-law), una única historia de git para el derecho de todos los países: este es el derecho nacional del Ecuador, que global-law lee en `ecuador/national/acts/`.
 
-Each act is a folder with one file per article or provision: `constitucion/`, `codigo-civil/`, `coip/`, `lotaip/`, `ley-transformacion-digital/`, `ley-personas-discapacidad/`, `ley-competencia-desleal/` and `ley-inteligencia/` (`constitucion/art-114.md` is Article 114 of the Constitution, on re-election); each folder's `titulos.md` holds the headings of its titles and chapters.
+**Qué contiene ahora:** la Constitución de 2008 y otras 7 normas (el Código Civil, el Código Orgánico Integral Penal y cinco leyes orgánicas de 2023 a 2025), con 92 versiones desde 2005 hasta 2026. El `README.md` propio de cada norma (por ejemplo, [`constitucion/README.md`](constitucion/README.md)) enumera sus disposiciones y cuántas veces cambió cada una; [`data/laws.csv`](data/laws.csv) enumera todas las leyes, sentencias y referéndums del registro.
 
-The text is in Spanish, as the Registro Oficial printed it, misprints included. An English translation is not part of this record.
+Cada norma es una carpeta con un archivo por artículo o disposición: `constitucion/`, `codigo-civil/`, `coip/`, `lotaip/`, `ley-transformacion-digital/`, `ley-personas-discapacidad/`, `ley-competencia-desleal/` y `ley-inteligencia/` (`constitucion/art-114.md` es el Artículo 114 de la Constitución, sobre la reelección); el `titulos.md` de cada carpeta contiene los encabezados de sus títulos y capítulos.
 
-## Questions as git commands
+El texto está en español, tal como lo publicó el Registro Oficial, erratas incluidas. Este registro no incluye una traducción al inglés.
 
-| Question | Command |
+## Preguntas como comandos de git
+
+| Pregunta | Comando |
 | --- | --- |
-| Every change to Article 114 of the Constitution | `git log -p --word-diff -- constitucion/art-114.md` |
-| Which act wrote each line of Article 114? | `git blame constitucion/art-114.md` |
-| Every version of Article 114, with the day each took effect | `git log --format="%h %(trailers:key=In-force,valueonly,separator=) %an" -- constitucion/art-114.md` |
-| Article 114 as in force on 1 January 2018 | `python tools/vigente_el.py 2018-01-01 constitucion 114` |
+| Todos los cambios del Artículo 114 de la Constitución | `git log -p --word-diff -- constitucion/art-114.md` |
+| ¿Qué norma escribió cada línea del Artículo 114? | `git blame constitucion/art-114.md` |
+| Todas las versiones del Artículo 114, con el día en que entró en vigencia cada una | `git log --format="%h %(trailers:key=In-force,valueonly,separator=) %an" -- constitucion/art-114.md` |
+| El Artículo 114 vigente al 1 de enero de 2018 | `python tools/vigente_el.py 2018-01-01 constitucion 114` |
 
-**Outside git**, we also host this record publicly, for free:
+**Fuera de git**, también alojamos este registro de forma pública y gratuita:
 
-- **[Ask Claude about Ecuadorian law](https://global-law.lexifina.com/v1/try_claude?country=ecuador)**: opens Claude with a first question ready.
-- **[Ask ChatGPT](https://global-law.lexifina.com/v1/try_chatgpt?country=ecuador)**: the same question in ChatGPT.
-- **[Search Ecuadorian law on our site](https://lexifina.com/law?country=ecuador&q=arrendamiento)**: a search for "arrendamiento" (lease), with each provision's text and its versions, no account needed.
-- **[Developer REST API](https://global-law.lexifina.com/v1/search_law?query=arrendamiento&jurisdiction=ecuador)**: the same search as JSON, with no key. See the [documentation here](https://lexifina.com/api/global-law).
+- **[Preguntar a Claude sobre el derecho ecuatoriano](https://global-law.lexifina.com/v1/try_claude?country=ecuador)**: abre Claude con una primera pregunta preparada.
+- **[Preguntar a ChatGPT](https://global-law.lexifina.com/v1/try_chatgpt?country=ecuador)**: la misma pregunta en ChatGPT.
+- **[Buscar en el derecho ecuatoriano en nuestro sitio](https://lexifina.com/law?country=ecuador&q=arrendamiento)**: una búsqueda de "arrendamiento", con el texto de cada disposición y sus versiones, sin necesidad de cuenta.
+- **[API REST para desarrolladores](https://global-law.lexifina.com/v1/search_law?query=arrendamiento&jurisdiction=ecuador)**: la misma búsqueda en JSON, sin clave. Consulte la [documentación aquí](https://lexifina.com/api/global-law).
 
-Both assistants read the record through the free Global law connector (MCP, `https://global-law.lexifina.com/mcp`); the first time, the chat gives you the link that adds it. Ask in Spanish or in English.
+Ambos asistentes leen el registro a través del conector gratuito Global law (MCP, `https://global-law.lexifina.com/mcp`); la primera vez, el chat le da el enlace para agregarlo. Pregunte en español o en inglés.
 
-**Host it yourself easily.** All it takes is git and Python, and the tools run on your machine:
+**Alójelo usted mismo fácilmente.** Solo hacen falta git y Python, y las herramientas se ejecutan en su equipo:
 
 ```sh
 git clone --depth 1 https://github.com/lexifina/global-law && cd global-law
@@ -37,58 +43,56 @@ python3 tools/countries.py add ecuador/national/acts
 python3 tools/law.py show 2026-01-01 ecuador/national/acts/constitucion/art-114.md
 ```
 
-Opened in Claude Code, Cursor, VS Code or Codex, the clone also starts a local MCP server with the same tools ([MCP.md](https://github.com/lexifina/global-law/blob/main/MCP.md)).
+Abierto en Claude Code, Cursor, VS Code o Codex, el clon también inicia un servidor MCP local con las mismas herramientas ([MCP.md](https://github.com/lexifina/global-law/blob/main/MCP.md)).
 
-## Dates
+## Fechas
 
-Each commit is dated at noon, America/Guayaquil, on the day the version took effect, and carries it in its `In-force:` trailer (with `Enacted:` and `Published:`):
+Cada commit está fechado a las doce del mediodía, hora de America/Guayaquil, del día en que la versión entró en vigencia, y lleva ese día en su trailer `In-force:` (con `Enacted:` y `Published:`):
 
-- a law is in force from its promulgation in the Registro Oficial unless it sets another day (Código Civil art. 6); the COIP, for example, took effect 180 days after publication, on 10 August 2014;
-- a referendum takes effect when the Consejo Nacional Electoral's results are published in the Registro Oficial; a rejected one changes no words and is a commit on the day of the vote;
-- a Constitutional Court ruling is dated on its publication, except Sentencia 018-18-SIN-CC, dated on its notification (2 August 2018), as the Court's own auto explains.
+- una ley rige desde su promulgación en el Registro Oficial, salvo que establezca otro día (art. 6 del Código Civil); el COIP, por ejemplo, entró en vigencia 180 días después de su publicación, el 10 de agosto de 2014;
+- un referéndum surte efecto cuando los resultados del Consejo Nacional Electoral se publican en el Registro Oficial; uno rechazado no cambia ninguna palabra y es un commit el día de la votación;
+- una sentencia de la Corte Constitucional se fecha por su publicación, salvo la Sentencia 018-18-SIN-CC, fechada por su notificación (2 de agosto de 2018), como explica el propio auto de la Corte.
 
-Each change is credited to the law, ruling or referendum that made it, with an address that cannot exist (`referendo-2018@registroficial.invalid`); the committer is Lexifina. The Código Civil starts from its 2005 codification, the oldest text available, credited to the Registro Oficial.
+Cada cambio se atribuye a la ley, la sentencia o el referéndum que lo hizo, con una dirección que no puede existir (`referendo-2018@registroficial.invalid`); el committer es Lexifina. El Código Civil parte de su codificación de 2005, el texto más antiguo disponible, atribuido al Registro Oficial.
 
-## How it is checked
+## Cómo se verifica
 
-- No official consolidated text exists: the Registro Oficial publishes gazette editions only. Each act starts from its text as published there, and each later version replays one act, ruling or referendum from the text layer of its own edition, applying exactly the edits it states; every inserted phrase must occur word for word in that edition.
-- `tools/check_repo.py` reads every version back from git on the day it took effect and on the day before, and compares it with the corpus: 92 versions, 0 mismatches (see [`REPRODUCE.md`](REPRODUCE.md)).
-- The text was compared, for reading only, with editorial consolidations (no text copied): the Constitution agrees in 430 of 444 articles on 25 January 2021, the Código Civil's current text in 2,362 of 2,428, and the COIP in 663 of 754 on 13 October 2021; `REPRODUCE.md` explains the differences.
-- Health checks: no merge commits, commit dates never go backwards, nothing is dated in the future, and every commit's trailers parse.
+- No existe ningún texto consolidado oficial: el Registro Oficial solo publica ediciones. Cada norma parte de su texto tal como se publicó allí, y cada versión posterior reproduce una ley, una sentencia o un referéndum a partir de la capa de texto de su propia edición, aplicando exactamente las modificaciones que esa norma dispone; cada frase insertada debe aparecer palabra por palabra en esa edición.
+- `tools/check_repo.py` vuelve a leer desde git cada versión el día en que entró en vigencia y el día anterior, y la compara con el corpus: 92 versiones, 0 discrepancias (véase [`REPRODUCE.md`](REPRODUCE.md)).
+- El texto se cotejó, solo como lectura, con textos consolidados de editoriales (sin copiar ningún texto): la Constitución coincide en 430 de 444 artículos al 25 de enero de 2021, el texto actual del Código Civil en 2.362 de 2.428, y el COIP en 663 de 754 al 13 de octubre de 2021; `REPRODUCE.md` explica las diferencias.
+- Comprobaciones de integridad: no hay commits de fusión (merge), las fechas de los commits nunca retroceden, nada está fechado en el futuro y los trailers de todos los commits se analizan sin errores.
 
-## What it does not show
+## Qué no muestra
 
-- **Reforms printed only as page images.** This repository does not OCR them, so their words are missing and the articles they changed keep wording that is no longer the law: the Constitution's art. 272 from 25 January 2021 and art. 138 from 30 May 2024, and the articles named by 7 acts and rulings for the Código Civil and 22 for the COIP (each of these a commit marked "NOT APPLIED" on its day).
-- **Reforms that could not be read.** Many laws since 2021 are page images, so whether they amend these acts is not always known.
-- **Most of Ecuador's law.** Eight acts are here. The Código de Comercio, the COGEP and the Código del Trabajo are built on the `preview` branch only and are not the law in force; the data protection law of 2021 is printed only as page images.
-- **Court rulings that interpret** a text without striking words are not commits.
-- **The Kichwa and Shuar versions** of the Constitution.
+- **Las reformas publicadas solo como imágenes de página.** Este repositorio no les aplica OCR, por lo que sus palabras faltan y los artículos que modificaron conservan una redacción que ya no es la vigente: el art. 272 de la Constitución desde el 25 de enero de 2021 y el art. 138 desde el 30 de mayo de 2024, y los artículos señalados por 7 normas y sentencias en el caso del Código Civil y por 22 en el del COIP (cada una de ellas, un commit marcado "NOT APPLIED" en su día).
+- **Las reformas que no pudieron leerse.** Muchas leyes desde 2021 son imágenes de página, por lo que no siempre se sabe si modifican estas normas.
+- **La mayor parte del derecho del Ecuador.** Aquí hay ocho normas. El Código de Comercio, el COGEP y el Código del Trabajo se compilan solo en la rama `preview` y no son el derecho vigente; la ley de protección de datos de 2021 solo está publicada como imágenes de página.
+- **Las sentencias que interpretan** un texto sin suprimir palabras no son commits.
+- **Las versiones en kichwa y shuar** de la Constitución.
 
-## Sources
+## Fuentes
 
-| Source | Kind | Past versions | Notes |
+| Fuente | Tipo | Versiones anteriores | Notas |
 | --- | --- | --- | --- |
-| [Registro Oficial](https://www.registroficial.gob.ec) | Official gazette (run by the Corte Constitucional) | gazette editions only | Every word of law here, cut from each edition's PDF text layer, rulings included |
-| [Asamblea Nacional](https://www.asambleanacional.gob.ec/es/leyes-aprobadas) | List of the laws it passed | n/a | The laws on its list were searched, in their gazette text, for amendments to the acts here |
-| Lexis, Ediciones Legales, Andina Ediciones | Editorial consolidations | yes | Read only as indexes and for comparison; no text copied |
+| [Registro Oficial](https://www.registroficial.gob.ec) | Diario oficial (a cargo de la Corte Constitucional) | solo ediciones | Cada palabra de las normas que hay aquí, extraída de la capa de texto del PDF de cada edición, sentencias incluidas |
+| [Asamblea Nacional](https://www.asambleanacional.gob.ec/es/leyes-aprobadas) | Lista de las leyes que aprobó | no corresponde | En las leyes de su lista se buscaron, en su texto del Registro Oficial, reformas a las normas que hay aquí |
+| Lexis, Ediciones Legales, Andina Ediciones | Textos consolidados de editoriales | sí | Leídas solo como índices y para comparar; no se copió ningún texto |
 
-## Licence
+## Licencia
 
-See [`LICENSE`](LICENSE). The Registro Oficial states no licence for its editions; they are official legal texts of the Republic of Ecuador, which are public. Lexifina's own contributions (the arrangement of the history, the commit messages, the tables and the tools) are dedicated to the public domain under CC0 1.0.
+Véase [`LICENSE`](LICENSE). El Registro Oficial no indica ninguna licencia para sus ediciones; son textos jurídicos oficiales de la República del Ecuador, que son públicos. Las contribuciones propias de Lexifina (la organización de la historia, los mensajes de commit, las tablas y las herramientas) se dedican al dominio público conforme a CC0 1.0.
 
-No AI model wrote, translated or corrected legal text, and no OCR output is legal text; the scripts, and the map of which provision each act changes, were written by an AI model (see [`REPRODUCE.md`](REPRODUCE.md)).
+Ningún modelo de IA escribió, tradujo ni corrigió texto normativo, y ningún resultado de OCR es texto normativo; los scripts, y el mapa de qué disposición modifica cada norma, los escribió un modelo de IA (véase [`REPRODUCE.md`](REPRODUCE.md)).
 
-## En español
+Esta es una traducción de la versión inglesa ([README.en.md](README.en.md)); si difieren, prevalece la versión inglesa.
 
-Historia del derecho ecuatoriano en git: un archivo por disposición y un commit por versión, fechado el día de su entrada en vigencia y firmado por la ley, sentencia o referéndum que hizo el cambio. Contiene la Constitución de 2008, el Código Civil, el COIP y cinco leyes orgánicas de 2023 a 2025, con 92 versiones, todo tomado del texto del Registro Oficial. Las reformas publicadas solo como imagen no están aplicadas: los artículos que modifican conservan su texto anterior, que no es el vigente. Texto vigente en una fecha: `python tools/vigente_el.py 2018-01-01 constitucion 114`.
+## Más información
 
-## More
+Del repositorio [lexifina/global-law](https://github.com/lexifina/global-law) (páginas en inglés):
 
-From [lexifina/global-law](https://github.com/lexifina/global-law):
-
-- [FEATURES.md](https://github.com/lexifina/global-law/blob/main/FEATURES.md): every feature, and what every corpus must support (`git blame`, `law.py`, the MCP tools)
-- [FAQ.md](https://github.com/lexifina/global-law/blob/main/FAQ.md): questions and answers · [CONTRIBUTING.md](https://github.com/lexifina/global-law/blob/main/CONTRIBUTING.md): proposing changes · [MCP.md](https://github.com/lexifina/global-law/blob/main/MCP.md): the MCP server · [REPRODUCE.md](https://github.com/lexifina/global-law/blob/main/REPRODUCE.md): how it was built · [CHANGELOG.md](https://github.com/lexifina/global-law/blob/main/CHANGELOG.md)
-- [FRESHNESS.md](https://github.com/lexifina/global-law/blob/main/FRESHNESS.md): how current each corpus is · [Monitoring](https://github.com/lexifina/global-law/tree/main/monitoring): whether updates are running · [WATCHING.md](https://github.com/lexifina/global-law/blob/main/WATCHING.md): how each official source is watched for changes
-- [performance/](https://github.com/lexifina/global-law/tree/main/performance): how fast the tools are, measured
-- [visualisations/](https://github.com/lexifina/global-law/tree/main/visualisations): charts and bridges across the world's law
-- [Vulnerabilities](https://github.com/lexifina/global-law/tree/main/vulnerabilities): mistakes in legislation as published
+- [FEATURES.md](https://github.com/lexifina/global-law/blob/main/FEATURES.md): todas las funciones y lo que cada corpus debe admitir (`git blame`, `law.py`, herramientas MCP)
+- [FAQ.md](https://github.com/lexifina/global-law/blob/main/FAQ.md): preguntas y respuestas · [CONTRIBUTING.md](https://github.com/lexifina/global-law/blob/main/CONTRIBUTING.md): proponer cambios · [MCP.md](https://github.com/lexifina/global-law/blob/main/MCP.md): servidor MCP · [REPRODUCE.md](https://github.com/lexifina/global-law/blob/main/REPRODUCE.md): cómo se ha construido · [CHANGELOG.md](https://github.com/lexifina/global-law/blob/main/CHANGELOG.md)
+- [FRESHNESS.md](https://github.com/lexifina/global-law/blob/main/FRESHNESS.md): lo actualizado que está cada corpus · [Supervisión](https://github.com/lexifina/global-law/tree/main/monitoring): si las actualizaciones funcionan · [WATCHING.md](https://github.com/lexifina/global-law/blob/main/WATCHING.md): cómo se vigila cada fuente oficial para detectar cambios
+- [performance/](https://github.com/lexifina/global-law/tree/main/performance): la rapidez de las herramientas, medida
+- [visualisations/](https://github.com/lexifina/global-law/tree/main/visualisations): gráficos y conexiones a través del derecho de todo el mundo
+- [Vulnerabilidades](https://github.com/lexifina/global-law/tree/main/vulnerabilities): errores en las normas tal como se publicaron
