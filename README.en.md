@@ -61,6 +61,7 @@ Each change is credited to the law, ruling or referendum that made it, with an a
 - `tools/check_repo.py` reads every version back from git on the day it took effect and on the day before, and compares it with the corpus: 92 versions, 0 mismatches (see [`REPRODUCE.md`](REPRODUCE.md)).
 - The text was compared, for reading only, with editorial consolidations (no text copied): the Constitution agrees in 430 of 444 articles on 25 January 2021, the Código Civil's current text in 2,362 of 2,428, and the COIP in 663 of 754 on 13 October 2021; `REPRODUCE.md` explains the differences.
 - Health checks: no merge commits, commit dates never go backwards, nothing is dated in the future, and every commit's trailers parse.
+- [vulnerabilities/](vulnerabilities/README.en.md): possible drafting mistakes in this law, found by global-law's detectors and checked by hand. Not run yet.
 
 ## What it does not show
 
@@ -83,6 +84,10 @@ Each change is credited to the law, ruling or referendum that made it, with an a
 See [`LICENSE`](LICENSE). The Registro Oficial states no licence for its editions; they are official legal texts of the Republic of Ecuador, which are public. Lexifina's own contributions (the arrangement of the history, the commit messages, the tables and the tools) are dedicated to the public domain under CC0 1.0.
 
 No AI model wrote, translated or corrected legal text, and no OCR output is legal text; the scripts, and the map of which provision each act changes, were written by an AI model (see [`REPRODUCE.md`](REPRODUCE.md)).
+
+## Visualisations
+
+- [visualisations/](visualisations/README.en.md): charts drawn from this repository. Not drawn yet.
 
 ## More
 

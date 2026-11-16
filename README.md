@@ -61,6 +61,7 @@ Cada cambio se atribuye a la ley, la sentencia o el referéndum que lo hizo, con
 - `tools/check_repo.py` vuelve a leer desde git cada versión el día en que entró en vigencia y el día anterior, y la compara con el corpus: 92 versiones, 0 discrepancias (véase [`REPRODUCE.md`](REPRODUCE.md)).
 - El texto se cotejó, solo como lectura, con textos consolidados de editoriales (sin copiar ningún texto): la Constitución coincide en 430 de 444 artículos al 25 de enero de 2021, el texto actual del Código Civil en 2.362 de 2.428, y el COIP en 663 de 754 al 13 de octubre de 2021; `REPRODUCE.md` explica las diferencias.
 - Comprobaciones de integridad: no hay commits de fusión (merge), las fechas de los commits nunca retroceden, nada está fechado en el futuro y los trailers de todos los commits se analizan sin errores.
+- [vulnerabilities/](vulnerabilities/): posibles errores de redacción en este derecho, hallados por los detectores de global-law y revisados a mano. Aún no se ha ejecutado.
 
 ## Qué no muestra
 
@@ -85,6 +86,10 @@ Véase [`LICENSE`](LICENSE). El Registro Oficial no indica ninguna licencia para
 Ningún modelo de IA escribió, tradujo ni corrigió texto normativo, y ningún resultado de OCR es texto normativo; los scripts, y el mapa de qué disposición modifica cada norma, los escribió un modelo de IA (véase [`REPRODUCE.md`](REPRODUCE.md)).
 
 Esta es una traducción de la versión inglesa ([README.en.md](README.en.md)); si difieren, prevalece la versión inglesa.
+
+## Visualizaciones
+
+- [visualisations/](visualisations/): gráficos hechos a partir de este repositorio. Aún no se han hecho.
 
 ## Más información
 
